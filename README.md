@@ -36,7 +36,7 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 #### **Quick Install – as Plugin**
 1. **Download ZIP:** [**builder-list-pages.zip**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip)
 2. Upload via WordPress Plugins > Add New > Upload Plugin
-3. Once activated, you can see the special page/post type listings – [see Usage below](#usage---examples)
+3. Once activated, you can see the special page/post type listings under each type in the Admin
  
 #### **Alternative: Use as Code Snippet**
 1. Below, download the appropriate snippet version
@@ -49,8 +49,6 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 For all other snippet manager plugins just use our plugin's main .php file [`builder-list-pages.php`](https://github.com/deckerweb/builder-list-pages/blob/master/builder-list-pages.php) and use its content as snippet (bevor saving your snippet: please check for your plugin if the opening php tag needs to be removed or not!).
 
 --> Please decide for one of both alternatives!
-
-_Note:_ The snippet version cannot display translations currently. All taxonomy labels will appear in English. We plan on implementing a solution for translated labels also for snippets.
 
 ### Tested Compatibility
 - **WordPress**: 6.7.2 / 6.8 Beta

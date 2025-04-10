@@ -14,7 +14,7 @@
 
 ---
 
-[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [Features](#features) | [Page Builders](#supported-page-builder) | [FAQ](#frequently-asked-questions) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [Features](#features) | [Page Builders](#supported-page-builders-%EF%B8%8F) | [FAQ](#frequently-asked-questions) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
 
 ---
 

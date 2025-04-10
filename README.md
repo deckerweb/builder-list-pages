@@ -2,7 +2,7 @@
 
 **Simple & lightweight:** List those pages and post types which were edited with your favorite Page Builder. Adds additional _**Views**_ to the post type list tables, plus: _**Submenus**_.
 
-![Builder List Pages plugin banner](https://repository-images.githubusercontent.com/114375288/882286e7-ebfc-45da-b2a2-9aa0e3b0d758)
+![Builder List Pages plugin banner](https://repository-images.githubusercontent.com/964191686/df3eaa01-7f0a-4ba3-b272-4a19d44dbea1)
 
 * Contributors: [David Decker](https://github.com/deckerweb), [contributors](https://github.com/deckerweb/builder-list-pages/graphs/contributors)
 * Tags: pages, post-type, post, page builder, site builder, view, list, listing, admin
@@ -115,13 +115,13 @@ The plugin does support translations, so you can add your own language files to 
 
 ## Frequently Asked Questions 
 
-### Why should it be important to have these views/ submenus?
+### Why should it be important to have these Views/ Submenus?
 Good question. This could be extremely useful if you have a lot of pages for example and only a few of them are built with your Page Builder. Then the additional **view** and **submenu** offer a "filter" to just query for those few pages. That makes total sense for Administrators, Editors, Clients and other use cases. This should be a default, to have these views. Sadly, most Builders just don't offer it.
 
 ### Why did you create this plugin?
 Back in 2019 I needed it myself for a few sites I maintained. Those sites were powered by Elementor (Pro). Once I discovered a code snippet offering these views, I enhanced the snippet (security, better labels) and made a plugin out of it. It was just for "private" use. A few years later I needed it again but now for other builders (Oxygen, Bricks, Breakdance ...), so I developed the plugin further and made a more robust solution out of it, working with more Builders.
 
-### Why is this plugin not on wordpress.org plugin repository?
+### Why is this plugin not on wordpress.org Plugin Repository?
 Because the restrictions there for plugin authors are becoming more and more. It would be possible, yes, but I don't want that anymore. The same for limited support forums for plugin authors on .org. I have decided to leave this whole thing behind me.
 
 ---

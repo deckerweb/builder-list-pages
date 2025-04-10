@@ -116,6 +116,9 @@ The plugin does support translations, so you can add your own language files to 
 ### Why should it be important to have these Views/ Submenus?
 Good question. This could be extremely useful if you have a lot of pages for example and only a few of them are built with your Page Builder. Then the additional **view** and **submenu** offer a "filter" to just query for those few pages. That makes total sense for Administrators, Editors, Clients and other use cases. This should be a default, to have these views. Sadly, most Builders just don't offer it.
 
+### The View is showing (0) items?
+That can happen if you have only items of that post type edited in your Builder but in Draft state. Just publish this post type item. And also make sure that it contains at least one element/widget of the builder in it. Then it will all make sense. (Meaning, WordPress needs to see a hidden meta key for that page/item, that mostly gets set when adding an element and publish – or at least save – the whole thing.)
+
 ### Why did you create this plugin?
 Back in 2019 I needed it myself for a few sites I maintained. Those sites were powered by Elementor (Pro). Once I discovered a code snippet offering these views, I enhanced the snippet (security, better labels) and made a plugin out of it. It was just for "private" use. A few years later I needed it again but now for other builders (Oxygen, Bricks, Breakdance ...), so I developed the plugin further and made a more robust solution out of it, working with more Builders.
 
@@ -136,6 +139,18 @@ Because the restrictions there for plugin authors are becoming more and more. It
 
 ### 🛠 v0.5.0 – 2019-08-12
 * _Private_ _alpha_ release
+
+---
+
+## Plugin Scope / Disclaimer 
+
+This plugin comes as is.
+
+_Disclaimer 1:_ So far I will support the plugin for breaking errors to keep it working. Otherwise support will be very limited. Also, it will NEVER be released to WordPress.org Plugin Repository for a lot of reasons (ah, thanks, Matt!).
+
+_Disclaimer 2:_ All of the above might change. I do all this stuff only in my spare time.
+
+_Most of all:_ Be blessed and have fun building great sites!!! 😉
 
 ---
 

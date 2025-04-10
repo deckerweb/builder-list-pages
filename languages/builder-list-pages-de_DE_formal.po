@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Builder List Pages\n"
+"POT-Creation-Date: 2025-04-10 22:36+0200\n"
+"PO-Revision-Date: 2025-04-10 22:36+0200\n"
+"Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
+"Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
+"Language: de_DE@formal\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: builder-list-pages.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: builder-list-pages.php:205
+msgid "Elementor"
+msgstr "Elementor"
+
+#: builder-list-pages.php:206
+msgid "With Elementor"
+msgstr "Mit Elementor"
+
+#: builder-list-pages.php:216
+msgid "Bricks"
+msgstr "Bricks"
+
+#: builder-list-pages.php:217
+msgid "With Bricks"
+msgstr "Mit Bricks"
+
+#: builder-list-pages.php:227
+msgid "Breakdance"
+msgstr "Breakdance"
+
+#: builder-list-pages.php:228
+msgid "With Breakdance"
+msgstr "Mit Breakdance"
+
+#: builder-list-pages.php:238 builder-list-pages.php:249
+msgid "Oxygen"
+msgstr "Oxygen"
+
+#: builder-list-pages.php:239 builder-list-pages.php:250
+msgid "With Oxygen"
+msgstr "Mit Oxygen"
+
+#: builder-list-pages.php:260
+msgid "Brizy"
+msgstr "Brizy"
+
+#: builder-list-pages.php:261
+msgid "With Brizy"
+msgstr "Mit Brizy"
+
+#: builder-list-pages.php:271
+msgid "Beaver Builder"
+msgstr "Beaver Builder"
+
+#: builder-list-pages.php:272
+msgid "With Beaver"
+msgstr "Mit Beaver"
+
+#: builder-list-pages.php:282
+msgid "Pagelayer"
+msgstr "Pagelayer"
+
+#: builder-list-pages.php:283
+msgid "With Pagelayer"
+msgstr "Mit Pagelayer"
+
+#: builder-list-pages.php:293
+msgid "ZionBuilder"
+msgstr "ZionBuilder"
+
+#: builder-list-pages.php:294
+msgid "With ZionBuilder"
+msgstr "Mit ZionBuilder"
+
+#: builder-list-pages.php:304
+msgid "Visual Composer"
+msgstr "Visual Composer"
+
+#: builder-list-pages.php:305
+msgid "With Visual Composer"
+msgstr "Mit Visual Composer"
+
+#: builder-list-pages.php:315
+msgid "Thrive Architect"
+msgstr "Thrive Architect"
+
+#: builder-list-pages.php:316
+msgid "With Thrive Architect"
+msgstr "Mit Thrive Architect"
+
+#. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
+#: builder-list-pages.php:447
+#, php-format
+msgctxt "Title attribute of Views link (above post type list table)"
+msgid "%1$s edited with %2$s"
+msgstr "%1$s bearbeitet mit %2$s"
+
+#. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
+#: builder-list-pages.php:505
+#, php-format
+msgctxt "Page title"
+msgid "%1$s edited with %2$s"
+msgstr "%1$s bearbeitet mit %2$s"
+
+#: builder-list-pages.php:557
+msgctxt "Plugins page listing"
+msgid "Donate"
+msgstr "Spenden"
+
+#: builder-list-pages.php:563
+msgctxt "Plugins page listing"
+msgid "Join our Newsletter"
+msgstr "Jetzt Newsletter"
+
+#. Plugin Name of the plugin/theme
+msgid "Builder List Pages"
+msgstr "Builder Seiten-Auflistung"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/deckerweb/builder-list-pages"
+msgstr "https://github.com/deckerweb/builder-list-pages"
+
+#. Description of the plugin/theme
+msgid ""
+"List those pages and post types which were edited with your favorite Page "
+"Builder. Adds additional views to the post type list tables, plus, submenus."
+msgstr ""
+"Listet die Seiten und Beitragstypen auf, die mit Ihrem bevorzugten Page "
+"Builder bearbeitet wurden. Fügt zusätzliche Ansichten zu den Tabellen der "
+"Beitragstypenliste hinzu, sowie Untermenüs."
+
+#. Author of the plugin/theme
+msgid "David Decker - DECKERWEB"
+msgstr "David Decker - DECKERWEB"
+
+#. Author URI of the plugin/theme
+msgid "https://deckerweb.de/"
+msgstr "https://deckerweb.de/"

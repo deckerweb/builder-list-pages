@@ -90,7 +90,6 @@ class DDW_Builder_List_Pages {
 	
 		/** Translations: Secondly, look in 'wp-content/languages/plugins/' for the proper .mo/.l10n.php file (= default) */
 		load_plugin_textdomain( $blp_textdomain, FALSE, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'languages' );
-	
 	}
 	
 	/**
@@ -354,8 +353,6 @@ class DDW_Builder_List_Pages {
 	/**
 	 * Query the post type items which were edited with the Builder.
 	 *
-	 * @since 1.0.0
-	 *
 	 * @param object $query
 	 */
 	public function post_types_builder_parse_query_filter( $query ) {
@@ -403,8 +400,6 @@ class DDW_Builder_List_Pages {
 	
 	/**
 	 * Setup the views filter above the post type list table.
-	 *
-	 * @since 1.0.0
 	 *
 	 * @param  array $views Array which holds all views.
 	 * @return array $views Modified array of views.

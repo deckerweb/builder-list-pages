@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Builder List Pages\n"
-"POT-Creation-Date: 2025-04-10 22:37+0200\n"
+"POT-Creation-Date: 2025-04-11 21:46+0200\n"
 "PO-Revision-Date: 2025-04-09 13:42+0200\n"
 "Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
 "Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
@@ -20,106 +20,106 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: builder-list-pages.php:205
+#: builder-list-pages.php:204
 msgid "Elementor"
 msgstr ""
 
-#: builder-list-pages.php:206
+#: builder-list-pages.php:205
 msgid "With Elementor"
 msgstr ""
 
-#: builder-list-pages.php:216
+#: builder-list-pages.php:215
 msgid "Bricks"
 msgstr ""
 
-#: builder-list-pages.php:217
+#: builder-list-pages.php:216
 msgid "With Bricks"
 msgstr ""
 
-#: builder-list-pages.php:227
+#: builder-list-pages.php:226
 msgid "Breakdance"
 msgstr ""
 
-#: builder-list-pages.php:228
+#: builder-list-pages.php:227
 msgid "With Breakdance"
 msgstr ""
 
-#: builder-list-pages.php:238 builder-list-pages.php:249
+#: builder-list-pages.php:237 builder-list-pages.php:248
 msgid "Oxygen"
 msgstr ""
 
-#: builder-list-pages.php:239 builder-list-pages.php:250
+#: builder-list-pages.php:238 builder-list-pages.php:249
 msgid "With Oxygen"
 msgstr ""
 
-#: builder-list-pages.php:260
+#: builder-list-pages.php:259
 msgid "Brizy"
 msgstr ""
 
-#: builder-list-pages.php:261
+#: builder-list-pages.php:260
 msgid "With Brizy"
 msgstr ""
 
-#: builder-list-pages.php:271
+#: builder-list-pages.php:270
 msgid "Beaver Builder"
 msgstr ""
 
-#: builder-list-pages.php:272
+#: builder-list-pages.php:271
 msgid "With Beaver"
 msgstr ""
 
-#: builder-list-pages.php:282
+#: builder-list-pages.php:281
 msgid "Pagelayer"
 msgstr ""
 
-#: builder-list-pages.php:283
+#: builder-list-pages.php:282
 msgid "With Pagelayer"
 msgstr ""
 
-#: builder-list-pages.php:293
+#: builder-list-pages.php:292
 msgid "ZionBuilder"
 msgstr ""
 
-#: builder-list-pages.php:294
+#: builder-list-pages.php:293
 msgid "With ZionBuilder"
 msgstr ""
 
-#: builder-list-pages.php:304
+#: builder-list-pages.php:303
 msgid "Visual Composer"
 msgstr ""
 
-#: builder-list-pages.php:305
+#: builder-list-pages.php:304
 msgid "With Visual Composer"
 msgstr ""
 
-#: builder-list-pages.php:315
+#: builder-list-pages.php:314
 msgid "Thrive Architect"
 msgstr ""
 
-#: builder-list-pages.php:316
+#: builder-list-pages.php:315
 msgid "With Thrive Architect"
 msgstr ""
 
 #. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
-#: builder-list-pages.php:447
+#: builder-list-pages.php:442
 #, php-format
 msgctxt "Title attribute of Views link (above post type list table)"
 msgid "%1$s edited with %2$s"
 msgstr ""
 
 #. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
-#: builder-list-pages.php:505
+#: builder-list-pages.php:500
 #, php-format
 msgctxt "Page title"
 msgid "%1$s edited with %2$s"
 msgstr ""
 
-#: builder-list-pages.php:557
+#: builder-list-pages.php:552
 msgctxt "Plugins page listing"
 msgid "Donate"
 msgstr ""
 
-#: builder-list-pages.php:563
+#: builder-list-pages.php:558
 msgctxt "Plugins page listing"
 msgid "Join our Newsletter"
 msgstr ""

@@ -150,7 +150,7 @@ Because the restrictions there for plugin authors are becoming more and more. It
 * With support for 11 popular Page Builders
 * Plugin is compatible with _ClassicPress_ (fork of WordPress) when the supported Page Builder is compatible with _ClassicPress_
 * Installable and updateable via [Git Updater plugin](https://git-updater.com/)
-* Includes `.pot` file, plus packaged German translations
+* Includes `.pot` file, plus packaged German translations, including new `l10n.php` files!
 
 
 ### 🛠 v0.5.0 – 2019-08-12

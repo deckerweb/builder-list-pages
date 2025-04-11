@@ -8,7 +8,7 @@
 * Tags: pages, post-type, post, page builder, site builder, view, list, listing, admin
 * Requires at least: 6.7
 * Requires PHP: 7.4
-* Stable tag: [master](https://github.com/deckerweb/builder-list-pages/releases/latest)
+* Stable tag: [main](https://github.com/deckerweb/builder-list-pages/releases/latest)
 * Donate link: https://paypal.me/deckerweb
 * License: GPL v2 or later
 
@@ -52,8 +52,9 @@ For all other snippet manager plugins just use our plugin's main .php file [`bui
 
 ### Tested Compatibility
 - **WordPress**: 6.7.2 / 6.8 Beta
+- **ClassicPress:** 2.4.0 / 2.4.1
 - **PHP**: 8.0 – 8.3
-- Requires at least: WP 6.7 / PHP 7.4
+- Requires at least: WP 6.7 or CP 2.0 / PHP 7.4
 
 ---
 
@@ -109,18 +110,31 @@ The plugin does support translations, so you can add your own language files to 
 * _Astra Site Builder_ (Layouts) (part of _Astra Pro_ for the _Astra_ Theme)
 * _OceanWP Library_ (part of _OceanWP_ Theme)
 
+#### Compatibility with ClassicPress (fork of WP)
+* This plugin itself is compatible!
+* As long as the _Page Builder_ is compatible then you can use this plugin here as a perfect helper tool
+* Current compatible Builders:
+  * ZionBuilder - tested the free version
+  * Beaver Builder - works (CP Forum)
+  * Breakdance – I played around with the Pro version v2.3.0 and to my surprise it worked in CP 2.4.1 without any issues. So it also worked with my plugin.
+  * I am sure, more builders from the above list will work fine. I just have not the time to test them all everytime...
+  * Bricks Builder – I guess this one might work also, but note it needs a [compat plugin](https://github.com/Hakira-Shymuy/cpbricksfixes) (to make Bricks work with CP)
+
 ---
 
 ## Frequently Asked Questions 
 
 ### Why should it be important to have these Views/ Submenus?
-Good question. This could be extremely useful if you have a lot of pages for example and only a few of them are built with your Page Builder. Then the additional **view** and **submenu** offer a "filter" to just query for those few pages. That makes total sense for Administrators, Editors, Clients and other use cases. This should be a default, to have these views. Sadly, most Builders just don't offer it.
+Good question. This could be extremely useful if you have a lot of pages for example and only a few of them are built with your Page Builder. Then the additional **view** and **submenu** offer a "filter" to just query for those few pages. That makes total sense for Administrators, Editors, Clients and other use cases. This should be a default, to have these views. Sadly, most Builders just don't offer that.
 
 ### The View is showing (0) items?
 That can happen if you have only items of that post type edited in your Builder but in _Draft_ state. Just **publish** this post type item. And also make sure that it contains at least _one_ element/widget of the Builder _in it_. Then it will all make sense. (Meaning, WordPress needs to see a hidden meta key for that page/item, that mostly gets set when adding an element and publish – or at least save – the whole thing.)
 
+### Will more Builders be supported?
+Mostly not. Only when another Builder is easy to integrate and works (like the others) with the principle of meta key/value pair. If I missed such a Builder, please [create an Issue](https://github.com/deckerweb/builder-list-pages/issues) on the GitHub repository of this plugin so I can consider integration. Otherwise no further integration is planned. (The Builders I personally need are already covered: _Bricks_, _Oxygen_, _Breakdance_, _Elementor_.)
+
 ### Why did you create this plugin?
-Back in 2019 I needed it myself for a few sites I maintained. Those sites were powered by Elementor (Pro). Once I discovered a code snippet offering these views, I enhanced the snippet (security, better labels) and made a plugin out of it. It was just for "private" use. A few years later I needed it again but now for other builders (Oxygen, Bricks, Breakdance ...), so I developed the plugin further and made a more robust solution out of it, working with more Builders.
+Back in 2019 I needed it myself for a few sites I maintained. Those sites were powered by Elementor (Pro). Once I discovered a code snippet offering these views, I enhanced the snippet (security, better labels, etc.) and made a plugin out of it. It was just for "private" use. A few years later I needed it again but now for other builders (Oxygen, Bricks, Breakdance ...), so I developed the plugin further and made a more robust solution out of it, working with more Builders. And this is now the result.
 
 ### Why is this plugin not on wordpress.org Plugin Repository?
 Because the restrictions there for plugin authors are becoming more and more. It would be possible, yes, but I don't want that anymore. The same for limited support forums for plugin authors on .org. I have decided to leave this whole thing behind me.
@@ -131,9 +145,11 @@ Because the restrictions there for plugin authors are becoming more and more. It
 
 #### Version History 
 
-### 🎉 v1.0.0 – 2025-04-??
+### 🎉 v1.0.0 – 2025-04-11
 * Initial _public_ release
 * With support for 11 popular Page Builders
+* Plugin is compatible with _ClassicPress_ (fork of WordPress) when the supported Page Builder is compatible with _ClassicPress_
+* Installable and updateable via [Git Updater plugin](https://git-updater.com/)
 * Includes `.pot` file, plus packaged German translations
 
 

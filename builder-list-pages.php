@@ -13,6 +13,7 @@ Text Domain:       builder-list-pages
 Domain Path:       /languages/
 Requires WP:       6.7
 Requires PHP:      7.4
+Requires CP:       2.0.0
 Update URI:        https://github.com/deckerweb/builder-list-pages/
 GitHub Plugin URI: https://github.com/deckerweb/builder-list-pages
 Primary Branch:    main
@@ -23,12 +24,13 @@ Product			Versions
 --------------------------------------------------------------------------------------------------------------
 PHP 			8.0, 8.3
 WordPress		6.7.2 ... 6.8 Beta
+ClassicPress	2.4.x
 --------------------------------------------------------------------------------------------------------------
 
 VERSION HISTORY:
 Date        Version     Description
 --------------------------------------------------------------------------------------------------------------
-2025-04-??	1.0.0	    Initial public release
+2025-04-11	1.0.0	    Initial public release
 2019-08-12	0.5.0       Development start / alpha
 --------------------------------------------------------------------------------------------------------------
 */
@@ -58,8 +60,6 @@ class DDW_Builder_List_Pages {
 	
 	/**
 	 * Load the text domain for translation of the plugin.
-	 *
-	 * @since 1.0.0
 	 *
 	 * @uses get_user_locale()
 	 * @uses load_textdomain() To load translations first from WP_LANG_DIR sub folder.

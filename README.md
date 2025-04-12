@@ -34,21 +34,23 @@ Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through th
 ## Installation 
 
 #### **Quick Install – as Plugin**
+[![Download Plugin](https://raw.githubusercontent.com/deckerweb/builder-list-pages/refs/heads/main/assets/button-download-plugin.png)](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip)  
 1. **Download ZIP:** [**builder-list-pages.zip**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip)
 2. Upload via WordPress Plugins > Add New > Upload Plugin
 3. Once activated, you can see the special page/post type listings under each type in the Admin
  
 #### **Alternative: Use as Code Snippet**
-1. Below, download the appropriate snippet version
+[![Download Code Snippet](https://raw.githubusercontent.com/deckerweb/builder-list-pages/refs/heads/main/assets/button-download-snippet.png)](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json)  
+1. **Download .json:** [**ddw-builder-list-pages.code-snippets.json**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json)
 2. activate or deactivate in your snippets plugin
 
 [**Download .json**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json) version for: _Code Snippets_ (free & Pro), _Advanced Scripts_ (Premium), _Scripts Organizer_ (Premium)  
---> just use their elegant script import features  
---> in _Scripts Organizer_ use the "Code Snippets Import"  
+➔ just use their elegant script import features  
+➔ in _Scripts Organizer_ use the "Code Snippets Import"  
 
-For all other snippet manager plugins just use our plugin's main .php file [`builder-list-pages.php`](https://github.com/deckerweb/builder-list-pages/blob/master/builder-list-pages.php) and use its content as snippet (bevor saving your snippet: please check for your plugin if the opening php tag needs to be removed or not!).
+For all other snippet manager plugins just use our plugin's main .php file [`builder-list-pages.php`](https://github.com/deckerweb/builder-list-pages/blob/main/builder-list-pages.php) and use its content as snippet (before saving your snippet: please check for your plugin if the opening `<?php` tag needs to be removed or not!).
 
---> Please decide for one of both alternatives!
+➔ Please decide for one of both alternatives!
 
 ### Tested Compatibility
 - **WordPress**: 6.7.2 / 6.8 Beta

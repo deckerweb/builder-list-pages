@@ -126,12 +126,12 @@ check(function_exists('deckerweb_library_register') && isset($GLOBALS['deckerweb
 $updates=new Deckerweb\BuilderListPages\GitHubUpdates();
 $art=$updates->artwork();check(isset($art['icons']['svg'],$art['banners']['high']),'Updater receives local artwork');
 $cache='ddw_ghru_'.substr(md5('https://github.com/deckerweb/builder-list-pages'),0,24);
-set_site_transient($cache,['version'=>'1.1.0','package'=>'https://github.com/deckerweb/builder-list-pages/releases/download/v1.1.0/builder-list-pages.zip','notes'=>'Fixture','published'=>'2026-10-01'],60);
+set_site_transient($cache,['version'=>'1.1.1','package'=>'https://github.com/deckerweb/builder-list-pages/releases/download/v1.1.1/builder-list-pages-1.1.1.zip','notes'=>'Fixture','published'=>'2026-10-01'],60);
 $offer=apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION,'RequiresWP'=>'6.7','RequiresPHP'=>'8.0'],'builder-list-pages/builder-list-pages.php',[]);
-check(is_array($offer)&&$offer['version']==='1.1.0','Native updater offers stable release over RC');
+check(is_array($offer)&&$offer['version']==='1.1.1','Native updater offers a newer stable release');
 $unrelated=apply_filters('update_plugins_github.com',false,[],'other/other.php',[]);check($unrelated===false,'Updater leaves other plugins alone');
 set_site_transient($cache,['version'=>'1.0.0','package'=>'fixture','notes'=>'','published'=>''],60);
-check(apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION],'builder-list-pages/builder-list-pages.php',[])===false,'Updater never downgrades test release');
+check(apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION],'builder-list-pages/builder-list-pages.php',[])===false,'Updater never downgrades installed version');
 wp_set_current_user($editor);ob_start();$settings->render();check(ob_get_clean()==='','Settings screen requires manage_options');
 wp_set_current_user(1);ob_start();$settings->render();$html=ob_get_clean();check(strpos($html,'name="_wpnonce"')!==false && strpos($html,'blp-footer')!==false,'Settings include WordPress nonce and deckerweb footer');
 foreach($ids as $id) wp_delete_post($id,true);wp_delete_post($own,true);wp_delete_post($other,true);

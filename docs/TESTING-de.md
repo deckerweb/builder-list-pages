@@ -1,9 +1,9 @@
-# Testplan · Builder List Pages 1.1.0-rc2
+# Testplan · Builder List Pages 1.1.0
 
 ## Installation
 
 1. Testkopie mit WordPress ab 6.7 und PHP ab 8.0 verwenden.
-2. `builder-list-pages-1.1.0-rc2.zip` als Plugin hochladen. Vorhandene Version ersetzen.
+2. `builder-list-pages-1.1.0.zip` als Plugin hochladen. Vorhandene Version ersetzen.
 3. Alte Snippet-Version deaktivieren, falls sie verwendet wurde.
 4. Cache leeren und die Seitenliste neu öffnen.
 
@@ -25,7 +25,7 @@
 ## Grenzen
 
 Automatische Prüfungen verwenden Builder-Metadaten und Konstanten als Fixtures.
-Echte Builder-Versionen, MySQL, PHP 8.0, Multisite und ClassicPress sind noch
+Andere Builder-Versionen, MySQL, PHP 8.0, Multisite und ClassicPress sind noch
 nicht umfassend validiert. Inaktive Builder und globale Templates werden nicht erkannt.
 Variante A ist als finales Design gewählt; B und C bleiben im Designpaket verfügbar.
 

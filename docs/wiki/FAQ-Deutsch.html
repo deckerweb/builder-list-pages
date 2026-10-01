@@ -1,0 +1,72 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Dokumentation</title><style>body{margin:0;background:#f3f6f7;color:#223641;font:16px/1.7 system-ui,sans-serif}main{max-width:940px;margin:36px auto;padding:32px 42px;background:white;border:1px solid #d4dee0;border-radius:12px}nav{display:flex;flex-wrap:wrap;gap:14px;padding-bottom:18px;border-bottom:1px solid #d4dee0}a{color:#17616a;text-underline-offset:3px}h1{font-size:32px}h2{margin-top:38px;padding-top:14px;border-top:1px solid #e2e8ea}h3{margin-top:28px}img{max-width:100%}code{background:#eef4f5;padding:2px 5px}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid #d4dee0;padding:8px}@media(max-width:640px){main{margin:12px;padding:20px}}</style></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-Deutsch.html">FAQ</a><a href="Changelog-Deutsch.html">Changelog</a></nav><h1 id="häufig-gestellte-fragen">Häufig gestellte Fragen</h1>
+<p><a href="Deutsch.html">Anleitung</a> · <a href="FAQ-English.html">English</a></p>
+<p>Antworten zum Testrelease 1.1.0-rc1. Geplante Funktionen werden nicht als verfügbar beschrieben.</p>
+<h2 id="erste-schritte">Erste Schritte</h2>
+<h3 id="muss-ich-zuerst-etwas-einrichten">Muss ich zuerst etwas einrichten?</h3>
+<p>Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstützter Builder bearbeiten darf. Ansichten, Builder-Spalte und Untermenüs sind standardmäßig eingeschaltet.</p>
+<h3 id="welche-voraussetzungen-gelten">Welche Voraussetzungen gelten?</h3>
+<p>WordPress ab 6.7 und PHP ab 8.0. Dieses Testrelease wurde mit WordPress 6.7 und PHP 8.4.5 in einer separaten SQLite-Installation geprüft. Weitere Versionen und echte Builder-Installationen müssen getestet werden.</p>
+<h3 id="ist-das-plugin-kostenlos">Ist das Plugin kostenlos?</h3>
+<p>Ja, unter GPL v2 oder neuer. Einige unterstützte Builder benötigen eine eigene kostenpflichtige Lizenz.</p>
+<h3 id="welche-builder-werden-unterstützt">Welche Builder werden unterstützt?</h3>
+<p>Elementor, Bricks, Breakdance, Oxygen ab Version 6, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Bei Visual Composer gilt derzeit der Seiten-/Beitragsumfang der kostenlosen Ausgabe.</p>
+<h3 id="warum-sehe-ich-keine-builder-ansicht">Warum sehe ich keine Builder-Ansicht?</h3>
+<p>Der Builder muss aktiv sein, den Inhaltstyp erlauben und erkennbare Einstellungen bereitstellen. Dein Benutzer braucht außerdem Bearbeitungsrechte für diesen Typ. Fehlende, ungültige und versteckte Inhaltstypen werden ausgeschlossen.</p>
+<h3 id="funktioniert-es-mit-eigenen-inhaltstypen">Funktioniert es mit eigenen Inhaltstypen?</h3>
+<p>Ja, wenn ein aktiver Builder sie erlaubt und sie eine Admin-Oberfläche haben. Medienanhänge sind ausgeschlossen.</p>
+<h2 id="erkennung-und-filter">Erkennung und Filter</h2>
+<h3 id="was-sagt-die-builder-spalte-aus">Was sagt die Builder-Spalte aus?</h3>
+<p>Sie zeigt passende Metadaten aktiver unterstützter Builder, die für den Inhaltstyp freigegeben sind. Sie analysiert weder die komplette Frontend-Darstellung noch Template-Zuweisungen.</p>
+<h3 id="kann-eine-seite-zwei-builder-anzeigen">Kann eine Seite zwei Builder anzeigen?</h3>
+<p>Ja. Jeder passende Builder erscheint. Nach einer Migration können alte Metadaten verbleiben. Builder-Gruppen können sich überschneiden; ihre Zähler lassen sich nicht einfach addieren.</p>
+<h3 id="was-bedeutet-ohne-erkannten-builder">Was bedeutet „Ohne erkannten Builder“?</h3>
+<p>Für keinen aktiven unterstützten Builder dieses Inhaltstyps wurde eine passende Datenregel gefunden. Das beweist nicht, dass die Seite Gutenberg verwendet.</p>
+<h3 id="werden-inaktive-builder-erkannt">Werden inaktive Builder erkannt?</h3>
+<p>In Version 1.1.0 noch nicht. Ihre verbliebenen Daten bilden keine erkannte Gruppe. Eine Bestandsaufnahme inaktiver Builder ist ein späteres Feature.</p>
+<h3 id="erkennt-das-plugin-builder-templates-auf-normalen-seiten">Erkennt das Plugin Builder-Templates auf normalen Seiten?</h3>
+<p>Nein. Die Erkennung basiert auf den eigenen Metadaten der Seite, nicht auf globalen Templates oder Theme-Builder-Bedingungen.</p>
+<h3 id="warum-erscheint-eine-leere-seite-unter-oxygen-oder-breakdance">Warum erscheint eine leere Seite unter Oxygen oder Breakdance?</h3>
+<p>Diese Integrationen behalten die bisherige Regel zur Existenz eines Metaschlüssels bei. Ein leerer gespeicherter Wert zählt als vorhanden; das ist keine Inhaltsprüfung.</p>
+<h3 id="wie-kombiniere-ich-builder-und-suche">Wie kombiniere ich Builder und Suche?</h3>
+<p>Builder auswählen und anschließend die Suche oder normale Listenfilter verwenden. Die Builder-ID bleibt im Listenformular erhalten. Alle oder eine andere Standardansicht setzt die Builder-Auswahl zurück.</p>
+<h3 id="werden-entwürfe-und-private-seiten-mitgezählt">Werden Entwürfe und private Seiten mitgezählt?</h3>
+<p>Die Zähler berücksichtigen lesbare veröffentlichte, geplante, als Entwurf, ausstehend oder privat gespeicherte Inhalte gemäß den registrierten Admin-Status. Papierkorb und automatische Entwürfe sind ausgeschlossen. Wer fremde Inhalte nicht bearbeiten darf, erhält Zähler für eigene Inhalte.</p>
+<h3 id="warum-ist-der-zähler-größer-als-die-suchergebnisliste">Warum ist der Zähler größer als die Suchergebnisliste?</h3>
+<p>Er beschreibt die gesamte lesbare Builder-Gruppe außerhalb des Papierkorbs. Suche, Datum, Autor und andere Listenfilter können die gerade sichtbaren Zeilen reduzieren.</p>
+<h3 id="funktionieren-filter-anderer-plugins-weiterhin">Funktionieren Filter anderer Plugins weiterhin?</h3>
+<p>Bestehende Meta-Abfragegruppen bleiben erhalten und werden mit AND mit dem Builder kombiniert. Der Filter ohne Builder ergänzt einen separaten Ausschluss. Abfrage-Hooks anderer Plugins können Ergebnisse weiterhin beeinflussen.</p>
+<h2 id="einstellungen-und-rechte">Einstellungen und Rechte</h2>
+<h3 id="wer-kann-einstellungen-ändern">Wer kann Einstellungen ändern?</h3>
+<p>Benutzer mit manage_options, normalerweise Administratoren. Inhaltsfilter verwenden die Bearbeitungsrechte des jeweiligen Inhaltstyps.</p>
+<h3 id="können-redakteure-die-untermenüs-verwenden">Können Redakteure die Untermenüs verwenden?</h3>
+<p>Ja, wenn sie den jeweiligen Inhaltstyp bearbeiten dürfen. edit_theme_options ist nicht erforderlich.</p>
+<h3 id="kann-ich-die-spalte-ausblenden">Kann ich die Spalte ausblenden?</h3>
+<p>Ja, persönlich über Ansicht anpassen in der Liste oder für die ganze Website unter Einstellungen → Builder List Pages.</p>
+<h3 id="kann-ich-die-zusätzlichen-untermenüs-ausblenden">Kann ich die zusätzlichen Untermenüs ausblenden?</h3>
+<p>Ja, für die ganze Website unter Einstellungen → Builder List Pages. Builder-Ansichten über der Liste bleiben erhalten.</p>
+<h3 id="gelten-einstellungen-pro-benutzer-oder-website">Gelten Einstellungen pro Benutzer oder Website?</h3>
+<p>Die drei Plugin-Schalter gelten für die aktuelle Website. Ansicht anpassen steuert die Spaltensichtbarkeit zusätzlich für jeden Benutzer separat.</p>
+<h3 id="was-ist-mit-multisite">Was ist mit Multisite?</h3>
+<p>Einstellungen bleiben pro Website; Netzwerkaktivierung lädt das Plugin auf jeder Website. Die Library hat eigene Netzwerkfunktionen. Dieses RC wurde nicht umfassend in Multisite getestet.</p>
+<h2 id="updates-library-und-hilfe">Updates, Library und Hilfe</h2>
+<h3 id="wie-funktionieren-updates">Wie funktionieren Updates?</h3>
+<p>Der mitgelieferte deckerweb GitHub-Updater V2 prüft öffentliche stabile Releases und integriert sie in die normalen WordPress-Updateseiten. Ein zusätzliches Updater-Plugin ist nicht nötig. Automatische Updates werden nicht eingeschaltet.</p>
+<h3 id="installiert-dieses-rc-automatisch-weitere-rcs">Installiert dieses RC automatisch weitere RCs?</h3>
+<p>Nein. Der Updater schließt Vorabversionen aus. Test-ZIPs werden manuell installiert; eine spätere stabile Version 1.1.0 kann dieses RC ersetzen.</p>
+<h3 id="was-ist-die-deckerweb-library">Was ist die deckerweb Library?</h3>
+<p>Ein eingebetteter Entdeckungs- und Installationskatalog unter Plugins → Installieren → deckerweb. Der normale WordPress-Tab bleibt die Standardansicht. Sichtbarkeit und Online-Katalog haben eigene Library-Einstellungen.</p>
+<h3 id="lädt-die-library-automatisch-plugins-herunter">Lädt die Library automatisch Plugins herunter?</h3>
+<p>Nein. Installation benötigt eine ausdrückliche Aktion, Rechte- und Nonce-Prüfungen. Der mitgelieferte Katalog liegt lokal; optionale Online-Aktualisierung muss separat aktiviert werden.</p>
+<h3 id="überschreibt-die-library-neuere-installierte-plugins">Überschreibt die Library neuere installierte Plugins?</h3>
+<p>Nein. Der Installer ersetzt kein vorhandenes Plugin-Verzeichnis und stuft dieses RC nicht auf die im Katalog hinterlegte Version 1.0.0 zurück.</p>
+<h3 id="gibt-es-nutzungs-tracking">Gibt es Nutzungs-Tracking?</h3>
+<p>Builder List Pages enthält keine Nutzungs-Telemetrie. GitHub-Updateprüfungen kontaktieren GitHub; optionale Kataloganfragen den freigegebenen Endpunkt. Server sehen die anfragende IP-Adresse. Installieren lädt das gewählte Release.</p>
+<h3 id="kann-ich-es-als-code-snippet-verwenden">Kann ich es als Code Snippet verwenden?</h3>
+<p>Ein separat erzeugter PHP- und Code-Snippets-JSON-Export bietet Ansichten, Spalte und Untermenüs mit den Standard-Schaltern. Einstellungen, Assets, Updater und Library sind nicht enthalten. Entweder Plugin oder Snippet aktivieren, niemals beide. Die modulare Plugin-Hauptdatei ist kein eigenständiges Snippet mehr.</p>
+<h3 id="ändert-oder-bereinigt-das-plugin-seiteninhalte">Ändert oder bereinigt das Plugin Seiteninhalte?</h3>
+<p>Nein. Es liest Builder-Metadaten und filtert Admin-Listen. Es gibt keine Konvertierung, Builder-Bereinigung oder Frontend-Assets.</p>
+<h3 id="wird-classicpress-unterstützt">Wird ClassicPress unterstützt?</h3>
+<p>Die Vorgängerversion dokumentierte ClassicPress-Kompatibilität. Dieses RC, die native Update-URI-Integration und die Library sind nicht auf ClassicPress geprüft. Alte Dokumentation ist keine Zusage für dieses Release.</p>
+<h3 id="was-soll-ich-bei-falscher-erkennung-melden">Was soll ich bei falscher Erkennung melden?</h3>
+<p>Plugin- und Builder-Version, Inhaltstyp, Benutzerrolle, gewählten Filter und erwartetes Ergebnis angeben. Eine Testkopie verwenden und keine privaten Seiteninhalte oder Zugangsdaten teilen.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0-rc1</p></footer></main></body></html>

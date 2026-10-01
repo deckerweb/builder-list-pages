@@ -14,13 +14,34 @@ final class Admin {
 		$this->query->register();
 		add_action( 'current_screen', [ $this, 'screen' ] );
 		add_action( 'admin_menu', [ $this, 'menus' ], 30 );
+		add_action( 'admin_init', [ $this, 'redirect_list' ], 5 );
 		add_filter( 'parent_file', [ $this, 'highlight_menu' ], 20 );
 		if ( defined( 'BLP_SNIPPET' ) ) { return; }
 		add_filter( 'plugin_action_links_' . plugin_basename( BLP_PLUGIN_FILE ), [ $this, 'links' ] );
 		add_filter( 'plugin_row_meta', [ $this, 'meta_links' ], 10, 2 );
 	}
 	public static function list_url( string $type, string $id ): string {
-		return add_query_arg( [ 'post_type' => $type, 'builder' => $id ], admin_url( 'edit.php' ) );
+		return add_query_arg( [ 'post_type' => $type, 'builder' => $id, 'blp_view' => '1' ], admin_url( 'edit.php' ) );
+	}
+	/** Prevent menu tools from mistaking a trailing builder ID for their menu slug. */
+	public function canonical_list_url(): string {
+		global $pagenow;
+		if ( ! is_admin() || 'edit.php' !== $pagenow || wp_doing_ajax() || 'GET' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) { return ''; }
+		$type = $_GET['post_type'] ?? 'post';
+		if ( ! is_string( $type ) || '' === $this->query->selected( $type ) ) { return ''; }
+		$uri = $_SERVER['REQUEST_URI'] ?? '';
+		$raw_query = is_string( $uri ) ? wp_parse_url( wp_unslash( $uri ), PHP_URL_QUERY ) : '';
+		if ( is_string( $raw_query ) && preg_match( '/(?:^|&)blp_view=1$/D', $raw_query ) ) { return ''; }
+		$url = add_query_arg( wp_unslash( $_GET ), admin_url( 'edit.php' ) );
+		return add_query_arg( 'blp_view', '1', remove_query_arg( 'blp_view', $url ) );
+	}
+	/** Normalize permitted builder lists before admin_head menu restrictions. */
+	public function redirect_list(): void {
+		$url = $this->canonical_list_url();
+		if ( '' !== $url ) {
+			wp_safe_redirect( $url, 302, 'Builder List Pages' );
+			exit;
+		}
 	}
 	/** Register only the currently visible supported list. */
 	public function screen( \WP_Screen $screen ): void {
@@ -66,7 +87,7 @@ final class Admin {
 	public function preserve_selection( string $type, string $which ): void {
 		$id = $this->query->selected( $type );
 		if ( 'top' === $which && '' !== $id ) {
-			echo '<input type="hidden" name="builder" value="' . esc_attr( $id ) . '">';
+			echo '<input type="hidden" name="builder" value="' . esc_attr( $id ) . '"><input type="hidden" name="blp_view" value="1">';
 		}
 	}
 	public function columns( array $columns ): array {
@@ -112,7 +133,7 @@ final class Admin {
 			foreach ( $this->registry->for_type( $type ) as $id => $builder ) {
 				/* translators: %s: builder name. */
 				$label = sprintf( __( 'With %s', 'builder-list-pages' ), $builder['label'] );
-				add_submenu_page( $this->parent( $type ), $label, $label, $object->cap->edit_posts, 'edit.php?post_type=' . $type . '&builder=' . $id );
+				add_submenu_page( $this->parent( $type ), $label, $label, $object->cap->edit_posts, 'edit.php?post_type=' . $type . '&builder=' . $id . '&blp_view=1' );
 			}
 		}
 	}
@@ -122,7 +143,7 @@ final class Admin {
 		$id = $this->query->selected( $screen->post_type );
 		if ( '' !== $id && 'none' !== $id ) {
 			global $submenu_file;
-			$submenu_file = 'edit.php?post_type=' . $screen->post_type . '&builder=' . $id;
+			$submenu_file = 'edit.php?post_type=' . $screen->post_type . '&builder=' . $id . '&blp_view=1';
 			return $this->parent( $screen->post_type );
 		}
 		return $parent;

@@ -3,7 +3,7 @@
  * Plugin Name: Builder List Pages
  * Plugin URI: https://github.com/deckerweb/builder-list-pages
  * Description: Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists.
- * Version: 1.1.0-rc1
+ * Version: 1.1.0-rc2
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Author: David Decker – DECKERWEB
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 if ( defined( 'BLP_VERSION' ) || class_exists( 'DDW_Builder_List_Pages', false ) ) {
 	return;
 }
-define( 'BLP_VERSION', '1.1.0-rc1' );
+define( 'BLP_VERSION', '1.1.0-rc2' );
 define( 'BLP_PLUGIN_FILE', __FILE__ );
 define( 'BLP_PLUGIN_DIR', __DIR__ . '/' );
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-registry.php';

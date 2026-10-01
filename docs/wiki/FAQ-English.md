@@ -2,7 +2,7 @@
 
 [Guide](English.md) · [Deutsch](FAQ-Deutsch.md)
 
-Answers for test release 1.1.0-rc1. Planned features are not described as available.
+Answers for test release 1.1.0-rc2. Planned features are not described as available.
 
 ## Getting started
 
@@ -140,3 +140,7 @@ The previous version documented ClassicPress compatibility. This RC, its native 
 
 Include plugin and builder versions, post type, user role, selected filter and expected result. Use a test copy and avoid sharing private page content or credentials.
 
+
+## Why does WP Admin Cleaner block the Bricks page list?
+
+WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its `bricks` slug also match `edit.php?post_type=page&builder=bricks`. Starting with 1.1.0-rc2, Builder List Pages automatically appends `&blp_view=1` to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.

@@ -3,7 +3,7 @@ Contributors: deckerweb
 Tags: admin, pages, page builder, filter, post types
 Requires at least: 6.7
 Requires PHP: 8.0
-Stable tag: 1.1.0-rc1
+Stable tag: 1.1.0-rc2
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Deine Seiten. Deine Builder. Alles im Blick. Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.
 
-Testversion: 1.1.0-rc1 · Voraussetzungen: WordPress 6.7+ / PHP 8.0+ · Lizenz: GPL v2 oder neuer
+Testversion: 1.1.0-rc2 · Voraussetzungen: WordPress 6.7+ / PHP 8.0+ · Lizenz: GPL v2 oder neuer
 
 [English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -81,6 +81,11 @@ Wie funktionieren Updates? Der mitgelieferte deckerweb GitHub-Updater V2 prüft 
 [Weitere Antworten nach Themen](docs/wiki/FAQ-Deutsch.md)
 
 == Changelog ==
+
+= 1.1.0-rc2 · 2026-10-01 =
+
+- **Behoben:** Verhindert die irrtümliche Zugriffssperre durch WP Admin Cleaner, wenn dessen ausgeblendete Bricks-Menüseite mit dem Ende einer Builder-Listen-URL kollidiert. Bestehende Listen-Links werden automatisch ergänzt; Suche und Filter bleiben erhalten.
+- **Sonstiges:** Bestätigt Designvariante A als finales Icon und Banner.
 
 = 1.1.0-rc1 · 2026-10-01 =
 

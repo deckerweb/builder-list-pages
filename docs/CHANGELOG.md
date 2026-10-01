@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0-rc2 · 2026-10-01
+
+- **Fixed:** Prevents WP Admin Cleaner from incorrectly blocking builder lists when a hidden Bricks menu slug matches the end of their URL. Existing list links are normalized automatically while preserving search and filters.
+- **Misc:** Confirms artwork A as the final icon and banner.
+
 ## 1.1.0-rc1 · 2026-10-01
 
 - **New:** Optional Builder column with clickable builder names and overlapping matches.

@@ -3,7 +3,7 @@ Contributors: deckerweb
 Tags: admin, pages, page builder, filter, post types
 Requires at least: 6.7
 Requires PHP: 8.0
-Stable tag: 1.1.0-rc1
+Stable tag: 1.1.0-rc2
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Your pages. Your builders. One clear overview. Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-Test version: 1.1.0-rc1 · Requires: WordPress 6.7+ / PHP 8.0+ · License: GPL v2 or later
+Test version: 1.1.0-rc2 · Requires: WordPress 6.7+ / PHP 8.0+ · License: GPL v2 or later
 
 [Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -81,6 +81,11 @@ Does it change or clean up my page content? No. It reads builder metadata and fi
 [More answers by topic](docs/wiki/FAQ-English.md)
 
 == Changelog ==
+
+= 1.1.0-rc2 · 2026-10-01 =
+
+- **Fixed:** Prevents WP Admin Cleaner from incorrectly blocking builder lists when a hidden Bricks menu slug matches the end of their URL. Existing list links are normalized automatically while preserving search and filters.
+- **Misc:** Confirms artwork A as the final icon and banner.
 
 = 1.1.0-rc1 · 2026-10-01 =
 

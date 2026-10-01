@@ -1,6 +1,6 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Dokumentation</title><style>body{margin:0;background:#f3f6f7;color:#223641;font:16px/1.7 system-ui,sans-serif}main{max-width:940px;margin:36px auto;padding:32px 42px;background:white;border:1px solid #d4dee0;border-radius:12px}nav{display:flex;flex-wrap:wrap;gap:14px;padding-bottom:18px;border-bottom:1px solid #d4dee0}a{color:#17616a;text-underline-offset:3px}h1{font-size:32px}h2{margin-top:38px;padding-top:14px;border-top:1px solid #e2e8ea}h3{margin-top:28px}img{max-width:100%}code{background:#eef4f5;padding:2px 5px}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid #d4dee0;padding:8px}@media(max-width:640px){main{margin:12px;padding:20px}}</style></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-Deutsch.html">FAQ</a><a href="Changelog-Deutsch.html">Changelog</a></nav><h1 id="häufig-gestellte-fragen">Häufig gestellte Fragen</h1>
 <p><a href="Deutsch.html">Anleitung</a> · <a href="FAQ-English.html">English</a></p>
-<p>Antworten zum Testrelease 1.1.0-rc1. Geplante Funktionen werden nicht als verfügbar beschrieben.</p>
+<p>Antworten zum Testrelease 1.1.0-rc2. Geplante Funktionen werden nicht als verfügbar beschrieben.</p>
 <h2 id="erste-schritte">Erste Schritte</h2>
 <h3 id="muss-ich-zuerst-etwas-einrichten">Muss ich zuerst etwas einrichten?</h3>
 <p>Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstützter Builder bearbeiten darf. Ansichten, Builder-Spalte und Untermenüs sind standardmäßig eingeschaltet.</p>
@@ -69,4 +69,6 @@
 <p>Die Vorgängerversion dokumentierte ClassicPress-Kompatibilität. Dieses RC, die native Update-URI-Integration und die Library sind nicht auf ClassicPress geprüft. Alte Dokumentation ist keine Zusage für dieses Release.</p>
 <h3 id="was-soll-ich-bei-falscher-erkennung-melden">Was soll ich bei falscher Erkennung melden?</h3>
 <p>Plugin- und Builder-Version, Inhaltstyp, Benutzerrolle, gewählten Filter und erwartetes Ergebnis angeben. Eine Testkopie verwenden und keine privaten Seiteninhalte oder Zugangsdaten teilen.</p>
-<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0-rc1</p></footer></main></body></html>
+<h2 id="warum-sperrt-wp-admin-cleaner-die-bricks-seitenliste">Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?</h2>
+<p>WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der URL. Ist „Bricks → Erste Schritte“ ausgeblendet, trifft der Menüname <code>bricks</code> auch auf <code>edit.php?post_type=page&amp;builder=bricks</code> zu. Seit 1.1.0-rc2 ergänzt Builder List Pages automatisch <code>&amp;blp_view=1</code> am Ende seiner Listen-URLs. Suche und Filter bleiben erhalten, und die ausgeblendete Bricks-Menüseite bleibt gesperrt. Admin Cleaner kann aktiv bleiben.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0-rc2</p></footer></main></body></html>

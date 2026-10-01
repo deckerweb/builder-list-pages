@@ -2,7 +2,7 @@
 
 [Anleitung](Deutsch.md) · [English](FAQ-English.md)
 
-Antworten zum Testrelease 1.1.0-rc1. Geplante Funktionen werden nicht als verfügbar beschrieben.
+Antworten zum Testrelease 1.1.0-rc2. Geplante Funktionen werden nicht als verfügbar beschrieben.
 
 ## Erste Schritte
 
@@ -140,3 +140,7 @@ Die Vorgängerversion dokumentierte ClassicPress-Kompatibilität. Dieses RC, die
 
 Plugin- und Builder-Version, Inhaltstyp, Benutzerrolle, gewählten Filter und erwartetes Ergebnis angeben. Eine Testkopie verwenden und keine privaten Seiteninhalte oder Zugangsdaten teilen.
 
+
+## Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?
+
+WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der URL. Ist „Bricks → Erste Schritte“ ausgeblendet, trifft der Menüname `bricks` auch auf `edit.php?post_type=page&builder=bricks` zu. Seit 1.1.0-rc2 ergänzt Builder List Pages automatisch `&blp_view=1` am Ende seiner Listen-URLs. Suche und Filter bleiben erhalten, und die ausgeblendete Bricks-Menüseite bleibt gesperrt. Admin Cleaner kann aktiv bleiben.

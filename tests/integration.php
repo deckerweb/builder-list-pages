@@ -1,0 +1,126 @@
+<?php
+/** Run against disposable WordPress: php tests/integration.php /path/to/wp-load.php */
+define('WP_ADMIN',true);
+define('WP_DISABLE_FATAL_ERROR_HANDLER',true);
+require $argv[1];
+require_once ABSPATH.'wp-admin/includes/plugin.php';
+require_once ABSPATH.'wp-admin/includes/template.php';
+require_once ABSPATH.'wp-admin/includes/user.php';
+add_filter('pre_wp_mail', '__return_true');
+foreach(['blp_editor','blp_author'] as $login) { $old=get_user_by('login',$login); if($old) wp_delete_user($old->ID,1); }
+require_once ABSPATH.'wp-admin/includes/class-wp-screen.php';
+require_once ABSPATH.'wp-admin/includes/screen.php';
+require_once ABSPATH.'wp-admin/includes/class-wp-list-table.php';
+require_once ABSPATH.'wp-admin/includes/class-wp-posts-list-table.php';
+use Deckerweb\BuilderListPages\Registry;
+use Deckerweb\BuilderListPages\Query;
+use Deckerweb\BuilderListPages\Settings;
+use Deckerweb\BuilderListPages\Admin;
+$checks=0;
+function check($condition,$message) { global $checks; ++$checks; if(!$condition) throw new Exception('FAIL: '.$message); echo 'PASS: '.$message.PHP_EOL; }
+set_error_handler(function($severity,$message,$file,$line) { if(error_reporting() & $severity) throw new ErrorException($message,0,$severity,$file,$line); });
+wp_set_current_user(1);
+foreach(get_posts(['post_type'=>['page','post'],'post_status'=>'any','numberposts'=>-1,'s'=>'BLP']) as $old) wp_delete_post($old->ID,true);
+foreach(get_posts(['post_type'=>['page','post'],'post_status'=>'trash','numberposts'=>-1,'s'=>'BLP']) as $old) wp_delete_post($old->ID,true);
+foreach(['ELEMENTOR_VERSION','BRICKS_VERSION','BRIZY_VERSION','CT_VERSION'] as $constant) { if(!defined($constant)) define($constant,'fixture'); }
+update_option('elementor_cpt_support',['page','post','missing-type']);
+update_option('bricks_global_settings',['postTypes'=>['page','post']]);
+update_option('brizy','bad-format');
+$GLOBALS['ct_ignore_post_types']=array_values(array_diff(get_post_types(),['page']));
+register_post_type('fixture_hidden',['show_ui'=>false]);
+add_filter('blp/filter/builder-data',function($builders) {
+    $builders['elementor']['builder-types'][]='fixture_hidden';
+    $builders['bad']='invalid';
+    $builders['legacy']=['builder-id'=>'legacy','is-active'=>true,'builder-types'=>['page'],'meta-key'=>'legacy-marker','meta-value'=>'yes','label'=>'Legacy','with-label'=>'With Legacy'];
+    return $builders;
+});
+$registry=new Registry();$query=new Query($registry);$query->register();
+check(count($registry->for_type('page'))===4,'Multiple active builders and legacy extensions resolved');
+check(!in_array('missing-type',$registry->post_types(),true) && !in_array('fixture_hidden',$registry->post_types(),true),'Missing and hidden post types excluded');
+check($registry->all()['brizy']['builder-types']===[],'Malformed options normalized');
+$baseline_elementor=$query->count("page","elementor");
+$baseline_bricks=$query->count("page","bricks");
+$query=new Query($registry);$query->register();
+$admin=new Admin($registry,$query,new Settings());
+$ids=[];
+foreach(['elementor','bricks','both','none','disabled','duplicate','empty_exists','draft','pending','private','trash'] as $name) {
+    $status=in_array($name,['draft','pending','private','trash'],true)?$name:'publish';
+    $ids[$name]=wp_insert_post(['post_type'=>'page','post_title'=>'BLP fixture '.$name,'post_status'=>$status,'post_author'=>1]);
+}
+foreach(['elementor','both','duplicate','draft','pending','private','trash'] as $name) update_post_meta($ids[$name],'_elementor_edit_mode','builder');
+foreach(['bricks','both'] as $name) update_post_meta($ids[$name],'_bricks_editor_mode','bricks');
+update_post_meta($ids['disabled'],'_elementor_edit_mode','disabled');
+add_post_meta($ids['duplicate'],'_elementor_edit_mode','disabled');
+update_post_meta($ids['empty_exists'],'_ct_builder_json','');
+$filtered=function($id,$extra=[]) use($query,$ids) {
+    $q=new WP_Query();$query->apply($q,'page',$id);
+    return $q->query(array_merge(['post__in'=>array_values($ids),'post_type'=>'page','post_status'=>'publish','fields'=>'ids','posts_per_page'=>-1,'meta_query'=>$q->get('meta_query')],$extra));
+};
+check(count($filtered('elementor'))===3,'Equality builder filter returns expected published items');
+check(count($filtered('bricks'))===2,'Second active builder selectable');
+check(in_array($ids['empty_exists'],$filtered('oxygen-classic'),true),'EXISTS retains empty-value legacy semantics');
+$none=$filtered('none');
+check(in_array($ids['none'],$none,true) && in_array($ids['disabled'],$none,true),'No-builder includes missing and nonmatching metadata');
+check(!in_array($ids['duplicate'],$none,true) && !in_array($ids['both'],$none,true) && !in_array($ids['empty_exists'],$none,true),'No-builder excludes all matches, duplicate rows and EXISTS data');
+check($query->count('page','elementor')===$baseline_elementor+6,'Counts include draft, pending and private, exclude trash');
+check($query->count('page','bricks')===$baseline_bricks+2,'Counts remain independent of selected builder');
+update_post_meta($ids['elementor'],'department','sales');
+update_post_meta($ids['bricks'],'department','sales');
+$existing=['relation'=>'OR',['key'=>'department','value'=>'sales'],['key'=>'department','value'=>'support']];
+$q=new WP_Query();$q->set('meta_query',$existing);$query->apply($q,'page','elementor');
+check($q->get('meta_query')['relation']==='AND' && $q->get('meta_query')[0]===$existing,'Existing OR group kept under AND');
+$results=$q->query(['post_type'=>'page','post_status'=>'publish','posts_per_page'=>-1,'fields'=>'ids','meta_query'=>$q->get('meta_query')]);
+check($results===[$ids['elementor']],'Existing meta constraint and builder both enforced');
+$GLOBALS['pagenow']='edit.php';
+foreach(['foo',['elementor'],'','none','bricks'] as $value) {
+    $_GET['builder']=$value;
+    $selected=$query->selected('page');
+    check($selected===(is_string($value)&&in_array($value,['none','bricks'],true)?$value:''),'URL parameter validation: '.json_encode($value));
+}
+$_GET['builder']='bricks';
+$GLOBALS['wp_the_query']=new WP_Query();$main=$GLOBALS['wp_the_query'];$main->set('post_type','page');$query->filter_main($main);
+check($main->get('meta_query')[0]['key']==='_bricks_editor_mode','Main admin list gets requested builder');
+$secondary=new WP_Query();$secondary->set('post_type','page');$query->filter_main($secondary);
+check(!$secondary->get('meta_query'),'Secondary queries untouched');
+$GLOBALS['pagenow']='upload.php';$main->set('meta_query',[]);$query->filter_main($main);
+check($main->get('meta_query')===[],'Other admin screens untouched');
+$GLOBALS['pagenow']='edit.php';
+set_current_screen('edit-page');
+$views=$admin->views(['all'=>'<a class="current" aria-current="page" href="edit.php">All</a>']);
+check(isset($views['blp_elementor'],$views['blp_bricks'],$views['blp_none']),'Separate builder views and none view');
+check(strpos($views['all'],'class="current"')===false && strpos($views['blp_bricks'],'aria-current="page"')!==false,'Only selected builder view is current');
+ob_start();$admin->preserve_selection('page','top');$hidden=ob_get_clean();
+check(strpos($hidden,'name="builder" value="bricks"')!==false,'Search forms retain builder selection');
+ob_start();$admin->column('blp_builder',$ids['both']);$column=ob_get_clean();
+check(strpos($column,'Elementor')!==false && strpos($column,'Bricks')!==false,'Column lists overlapping builder matches');
+$settings=new Settings();
+check($settings->sanitize(['show_column'=>['bad'],'show_submenus'=>'1','show_none'=>'0'])===['show_column'=>false,'show_submenus'=>true,'show_none'=>false],'Settings reject malformed input');
+update_option('blp_settings',['show_column'=>true,'show_submenus'=>true,'show_none'=>false]);
+$_GET['builder']='none';check($query->selected('page')==='','Disabled none filter cannot be activated by URL');
+update_option('blp_settings',Settings::defaults());
+$editor=wp_insert_user(['user_login'=>'blp_editor','user_pass'=>'blp-local-test','role'=>'editor']);
+wp_set_current_user($editor);
+check(current_user_can('edit_pages') && !current_user_can('edit_theme_options'),'Editor fixture matches real permissions');
+$editor_registry=new Registry();check(isset($editor_registry->for_type('page')['elementor']),'Editors have builder functionality without theme permission');
+$author=wp_insert_user(['user_login'=>'blp_author','user_pass'=>'blp-local-test','role'=>'author']);
+$own=wp_insert_post(['post_type'=>'post','post_title'=>'BLP own','post_status'=>'draft','post_author'=>$author]);update_post_meta($own,'_elementor_edit_mode','builder');
+$other=wp_insert_post(['post_type'=>'post','post_title'=>'BLP other','post_status'=>'draft','post_author'=>1]);update_post_meta($other,'_elementor_edit_mode','builder');
+wp_set_current_user($author);$author_query=new Query(new Registry());$author_query->register();
+check($author_query->count('post','elementor')===1,'Author counts exclude other authors content');
+check(!(new Registry())->for_type('page'),'Users without edit_pages receive no page integrations');
+wp_set_current_user(1);
+check(function_exists('deckerweb_library_register') && isset($GLOBALS['deckerweb_library_runtime_v1']),'Embedded Library elected once');
+$updates=new Deckerweb\BuilderListPages\GitHubUpdates();
+$art=$updates->artwork();check(isset($art['icons']['svg'],$art['banners']['high']),'Updater receives local artwork');
+$cache='ddw_ghru_'.substr(md5('https://github.com/deckerweb/builder-list-pages'),0,24);
+set_site_transient($cache,['version'=>'1.1.0','package'=>'https://github.com/deckerweb/builder-list-pages/releases/download/v1.1.0/builder-list-pages.zip','notes'=>'Fixture','published'=>'2026-10-01'],60);
+$offer=apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION,'RequiresWP'=>'6.7','RequiresPHP'=>'8.0'],'builder-list-pages/builder-list-pages.php',[]);
+check(is_array($offer)&&$offer['version']==='1.1.0','Native updater offers stable release over RC');
+$unrelated=apply_filters('update_plugins_github.com',false,[],'other/other.php',[]);check($unrelated===false,'Updater leaves other plugins alone');
+set_site_transient($cache,['version'=>'1.0.0','package'=>'fixture','notes'=>'','published'=>''],60);
+check(apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION],'builder-list-pages/builder-list-pages.php',[])===false,'Updater never downgrades test release');
+wp_set_current_user($editor);ob_start();$settings->render();check(ob_get_clean()==='','Settings screen requires manage_options');
+wp_set_current_user(1);ob_start();$settings->render();$html=ob_get_clean();check(strpos($html,'name="_wpnonce"')!==false && strpos($html,'blp-footer')!==false,'Settings include WordPress nonce and deckerweb footer');
+foreach($ids as $id) wp_delete_post($id,true);wp_delete_post($own,true);wp_delete_post($other,true);
+require_once ABSPATH.'wp-admin/includes/user.php';wp_delete_user($editor);wp_delete_user($author);
+echo "SUCCESS: $checks integration checks on WordPress ".$GLOBALS['wp_version'].' / PHP '.PHP_VERSION.PHP_EOL;

@@ -1,7 +1,7 @@
-# Builder List Pages 1.1.0-rc2
+# Builder List Pages 1.1.0
 
-Test release for WordPress 6.7+ and PHP 8.0+. Upload the installable
-`builder-list-pages-1.1.0-rc2.zip` and replace the existing plugin.
+Stable release for WordPress 6.7+ and PHP 8.0+. Upload the installable
+`builder-list-pages-1.1.0.zip` and replace the existing plugin.
 Disable any older snippet version first.
 
 See [the German test plan](docs/TESTING-de.md) for the manual checks.
@@ -11,6 +11,10 @@ All 44 integration checks pass. Other builder checks use metadata fixtures.
 Artwork A is final; alternatives remain included in the design package.
 
 ## Changes
+
+## 1.1.0 · 2026-10-01
+
+- **Misc:** Publishes 1.1.0 as a stable release after successful customer validation of the Admin Cleaner fix. Includes the features and fixes from rc1 and rc2.
 
 ## 1.1.0-rc2 · 2026-10-01
 

@@ -4,7 +4,7 @@
 
 **Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-**Test version:** 1.1.0-rc2 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later
+**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later
 
 [Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -74,6 +74,10 @@ The embedded Library adds **Plugins → Add New → deckerweb**. It installs not
 [More answers by topic](docs/wiki/FAQ-English.md)
 
 ## Changelog
+
+### 1.1.0 · 2026-10-01
+
+- **Misc:** Publishes 1.1.0 as a stable release after successful customer validation of the Admin Cleaner fix. Includes the features and fixes from rc1 and rc2.
 
 ### 1.1.0-rc2 · 2026-10-01
 

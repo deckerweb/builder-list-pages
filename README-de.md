@@ -4,7 +4,7 @@
 
 **Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.
 
-**Testversion:** 1.1.0-rc2 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer
+**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer
 
 [English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -74,6 +74,10 @@ Die eingebettete Library ergänzt **Plugins → Installieren → deckerweb**. Si
 [Weitere Antworten nach Themen](docs/wiki/FAQ-Deutsch.md)
 
 ## Changelog
+
+### 1.1.0 · 2026-10-01
+
+- **Sonstiges:** Veröffentlicht 1.1.0 als stabile Version nach erfolgreichem Kundentest der Admin-Cleaner-Korrektur. Enthält die Funktionen und Korrekturen aus rc1 und rc2.
 
 ### 1.1.0-rc2 · 2026-10-01
 

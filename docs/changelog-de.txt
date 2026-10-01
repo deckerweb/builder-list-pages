@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.1.0-rc2 · 2026-10-01 =
+
+- **Behoben:** Verhindert die irrtümliche Zugriffssperre durch WP Admin Cleaner, wenn dessen ausgeblendete Bricks-Menüseite mit dem Ende einer Builder-Listen-URL kollidiert. Bestehende Listen-Links werden automatisch ergänzt; Suche und Filter bleiben erhalten.
+- **Sonstiges:** Bestätigt Designvariante A als finales Icon und Banner.
+
 = 1.1.0-rc1 · 2026-10-01 =
 
 * Neu: Optionale Builder-Spalte mit anklickbaren Builder-Namen und mehreren Treffern je Inhalt.

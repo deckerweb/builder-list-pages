@@ -9,4 +9,4 @@ Your pages. Your builders. One clear overview.
 - [Changelog English](Changelog-English.md)
 - [Changelog Deutsch](Changelog-Deutsch.md)
 
-Documentation for the 1.1.0-rc1 test package.
+Documentation for the 1.1.0-rc2 test package.

@@ -1,6 +1,6 @@
 # User guide
 
-Builder List Pages 1.1.0-rc2 · [FAQ](FAQ-English.md) · [Deutsch](Deutsch.md)
+Builder List Pages 1.1.0 · [FAQ](FAQ-English.md) · [Deutsch](Deutsch.md)
 
 ## At a glance
 

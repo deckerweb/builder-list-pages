@@ -1,5 +1,9 @@
 # Änderungsverlauf
 
+## 1.1.0 · 2026-10-01
+
+- **Sonstiges:** Veröffentlicht 1.1.0 als stabile Version nach erfolgreichem Kundentest der Admin-Cleaner-Korrektur. Enthält die Funktionen und Korrekturen aus rc1 und rc2.
+
 ## 1.1.0-rc2 · 2026-10-01
 
 - **Behoben:** Verhindert die irrtümliche Zugriffssperre durch WP Admin Cleaner, wenn dessen ausgeblendete Bricks-Menüseite mit dem Ende einer Builder-Listen-URL kollidiert. Bestehende Listen-Links werden automatisch ergänzt; Suche und Filter bleiben erhalten.

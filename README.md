@@ -1,177 +1,114 @@
 # Builder List Pages
 
-**Simple & lightweight:** List those pages and post types which were edited with your favorite Page Builder. Adds additional _**Views**_ to the post type list tables, plus: _**Submenus**_.
+![Builder List Pages](assets/banner-1544x500.png)
 
-![Builder List Pages plugin banner](https://repository-images.githubusercontent.com/964191686/df3eaa01-7f0a-4ba3-b272-4a19d44dbea1)
+**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-* Contributors: [David Decker](https://github.com/deckerweb), [contributors](https://github.com/deckerweb/builder-list-pages/graphs/contributors)
-* Tags: pages, post-type, post, page builder, site builder, view, list, listing, admin
-* Requires at least: 6.7
-* Requires PHP: 7.4
-* Stable tag: [main](https://github.com/deckerweb/builder-list-pages/releases/latest)
-* Donate link: https://paypal.me/deckerweb
-* License: GPL v2 or later
+**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later
 
----
+[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
-[Support Project](#support-the-project) | [Installation](#installation) | [Updates](#updates) | [Description](#description) | [Features](#features) | [Page Builders](#supported-page-builders-%EF%B8%8F) | [FAQ](#frequently-asked-questions) | [Changelog](#changelog) | [Plugin Scope / Disclaimer](#plugin-scope--disclaimer)
+## Contents
 
----
+- [At a glance](#at-a-glance)
+- [Installation and first filter](#installation-and-first-filter)
+- [Builders and recognition](#builders-and-recognition)
+- [Settings](#settings)
+- [Updates and Library](#updates-and-library)
+- [FAQ](#faq)
+- [Changelog](#changelog)
+- [About](#about)
 
-## Support the Project
+## At a glance
 
-If you find this project helpful, consider showing your support by buying me a coffee! Your contribution helps me keep developing and improving this plugin.
+- **Recognize builders:** clickable Builder column, including multiple matches per item.
+- **Filter quickly:** independent views for multiple active builders and “No recognized builder”.
+- **Keep working:** builder selection stays in searches and standard list filters.
+- **Familiar navigation:** builder submenus respect the post type’s editing permissions.
+- **Little setup:** three optional switches, German translations, local guide and full changelog.
+- **DECKERWEB integrated:** embedded GitHub Updater V2 and Plugin Library 0.2.0.
 
-Enjoying the plugin? Feel free to treat me to a cup of coffee ☕🙂 through the following options:
+## Installation and first filter
 
-- [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W81BNTZE)
-- [Buy me a coffee](https://buymeacoffee.com/daveshine)
-- [PayPal donation](https://paypal.me/deckerweb)
-- [Join my **newsletter** for DECKERWEB WordPress Plugins](https://eepurl.com/gbAUUn)
+1. Upload the test ZIP through **Plugins → Add New → Upload Plugin**, replacing the old plugin version if installed.
+2. Activate it and open **Pages** or another content list enabled by an active supported builder.
+3. Click a builder above the table. Then use the normal search if needed.
+4. Adjust optional choices under **Settings → Builder List Pages**.
 
----
+Use either the plugin or the separately generated snippet export. The modular main PHP file is no longer a standalone snippet. The export contains list functionality with default switches, without settings, assets, Library or updates.
 
-## Installation 
+## Builders and recognition
 
-#### **Quick Install – as Plugin**
-[![Download Plugin](https://raw.githubusercontent.com/deckerweb/builder-list-pages/refs/heads/main/assets/button-download-plugin.png)](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip)  
-1. **Download ZIP:** [**builder-list-pages.zip**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip)
-2. Upload via WordPress Plugins > Add New > Upload Plugin
-3. Once activated, you can see the special page/post type listings under each type in the Admin
- 
-#### **Alternative: Use as Code Snippet**
-[![Download Code Snippet](https://raw.githubusercontent.com/deckerweb/builder-list-pages/refs/heads/main/assets/button-download-snippet.png)](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json)  
-1. **Download .json:** [**ddw-builder-list-pages.code-snippets.json**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json)
-2. activate or deactivate in your snippets plugin
+Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer retains the free edition’s page/post scope. Astra and OceanWP post types retain their special menu navigation when available.
 
-[**Download .json**](https://github.com/deckerweb/builder-list-pages/releases/latest/download/ddw-builder-list-pages.code-snippets.json) version for: _Code Snippets_ (free & Pro), _Advanced Scripts_ (Premium), _Scripts Organizer_ (Premium)  
-➔ just use their elegant script import features  
-➔ in _Scripts Organizer_ use the "Code Snippets Import"  
+Recognition reads existing metadata for active supported builders enabled on the post type. “No recognized builder” does not automatically mean Gutenberg. Inactive-builder data and global template assignments are not analyzed. Existence-based integrations retain their previous semantics even for empty values.
 
-For all other snippet manager plugins just use our plugin's main .php file [`builder-list-pages.php`](https://github.com/deckerweb/builder-list-pages/blob/main/builder-list-pages.php) and use its content as snippet (before saving your snippet: please check for your plugin if the opening `<?php` tag needs to be removed or not!).
+Counts describe the complete readable group outside trash, including unpublished content. Search and other list filters can reduce visible results. Builder groups can overlap.
 
-➔ Please decide for one of both alternatives!
+## Settings
 
-### Tested Compatibility
-- **WordPress**: 6.7.2 / 6.8 Beta
-- **ClassicPress:** 2.4.0 / 2.4.1
-- **PHP**: 8.0 – 8.3
-- Requires at least: WP 6.7 or CP 2.0 / PHP 7.4
+Enable or disable the Builder column, builder submenus and no-builder filter site-wide. Users can also hide the column individually through **Screen Options**. Administrators change settings; editors use list features according to normal editing permissions.
 
----
+## Updates and Library
 
-## Updates 
+Stable GitHub releases appear through the deckerweb updater in the regular WordPress update system. Install prereleases manually. The updater does not enable automatic updates.
 
-#### For Plugin Version:
+The embedded Library adds **Plugins → Add New → deckerweb**. It installs nothing automatically and has its own visibility and online catalog settings. Its local catalog contains approved releases with checksums; this RC does not replace the existing stable 1.0.0 catalog entry.
 
-1) Alternative 1: Just download a new [ZIP file](https://github.com/deckerweb/builder-list-pages/releases/latest/download/builder-list-pages.zip) (see above), upload and override existing version. Done.
+## FAQ
 
-2) Alternative 2: Use the (free) [**_Git Updater_ plugin**](https://git-updater.com/) and get updates automatically.
+**Do I need to configure anything first?** No. Activate the plugin and open a content list that an active supported builder can edit. Views, the Builder column and builder submenus are enabled by default.
 
-3) Alternative 3: Upcoming! – In future I will built-in our own deckerweb updater. This is currently being worked on for my plugins. Stay tuned!
+**Why is no builder view visible?** The builder must be active, allow the current post type, and provide recognized settings. Your user also needs editing access to that type. Invalid, missing and hidden post types are excluded.
 
-#### For Code Snippet Version:
+**What does “No recognized builder” mean?** No configured condition matched among active supported builders enabled for this post type. It does not prove the page uses Gutenberg.
 
-Just manually: Download the latest Snippet version (see above) and import it in your favorite snippets manager plugin. – You can delete the old snippet; then just activate the new one. Done.
+**Can one page show two builders?** Yes. Each matching builder is shown; old metadata can remain after a migration. Builder groups may overlap and their counts cannot simply be added.
 
----
+**Can I hide the column?** Yes, individually in Screen Options on the list, or site-wide in Settings → Builder List Pages.
 
-## Description 
+**How do updates work?** The bundled deckerweb GitHub Updater V2 checks public stable releases and integrates with the regular WordPress update screens. No separate updater plugin is required. The updater does not enable automatic updates.
 
-#### 💖 Currently 11 popular Page Builders are supported!
+**Does it change or clean up my page content?** No. It reads builder metadata and filters admin lists. No conversion, builder cleanup or frontend assets are included.
 
-Very useful to "filter" for all pages or post types that were edited with your favorite Page Builder. For example, you have 30 pages and 10 of them were edited with Elementor, the rest with the default block editor. Now you, or your client, wants to filter only those 10 Elementor-edited pages. Builder List Pages does exactly that.
+[More answers by topic](docs/wiki/FAQ-English.md)
 
-You get an additional **View** above the post list table, additional to: All / Draft / Deleted etc. – now it adds Elementor (10) or Bricks (7) – you get the idea.
+## Changelog
 
-Furthermore, in the Admin you get a new **Submenu** under that post type, that is linked to this **View** (= filter). It is always shown that way: "With {Name of Builder}", for example: "With Breakdance"
+### 1.1.0 · 2026-10-01
 
-NOTE: All of that is only shown when the supported Builder is active, and in this Builder you selected the post types which are allowed to be edited with that Builder.
+- **Misc:** Publishes 1.1.0 as a stable release after successful customer validation of the Admin Cleaner fix. Includes the features and fixes from rc1 and rc2.
 
-The plugin does support translations, so you can add your own language files to translate / adjust its few strings.
+### 1.1.0-rc2 · 2026-10-01
 
----
+- **Fixed:** Prevents WP Admin Cleaner from incorrectly blocking builder lists when a hidden Bricks menu slug matches the end of their URL. Existing list links are normalized automatically while preserving search and filters.
+- **Misc:** Confirms artwork A as the final icon and banner.
 
-## Supported Page Builders 👷‍♂️ 
+### 1.1.0-rc1 · 2026-10-01
 
-#### These Builders are Supported for Views & Submenus:
-* _Elementor_ (free & Pro)
-* _Bricks Builder_ (Premium)
-* _Breakdance Builder_ (Premium)
-* _Oxygen Builder_ (v6+) (Premium)
-* _Oxygen Classic_ (Premium)
-* _Brizy_ (free & Pro)
-* _Beaver Builder_ (free & Pro)
-* _ZionBuilder_ (free & Pro)
-* _Thrive Architect_ (Premium)
-* _Pagelayer Builder_ (free & Pro)
-* _Visual Composer_ (free & Pro)
-(currently only free version is supported, with Pages & Posts)
+- **New:** Optional Builder column with clickable builder names and overlapping matches.
+- **New:** Independent views and submenus for multiple active builders.
+- **New:** “No recognized builder” filter for content outside the detected builder groups.
+- **New:** Compact settings page with deckerweb header, footer, local documentation and changelog dialog.
+- **Improved:** Retains the builder selection when searching and filtering the content list.
+- **Improved:** Centralizes builder metadata rules and resolves settings once per request.
+- **Improved:** Counts readable published and unpublished content outside trash using ID-only queries.
+- **Fixed:** Validates URL parameters and targets only the main supported admin list.
+- **Fixed:** Preserves existing meta query groups and handles missing or malformed builder options.
+- **Fixed:** Uses post-type editing permissions for builder submenus instead of theme permissions.
+- **Misc:** Integrates the shared deckerweb GitHub Updater V2 and embedded Plugin Library 0.2.0.
+- **Misc:** Raises minimum PHP to 8.0 for the embedded Library; WordPress 6.7 remains the minimum.
+- **Misc:** Adds bilingual readmes, guides, FAQs, translations, release tooling and regression checks.
+- **Misc:** Refreshes icon and English/German banners; includes three design alternatives in the source package.
 
-#### Compatibilty for special Post Types:
-* _Astra Site Builder_ (Layouts) (part of _Astra Pro_ for the _Astra_ Theme)
-* _OceanWP Library_ (part of _OceanWP_ Theme)
+### 1.0.0 · 2025-04-11
 
-#### Compatibility with ClassicPress (fork of WP)
-* This plugin itself is compatible!
-* As long as the _Page Builder_ is compatible then you can use this plugin here as a perfect helper tool
-* Current compatible Builders:
-  * ZionBuilder - tested the free version
-  * Beaver Builder - works (CP Forum)
-  * Breakdance – I played around with the Pro version v2.3.0 and to my surprise it worked in CP 2.4.1 without any issues. So it also worked with my plugin.
-  * I am sure, more builders from the above list will work fine. I just have not the time to test them all everytime...
-  * Bricks Builder – I guess this one might work also, but note it needs a [compat plugin](https://github.com/Hakira-Shymuy/cpbricksfixes) (to make Bricks work with CP)
+- **New:** Initial public release.
 
----
+[Complete changelog](docs/CHANGELOG.md)
 
-## Frequently Asked Questions 
+## About
 
-### Why should it be important to have these Views/ Submenus?
-Good question. This could be extremely useful if you have a lot of pages for example and only a few of them are built with your Page Builder. Then the additional **view** and **submenu** offer a "filter" to just query for those few pages. That makes total sense for Administrators, Editors, Clients and other use cases. This should be a default, to have these views. Sadly, most Builders just don't offer that.
+Created by David Decker – DECKERWEB. © 2019–2026. [Support the project](https://ko-fi.com/deckerweb).
 
-### The View is showing (0) items?
-That can happen if you have only items of that post type edited in your Builder but in _Draft_ state. Just **publish** this post type item. And also make sure that it contains at least _one_ element/widget of the Builder _in it_. Then it will all make sense. (Meaning, WordPress needs to see a hidden meta key for that page/item, that mostly gets set when adding an element and publish – or at least save – the whole thing.)
-
-### Will more Builders be supported?
-Mostly not. Only when another Builder is easy to integrate and works (like the others) with the principle of meta key/value pair. If I missed such a Builder, please [create an Issue](https://github.com/deckerweb/builder-list-pages/issues) on the GitHub repository of this plugin so I can consider integration. Otherwise no further integration is planned. (The Builders I personally need are already covered: _Bricks_, _Oxygen_, _Breakdance_, _Elementor_.)
-
-### Why did you create this plugin?
-Back in 2019 I needed it myself for a few sites I maintained. Those sites were powered by Elementor (Pro). Once I discovered a code snippet offering these views, I enhanced the snippet (security, better labels, etc.) and made a plugin out of it. It was just for "private" use. A few years later I needed it again but now for other builders (Oxygen, Bricks, Breakdance ...), so I developed the plugin further and made a more robust solution out of it, working with more Builders. And this is now the result.
-
-### Why is this plugin not on wordpress.org Plugin Repository?
-Because the restrictions there for plugin authors are becoming more and more. It would be possible, yes, but I don't want that anymore. The same for limited support forums for plugin authors on .org. I have decided to leave this whole thing behind me.
-
----
-
-## Changelog 
-
-#### Version History 
-
-### 🎉 v1.0.0 – 2025-04-11
-* Initial _public_ release
-* With support for 11 popular Page Builders
-* Plugin is compatible with _ClassicPress_ (fork of WordPress) when the supported Page Builder is compatible with _ClassicPress_
-* Installable and updateable via [Git Updater plugin](https://git-updater.com/)
-* Includes `.pot` file, plus packaged German translations, including new `l10n.php` files!
-
-
-### 🛠 v0.5.0 – 2019-08-12
-* _Private_ _alpha_ release
-
----
-
-## Plugin Scope / Disclaimer 
-
-This plugin comes as is.
-
-_Disclaimer 1:_ So far I will support the plugin for breaking errors to keep it working. Otherwise support will be very limited. Also, it will NEVER be released to WordPress.org Plugin Repository for a lot of reasons (ah, thanks, Matt!).
-
-_Disclaimer 2:_ All of the above might change. I do all this stuff only in my spare time.
-
-_Most of all:_ Be blessed and have fun building great sites!!! 😉
-
----
-
-Icon used in promo graphics: [© Remix Icon](https://remixicon.com/)
-
-Readme & Plugin Copyright: © 2019-2025, David Decker – DECKERWEB.de
+The plugin reads builder data; it does not change content or load frontend assets. Real builders, other PHP/WordPress versions, Multisite and ClassicPress have not been comprehensively checked for this RC.

@@ -1,149 +1,127 @@
 msgid ""
-msgstr ""
-"Project-Id-Version: Builder List Pages\n"
-"POT-Creation-Date: 2025-04-11 21:46+0200\n"
-"PO-Revision-Date: 2025-04-11 21:46+0200\n"
-"Last-Translator: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
-"Language-Team: David Decker DECKERWEB.de <David Decker DECKERWEB.de>\n"
-"Language: de_DE@formal\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: builder-list-pages.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+msgstr "Project-Id-Version: Builder List Pages 1.1.0\nReport-Msgid-Bugs-To: https://github.com/deckerweb/builder-list-pages/issues\nPOT-Creation-Date: 2026-10-01 17:00+0200\nPO-Revision-Date: 2026-10-01 17:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: builder-list-pages.php:204
-msgid "Elementor"
-msgstr "Elementor"
+#: includes/class-blp-admin.php:76 includes/class-blp-admin.php:78
+msgid "Builder"
+msgstr "Builder"
 
-#: builder-list-pages.php:205
-msgid "With Elementor"
-msgstr "Mit Elementor"
+#: includes/class-blp-settings.php:49 includes/class-blp-settings.php:58
+msgid "Changelog"
+msgstr "Änderungsverlauf"
 
-#: builder-list-pages.php:215
-msgid "Bricks"
-msgstr "Bricks"
+#: includes/class-blp-settings.php:58
+msgid "Close"
+msgstr "Schließen"
 
-#: builder-list-pages.php:216
-msgid "With Bricks"
-msgstr "Mit Bricks"
+#: includes/class-blp-settings.php:48
+msgid "Counts include readable published and unpublished content outside the trash. Search and other list filters can reduce the visible results. Builder groups may overlap."
+msgstr "Zähler berücksichtigen lesbare veröffentlichte und unveröffentlichte Inhalte außerhalb des Papierkorbs. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Builder-Gruppen können sich überschneiden."
 
-#: builder-list-pages.php:226
-msgid "Breakdance"
-msgstr "Breakdance"
+#: includes/class-blp-admin.php:138 includes/class-blp-settings.php:49
+msgid "Documentation"
+msgstr "Dokumentation"
 
-#: builder-list-pages.php:227
-msgid "With Breakdance"
-msgstr "Mit Breakdance"
+#: includes/class-blp-github-updates.php:32
+msgid "Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists."
+msgstr "Finden Sie Seiten nach ihrem Page Builder. Erkennen Sie Builder auf einen Blick, filtern Sie mehrere Builder und arbeiten Sie in den gewohnten WordPress-Listen weiter."
 
-#: builder-list-pages.php:237 builder-list-pages.php:248
-msgid "Oxygen"
-msgstr "Oxygen"
+#: includes/class-blp-settings.php:40
+msgid "Find your pages faster"
+msgstr "Finden Sie Ihre Seiten schneller"
 
-#: builder-list-pages.php:238 builder-list-pages.php:249
-msgid "With Oxygen"
-msgstr "Mit Oxygen"
+#: includes/class-blp-settings.php:48
+msgid "No matching data was found for the active, supported builders enabled for this content type. The page may still use the block editor, an unsupported or inactive builder, or a builder template."
+msgstr "Für die aktiven unterstützten Builder dieses Inhaltstyps wurden keine passenden Daten gefunden. Die Seite kann trotzdem den Blockeditor, einen nicht unterstützten oder inaktiven Builder oder ein Builder-Template verwenden."
 
-#: builder-list-pages.php:259
-msgid "Brizy"
-msgstr "Brizy"
+#: includes/class-blp-admin.php:58 includes/class-blp-admin.php:87
+msgid "No recognized builder"
+msgstr "Ohne erkannten Builder"
 
-#: builder-list-pages.php:260
-msgid "With Brizy"
-msgstr "Mit Brizy"
+#: includes/class-blp-settings.php:40
+msgid "Open Pages or another supported content list. Click a builder above the table to filter, or use its name in the Builder column."
+msgstr "Öffnen Sie Seiten oder eine andere unterstützte Inhaltsliste. Klicken Sie zum Filtern auf einen Builder über der Tabelle oder auf seinen Namen in der Builder-Spalte."
 
-#: builder-list-pages.php:270
-msgid "Beaver Builder"
-msgstr "Beaver Builder"
+#: includes/class-blp-settings.php:49
+msgid "Plugin information"
+msgstr "Plugin-Informationen"
 
-#: builder-list-pages.php:271
-msgid "With Beaver"
-msgstr "Mit Beaver"
+#: includes/class-blp-settings.php:49
+msgid "Plugin website"
+msgstr "Plugin-Website"
 
-#: builder-list-pages.php:281
-msgid "Pagelayer"
-msgstr "Pagelayer"
+#: includes/class-blp-settings.php:48
+msgid "Read the documentation and FAQ"
+msgstr "Anleitung und FAQ lesen"
 
-#: builder-list-pages.php:282
-msgid "With Pagelayer"
-msgstr "Mit Pagelayer"
+#: includes/class-blp-admin.php:132
+msgid "Settings"
+msgstr "Einstellungen"
 
-#: builder-list-pages.php:292
-msgid "ZionBuilder"
-msgstr "ZionBuilder"
+#: includes/class-blp-settings.php:42
+msgid "Show builder links in post-type menus"
+msgstr "Builder-Links in den Menüs der Inhaltstypen anzeigen"
 
-#: builder-list-pages.php:293
-msgid "With ZionBuilder"
-msgstr "Mit ZionBuilder"
+#: includes/class-blp-settings.php:42
+msgid "Show the Builder column"
+msgstr "Builder-Spalte anzeigen"
 
-#: builder-list-pages.php:303
-msgid "Visual Composer"
-msgstr "Visual Composer"
+#: includes/class-blp-settings.php:42
+msgid "Show the “No recognized builder” filter"
+msgstr "Filter „Ohne erkannten Builder“ anzeigen"
 
-#: builder-list-pages.php:304
-msgid "With Visual Composer"
-msgstr "Mit Visual Composer"
+#: includes/class-blp-admin.php:139
+msgid "Support the project"
+msgstr "Projekt unterstützen"
 
-#: builder-list-pages.php:314
-msgid "Thrive Architect"
-msgstr "Thrive Architect"
+#: includes/class-blp-github-updates.php:100
+msgid "The GitHub package could not be prepared. The installed version has been kept."
+msgstr "Das GitHub-Paket konnte nicht vorbereitet werden. Die installierte Version wurde beibehalten."
 
-#: builder-list-pages.php:315
-msgid "With Thrive Architect"
-msgstr "Mit Thrive Architect"
+#: includes/class-blp-github-updates.php:99
+msgid "The GitHub package does not contain the Builder List Pages plugin file."
+msgstr "Das GitHub-Paket enthält die Plugin-Datei von Builder List Pages nicht."
 
-#. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
-#: builder-list-pages.php:442
+#: includes/class-blp-github-updates.php:122
+msgid "The package identity or version does not match a newer Builder List Pages release."
+msgstr "Paketidentität oder Version passen nicht zu einem neueren Release von Builder List Pages."
+
+#: includes/class-blp-github-updates.php:127
+msgid "The package version differs from the offered update. Please check for updates again."
+msgstr "Die Paketversion weicht vom angebotenen Update ab. Bitte prüfe erneut auf Updates."
+
+#: includes/class-blp-github-updates.php:98
+msgid "The update filesystem is unavailable. Please try again."
+msgstr "Das Dateisystem für Updates ist nicht verfügbar. Bitte versuchen Sie es erneut."
+
+#: includes/class-blp-github-updates.php:107 includes/class-blp-github-updates.php:111 includes/class-blp-github-updates.php:115
+msgid "The update package could not be checked."
+msgstr "Das Updatepaket konnte nicht geprüft werden."
+
+#: includes/class-blp-github-updates.php:131
+msgid "The update package has missing or invalid WordPress/PHP requirements."
+msgstr "Im Updatepaket fehlen gültige WordPress-/PHP-Voraussetzungen."
+
+#: includes/class-blp-settings.php:46
+msgid "These choices apply to this site. Each user can also hide the Builder column using Screen Options on the content list."
+msgstr "Diese Einstellungen gelten für diese Website. Jeder Benutzer kann die Builder-Spalte zusätzlich über Ansicht anpassen in der Inhaltsliste ausblenden."
+
+#: includes/class-blp-github-updates.php:135
+msgid "This release requires a newer WordPress or PHP version. The installed version has been kept."
+msgstr "Dieses Release benötigt eine neuere WordPress- oder PHP-Version. Die installierte Version wurde beibehalten."
+
+#: includes/class-blp-settings.php:49
+msgid "Version"
+msgstr "Version"
+
+#: includes/class-blp-settings.php:48
+msgid "What does “No recognized builder” mean?"
+msgstr "Was bedeutet „Ohne erkannten Builder“?"
+
+#: includes/class-blp-admin.php:114
 #, php-format
-msgctxt "Title attribute of Views link (above post type list table)"
-msgid "%1$s edited with %2$s"
-msgstr "%1$s bearbeitet mit %2$s"
+msgid "With %s"
+msgstr "Mit %s"
 
-#. translators: 1 - plural name of post type (i.e. Pages) / 2 - name of the Builder (i.e. Bricks)
-#: builder-list-pages.php:500
-#, php-format
-msgctxt "Page title"
-msgid "%1$s edited with %2$s"
-msgstr "%1$s bearbeitet mit %2$s"
-
-#: builder-list-pages.php:552
-msgctxt "Plugins page listing"
-msgid "Donate"
-msgstr "Spenden"
-
-#: builder-list-pages.php:558
-msgctxt "Plugins page listing"
-msgid "Join our Newsletter"
-msgstr "Jetzt Newsletter"
-
-#. Plugin Name of the plugin/theme
-msgid "Builder List Pages"
-msgstr "Builder Seiten-Auflistung"
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/deckerweb/builder-list-pages"
-msgstr "https://github.com/deckerweb/builder-list-pages"
-
-#. Description of the plugin/theme
-msgid ""
-"List those pages and post types which were edited with your favorite Page "
-"Builder. Adds additional views to the post type list tables, plus, submenus."
-msgstr ""
-"Listet die Seiten und Beitragstypen auf, die mit Ihrem bevorzugten Page "
-"Builder bearbeitet wurden. Fügt zusätzliche Ansichten zu den Tabellen der "
-"Beitragstypenliste hinzu, sowie Untermenüs."
-
-#. Author of the plugin/theme
-msgid "David Decker - DECKERWEB"
-msgstr "David Decker - DECKERWEB"
-
-#. Author URI of the plugin/theme
-msgid "https://deckerweb.de/"
-msgstr "https://deckerweb.de/"
+#: includes/class-blp-settings.php:38 includes/class-blp-settings.php:49
+msgid "Your pages. Your builders. One clear overview."
+msgstr "Ihre Seiten. Ihre Builder. Alles im Blick."

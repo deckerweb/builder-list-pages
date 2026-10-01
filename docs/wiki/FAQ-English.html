@@ -1,11 +1,11 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Documentation</title><style>body{margin:0;background:#f3f6f7;color:#223641;font:16px/1.7 system-ui,sans-serif}main{max-width:940px;margin:36px auto;padding:32px 42px;background:white;border:1px solid #d4dee0;border-radius:12px}nav{display:flex;flex-wrap:wrap;gap:14px;padding-bottom:18px;border-bottom:1px solid #d4dee0}a{color:#17616a;text-underline-offset:3px}h1{font-size:32px}h2{margin-top:38px;padding-top:14px;border-top:1px solid #e2e8ea}h3{margin-top:28px}img{max-width:100%}code{background:#eef4f5;padding:2px 5px}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid #d4dee0;padding:8px}@media(max-width:640px){main{margin:12px;padding:20px}}</style></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-English.html">FAQ</a><a href="Changelog-English.html">Changelog</a></nav><h1 id="frequently-asked-questions">Frequently asked questions</h1>
 <p><a href="English.html">Guide</a> · <a href="FAQ-Deutsch.html">Deutsch</a></p>
-<p>Answers for test release 1.1.0-rc2. Planned features are not described as available.</p>
+<p>Answers for release 1.1.0. Planned features are not described as available.</p>
 <h2 id="getting-started">Getting started</h2>
 <h3 id="do-i-need-to-configure-anything-first">Do I need to configure anything first?</h3>
 <p>No. Activate the plugin and open a content list that an active supported builder can edit. Views, the Builder column and builder submenus are enabled by default.</p>
 <h3 id="which-requirements-apply">Which requirements apply?</h3>
-<p>WordPress 6.7+ and PHP 8.0+. This test release was checked on WordPress 6.7 and PHP 8.4.5 using a disposable SQLite installation. Other versions and real builder installations need testing.</p>
+<p>WordPress 6.7+ and PHP 8.0+. Checked on WordPress 6.7 and 7.1.2 with PHP 8.4.5 using disposable SQLite installations, including Bricks 2.4.2 and WP Admin Cleaner 2.0.1. Other builder integrations, database engines and versions still need broader testing.</p>
 <h3 id="is-it-free">Is it free?</h3>
 <p>Yes. GPL v2 or later. Some supported builders require their own paid license.</p>
 <h3 id="which-builders-are-supported">Which builders are supported?</h3>
@@ -71,4 +71,4 @@
 <p>Include plugin and builder versions, post type, user role, selected filter and expected result. Use a test copy and avoid sharing private page content or credentials.</p>
 <h2 id="why-does-wp-admin-cleaner-block-the-bricks-page-list">Why does WP Admin Cleaner block the Bricks page list?</h2>
 <p>WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its <code>bricks</code> slug also match <code>edit.php?post_type=page&amp;builder=bricks</code>. Starting with 1.1.0-rc2, Builder List Pages automatically appends <code>&amp;blp_view=1</code> to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.</p>
-<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0-rc2</p></footer></main></body></html>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0</p></footer></main></body></html>

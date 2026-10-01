@@ -2,7 +2,7 @@
 
 [Anleitung](Deutsch.md) · [English](FAQ-English.md)
 
-Antworten zum Testrelease 1.1.0-rc2. Geplante Funktionen werden nicht als verfügbar beschrieben.
+Antworten zum Release 1.1.0. Geplante Funktionen werden nicht als verfügbar beschrieben.
 
 ## Erste Schritte
 
@@ -12,7 +12,7 @@ Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstü
 
 ### Welche Voraussetzungen gelten?
 
-WordPress ab 6.7 und PHP ab 8.0. Dieses Testrelease wurde mit WordPress 6.7 und PHP 8.4.5 in einer separaten SQLite-Installation geprüft. Weitere Versionen und echte Builder-Installationen müssen getestet werden.
+WordPress ab 6.7 und PHP ab 8.0. Geprüft mit WordPress 6.7 und 7.1.2 sowie PHP 8.4.5 in separaten SQLite-Installationen, einschließlich Bricks 2.4.2 und WP Admin Cleaner 2.0.1. Andere Builder, Datenbanksysteme und Versionen benötigen weitere Tests.
 
 ### Ist das Plugin kostenlos?
 

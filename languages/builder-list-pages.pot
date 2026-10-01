@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Builder List Pages 1.1.0-rc2\nContent-Type: text/plain; charset=UTF-8\n"
+msgstr "Project-Id-Version: Builder List Pages 1.1.0\nContent-Type: text/plain; charset=UTF-8\n"
 
 #: includes/class-blp-admin.php:76 includes/class-blp-admin.php:78
 msgid "Builder"

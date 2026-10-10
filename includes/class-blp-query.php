@@ -10,6 +10,7 @@ final class Query {
 	private Registry $registry;
 	private array $counts = [];
 	private \SplObjectStorage $negative_queries;
+	private \SplObjectStorage $special_queries;
 
 	/**
 	 * Retain the registry and initialize query-scoped exclusions.
@@ -20,6 +21,7 @@ final class Query {
 	public function __construct( Registry $registry ) {
 		$this->registry = $registry;
 		$this->negative_queries = new \SplObjectStorage();
+		$this->special_queries = new \SplObjectStorage();
 	}
 	/**
 	 * Register native list and SQL-filter callbacks.
@@ -41,7 +43,7 @@ final class Query {
 		if ( ! is_string( $value ) ) { return ''; }
 		$id = sanitize_key( wp_unslash( $value ) );
 		$builders = $this->registry->for_type( $type );
-		return ( isset( $builders[ $id ] ) || ( 'none' === $id && $builders && Settings::enabled( 'show_none' ) ) ) ? $id : '';
+		return ( ( 'multiple' === $id && count( $builders ) > 1 ) || ( 'traces' === $id && $this->registry->traces( $type ) ) || isset( $builders[ $id ] ) || ( 'none' === $id && $builders && Settings::enabled( 'show_none' ) ) ) ? $id : '';
 	}
 	/**
 	 * Apply the selected builder only to the main admin content list.
@@ -68,6 +70,8 @@ final class Query {
 	 */
 	public function apply( \WP_Query $query, string $type, string $id ): void {
 		$builders = $this->registry->for_type( $type );
+		if ( 'multiple' === $id && count( $builders ) > 1 ) { $this->special_queries[ $query ] = [ $builders, 2 ]; return; }
+		if ( 'traces' === $id ) { $traces = $this->registry->traces( $type ); if ( $traces ) { $this->special_queries[ $query ] = [ $traces, 1 ]; } return; }
 		if ( 'none' === $id && $builders ) {
 			$this->negative_queries[ $query ] = $builders;
 			return;
@@ -85,6 +89,18 @@ final class Query {
 	 * @return string Resulting text, URL or SQL fragment.
 	 */
 	public function exclude_builders( string $where, \WP_Query $query ): string {
+		if ( $this->special_queries->contains( $query ) ) {
+			global $wpdb;
+			[ $builders, $minimum ] = $this->special_queries[ $query ];
+			$parts = [];
+			foreach ( $builders as $builder ) {
+				$c = $builder['meta_query'][0];
+				$condition = $wpdb->prepare( 'blp_meta.meta_key = %s', $c['key'] );
+				if ( '=' === $c['compare'] ) { $condition .= $wpdb->prepare( ' AND blp_meta.meta_value = %s', $c['value'] ); }
+				$parts[] = "CASE WHEN EXISTS (SELECT 1 FROM {$wpdb->postmeta} AS blp_meta WHERE blp_meta.post_id = {$wpdb->posts}.ID AND {$condition}) THEN 1 ELSE 0 END";
+			}
+			return $where . ' AND (' . implode( ' + ', $parts ) . ') >= ' . (int) $minimum;
+		}
 		if ( ! $this->negative_queries->contains( $query ) ) { return $where; }
 		$clauses = [ 'relation' => 'OR' ];
 		foreach ( $this->negative_queries[ $query ] as $builder ) { $clauses[] = $builder['meta_query']; }
@@ -117,6 +133,7 @@ final class Query {
 		if ( $object && ! current_user_can( $object->cap->edit_others_posts ) ) { $args['author'] = get_current_user_id(); }
 		$query->query( $args );
 		if ( $this->negative_queries->contains( $query ) ) { $this->negative_queries->detach( $query ); }
+		if ( $this->special_queries->contains( $query ) ) { $this->special_queries->detach( $query ); }
 		return $this->counts[ $key ] = (int) $query->found_posts;
 	}
 }

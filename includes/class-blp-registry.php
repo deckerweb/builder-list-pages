@@ -8,6 +8,8 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Registry {
 	private ?array $resolved = null;
+	private ?array $definitions_cache = null;
+	private array $trace_cache = [];
 
 	/**
 	 * Read a list option or nested setting defensively.
@@ -117,6 +119,7 @@ final class Registry {
 	 * @return array Validated values or generated entries.
 	 */
 	private function definitions(): array {
+		if ( null !== $this->definitions_cache ) { return $this->definitions_cache; }
 		$definitions = [
 			'elementor' => [ 'elementor', defined( 'ELEMENTOR_VERSION' ), [ $this, 'types_elementor' ], '_elementor_edit_mode', 'builder', 'Elementor', 'With Elementor' ],
 			'bricks' => [ 'bricks', defined( 'BRICKS_VERSION' ), [ $this, 'types_bricks' ], '_bricks_editor_mode', 'bricks', 'Bricks', 'With Bricks' ],
@@ -141,7 +144,7 @@ final class Registry {
 				'label' => $label, 'with-label' => $with,
 			];
 		}
-		return $data;
+		return $this->definitions_cache = $data;
 	}
 
 	/**
@@ -167,7 +170,7 @@ final class Registry {
 				continue;
 			}
 			$id = sanitize_key( $builder['builder-id'] );
-			if ( '' === $id || 'none' === $id || '' === $builder['meta-key'] || isset( $this->resolved[ $id ] ) ) {
+			if ( '' === $id || in_array( $id, [ 'none', 'multiple', 'traces' ], true ) || '' === $builder['meta-key'] || isset( $this->resolved[ $id ] ) ) {
 				continue;
 			}
 			$types = [];
@@ -217,6 +220,70 @@ final class Registry {
 		$types = [];
 		foreach ( $this->all() as $builder ) { $types = array_merge( $types, $builder['builder-types'] ); }
 		return array_values( array_unique( $types ) );
+	}
+
+	/**
+	 * Return known inactive metadata signatures without invoking inactive APIs.
+	 *
+	 * @param string $type Content-type name.
+	 * @return array Read-only signatures, restricted to editable admin content types.
+	 */
+	public function traces( string $type ): array {
+		$object = get_post_type_object( $type );
+		if ( ! $object || ! $object->show_ui || 'attachment' === $type || ! current_user_can( $object->cap->edit_posts ) ) { return []; }
+		if ( isset( $this->trace_cache[ $type ] ) ) { return $this->trace_cache[ $type ]; }
+		$result = [];
+		foreach ( $this->definitions() as $builder ) {
+			if ( $builder['is-active'] ) { continue; }
+			$builder['meta_query'] = [ [ 'key' => $builder['meta-key'], 'compare' => $builder['meta-compare'] ] ];
+			if ( '=' === $builder['meta-compare'] ) { $builder['meta_query'][0]['value'] = (string) $builder['meta-value']; }
+			$result[ $builder['builder-id'] ] = $builder;
+		}
+		return $this->trace_cache[ $type ] = $result;
+	}
+
+	/**
+	 * Identify inactive signatures in already primed metadata.
+	 *
+	 * @param int $post_id Content item ID.
+	 * @param string $type Content-type name.
+	 * @return array Matching inactive signatures; no builder data is changed.
+	 */
+	public function trace_matches( int $post_id, string $type ): array {
+		$result = [];
+		foreach ( $this->traces( $type ) as $id => $builder ) {
+			$c = $builder['meta_query'][0];
+			$values = get_post_meta( $post_id, $c['key'], false );
+			if ( 'EXISTS' === $c['compare'] ? metadata_exists( 'post', $post_id, $c['key'] ) : in_array( $c['value'], array_map( 'strval', array_filter( $values, 'is_scalar' ) ), true ) ) { $result[ $id ] = $builder; }
+		}
+		return $result;
+	}
+
+	/**
+	 * Resolve CSV signatures in bounded ID batches without loading builder payloads.
+	 *
+	 * @param array $ids Native query results restricted to readable and editable content.
+	 * @param string $type Content-type name.
+	 * @return array Builder label lists keyed by post ID, including marked inactive traces.
+	 */
+	public function export_labels( array $ids, string $type ): array {
+		$ids = array_values( array_filter( array_map( 'absint', $ids ) ) );
+		$result = [];
+		if ( ! $ids ) { return $result; }
+		global $wpdb;
+		$builders = $this->for_type( $type );
+		foreach ( $this->traces( $type ) as $id => $b ) { $b['label'] .= ' (' . __( 'inactive trace', 'builder-list-pages' ) . ')'; $builders[ $id ] = $b; }
+		foreach ( array_chunk( $ids, 500 ) as $batch ) {
+			$placeholders = implode( ',', array_fill( 0, count( $batch ), '%d' ) );
+			foreach ( $builders as $builder ) {
+				$c = $builder['meta_query'][0];
+				$sql = "SELECT DISTINCT post_id FROM {$wpdb->postmeta} WHERE post_id IN ({$placeholders}) AND meta_key = %s";
+				$values = array_merge( $batch, [ $c['key'] ] );
+				if ( '=' === $c['compare'] ) { $sql .= ' AND meta_value = %s'; $values[] = $c['value']; }
+				foreach ( $wpdb->get_col( $wpdb->prepare( $sql, $values ) ) as $post_id ) { $result[ (int) $post_id ][] = $builder['label']; }
+			}
+		}
+		return $result;
 	}
 
 	/**

@@ -16,7 +16,7 @@ blp_check( ! is_wp_error( $result ) && get_option( 'blp_settings' ) === $prefere
 blp_check( get_class( $GLOBALS['deckerweb_library_runtime_v1'] ) === 'Deckerweb\\PluginLibrary\\V0_9_0\\Library', 'Latest compatible Library elected once' );
 foreach ( [ 'de_DE', 'de_DE_formal' ] as $locale ) {
  $mo = new MO(); $mo->import_from_file( $plugin . 'languages/builder-list-pages-' . $locale . '.mo' );
- blp_check( count( $mo->entries ) === 241, $locale . ': all 241 host and component messages included' );
+ blp_check( count( $mo->entries ) === 272, $locale . ': all 272 host and component messages included' );
  $GLOBALS['l10n']['builder-list-pages'] = $mo;
  blp_check( __( 'Close', 'builder-list-pages' ) === 'Schließen', $locale . ': host domain is translated' );
  $translate = require $plugin . 'includes/updater-translations.php';
@@ -28,7 +28,7 @@ foreach ( [ 'de_DE', 'de_DE_formal' ] as $locale ) {
 require_once $plugin . 'includes/deckerweb-changelog-v1.php';
 foreach ( [ 'changelog.txt' => 'Fixed', 'changelog-de.txt' => 'Behoben' ] as $file => $prefix ) {
  $html = Deckerweb_Changelog_Renderer_V1::render( file_get_contents( $plugin . 'docs/' . $file ) );
- blp_check( substr_count( $html, 'ddw-changelog-release' ) === 2 && str_contains( $html, 'ddw-changelog-fixed' ) && str_contains( $html, $prefix ), $file . ': versions and localized category badges render' );
+ blp_check( substr_count( $html, 'ddw-changelog-release' ) === 3 && str_contains( $html, 'ddw-changelog-fixed' ) && str_contains( $html, $prefix ), $file . ': versions and localized category badges render' );
 }
 $html = Deckerweb_Changelog_Renderer_V1::render( "== Changelog ==\n\n= 1.1.0 · 2026-10-01 =\n* Fixed: <script>alert(1)</script> `<img src=x onerror=alert(1)>`" );
 blp_check( ! str_contains( $html, '<script>' ) && ! str_contains( $html, '<img' ) && str_contains( $html, '&lt;script&gt;' ), 'History markup cannot inject executable HTML' );

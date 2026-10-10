@@ -7,5 +7,5 @@
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 require_once __DIR__ . '/includes/deckerweb-plugin-library/lifecycle.php';
 deckerweb_library_uninstall_v3( __DIR__ . '/builder-list-pages.php' );
-// The three blp_settings choices and all builder metadata remain on every site.
+// Site settings, site-scoped user favorites/display choices and builder metadata remain.
 delete_site_transient( 'ddw_ghru_' . substr( md5( 'https://github.com/deckerweb/builder-list-pages' ), 0, 24 ) );

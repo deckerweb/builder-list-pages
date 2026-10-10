@@ -81,7 +81,7 @@ final class Admin {
 	 * @return void
 	 */
 	public function screen( \WP_Screen $screen ): void {
-		if ( 'edit' !== $screen->base || ! $this->registry->for_type( $screen->post_type ) ) { return; }
+		if ( 'edit' !== $screen->base || ! ( $this->registry->for_type( $screen->post_type ) || 'traces' === $this->query->selected( $screen->post_type ) ) ) { return; }
 		add_filter( 'views_edit-' . $screen->post_type, [ $this, 'views' ] );
 		add_action( 'restrict_manage_posts', [ $this, 'preserve_selection' ], 10, 2 );
 		if ( Settings::enabled( 'show_column' ) ) {
@@ -119,6 +119,8 @@ final class Admin {
 			}
 			unset( $view );
 		}
+		if ( Workflows::state()['compact'] ) { return $views; }
+		if ( count( $builders ) > 1 ) { $views['blp_multiple'] = $this->view_link( $type, 'multiple', __( 'Multiple builders recognized', 'builder-list-pages' ), $selected ); }
 		foreach ( $builders as $id => $builder ) {
 			$views[ 'blp_' . $id ] = $this->view_link( $type, $id, $builder['label'], $selected );
 		}
@@ -148,7 +150,13 @@ final class Admin {
 	 */
 	public function preserve_selection( string $type, string $which ): void {
 		$id = $this->query->selected( $type );
-		if ( 'top' === $which && '' !== $id ) {
+		if ( 'top' === $which && Workflows::state()['compact'] ) {
+			$choices = ( new Workflows( $this->registry, $this->query ) )->choices( $type );
+			echo '<label class="screen-reader-text" for="blp-compact">' . esc_html__( 'Builder view', 'builder-list-pages' ) . '</label><select name="builder" id="blp-compact"><option value="">' . esc_html__( 'All builders', 'builder-list-pages' ) . '</option>';
+			foreach ( $choices as $choice => $label ) { echo '<option value="' . esc_attr( $choice ) . '" ' . selected( $id, $choice, false ) . '>' . esc_html( $label ) . '</option>'; }
+			echo '</select><input type="hidden" name="blp_view" value="1">';
+		}
+		if ( 'top' === $which && ! Workflows::state()['compact'] && '' !== $id ) {
 			echo '<input type="hidden" name="builder" value="' . esc_attr( $id ) . '"><input type="hidden" name="blp_view" value="1">';
 		}
 	}
@@ -179,15 +187,53 @@ final class Admin {
 		$type = get_post_type( $post_id );
 		if ( ! is_string( $type ) ) { return; }
 		$builders = $this->registry->matches( $post_id, $type );
+		$recognized = $builders;
+		if ( 'traces' === $this->query->selected( $type ) ) {
+			foreach ( $this->registry->trace_matches( $post_id, $type ) as $trace_id => $b ) { $recognized[ $trace_id ] = $b; echo '<span class="blp-builder blp-builder-trace">' . esc_html( $b['label'] . ' · ' . __( 'inactive trace', 'builder-list-pages' ) ) . '</span> '; }
+		}
 		if ( ! $builders ) {
+			if ( $recognized ) { $this->recognition_details( $post_id, $recognized ); }
 			$label = __( 'No recognized builder', 'builder-list-pages' );
-			echo Settings::enabled( 'show_none' ) ? '<a class="blp-builder blp-builder-none" href="' . esc_url( self::list_url( $type, 'none' ) ) . '">' . esc_html( $label ) . '</a>' : '<span class="blp-builder-none">' . esc_html( $label ) . '</span>';
+			echo Settings::enabled( 'show_none' ) ? '<a class="blp-builder blp-builder-none" href="' . esc_url( self::list_url( $type, 'none' ) ) . '" title="' . esc_attr__( 'Show items without a recognized active builder', 'builder-list-pages' ) . '">' . esc_html( $label ) . '</a>' : '<span class="blp-builder-none">' . esc_html( $label ) . '</span>';
 			return;
 		}
 		foreach ( $builders as $id => $builder ) {
-			echo '<a class="blp-builder" href="' . esc_url( self::list_url( $type, $id ) ) . '">' . esc_html( $builder['label'] ) . '</a> ';
+			echo '<a class="blp-builder" href="' . esc_url( self::list_url( $type, $id ) ) . '" title="' . esc_attr( sprintf( __( 'Filter by %s', 'builder-list-pages' ), $builder['label'] ) ) . '">' . esc_html( $builder['label'] ) . '</a> ';
+			$url = $this->editor_url( $post_id, $id );
+			if ( $url ) { echo '<a class="blp-editor-link" href="' . esc_url( $url ) . '">' . esc_html( sprintf( __( 'Edit with %s', 'builder-list-pages' ), $builder['label'] ) ) . '</a> '; }
 		}
+		if ( $recognized ) { $this->recognition_details( $post_id, $recognized ); }
 	}
+	/**
+	 * Reveal signature field names only after opening a row's disclosure.
+	 *
+	 * @param int $post_id Content item with primed metadata.
+	 * @param array $builders Already recognized active or explicitly requested inactive signatures.
+	 * @return void
+	 */
+	private function recognition_details( int $post_id, array $builders ): void {
+		echo '<details class="blp-recognition"><summary>' . esc_html__( 'Recognition details', 'builder-list-pages' ) . '</summary><ul>';
+		foreach ( $builders as $b ) {
+			$values = get_post_meta( $post_id, $b['meta-key'], false );
+			$empty = in_array( '', $values, true );
+			echo '<li>' . esc_html( $b['label'] ) . ': <code>' . esc_html( $b['meta-key'] ) . '</code> · ' . esc_html( $empty ? __( 'Contains an empty value', 'builder-list-pages' ) : __( 'Stored signature matched', 'builder-list-pages' ) ) . '</li>';
+		}
+		echo '</ul></details>';
+	}
+
+	/**
+	 * Use available native editor APIs after object and builder permission checks.
+	 *
+	 * @param int $post_id Editable content item.
+	 * @param string $id Active recognized builder ID.
+	 * @return string Native builder URL, or empty when a safe public API is unavailable.
+	 */
+	public function editor_url( int $post_id, string $id ): string {
+		if ( ! current_user_can( 'edit_post', $post_id ) || 'trash' === get_post_status( $post_id ) ) { return ''; }
+		if ( 'bricks' === $id && is_callable( [ '\Bricks\Capabilities', 'current_user_can_use_builder' ] ) && is_callable( [ '\Bricks\Helpers', 'get_builder_edit_link' ] ) && \Bricks\Capabilities::current_user_can_use_builder( $post_id ) ) { return (string) \Bricks\Helpers::get_builder_edit_link( $post_id ); }
+		return '';
+	}
+
 	/**
 	 * Resolve the content menu including established theme integrations.
 	 *
@@ -233,7 +279,7 @@ final class Admin {
 		$screen = get_current_screen();
 		if ( ! $screen || 'edit' !== $screen->base || ! Settings::enabled( 'show_submenus' ) ) { return $parent; }
 		$id = $this->query->selected( $screen->post_type );
-		if ( '' !== $id && 'none' !== $id ) {
+		if ( isset( $this->registry->for_type( $screen->post_type )[ $id ] ) ) {
 			global $submenu_file;
 			$submenu_file = 'edit.php?post_type=' . $screen->post_type . '&builder=' . $id . '&blp_view=1';
 			return $this->parent( $screen->post_type );

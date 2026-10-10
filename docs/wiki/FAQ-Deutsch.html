@@ -21,7 +21,7 @@
 <h3 id="was-bedeutet-ohne-erkannten-builder">Was bedeutet „Ohne erkannten Builder“?</h3>
 <p>Für keinen aktiven unterstützten Builder dieses Inhaltstyps wurde eine passende Datenregel gefunden. Das beweist nicht, dass die Seite Gutenberg verwendet.</p>
 <h3 id="werden-inaktive-builder-erkannt">Werden inaktive Builder erkannt?</h3>
-<p>In Version 1.1.0 noch nicht. Ihre verbliebenen Daten bilden keine erkannte Gruppe. Eine Bestandsaufnahme inaktiver Builder ist ein späteres Feature.</p>
+<p>Die Standardansichten erkennen nur aktive Builder. Öffne Builder-Werkzeuge und persönliche Ansichten → Inaktive Builder-Spuren prüfen für eine ausdrückliche rein lesende Prüfung bekannter inaktiver Signaturen. Sie beweist nicht die Darstellung im Frontend.</p>
 <h3 id="erkennt-das-plugin-builder-templates-auf-normalen-seiten">Erkennt das Plugin Builder-Templates auf normalen Seiten?</h3>
 <p>Nein. Die Erkennung basiert auf den eigenen Metadaten der Seite, nicht auf globalen Templates oder Theme-Builder-Bedingungen.</p>
 <h3 id="warum-erscheint-eine-leere-seite-unter-oxygen-oder-breakdance">Warum erscheint eine leere Seite unter Oxygen oder Breakdance?</h3>
@@ -71,5 +71,12 @@
 <h3 id="warum-sperrt-wp-admin-cleaner-die-bricks-seitenliste">Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?</h3>
 <p>WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der URL. Ist „Bricks → Erste Schritte“ ausgeblendet, trifft der Menüname <code>bricks</code> auch auf <code>edit.php?post_type=page&amp;builder=bricks</code> zu. Seit 1.1.0-rc2 ergänzt Builder List Pages automatisch <code>&amp;blp_view=1</code> am Ende seiner Listen-URLs. Suche und Filter bleiben erhalten, und die ausgeblendete Bricks-Menüseite bleibt gesperrt. Admin Cleaner kann aktiv bleiben.</p>
 <h3 id="was-passiert-beim-deaktivieren-oder-deinstallieren">Was passiert beim Deaktivieren oder Deinstallieren?</h3>
-<p>Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt.</p>
+<p>Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen, persönlichen Ansichten/Anzeigepräferenzen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt.</p>
+<h2 id="neue-werkzeuge-und-persönliche-ansichten">Neue Werkzeuge und persönliche Ansichten</h2>
+<h3 id="wo-werden-persönliche-ansichten-gespeichert">Wo werden persönliche Ansichten gespeichert?</h3>
+<p>In deinen Benutzer-Metadaten mit einem getrennten Schlüssel je Website. Andere Benutzer erhalten deine Favoriten nicht. Deaktivierung und Deinstallation erhalten sie; lösche einen Favoriten im Werkzeugbereich.</p>
+<h3 id="was-beweist-die-prüfung-inaktiver-spuren">Was beweist die Prüfung inaktiver Spuren?</h3>
+<p>Nur, dass eine bekannte Metadaten-Signatur vorhanden ist. Sie kann historisch oder leer sein und beweist nicht die Darstellung im Frontend. Die Prüfung verändert keine Inhalte.</p>
+<h3 id="was-enthält-die-csv">Was enthält die CSV?</h3>
+<p>Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft.</p>
 <footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0</p></footer></main></body></html>

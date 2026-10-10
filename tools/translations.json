@@ -962,5 +962,129 @@
   "Total readable items in this group, excluding trash. Search and other filters may show fewer results.": {
     "de_DE": "Alle für dich lesbaren Inhalte dieser Gruppe ohne Papierkorb. Suche und weitere Filter können weniger Ergebnisse anzeigen.",
     "de_DE_formal": "Alle für Sie lesbaren Inhalte dieser Gruppe ohne Papierkorb. Suche und weitere Filter können weniger Ergebnisse anzeigen."
+  },
+  "All builders": {
+    "de_DE": "Alle Builder",
+    "de_DE_formal": "Alle Builder"
+  },
+  "Apply view": {
+    "de_DE": "Ansicht anwenden",
+    "de_DE_formal": "Ansicht anwenden"
+  },
+  "Builder tools and personal views": {
+    "de_DE": "Builder-Werkzeuge und persönliche Ansichten",
+    "de_DE_formal": "Builder-Werkzeuge und persönliche Ansichten"
+  },
+  "Builder view": {
+    "de_DE": "Builder-Ansicht",
+    "de_DE_formal": "Builder-Ansicht"
+  },
+  "Check inactive builder traces": {
+    "de_DE": "Inaktive Builder-Spuren prüfen",
+    "de_DE_formal": "Inaktive Builder-Spuren prüfen"
+  },
+  "Delete view": {
+    "de_DE": "Ansicht löschen",
+    "de_DE_formal": "Ansicht löschen"
+  },
+  "Edit link": {
+    "de_DE": "Bearbeitungslink",
+    "de_DE_formal": "Bearbeitungslink"
+  },
+  "Edit with %s": {
+    "de_DE": "Mit %s bearbeiten",
+    "de_DE_formal": "Mit %s bearbeiten"
+  },
+  "Export selection as CSV": {
+    "de_DE": "Auswahl als CSV exportieren",
+    "de_DE_formal": "Auswahl als CSV exportieren"
+  },
+  "Filter by %s": {
+    "de_DE": "Nach %s filtern",
+    "de_DE_formal": "Nach %s filtern"
+  },
+  "Multiple builders recognized": {
+    "de_DE": "Mehrere Builder erkannt",
+    "de_DE_formal": "Mehrere Builder erkannt"
+  },
+  "No matching items with these filters.": {
+    "de_DE": "Keine passenden Inhalte mit diesen Filtern.",
+    "de_DE_formal": "Keine passenden Inhalte mit diesen Filtern."
+  },
+  "Remove builder filter": {
+    "de_DE": "Builder-Filter aufheben",
+    "de_DE_formal": "Builder-Filter aufheben"
+  },
+  "Reset search": {
+    "de_DE": "Suche zurücksetzen",
+    "de_DE_formal": "Suche zurücksetzen"
+  },
+  "Save display choice": {
+    "de_DE": "Anzeige speichern",
+    "de_DE_formal": "Anzeige speichern"
+  },
+  "Save personal view": {
+    "de_DE": "Persönliche Ansicht speichern",
+    "de_DE_formal": "Persönliche Ansicht speichern"
+  },
+  "Status": {
+    "de_DE": "Status",
+    "de_DE_formal": "Status"
+  },
+  "Support diagnostics: select and copy": {
+    "de_DE": "Support-Diagnose: auswählen und kopieren",
+    "de_DE_formal": "Support-Diagnose: auswählen und kopieren"
+  },
+  "Title": {
+    "de_DE": "Titel",
+    "de_DE_formal": "Titel"
+  },
+  "Use compact builder selection for my account": {
+    "de_DE": "Kompakte Builder-Auswahl für mein Benutzerkonto verwenden",
+    "de_DE_formal": "Kompakte Builder-Auswahl für mein Benutzerkonto verwenden"
+  },
+  "View name": {
+    "de_DE": "Name der Ansicht",
+    "de_DE_formal": "Name der Ansicht"
+  },
+  "You cannot access this content type.": {
+    "de_DE": "Du kannst auf diesen Inhaltstyp nicht zugreifen.",
+    "de_DE_formal": "Sie können auf diesen Inhaltstyp nicht zugreifen."
+  },
+  "inactive trace": {
+    "de_DE": "inaktive Spur",
+    "de_DE_formal": "inaktive Spur"
+  },
+  "Builder groups can overlap. An existing metadata field can count even when empty. Recognition describes stored signatures, not frontend rendering or global templates.": {
+    "de_DE": "Builder-Gruppen können sich überschneiden. Ein vorhandenes Metadatenfeld kann auch mit leerem Wert zählen. Die Erkennung beschreibt gespeicherte Signaturen, nicht die Darstellung im Frontend oder globale Templates.",
+    "de_DE_formal": "Builder-Gruppen können sich überschneiden. Ein vorhandenes Metadatenfeld kann auch mit leerem Wert zählen. Die Erkennung beschreibt gespeicherte Signaturen, nicht die Darstellung im Frontend oder globale Templates."
+  },
+  "CSV exports this builder, status and search selection, up to 5,000 readable items. Other list filters are not included.": {
+    "de_DE": "Die CSV enthält diese Auswahl nach Builder, Status und Suche mit bis zu 5.000 lesbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt.",
+    "de_DE_formal": "Die CSV enthält diese Auswahl nach Builder, Status und Suche mit bis zu 5.000 lesbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt."
+  },
+  "Read-only audit: these items contain known signatures from inactive builders. A trace does not prove which builder renders the page. No content is changed.": {
+    "de_DE": "Rein lesende Prüfung: Diese Inhalte enthalten bekannte Signaturen inaktiver Builder. Eine Spur beweist nicht, welcher Builder die Seite darstellt. Inhalte werden nicht verändert.",
+    "de_DE_formal": "Rein lesende Prüfung: Diese Inhalte enthalten bekannte Signaturen inaktiver Builder. Eine Spur beweist nicht, welcher Builder die Seite darstellt. Inhalte werden nicht verändert."
+  },
+  "Show items without a recognized active builder": {
+    "de_DE": "Inhalte ohne erkannten aktiven Builder zeigen",
+    "de_DE_formal": "Inhalte ohne erkannten aktiven Builder zeigen"
+  },
+  "You can save up to 20 personal views. Delete a view before adding another.": {
+    "de_DE": "Du kannst bis zu 20 persönliche Ansichten speichern. Lösche eine Ansicht, bevor du eine weitere hinzufügst.",
+    "de_DE_formal": "Sie können bis zu 20 persönliche Ansichten speichern. Löschen Sie eine Ansicht, bevor Sie eine weitere hinzufügen."
+  },
+  "Recognition details": {
+    "de_DE": "Details zur Erkennung",
+    "de_DE_formal": "Details zur Erkennung"
+  },
+  "Contains an empty value": {
+    "de_DE": "Enthält einen leeren Wert",
+    "de_DE_formal": "Enthält einen leeren Wert"
+  },
+  "Stored signature matched": {
+    "de_DE": "Gespeicherte Signatur erkannt",
+    "de_DE_formal": "Gespeicherte Signatur erkannt"
   }
 }

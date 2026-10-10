@@ -29,6 +29,7 @@ define( 'BLP_PLUGIN_DIR', __DIR__ . '/' );
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-registry.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-query.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-admin.php';
+require_once BLP_PLUGIN_DIR . 'includes/class-blp-workflows.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-settings.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-github-updates.php';
 add_action( 'init',
@@ -52,6 +53,7 @@ static function (): void {
 	$settings = new \Deckerweb\BuilderListPages\Settings();
 	( new \Deckerweb\BuilderListPages\Admin( $registry, $query, $settings ) )->register();
 	$settings->register();
+	( new \Deckerweb\BuilderListPages\Workflows( $registry, $query ) )->register();
 	( new \Deckerweb\BuilderListPages\GitHubUpdates() )->register();
 } );
 require_once BLP_PLUGIN_DIR . 'includes/deckerweb-plugin-library/bootstrap.php';

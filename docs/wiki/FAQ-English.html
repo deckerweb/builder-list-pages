@@ -21,7 +21,7 @@
 <h3 id="what-does-no-recognized-builder-mean">What does “No recognized builder” mean?</h3>
 <p>No configured condition matched among active supported builders enabled for this post type. It does not prove the page uses Gutenberg.</p>
 <h3 id="are-inactive-builders-detected">Are inactive builders detected?</h3>
-<p>No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included.</p>
+<p>The default views recognize active builders only. Open Builder tools and personal views → Check inactive builder traces for an explicit read-only audit of known inactive signatures. It does not prove frontend rendering.</p>
 <h3 id="does-it-recognize-builder-templates-applied-to-normal-pages">Does it recognize builder templates applied to normal pages?</h3>
 <p>No. Recognition is based on the page’s own metadata, not on global templates or theme-builder conditions.</p>
 <h3 id="why-can-an-empty-page-still-appear-under-oxygen-or-breakdance">Why can an empty page still appear under Oxygen or Breakdance?</h3>
@@ -71,5 +71,12 @@
 <h3 id="why-does-wp-admin-cleaner-block-the-bricks-page-list">Why does WP Admin Cleaner block the Bricks page list?</h3>
 <p>WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its <code>bricks</code> slug also match <code>edit.php?post_type=page&amp;builder=bricks</code>. Builder List Pages automatically appends <code>&amp;blp_view=1</code> to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.</p>
 <h3 id="what-happens-when-i-deactivate-or-uninstall-it">What happens when I deactivate or uninstall it?</h3>
-<p>Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.</p>
+<p>Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings, personal views/display preferences and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.</p>
+<h2 id="new-tools-and-personal-views">New tools and personal views</h2>
+<h3 id="where-are-personal-views-stored">Where are personal views stored?</h3>
+<p>In your user metadata with a separate key for each site. Other users do not receive your favorites. Deactivation and uninstall retain them; delete a favorite from the tools panel.</p>
+<h3 id="what-does-the-inactive-trace-audit-prove">What does the inactive trace audit prove?</h3>
+<p>Only that a known metadata signature is present. It can be historical or empty and does not prove frontend rendering. The audit never changes content.</p>
+<h3 id="what-is-included-in-the-csv">What is included in the CSV?</h3>
+<p>Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized.</p>
 <footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0</p></footer></main></body></html>

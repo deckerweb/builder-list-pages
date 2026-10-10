@@ -44,7 +44,7 @@ No configured condition matched among active supported builders enabled for this
 
 ### Are inactive builders detected?
 
-No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included.
+The default views recognize active builders only. Open Builder tools and personal views → Check inactive builder traces for an explicit read-only audit of known inactive signatures. It does not prove frontend rendering.
 
 ### Does it recognize builder templates applied to normal pages?
 
@@ -144,4 +144,18 @@ WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. H
 
 ### What happens when I deactivate or uninstall it?
 
-Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.
+Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings, personal views/display preferences and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.
+
+## New tools and personal views
+
+### Where are personal views stored?
+
+In your user metadata with a separate key for each site. Other users do not receive your favorites. Deactivation and uninstall retain them; delete a favorite from the tools panel.
+
+### What does the inactive trace audit prove?
+
+Only that a known metadata signature is present. It can be historical or empty and does not prove frontend rendering. The audit never changes content.
+
+### What is included in the CSV?
+
+Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized.

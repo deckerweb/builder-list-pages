@@ -2,7 +2,7 @@
   "version": "1.1.0",
   "languages": {
     "en": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1544x500.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "At a glance",
@@ -14,7 +14,7 @@
         ],
         [
           "Builders and recognition",
-          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer retains the free edition’s page/post scope. Astra and OceanWP post types retain their special menu navigation when available.\n\nRecognition reads existing metadata for active supported builders enabled on the post type. “No recognized builder” does not automatically mean Gutenberg. Inactive-builder data and global template assignments are not analyzed. Existence-based integrations retain their previous semantics even for empty values.\n\nCounts describe the complete readable group outside trash, including unpublished content. Search and other list filters can reduce visible results. Builder groups can overlap."
+          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer retains the free edition’s page/post scope. Astra and OceanWP post types retain their special menu navigation when available.\n\nRecognition reads existing metadata for active supported builders enabled on the post type. “No recognized builder” does not automatically mean Gutenberg. The default views recognize active builders; the optional trace view checks inactive signatures. Global template assignments are not analyzed. Existence-based integrations retain their previous semantics even for empty values.\n\nCounts describe the complete readable group outside trash, including unpublished content. Search and other list filters can reduce visible results. Builder groups can overlap."
         ],
         [
           "Settings",
@@ -23,6 +23,10 @@
         [
           "Updates and Library",
           "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.1.0. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 0.9.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
+        ],
+        [
+          "New tools and personal views",
+          "The **Multiple builders recognized** view collects content with at least two distinct active builder signatures. Duplicate copies of the same metadata field count once.\n\nOpen **Builder tools and personal views** above the native content list to select a view, save a named favorite, switch to a compact selector, inspect inactive builder traces, copy diagnostics or export a CSV. The tools remain collapsed by default; existing builder views remain the default. Bricks badges provide a separate editor link only when native Bricks permissions allow it.\n\n**Inactive traces:** the optional read-only view checks known metadata signatures even when the corresponding builder is inactive. It does not activate builders, change content or prove which builder renders the frontend. Empty fields can count for existence-based signatures. Active builders disabled for a post type are not classified as inactive.\n\n**Personal favorites:** save post type, builder, status and search for your own account on this site. Save the same name to update a favorite; up to 20 names are supported. Opening a favorite rechecks your access. Delete favorites individually; deactivation and uninstall retain them.\n\n**Diagnostics:** select and copy the local text containing plugin, WordPress and PHP versions, supported active builder names and accessible post types. It omits website URLs, usernames, credentials and page contents. Nothing is automatically sent.\n\n**CSV:** download title, status, recognized builders and edit link for the explicitly displayed builder/status/search selection, up to 5,000 readable and editable items. Other list filters are not included; the tool states this before download. CSV formulas are neutralized. Edit links contain the site URL, so the CSV is intended for a trusted handover, unlike the minimal support diagnostics.\n\nAn empty builder result explains the current builder, search and status. **Reset search** or **Remove builder filter** clears that one restriction while preserving the post type and other list filters.\n\nOpen **Recognition details** in a row to see the matched metadata field names and whether an empty value exists. No metadata values or builder content are displayed."
         ],
         [
           "About",
@@ -34,7 +38,7 @@
         ],
         [
           "License and included components",
-          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 0.9.0 and deckerweb Updater 2.1.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe existing banners and icon use native SVG shapes with solid fills and transparency; banners contain live system-font text, with no embedded font or raster files. PNG assets are local derivatives of the approved artwork."
+          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 0.9.0 and deckerweb Updater 2.1.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files."
         ]
       ],
       "faq": [
@@ -84,7 +88,7 @@
             ],
             [
               "Are inactive builders detected?",
-              "No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included."
+              "The default views recognize active builders only. Open Builder tools and personal views → Check inactive builder traces for an explicit read-only audit of known inactive signatures. It does not prove frontend rendering."
             ],
             [
               "Does it recognize builder templates applied to normal pages?",
@@ -190,7 +194,24 @@
             ],
             [
               "What happens when I deactivate or uninstall it?",
-              "Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed."
+              "Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings, personal views/display preferences and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed."
+            ]
+          ]
+        ],
+        [
+          "New tools and personal views",
+          [
+            [
+              "Where are personal views stored?",
+              "In your user metadata with a separate key for each site. Other users do not receive your favorites. Deactivation and uninstall retain them; delete a favorite from the tools panel."
+            ],
+            [
+              "What does the inactive trace audit prove?",
+              "Only that a known metadata signature is present. It can be historical or empty and does not prove frontend rendering. The audit never changes content."
+            ],
+            [
+              "What is included in the CSV?",
+              "Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized."
             ]
           ]
         ]
@@ -206,7 +227,7 @@
       ]
     },
     "de": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1544x500.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1280x640.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "Auf einen Blick",
@@ -229,6 +250,10 @@
           "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.1.0 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 0.9.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
         ],
         [
+          "Neue Werkzeuge und persönliche Ansichten",
+          "Die Ansicht **Mehrere Builder erkannt** sammelt Inhalte mit mindestens zwei unterschiedlichen Signaturen aktiver Builder. Doppelte Kopien desselben Metadatenfelds zählen einmal.\n\nÖffne **Builder-Werkzeuge und persönliche Ansichten** oberhalb der normalen Inhaltsliste, um eine Ansicht auszuwählen, einen benannten Favoriten zu speichern, zur kompakten Auswahl zu wechseln, inaktive Builder-Spuren zu prüfen, Diagnosedaten zu kopieren oder eine CSV herunterzuladen. Die Werkzeuge bleiben standardmäßig zugeklappt; die bisherigen Builder-Ansichten bleiben Standard. Bricks-Kennzeichen bieten einen getrennten Bearbeitungslink, wenn die eigenen Bricks-Berechtigungen ihn erlauben.\n\n**Inaktive Spuren:** Die optionale, rein lesende Ansicht prüft bekannte Metadaten-Signaturen auch bei deaktiviertem Builder. Sie aktiviert keine Builder, verändert keine Inhalte und beweist nicht, welcher Builder das Frontend darstellt. Bei existenzbasierter Erkennung können leere Felder zählen. Aktive Builder, die für einen Inhaltstyp abgeschaltet sind, gelten nicht als inaktiv.\n\n**Persönliche Favoriten:** Speichere Inhaltstyp, Builder, Status und Suche für dein Benutzerkonto auf dieser Website. Derselbe Name aktualisiert einen Favoriten; bis zu 20 Namen werden unterstützt. Beim Öffnen werden deine Rechte erneut geprüft. Favoriten lassen sich einzeln löschen; Deaktivierung und Deinstallation erhalten sie.\n\n**Diagnose:** Wähle den lokalen Text aus und kopiere ihn. Er enthält Plugin-, WordPress- und PHP-Version, Namen unterstützter aktiver Builder und zugängliche Inhaltstypen. Website-URLs, Benutzernamen, Zugangsdaten und Seiteninhalte fehlen. Es wird nichts automatisch gesendet.\n\n**CSV:** Lade Titel, Status, erkannte Builder und Bearbeitungslink für die ausdrücklich angezeigte Auswahl nach Builder/Status/Suche herunter, mit bis zu 5.000 lesbaren und bearbeitbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt; der Hinweis steht vor dem Download. Tabellenformeln werden entschärft. Bearbeitungslinks enthalten die Website-URL; die CSV ist für eine vertrauliche Übergabe gedacht, im Unterschied zur sparsamen Support-Diagnose.\n\nEin leeres Builder-Ergebnis erklärt Builder, Suche und Status. **Suche zurücksetzen** oder **Builder-Filter aufheben** entfernt nur diese Einschränkung und erhält Inhaltstyp und weitere Listenfilter.\n\nÖffne **Details zur Erkennung** in einer Zeile, um die Namen erkannter Metadatenfelder und einen Hinweis auf leere Werte zu sehen. Metadatenwerte und Builder-Inhalte werden nicht angezeigt."
+        ],
+        [
           "Über das Projekt",
           "Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden."
         ],
@@ -238,7 +263,7 @@
         ],
         [
           "Lizenz und enthaltene Komponenten",
-          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 0.9.0 und deckerweb Updater 2.1.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nDie bestehenden Banner und das Icon bestehen aus nativen SVG-Formen mit Volltonfarben und Transparenz. Banner enthalten lebenden Systemschrift-Text, ohne eingebettete Schrift- oder Rasterdateien. PNG-Dateien sind lokale Ableitungen der freigegebenen Grafik."
+          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 0.9.0 und deckerweb Updater 2.1.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nBanner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](assets/Inter-OFL.txt) liegt ohne Fontdateien bei."
         ]
       ],
       "faq": [
@@ -288,7 +313,7 @@
             ],
             [
               "Werden inaktive Builder erkannt?",
-              "In Version 1.1.0 noch nicht. Ihre verbliebenen Daten bilden keine erkannte Gruppe. Eine Bestandsaufnahme inaktiver Builder ist ein späteres Feature."
+              "Die Standardansichten erkennen nur aktive Builder. Öffne Builder-Werkzeuge und persönliche Ansichten → Inaktive Builder-Spuren prüfen für eine ausdrückliche rein lesende Prüfung bekannter inaktiver Signaturen. Sie beweist nicht die Darstellung im Frontend."
             ],
             [
               "Erkennt das Plugin Builder-Templates auf normalen Seiten?",
@@ -394,7 +419,24 @@
             ],
             [
               "Was passiert beim Deaktivieren oder Deinstallieren?",
-              "Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt."
+              "Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen, persönlichen Ansichten/Anzeigepräferenzen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt."
+            ]
+          ]
+        ],
+        [
+          "Neue Werkzeuge und persönliche Ansichten",
+          [
+            [
+              "Wo werden persönliche Ansichten gespeichert?",
+              "In deinen Benutzer-Metadaten mit einem getrennten Schlüssel je Website. Andere Benutzer erhalten deine Favoriten nicht. Deaktivierung und Deinstallation erhalten sie; lösche einen Favoriten im Werkzeugbereich."
+            ],
+            [
+              "Was beweist die Prüfung inaktiver Spuren?",
+              "Nur, dass eine bekannte Metadaten-Signatur vorhanden ist. Sie kann historisch oder leer sein und beweist nicht die Darstellung im Frontend. Die Prüfung verändert keine Inhalte."
+            ],
+            [
+              "Was enthält die CSV?",
+              "Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft."
             ]
           ]
         ]
@@ -412,6 +454,27 @@
   },
   "history": {
     "en": [
+      [
+        "Unreleased · 2026-10-10",
+        [
+          [
+            "New",
+            "Adds a multiple-builder filter, optional inactive-trace audit, personal saved views, compact user display choice, minimal copyable diagnostics and an explicit CSV handover export."
+          ],
+          [
+            "Improved",
+            "Explains empty results with independent search/builder recovery and clearer badge actions; adds permission-checked native Bricks editor links."
+          ],
+          [
+            "Improved",
+            "Preserves personal favorites and preferences across deactivation and uninstall; limits exports to permitted items and neutralizes spreadsheet formulas."
+          ],
+          [
+            "Improved",
+            "Updates bilingual banners and icons using the approved blue-petrol vector artwork and local Inter font outlines with the font license."
+          ]
+        ]
+      ],
       [
         "1.1.0 · 2026-10-01",
         [
@@ -484,6 +547,27 @@
       ]
     ],
     "de": [
+      [
+        "Unveröffentlicht · 2026-10-10",
+        [
+          [
+            "Neu",
+            "Ergänzt einen Mehrfach-Builder-Filter, optionale Prüfung inaktiver Spuren, persönliche gespeicherte Ansichten, kompakte Benutzerauswahl, sparsame kopierbare Diagnose und einen ausdrücklichen CSV-Export für Übergaben."
+          ],
+          [
+            "Verbessert",
+            "Erklärt leere Ergebnisse mit getrenntem Zurücksetzen von Suche und Builder sowie klareren Kennzeichen-Aktionen; ergänzt normale Bricks-Bearbeitungslinks mit Rechteprüfung."
+          ],
+          [
+            "Verbessert",
+            "Erhält persönliche Favoriten und Anzeigepräferenzen bei Deaktivierung und Deinstallation; begrenzt Exporte auf erlaubte Inhalte und entschärft Tabellenformeln."
+          ],
+          [
+            "Verbessert",
+            "Aktualisiert zweisprachige Banner und Icons mit der freigegebenen blaupetrolfarbenen Vektorgestaltung und lokalen Inter-Schriftpfaden samt Schriftlizenz."
+          ]
+        ]
+      ],
       [
         "1.1.0 · 2026-10-01",
         [

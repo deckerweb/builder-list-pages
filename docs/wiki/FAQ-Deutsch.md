@@ -44,7 +44,7 @@ Für keinen aktiven unterstützten Builder dieses Inhaltstyps wurde eine passend
 
 ### Werden inaktive Builder erkannt?
 
-In Version 1.1.0 noch nicht. Ihre verbliebenen Daten bilden keine erkannte Gruppe. Eine Bestandsaufnahme inaktiver Builder ist ein späteres Feature.
+Die Standardansichten erkennen nur aktive Builder. Öffne Builder-Werkzeuge und persönliche Ansichten → Inaktive Builder-Spuren prüfen für eine ausdrückliche rein lesende Prüfung bekannter inaktiver Signaturen. Sie beweist nicht die Darstellung im Frontend.
 
 ### Erkennt das Plugin Builder-Templates auf normalen Seiten?
 
@@ -144,4 +144,18 @@ WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der 
 
 ### Was passiert beim Deaktivieren oder Deinstallieren?
 
-Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt.
+Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen, persönlichen Ansichten/Anzeigepräferenzen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt.
+
+## Neue Werkzeuge und persönliche Ansichten
+
+### Wo werden persönliche Ansichten gespeichert?
+
+In deinen Benutzer-Metadaten mit einem getrennten Schlüssel je Website. Andere Benutzer erhalten deine Favoriten nicht. Deaktivierung und Deinstallation erhalten sie; lösche einen Favoriten im Werkzeugbereich.
+
+### Was beweist die Prüfung inaktiver Spuren?
+
+Nur, dass eine bekannte Metadaten-Signatur vorhanden ist. Sie kann historisch oder leer sein und beweist nicht die Darstellung im Frontend. Die Prüfung verändert keine Inhalte.
+
+### Was enthält die CSV?
+
+Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft.

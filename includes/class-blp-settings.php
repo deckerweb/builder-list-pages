@@ -93,13 +93,13 @@ final class Settings {
 	public function render(): void {
 		if ( ! current_user_can( 'manage_options' ) ) { return; }
 		$wiki = plugins_url( $this->german() ? 'docs/wiki/Deutsch.html' : 'docs/wiki/English.html', BLP_PLUGIN_FILE );
-		echo '<div class="wrap blp-root"><header class="blp-header"><img src="' . esc_url( plugins_url( 'assets/icon.svg', BLP_PLUGIN_FILE ) ) . '" width="56" height="56" alt=""><div><h1>Builder List Pages</h1><p>' . esc_html__( 'Your pages. Your builders. One clear overview.', 'builder-list-pages' ) . '</p></div></header>';
+		echo '<div class="wrap blp-root"><header class="blp-header"><img src="' . esc_url( plugins_url( 'assets/icon.svg', BLP_PLUGIN_FILE ) ) . '" width="56" height="56" alt=""><div><h1>Builder List Pages</h1><p>' . esc_html__( 'Your pages. Your builders. One clear overview.', 'builder-list-pages' ) . '</p></div></header><hr class="wp-header-end">';
 		echo '<section class="blp-card"><h2>' . esc_html__( 'Find your pages faster', 'builder-list-pages' ) . '</h2><p>' . esc_html__( 'Open Pages or another supported content list. Click a builder above the table to filter, or use its name in the Builder column.', 'builder-list-pages' ) . '</p><form method="post" action="options.php">';
 		if ( ! ( new Registry() )->post_types() ) {
 			echo '<p class="description">' . esc_html__( 'No supported builder is available for an editable content type on this site. Activate a supported builder and enable it for Pages or another content type.', 'builder-list-pages' ) . '</p>';
 		}
 		settings_fields( 'blp_settings' );
-		$labels = [ 'show_column' => __( 'Show the Builder column', 'builder-list-pages' ), 'show_submenus' => __( 'Show builder links in post-type menus', 'builder-list-pages' ), 'show_none' => __( 'Show the “No recognized builder” filter', 'builder-list-pages' ) ];
+		$labels = [ 'show_column' => __( 'Show the Builder column in the Post Table (Overview)', 'builder-list-pages' ), 'show_submenus' => __( 'Show builder links in post-type admin menus', 'builder-list-pages' ), 'show_none' => __( 'Show the “No recognized builder” filter', 'builder-list-pages' ) ];
 		foreach ( $labels as $key => $label ) {
 			echo '<p><label><input type="checkbox" name="blp_settings[' . esc_attr( $key ) . ']" value="1" ' . checked( self::enabled( $key ), true, false ) . '> ' . esc_html( $label ) . '</label></p>';
 		}

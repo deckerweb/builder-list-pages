@@ -794,8 +794,8 @@ msgid "Shop"
 msgstr "Shop"
 
 #: includes/class-blp-settings.php:102
-msgid "Show builder links in post-type menus"
-msgstr "Builder-Links in den Menüs der Inhaltstypen anzeigen"
+msgid "Show builder links in post-type admin menus"
+msgstr "Builder-Links in den Admin-Menüs der Inhaltstypen anzeigen"
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Show deckerweb under Add Plugins"
@@ -806,8 +806,8 @@ msgid "Show items without a recognized active builder"
 msgstr "Inhalte ohne erkannten aktiven Builder zeigen"
 
 #: includes/class-blp-settings.php:102
-msgid "Show the Builder column"
-msgstr "Builder-Spalte anzeigen"
+msgid "Show the Builder column in the Post Table (Overview)"
+msgstr "Builder-Spalte in der Beitrags-Tabelle (Übersicht) anzeigen"
 
 #: includes/class-blp-settings.php:102
 msgid "Show the “No recognized builder” filter"

@@ -8,6 +8,7 @@
 - **Improved:** Explains empty results with independent search/builder recovery and clearer badge actions; adds permission-checked native Bricks editor links.
 - **Improved:** Preserves personal favorites and preferences across deactivation and uninstall; limits exports to permitted items and neutralizes spreadsheet formulas.
 - **Improved:** Updates bilingual banners and icons using the approved blue-petrol vector artwork and local Inter font outlines with the font license.
+- **Fixed:** Places native admin notices below the complete settings header and clarifies the column and post-type admin menu labels.
 
 ## 1.1.0 · 2026-10-01
 

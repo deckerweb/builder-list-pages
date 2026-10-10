@@ -887,14 +887,6 @@
     "de_DE": "Einstellungen",
     "de_DE_formal": "Einstellungen"
   },
-  "Show builder links in post-type menus": {
-    "de_DE": "Builder-Links in den Menüs der Inhaltstypen anzeigen",
-    "de_DE_formal": "Builder-Links in den Menüs der Inhaltstypen anzeigen"
-  },
-  "Show the Builder column": {
-    "de_DE": "Builder-Spalte anzeigen",
-    "de_DE_formal": "Builder-Spalte anzeigen"
-  },
   "Show the “No recognized builder” filter": {
     "de_DE": "Filter „Ohne erkannten Builder“ anzeigen",
     "de_DE_formal": "Filter „Ohne erkannten Builder“ anzeigen"
@@ -1086,5 +1078,13 @@
   "Stored signature matched": {
     "de_DE": "Gespeicherte Signatur erkannt",
     "de_DE_formal": "Gespeicherte Signatur erkannt"
+  },
+  "Show the Builder column in the Post Table (Overview)": {
+    "de_DE": "Builder-Spalte in der Beitrags-Tabelle (Übersicht) anzeigen",
+    "de_DE_formal": "Builder-Spalte in der Beitrags-Tabelle (Übersicht) anzeigen"
+  },
+  "Show builder links in post-type admin menus": {
+    "de_DE": "Builder-Links in den Admin-Menüs der Inhaltstypen anzeigen",
+    "de_DE_formal": "Builder-Links in den Admin-Menüs der Inhaltstypen anzeigen"
   }
 }

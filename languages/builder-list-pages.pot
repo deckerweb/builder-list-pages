@@ -786,7 +786,7 @@ msgid "Shop"
 msgstr ""
 
 #: includes/class-blp-settings.php:102
-msgid "Show builder links in post-type menus"
+msgid "Show builder links in post-type admin menus"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -798,7 +798,7 @@ msgid "Show items without a recognized active builder"
 msgstr ""
 
 #: includes/class-blp-settings.php:102
-msgid "Show the Builder column"
+msgid "Show the Builder column in the Post Table (Overview)"
 msgstr ""
 
 #: includes/class-blp-settings.php:102

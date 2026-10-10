@@ -10,7 +10,7 @@ $context = [ 'plugin' => 'builder-list-pages/builder-list-pages.php', 'type' => 
 $dir = get_temp_dir() . 'blp-update-safety-' . wp_generate_password( 8, false );
 mkdir( $dir );
 $initial = get_site_transient( 'update_plugins' );
-set_site_transient( 'update_plugins', (object) [ 'response' => [ $context['plugin'] => (object) [ 'new_version' => '1.1.1' ] ] ] );
+set_site_transient( 'update_plugins', (object) [ 'response' => [ $context['plugin'] => (object) [ 'new_version' => '1.2.1' ] ] ] );
 /**
  * Verify the expected candidate outcome without executing candidate PHP.
  * @param Deckerweb\BuilderListPages\GitHubUpdates $adapter Host update validator.
@@ -21,7 +21,7 @@ set_site_transient( 'update_plugins', (object) [ 'response' => [ $context['plugi
  * @return void Throws on a wrong result and prints each passing case.
  */
 function blp_update_case( $adapter, string $dir, array $context, array $headers, ?string $error ): void {
- $headers += [ 'Plugin Name' => 'Builder List Pages', 'Version' => '1.1.1', 'Update URI' => 'https://github.com/deckerweb/builder-list-pages', 'Requires PHP' => '8.0', 'Requires at least' => '6.7' ];
+ $headers += [ 'Plugin Name' => 'Builder List Pages', 'Version' => '1.2.1', 'Update URI' => 'https://github.com/deckerweb/builder-list-pages', 'Requires PHP' => '8.0', 'Requires at least' => '6.7' ];
  $text = "<?php\n/**\n";
  foreach ( $headers as $key => $value ) { $text .= ' * ' . $key . ': ' . $value . "\n"; }
  file_put_contents( $dir . '/builder-list-pages.php', $text . " */\n" );
@@ -34,8 +34,8 @@ try {
  blp_update_case( $adapter, $dir, $context, [ 'Plugin Name' => 'Different plugin' ], 'blp_update_identity' );
  blp_update_case( $adapter, $dir, $context, [ 'Update URI' => 'https://evil.example/plugin' ], 'blp_update_identity' );
  blp_update_case( $adapter, $dir, $context, [ 'Version' => '1.0.0' ], 'blp_update_identity' );
- blp_update_case( $adapter, $dir, $context, [ 'Version' => '1.1.1-rc1' ], 'blp_update_identity' );
- blp_update_case( $adapter, $dir, $context, [ 'Version' => '1.1.2' ], 'blp_update_version' );
+ blp_update_case( $adapter, $dir, $context, [ 'Version' => '1.2.1-rc1' ], 'blp_update_identity' );
+ blp_update_case( $adapter, $dir, $context, [ 'Version' => '1.2.2' ], 'blp_update_version' );
  blp_update_case( $adapter, $dir, $context, [ 'Requires PHP' => '' ], 'blp_update_requirements' );
  blp_update_case( $adapter, $dir, $context, [ 'Requires PHP' => '99.0' ], 'blp_update_compatibility' );
  blp_update_case( $adapter, $dir, $context, [ 'Requires at least' => '99.0' ], 'blp_update_compatibility' );

@@ -3,7 +3,7 @@ Contributors: deckerweb
 Tags: admin, pages, page builder, filter, post types
 Requires at least: 6.7
 Requires PHP: 8.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,13 +119,16 @@ Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporäre
 
 == Changelog ==
 
-= Unveröffentlicht · 2026-10-10 =
+= 1.2.0 · 2026-10-10 =
 
 * Neu: Ergänzt einen Mehrfach-Builder-Filter, optionale Prüfung inaktiver Spuren, persönliche gespeicherte Ansichten, kompakte Benutzerauswahl, sparsame kopierbare Diagnose und einen ausdrücklichen CSV-Export für Übergaben.
 * Verbessert: Erklärt leere Ergebnisse mit getrenntem Zurücksetzen von Suche und Builder sowie klareren Kennzeichen-Aktionen; ergänzt normale Bricks-Bearbeitungslinks mit Rechteprüfung.
 * Verbessert: Erhält persönliche Favoriten und Anzeigepräferenzen bei Deaktivierung und Deinstallation; begrenzt Exporte auf erlaubte Inhalte und entschärft Tabellenformeln.
 * Verbessert: Aktualisiert zweisprachige Banner und Icons mit der freigegebenen blaupetrolfarbenen Vektorgestaltung und lokalen Inter-Schriftpfaden samt Schriftlizenz.
+* Verbessert: Integriert deckerweb Library 0.9.0 und Updater 2.1.0 mit vollständigen deutschen Du-/Sie-Übersetzungen im Host und synchroner lokaler Dokumentation.
+* Verbessert: Zeigt das Plugin-Icon einmal im Einstellungsheader; Version, Dokumentation und Autorenangaben bleiben im Footer.
 * Behoben: Ordnet normale Admin-Hinweise unter dem vollständigen Einstellungsheader ein und präzisiert die Beschriftungen für Spalte und Admin-Menüs der Inhaltstypen.
+* Sonstiges: Erhält bestehende Website-Einstellungen, Builder-Inhalte und Mindestanforderungen; liefert die lokale Inter-Schriftlizenz mit.
 
 = 1.1.0 · 2026-10-01 =
 

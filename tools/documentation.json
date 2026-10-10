@@ -1,8 +1,8 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "languages": {
     "en": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.2.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "At a glance",
@@ -227,7 +227,7 @@
       ]
     },
     "de": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1280x640.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1280x640.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.2.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "Auf einen Blick",
@@ -455,7 +455,7 @@
   "history": {
     "en": [
       [
-        "Unreleased · 2026-10-10",
+        "1.2.0 · 2026-10-10",
         [
           [
             "New",
@@ -474,8 +474,20 @@
             "Updates bilingual banners and icons using the approved blue-petrol vector artwork and local Inter font outlines with the font license."
           ],
           [
+            "Improved",
+            "Integrates deckerweb Library 0.9.0 and Updater 2.1.0 with complete German informal/formal host translations and synchronized local documentation."
+          ],
+          [
+            "Improved",
+            "Displays the plugin icon once in the settings header; keeps version, documentation and author information in the footer."
+          ],
+          [
             "Fixed",
             "Places native admin notices below the complete settings header and clarifies the column and post-type admin menu labels."
+          ],
+          [
+            "Misc",
+            "Preserves existing site settings, builder content and minimum requirements; includes the local Inter font license."
           ]
         ]
       ],
@@ -552,7 +564,7 @@
     ],
     "de": [
       [
-        "Unveröffentlicht · 2026-10-10",
+        "1.2.0 · 2026-10-10",
         [
           [
             "Neu",
@@ -571,8 +583,20 @@
             "Aktualisiert zweisprachige Banner und Icons mit der freigegebenen blaupetrolfarbenen Vektorgestaltung und lokalen Inter-Schriftpfaden samt Schriftlizenz."
           ],
           [
+            "Verbessert",
+            "Integriert deckerweb Library 0.9.0 und Updater 2.1.0 mit vollständigen deutschen Du-/Sie-Übersetzungen im Host und synchroner lokaler Dokumentation."
+          ],
+          [
+            "Verbessert",
+            "Zeigt das Plugin-Icon einmal im Einstellungsheader; Version, Dokumentation und Autorenangaben bleiben im Footer."
+          ],
+          [
             "Behoben",
             "Ordnet normale Admin-Hinweise unter dem vollständigen Einstellungsheader ein und präzisiert die Beschriftungen für Spalte und Admin-Menüs der Inhaltstypen."
+          ],
+          [
+            "Sonstiges",
+            "Erhält bestehende Website-Einstellungen, Builder-Inhalte und Mindestanforderungen; liefert die lokale Inter-Schriftlizenz mit."
           ]
         ]
       ],

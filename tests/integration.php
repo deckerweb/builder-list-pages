@@ -22,6 +22,7 @@ function check($condition,$message) { global $checks; ++$checks; if(!$condition)
 /** Surface PHP diagnostics as failing tests. @param int $severity PHP severity. @param string $message Diagnostic. @param string $file Source file. @param int $line Source line. @return void */
 set_error_handler(function($severity,$message,$file,$line) { if(error_reporting() & $severity) throw new ErrorException($message,0,$severity,$file,$line); });
 wp_set_current_user(1);
+update_user_meta(1,Deckerweb\BuilderListPages\Workflows::key(),["compact"=>false,"views"=>[]]);
 foreach(get_posts(['post_type'=>['page','post'],'post_status'=>'any','numberposts'=>-1,'s'=>'BLP']) as $old) wp_delete_post($old->ID,true);
 foreach(get_posts(['post_type'=>['page','post'],'post_status'=>'trash','numberposts'=>-1,'s'=>'BLP']) as $old) wp_delete_post($old->ID,true);
 foreach(['ELEMENTOR_VERSION','BRICKS_VERSION','BRIZY_VERSION','CT_VERSION'] as $constant) { if(!defined($constant)) define($constant,'fixture'); }
@@ -130,9 +131,9 @@ check(function_exists('deckerweb_library_register') && isset($GLOBALS['deckerweb
 $updates=new Deckerweb\BuilderListPages\GitHubUpdates();
 $art=$updates->artwork();check(isset($art['icons']['svg'],$art['banners']['high']),'Updater receives local artwork');
 $cache='ddw_ghru_'.substr(md5('https://github.com/deckerweb/builder-list-pages'),0,24);
-set_site_transient($cache,['version'=>'1.1.1','package'=>'https://github.com/deckerweb/builder-list-pages/releases/download/v1.1.1/builder-list-pages-1.1.1.zip','notes'=>'Fixture','published'=>'2026-10-01'],60);
+set_site_transient($cache,['version'=>'1.2.1','package'=>'https://github.com/deckerweb/builder-list-pages/releases/download/v1.2.1/builder-list-pages-1.2.1.zip','notes'=>'Fixture','published'=>'2026-10-01'],60);
 $offer=apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION,'RequiresWP'=>'6.7','RequiresPHP'=>'8.0'],'builder-list-pages/builder-list-pages.php',[]);
-check(is_array($offer)&&$offer['version']==='1.1.1','Native updater offers a newer stable release');
+check(is_array($offer)&&$offer['version']==='1.2.1','Native updater offers a newer stable release');
 $unrelated=apply_filters('update_plugins_github.com',false,[],'other/other.php',[]);check($unrelated===false,'Updater leaves other plugins alone');
 set_site_transient($cache,['version'=>'1.0.0','package'=>'fixture','notes'=>'','published'=>''],60);
 check(apply_filters('update_plugins_github.com',false,['UpdateURI'=>'https://github.com/deckerweb/builder-list-pages','Version'=>BLP_VERSION],'builder-list-pages/builder-list-pages.php',[])===false,'Updater never downgrades installed version');

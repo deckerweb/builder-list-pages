@@ -4,7 +4,7 @@
 
 **Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.
 
-**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer
+**Version:** 1.2.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer
 
 [English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -112,13 +112,16 @@ Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporäre
 
 ## Changelog
 
-### Unveröffentlicht · 2026-10-10
+### 1.2.0 · 2026-10-10
 
 - **Neu:** Ergänzt einen Mehrfach-Builder-Filter, optionale Prüfung inaktiver Spuren, persönliche gespeicherte Ansichten, kompakte Benutzerauswahl, sparsame kopierbare Diagnose und einen ausdrücklichen CSV-Export für Übergaben.
 - **Verbessert:** Erklärt leere Ergebnisse mit getrenntem Zurücksetzen von Suche und Builder sowie klareren Kennzeichen-Aktionen; ergänzt normale Bricks-Bearbeitungslinks mit Rechteprüfung.
 - **Verbessert:** Erhält persönliche Favoriten und Anzeigepräferenzen bei Deaktivierung und Deinstallation; begrenzt Exporte auf erlaubte Inhalte und entschärft Tabellenformeln.
 - **Verbessert:** Aktualisiert zweisprachige Banner und Icons mit der freigegebenen blaupetrolfarbenen Vektorgestaltung und lokalen Inter-Schriftpfaden samt Schriftlizenz.
+- **Verbessert:** Integriert deckerweb Library 0.9.0 und Updater 2.1.0 mit vollständigen deutschen Du-/Sie-Übersetzungen im Host und synchroner lokaler Dokumentation.
+- **Verbessert:** Zeigt das Plugin-Icon einmal im Einstellungsheader; Version, Dokumentation und Autorenangaben bleiben im Footer.
 - **Behoben:** Ordnet normale Admin-Hinweise unter dem vollständigen Einstellungsheader ein und präzisiert die Beschriftungen für Spalte und Admin-Menüs der Inhaltstypen.
+- **Sonstiges:** Erhält bestehende Website-Einstellungen, Builder-Inhalte und Mindestanforderungen; liefert die lokale Inter-Schriftlizenz mit.
 
 ### 1.1.0 · 2026-10-01
 

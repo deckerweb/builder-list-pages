@@ -4,7 +4,7 @@
 
 **Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later
+**Version:** 1.2.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later
 
 [Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -112,13 +112,16 @@ Deactivation keeps all data. Uninstallation removes this plugin’s temporary up
 
 ## Changelog
 
-### Unreleased · 2026-10-10
+### 1.2.0 · 2026-10-10
 
 - **New:** Adds a multiple-builder filter, optional inactive-trace audit, personal saved views, compact user display choice, minimal copyable diagnostics and an explicit CSV handover export.
 - **Improved:** Explains empty results with independent search/builder recovery and clearer badge actions; adds permission-checked native Bricks editor links.
 - **Improved:** Preserves personal favorites and preferences across deactivation and uninstall; limits exports to permitted items and neutralizes spreadsheet formulas.
 - **Improved:** Updates bilingual banners and icons using the approved blue-petrol vector artwork and local Inter font outlines with the font license.
+- **Improved:** Integrates deckerweb Library 0.9.0 and Updater 2.1.0 with complete German informal/formal host translations and synchronized local documentation.
+- **Improved:** Displays the plugin icon once in the settings header; keeps version, documentation and author information in the footer.
 - **Fixed:** Places native admin notices below the complete settings header and clarifies the column and post-type admin menu labels.
+- **Misc:** Preserves existing site settings, builder content and minimum requirements; includes the local Inter font license.
 
 ### 1.1.0 · 2026-10-01
 

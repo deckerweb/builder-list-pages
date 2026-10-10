@@ -1,0 +1,10 @@
+{
+  "name": "builder-list-pages-documentation",
+  "private": true,
+  "scripts": {
+    "docs": "node render-docs.cjs"
+  },
+  "devDependencies": {
+    "marked": "17.0.5"
+  }
+}

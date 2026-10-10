@@ -1,6 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Documentation</title><style>body{margin:0;background:#f3f6f7;color:#223641;font:16px/1.7 system-ui,sans-serif}main{max-width:940px;margin:36px auto;padding:32px 42px;background:white;border:1px solid #d4dee0;border-radius:12px}nav{display:flex;flex-wrap:wrap;gap:14px;padding-bottom:18px;border-bottom:1px solid #d4dee0}a{color:#17616a;text-underline-offset:3px}h1{font-size:32px}h2{margin-top:38px;padding-top:14px;border-top:1px solid #e2e8ea}h3{margin-top:28px}img{max-width:100%}code{background:#eef4f5;padding:2px 5px}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid #d4dee0;padding:8px}@media(max-width:640px){main{margin:12px;padding:20px}}</style></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-English.html">FAQ</a><a href="Changelog-English.html">Changelog</a></nav><h1 id="frequently-asked-questions">Frequently asked questions</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Documentation</title><link rel="stylesheet" href="../../assets/documentation.css"></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-English.html">FAQ</a><a href="Changelog-English.html">Changelog</a></nav><h1 id="faq-by-topic">FAQ by topic</h1>
 <p><a href="English.html">Guide</a> · <a href="FAQ-Deutsch.html">Deutsch</a></p>
-<p>Answers for release 1.1.0. Planned features are not described as available.</p>
 <h2 id="getting-started">Getting started</h2>
 <h3 id="do-i-need-to-configure-anything-first">Do I need to configure anything first?</h3>
 <p>No. Activate the plugin and open a content list that an active supported builder can edit. Views, the Builder column and builder submenus are enabled by default.</p>
@@ -22,7 +21,7 @@
 <h3 id="what-does-no-recognized-builder-mean">What does “No recognized builder” mean?</h3>
 <p>No configured condition matched among active supported builders enabled for this post type. It does not prove the page uses Gutenberg.</p>
 <h3 id="are-inactive-builders-detected">Are inactive builders detected?</h3>
-<p>Not in 1.1.0. Their remaining data does not form a detected group. An inventory of inactive-builder data is a future feature.</p>
+<p>No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included.</p>
 <h3 id="does-it-recognize-builder-templates-applied-to-normal-pages">Does it recognize builder templates applied to normal pages?</h3>
 <p>No. Recognition is based on the page’s own metadata, not on global templates or theme-builder conditions.</p>
 <h3 id="why-can-an-empty-page-still-appear-under-oxygen-or-breakdance">Why can an empty page still appear under Oxygen or Breakdance?</h3>
@@ -47,28 +46,30 @@
 <h3 id="are-these-settings-per-user-or-per-site">Are these settings per user or per site?</h3>
 <p>The three plugin switches apply to the current site. WordPress Screen Options provide each user’s separate column visibility.</p>
 <h3 id="what-about-multisite">What about Multisite?</h3>
-<p>Settings stay per site; network activation loads the plugin on each site. The embedded Library provides its own network-aware controls. This RC has not been fully tested in Multisite.</p>
+<p>The three display choices are stored separately for each site. Network activation loads the plugin on all sites, including newly created sites. The Library uses its own site and network controls; site administrators cannot manage its network preferences.</p>
 <h2 id="updates-library-and-troubleshooting">Updates, Library and troubleshooting</h2>
 <h3 id="how-do-updates-work">How do updates work?</h3>
 <p>The bundled deckerweb GitHub Updater V2 checks public stable releases and integrates with the regular WordPress update screens. No separate updater plugin is required. The updater does not enable automatic updates.</p>
-<h3 id="will-this-rc-automatically-install-other-rcs">Will this RC automatically install other RCs?</h3>
-<p>No. Prereleases are excluded by the stable-release updater. Install test ZIPs manually; a newer stable 1.1.0 can replace this RC later.</p>
+<h3 id="are-prereleases-installed-automatically">Are prereleases installed automatically?</h3>
+<p>No. The updater offers stable GitHub releases only. Install test packages manually when needed. It does not turn on automatic updates.</p>
 <h3 id="what-is-the-deckerweb-library">What is the deckerweb Library?</h3>
 <p>An embedded discovery and installation catalog under Plugins → Add New → deckerweb. The standard WordPress tab remains the default. Library visibility and online catalog preferences have their own settings.</p>
 <h3 id="does-the-library-download-plugins-automatically">Does the Library download plugins automatically?</h3>
 <p>No. Installation requires an explicit action, capabilities and nonce checks. The embedded catalog is local; optional online catalog refresh must be enabled separately.</p>
 <h3 id="does-the-library-overwrite-newer-installed-plugins">Does the Library overwrite newer installed plugins?</h3>
-<p>No. The embedded installer does not replace an existing plugin directory or downgrade this RC to the pinned 1.0.0 catalog release.</p>
+<p>No. A fresh installation never replaces an existing directory. Updates use the separate update action, check the offered version and requirements, and never offer a downgrade.</p>
 <h3 id="does-it-send-usage-tracking">Does it send usage tracking?</h3>
 <p>Builder List Pages contains no usage telemetry. GitHub update checks contact GitHub; optional catalog requests contact the configured approved endpoint. Servers see the requesting IP. Clicking Install downloads the selected release.</p>
 <h3 id="can-i-use-it-as-a-code-snippet">Can I use it as a code snippet?</h3>
-<p>A separately generated PHP and Code Snippets JSON export provides views, columns and submenus with the default switches. It excludes plugin settings, bundled assets, updater and Library. Activate either the plugin or the snippet, never both. The modular plugin main file is no longer a standalone snippet.</p>
+<p>Use the installable plugin ZIP. Older releases supplied a separate snippet with a smaller feature set. Do not activate a legacy snippet alongside the plugin; the plugin main file is not a standalone snippet.</p>
 <h3 id="does-it-change-or-clean-up-my-page-content">Does it change or clean up my page content?</h3>
 <p>No. It reads builder metadata and filters admin lists. No conversion, builder cleanup or frontend assets are included.</p>
 <h3 id="is-classicpress-supported">Is ClassicPress supported?</h3>
-<p>The previous version documented ClassicPress compatibility. This RC, its native Update URI integration and the embedded Library have not been verified on ClassicPress; do not assume support from old documentation.</p>
+<p>The current plugin, its Update URI integration and its embedded Library have not been tested on ClassicPress. Earlier compatibility statements do not establish support for this build.</p>
 <h3 id="what-should-i-report-when-recognition-looks-wrong">What should I report when recognition looks wrong?</h3>
 <p>Include plugin and builder versions, post type, user role, selected filter and expected result. Use a test copy and avoid sharing private page content or credentials.</p>
-<h2 id="why-does-wp-admin-cleaner-block-the-bricks-page-list">Why does WP Admin Cleaner block the Bricks page list?</h2>
-<p>WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its <code>bricks</code> slug also match <code>edit.php?post_type=page&amp;builder=bricks</code>. Starting with 1.1.0-rc2, Builder List Pages automatically appends <code>&amp;blp_view=1</code> to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.</p>
+<h3 id="why-does-wp-admin-cleaner-block-the-bricks-page-list">Why does WP Admin Cleaner block the Bricks page list?</h3>
+<p>WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its <code>bricks</code> slug also match <code>edit.php?post_type=page&amp;builder=bricks</code>. Builder List Pages automatically appends <code>&amp;blp_view=1</code> to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.</p>
+<h3 id="what-happens-when-i-deactivate-or-uninstall-it">What happens when I deactivate or uninstall it?</h3>
+<p>Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.</p>
 <footer><p>© 2019–2026 David Decker – DECKERWEB · 1.1.0</p></footer></main></body></html>

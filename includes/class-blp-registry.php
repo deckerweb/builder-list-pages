@@ -3,10 +3,20 @@
 namespace Deckerweb\BuilderListPages;
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Resolve supported builders and their metadata without changing builder data.
+ */
 final class Registry {
 	private ?array $resolved = null;
 
-	/** Read a list option or one nested setting without assuming its format. */
+	/**
+	 * Read a list option or nested setting defensively.
+	 *
+	 * @param string $option WordPress option name.
+	 * @param string|null $key Nested setting key or display-choice key.
+	 * @param array $default Fallback list for absent or malformed data.
+	 * @return array Validated values or generated entries.
+	 */
 	private function option_types( string $option, ?string $key = null, array $default = [] ): array {
 		$value = get_option( $option, $default );
 		if ( null !== $key ) {
@@ -15,6 +25,11 @@ final class Registry {
 		return is_array( $value ) ? $value : $default;
 	}
 
+	/**
+	 * Read content types from the active Breakdance-compatible builder.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	private function breakdance_types(): array {
 		if ( ! function_exists( '\Breakdance\Settings\get_allowed_post_types' ) ) {
 			return [];
@@ -23,11 +38,21 @@ final class Registry {
 		return is_array( $value ) ? $value : [];
 	}
 
+	/**
+	 * Exclude Oxygen Classic templates and disabled types.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	private function oxygen_classic_types(): array {
 		global $ct_ignore_post_types;
 		return array_values( array_diff( get_post_types(), is_array( $ct_ignore_post_types ) ? $ct_ignore_post_types : [], [ 'ct_template', 'oxy_user_library' ] ) );
 	}
 
+	/**
+	 * Read Zion content types from array or encoded legacy settings.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	private function zion_types(): array {
 		$value = get_option( '_zionbuilder_options', [] );
 		if ( is_string( $value ) ) {
@@ -37,20 +62,73 @@ final class Registry {
 		return is_array( $value ) && is_array( $value['allowed_post_types'] ?? null ) ? $value['allowed_post_types'] : [];
 	}
 
-	/** IDs and legacy filter fields remain compatible with version 1.0.0. */
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_elementor(): array { return $this->option_types( 'elementor_cpt_support' ); }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_bricks(): array { return $this->option_types( 'bricks_global_settings', 'postTypes' ); }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_brizy(): array { return $this->option_types( 'brizy', 'post-types' ); }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_beaver(): array { return $this->option_types( '_fl_builder_post_types' ); }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_pagelayer(): array { return $this->option_types( 'pl_support_ept', null, [ 'post', 'page' ] ); }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_visual(): array { return [ 'page', 'post' ]; }
+
+	/**
+	 * Resolve the enabled content types for this builder after initialization.
+	 *
+	 * @return array Content-type names; inactive builders never invoke this resolver.
+	 */
+	private function types_thrive(): array { return get_post_types( [ 'public' => true ] ); }
+
+	/**
+	 * Build legacy-compatible definitions without resolving inactive builders.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	private function definitions(): array {
 		$definitions = [
-			'elementor' => [ 'elementor', defined( 'ELEMENTOR_VERSION' ), fn() => $this->option_types( 'elementor_cpt_support' ), '_elementor_edit_mode', 'builder', 'Elementor', 'With Elementor' ],
-			'bricks' => [ 'bricks', defined( 'BRICKS_VERSION' ), fn() => $this->option_types( 'bricks_global_settings', 'postTypes' ), '_bricks_editor_mode', 'bricks', 'Bricks', 'With Bricks' ],
-			'breakdance' => [ 'breakdance', defined( '__BREAKDANCE_VERSION' ) && ! defined( 'BREAKDANCE_MODE' ), fn() => $this->breakdance_types(), '_breakdance_data', null, 'Breakdance', 'With Breakdance' ],
-			'oxygen-classic' => [ 'oxygen-classic', defined( 'CT_VERSION' ), fn() => $this->oxygen_classic_types(), '_ct_builder_json', null, 'Oxygen Classic', 'With Oxygen Classic' ],
-			'oxygen-builder' => [ 'oxygen', defined( 'BREAKDANCE_MODE' ) && 'oxygen' === BREAKDANCE_MODE, fn() => $this->breakdance_types(), '_oxygen_data', null, 'Oxygen', 'With Oxygen' ],
-			'brizy' => [ 'brizy', defined( 'BRIZY_VERSION' ), fn() => $this->option_types( 'brizy', 'post-types' ), 'brizy_enabled', '1', 'Brizy', 'With Brizy' ],
-			'beaver-builder' => [ 'beaver', class_exists( 'FLBuilderLoader' ), fn() => $this->option_types( '_fl_builder_post_types' ), '_fl_builder_enabled', '1', 'Beaver Builder', 'With Beaver' ],
-			'pagelayer' => [ 'pagelayer', defined( 'PAGELAYER_VERSION' ), fn() => $this->option_types( 'pl_support_ept', null, [ 'post', 'page' ] ), 'pagelayer-data', null, 'Pagelayer', 'With Pagelayer' ],
-			'zionbuilder' => [ 'zionbuilder', function_exists( '\ZionBuilder\zionbuilder_load_textdomain' ), fn() => $this->zion_types(), '_zionbuilder_page_status', 'enabled', 'ZionBuilder', 'With ZionBuilder' ],
-			'visual-composer' => [ 'visualcomposer', defined( 'VCV_VERSION' ), fn() => [ 'page', 'post' ], 'vcv-be-editor', 'fe', 'Visual Composer', 'With Visual Composer' ],
-			'thrive-architect' => [ 'thrive-architect', defined( 'TVE_EDITOR_URL' ), fn() => get_post_types( [ 'public' => true ] ), 'tcb_editor_enabled', '1', 'Thrive Architect', 'With Thrive Architect' ],
+			'elementor' => [ 'elementor', defined( 'ELEMENTOR_VERSION' ), [ $this, 'types_elementor' ], '_elementor_edit_mode', 'builder', 'Elementor', 'With Elementor' ],
+			'bricks' => [ 'bricks', defined( 'BRICKS_VERSION' ), [ $this, 'types_bricks' ], '_bricks_editor_mode', 'bricks', 'Bricks', 'With Bricks' ],
+			'breakdance' => [ 'breakdance', defined( '__BREAKDANCE_VERSION' ) && ! defined( 'BREAKDANCE_MODE' ), [ $this, 'breakdance_types' ], '_breakdance_data', null, 'Breakdance', 'With Breakdance' ],
+			'oxygen-classic' => [ 'oxygen-classic', defined( 'CT_VERSION' ), [ $this, 'oxygen_classic_types' ], '_ct_builder_json', null, 'Oxygen Classic', 'With Oxygen Classic' ],
+			'oxygen-builder' => [ 'oxygen', defined( 'BREAKDANCE_MODE' ) && 'oxygen' === BREAKDANCE_MODE, [ $this, 'breakdance_types' ], '_oxygen_data', null, 'Oxygen', 'With Oxygen' ],
+			'brizy' => [ 'brizy', defined( 'BRIZY_VERSION' ), [ $this, 'types_brizy' ], 'brizy_enabled', '1', 'Brizy', 'With Brizy' ],
+			'beaver-builder' => [ 'beaver', class_exists( 'FLBuilderLoader' ), [ $this, 'types_beaver' ], '_fl_builder_enabled', '1', 'Beaver Builder', 'With Beaver' ],
+			'pagelayer' => [ 'pagelayer', defined( 'PAGELAYER_VERSION' ), [ $this, 'types_pagelayer' ], 'pagelayer-data', null, 'Pagelayer', 'With Pagelayer' ],
+			'zionbuilder' => [ 'zionbuilder', function_exists( '\ZionBuilder\zionbuilder_load_textdomain' ), [ $this, 'zion_types' ], '_zionbuilder_page_status', 'enabled', 'ZionBuilder', 'With ZionBuilder' ],
+			'visual-composer' => [ 'visualcomposer', defined( 'VCV_VERSION' ), [ $this, 'types_visual' ], 'vcv-be-editor', 'fe', 'Visual Composer', 'With Visual Composer' ],
+			'thrive-architect' => [ 'thrive-architect', defined( 'TVE_EDITOR_URL' ), [ $this, 'types_thrive' ], 'tcb_editor_enabled', '1', 'Thrive Architect', 'With Thrive Architect' ],
 		];
 		$data = [];
 		foreach ( $definitions as $key => $definition ) {
@@ -66,11 +144,22 @@ final class Registry {
 		return $data;
 	}
 
-	/** Resolve only in admin hooks, after themes and post types have initialized. */
+	/**
+	 * Validate and cache builder definitions for the current user.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	public function all(): array {
 		if ( null !== $this->resolved ) {
 			return $this->resolved;
 		}
+		/**
+		 * Modify builder definitions before validation and permission checks.
+		 *
+		 * Return the definition array with the desired builder entries. Invalid entries are ignored.
+		 * @since 1.0.0
+		 * @param array $builders Builder definitions with IDs, activation, types and metadata conditions.
+		 */
 		$raw = apply_filters( 'blp/filter/builder-data', $this->definitions() );
 		$this->resolved = [];
 		foreach ( is_array( $raw ) ? $raw : [] as $builder ) {
@@ -105,23 +194,45 @@ final class Registry {
 		return $this->resolved;
 	}
 
+	/**
+	 * Select active builders the current user may access for a content type.
+	 *
+	 * @param string $type Content-type name.
+	 * @return array Validated values or generated entries.
+	 */
 	public function for_type( string $type ): array {
-		return array_filter( $this->all(), static fn( array $builder ): bool => in_array( $type, $builder['builder-types'], true ) );
+		$result = [];
+		foreach ( $this->all() as $id => $builder ) {
+			if ( in_array( $type, $builder['builder-types'], true ) ) { $result[ $id ] = $builder; }
+		}
+		return $result;
 	}
 
+	/**
+	 * Return unique accessible supported content types.
+	 *
+	 * @return array Validated values or generated entries.
+	 */
 	public function post_types(): array {
 		$types = [];
 		foreach ( $this->all() as $builder ) { $types = array_merge( $types, $builder['builder-types'] ); }
 		return array_values( array_unique( $types ) );
 	}
 
-	/** Labels describe detected metadata, not rendering or template assignment. */
+	/**
+	 * Detect metadata matches; this does not predict frontend rendering.
+	 *
+	 * @param int $post_id Content item ID.
+	 * @param string $type Content-type name.
+	 * @return array Validated values or generated entries.
+	 */
 	public function matches( int $post_id, string $type ): array {
 		$result = [];
 		foreach ( $this->for_type( $type ) as $id => $builder ) {
 			$clause = $builder['meta_query'][0];
 			$values = get_post_meta( $post_id, $clause['key'], false );
-			$values = array_map( static fn( $value ): string => is_scalar( $value ) ? (string) $value : '', $values );
+			foreach ( $values as &$value ) { $value = is_scalar( $value ) ? (string) $value : ''; }
+			unset( $value );
 			$matches = 'EXISTS' === $clause['compare'] ? metadata_exists( 'post', $post_id, $clause['key'] ) : in_array( (string) $clause['value'], $values, true );
 			if ( $matches ) { $result[ $id ] = $builder; }
 		}

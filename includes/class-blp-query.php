@@ -3,20 +3,39 @@
 namespace Deckerweb\BuilderListPages;
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Filter native lists and count readable matches using shared conditions.
+ */
 final class Query {
 	private Registry $registry;
 	private array $counts = [];
 	private \SplObjectStorage $negative_queries;
 
+	/**
+	 * Retain the registry and initialize query-scoped exclusions.
+	 *
+	 * @param Registry $registry Validated builder registry.
+	 * @return void
+	 */
 	public function __construct( Registry $registry ) {
 		$this->registry = $registry;
 		$this->negative_queries = new \SplObjectStorage();
 	}
+	/**
+	 * Register native list and SQL-filter callbacks.
+	 *
+	 * @return void
+	 */
 	public function register(): void {
 		add_action( 'pre_get_posts', [ $this, 'filter_main' ], 20 );
 		add_filter( 'posts_where', [ $this, 'exclude_builders' ], 20, 2 );
 	}
-	/** Unknown or non-string URL parameters never activate a builder filter. */
+	/**
+	 * Validate the requested builder against available views.
+	 *
+	 * @param string $type Content-type name.
+	 * @return string Resulting text, URL or SQL fragment.
+	 */
 	public function selected( string $type ): string {
 		$value = $_GET['builder'] ?? '';
 		if ( ! is_string( $value ) ) { return ''; }
@@ -24,6 +43,12 @@ final class Query {
 		$builders = $this->registry->for_type( $type );
 		return ( isset( $builders[ $id ] ) || ( 'none' === $id && $builders && Settings::enabled( 'show_none' ) ) ) ? $id : '';
 	}
+	/**
+	 * Apply the selected builder only to the main admin content list.
+	 *
+	 * @param \WP_Query $query Native query being filtered.
+	 * @return void
+	 */
 	public function filter_main( \WP_Query $query ): void {
 		global $pagenow;
 		if ( ! is_admin() || 'edit.php' !== $pagenow || ! $query->is_main_query() || wp_doing_ajax() ) { return; }
@@ -33,7 +58,14 @@ final class Query {
 		$selected = $this->selected( $type );
 		if ( '' !== $selected ) { $this->apply( $query, $type, $selected ); }
 	}
-	/** Preserve the existing group, including any internal OR relationship. */
+	/**
+	 * Add a builder constraint while preserving existing metadata groups.
+	 *
+	 * @param \WP_Query $query Native query being filtered.
+	 * @param string $type Content-type name.
+	 * @param string $id Validated builder identifier or none.
+	 * @return void
+	 */
 	public function apply( \WP_Query $query, string $type, string $id ): void {
 		$builders = $this->registry->for_type( $type );
 		if ( 'none' === $id && $builders ) {
@@ -45,7 +77,13 @@ final class Query {
 		$builder = $builders[ $id ]['meta_query'];
 		$query->set( 'meta_query', is_array( $existing ) && $existing ? [ 'relation' => 'AND', $existing, $builder ] : $builder );
 	}
-	/** Exact complement, including duplicate meta rows. Scoped by object identity. */
+	/**
+	 * Exclude any matching builder using a query-scoped complement.
+	 *
+	 * @param string $where Existing SQL WHERE fragment.
+	 * @param \WP_Query $query Native query being filtered.
+	 * @return string Resulting text, URL or SQL fragment.
+	 */
 	public function exclude_builders( string $where, \WP_Query $query ): string {
 		if ( ! $this->negative_queries->contains( $query ) ) { return $where; }
 		$clauses = [ 'relation' => 'OR' ];
@@ -55,7 +93,13 @@ final class Query {
 		$sql = $meta->get_sql( 'post', 'blp_posts', 'ID', $query );
 		return $where . " AND {$wpdb->posts}.ID NOT IN (SELECT blp_posts.ID FROM {$wpdb->posts} AS blp_posts {$sql['join']} WHERE 1=1 {$sql['where']})";
 	}
-	/** Count readable items outside trash; search does not change the badges. */
+	/**
+	 * Cache readable content counts outside trash for this request.
+	 *
+	 * @param string $type Content-type name.
+	 * @param string $id Validated builder identifier or none.
+	 * @return int Number of readable matching items.
+	 */
 	public function count( string $type, string $id ): int {
 		$key = $type . ':' . $id;
 		if ( isset( $this->counts[ $key ] ) ) { return $this->counts[ $key ]; }

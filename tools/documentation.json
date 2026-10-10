@@ -1,0 +1,559 @@
+{
+  "version": "1.1.0",
+  "languages": {
+    "en": {
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1544x500.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.1.0 · **Requires:** WordPress 6.7+ / PHP 8.0+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "sections": [
+        [
+          "At a glance",
+          "- **Recognize builders:** clickable Builder column, including multiple matches per item.\n- **Filter quickly:** independent views for multiple active builders and “No recognized builder”.\n- **Keep working:** builder selection stays in searches and standard list filters.\n- **Familiar navigation:** builder submenus respect the post type’s editing permissions.\n- **Little setup:** three optional switches, German translations, local guide and full changelog.\n- **DECKERWEB integrated:** embedded GitHub Updater 2.1.0 and Plugin Library 0.9.0."
+        ],
+        [
+          "Installation and first filter",
+          "1. Upload the plugin ZIP through **Plugins → Add New → Upload Plugin**, replacing the old plugin version if installed.\n2. Activate it and open **Pages** or another content list enabled by an active supported builder.\n3. Click a builder above the table. Then use the normal search if needed.\n4. Adjust optional choices under **Settings → Builder List Pages**."
+        ],
+        [
+          "Builders and recognition",
+          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer retains the free edition’s page/post scope. Astra and OceanWP post types retain their special menu navigation when available.\n\nRecognition reads existing metadata for active supported builders enabled on the post type. “No recognized builder” does not automatically mean Gutenberg. Inactive-builder data and global template assignments are not analyzed. Existence-based integrations retain their previous semantics even for empty values.\n\nCounts describe the complete readable group outside trash, including unpublished content. Search and other list filters can reduce visible results. Builder groups can overlap."
+        ],
+        [
+          "Settings",
+          "Enable or disable the Builder column, builder submenus and no-builder filter site-wide. Users can also hide the column individually through **Screen Options**. Administrators change settings; editors use list features according to normal editing permissions.\n\nThe local changelog opens in a keyboard-accessible dialog. Close it with Escape, the Close button or a click outside the dialog; focus returns to the link."
+        ],
+        [
+          "Updates and Library",
+          "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.1.0. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 0.9.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
+        ],
+        [
+          "About",
+          "Created and maintained by David Decker – DECKERWEB. © 2019–2026. Builder List Pages began in 2019 and complements native content lists; it reads metadata without converting pages or loading frontend assets."
+        ],
+        [
+          "Issues, security and support",
+          "Report reproducible problems through [GitHub Issues](https://github.com/deckerweb/builder-list-pages/issues). Report security vulnerabilities privately using the [security policy](SECURITY.md); never publish exploit details or credentials in an issue.\n\nSupport development through [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me a Coffee](https://buymeacoffee.com/daveshine) or [PayPal](https://paypal.me/deckerweb)."
+        ],
+        [
+          "License and included components",
+          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 0.9.0 and deckerweb Updater 2.1.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe existing banners and icon use native SVG shapes with solid fills and transparency; banners contain live system-font text, with no embedded font or raster files. PNG assets are local derivatives of the approved artwork."
+        ]
+      ],
+      "faq": [
+        [
+          "Getting started",
+          [
+            [
+              "Do I need to configure anything first?",
+              "No. Activate the plugin and open a content list that an active supported builder can edit. Views, the Builder column and builder submenus are enabled by default."
+            ],
+            [
+              "Which requirements apply?",
+              "WordPress 6.7+ and PHP 8.0+. Checked on WordPress 6.7 and 7.1.2 with PHP 8.4.5 using disposable SQLite installations, including Bricks 2.4.2 and WP Admin Cleaner 2.0.1. Other builder integrations, database engines and versions still need broader testing."
+            ],
+            [
+              "Is it free?",
+              "Yes. GPL v2 or later. Some supported builders require their own paid license."
+            ],
+            [
+              "Which builders are supported?",
+              "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer currently uses the free edition’s page/post scope."
+            ],
+            [
+              "Why is no builder view visible?",
+              "The builder must be active, allow the current post type, and provide recognized settings. Your user also needs editing access to that type. Invalid, missing and hidden post types are excluded."
+            ],
+            [
+              "Does it work with custom post types?",
+              "Yes, where an active builder allows them and the post type has an admin interface. Attachments are excluded."
+            ]
+          ]
+        ],
+        [
+          "Recognition and filters",
+          [
+            [
+              "What does the Builder column tell me?",
+              "It shows matching metadata for active supported builders allowed on that post type. It is not a full analysis of frontend rendering or template assignments."
+            ],
+            [
+              "Can one page show two builders?",
+              "Yes. Each matching builder is shown; old metadata can remain after a migration. Builder groups may overlap and their counts cannot simply be added."
+            ],
+            [
+              "What does “No recognized builder” mean?",
+              "No configured condition matched among active supported builders enabled for this post type. It does not prove the page uses Gutenberg."
+            ],
+            [
+              "Are inactive builders detected?",
+              "No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included."
+            ],
+            [
+              "Does it recognize builder templates applied to normal pages?",
+              "No. Recognition is based on the page’s own metadata, not on global templates or theme-builder conditions."
+            ],
+            [
+              "Why can an empty page still appear under Oxygen or Breakdance?",
+              "These integrations retain the existing metadata-existence rule. An empty stored value still counts as present; it is not a content-quality check."
+            ],
+            [
+              "How can I combine builder and search?",
+              "Select a builder, then search the list or use its normal filters. The builder ID is carried in the native list form. All or another standard view resets the builder selection."
+            ],
+            [
+              "Do draft and private pages count?",
+              "The badges count readable published, future, draft, pending and private content, according to registered admin statuses. Trash and auto-drafts are excluded. Users unable to edit other authors’ content receive counts for their own content."
+            ],
+            [
+              "Why does the count exceed the visible search results?",
+              "Badges describe the complete readable builder group outside trash. Search, date, author and other list constraints can reduce the rows currently shown."
+            ],
+            [
+              "Do other plugin filters still work?",
+              "Existing meta query groups are kept and combined with the selected builder using AND. The no-builder filter adds its exclusion separately. Third-party query hooks can still affect results."
+            ]
+          ]
+        ],
+        [
+          "Settings and permissions",
+          [
+            [
+              "Who can change settings?",
+              "Users with manage_options, normally administrators. Content filtering uses each post type’s own editing permissions."
+            ],
+            [
+              "Can editors use the builder submenus?",
+              "Yes, when they can edit the corresponding post type. They do not need edit_theme_options."
+            ],
+            [
+              "Can I hide the column?",
+              "Yes, individually in Screen Options on the list, or site-wide in Settings → Builder List Pages."
+            ],
+            [
+              "Can I hide the extra submenus?",
+              "Yes, site-wide in Settings → Builder List Pages. Builder views above the list remain available."
+            ],
+            [
+              "Are these settings per user or per site?",
+              "The three plugin switches apply to the current site. WordPress Screen Options provide each user’s separate column visibility."
+            ],
+            [
+              "What about Multisite?",
+              "The three display choices are stored separately for each site. Network activation loads the plugin on all sites, including newly created sites. The Library uses its own site and network controls; site administrators cannot manage its network preferences."
+            ]
+          ]
+        ],
+        [
+          "Updates, Library and troubleshooting",
+          [
+            [
+              "How do updates work?",
+              "The bundled deckerweb GitHub Updater V2 checks public stable releases and integrates with the regular WordPress update screens. No separate updater plugin is required. The updater does not enable automatic updates."
+            ],
+            [
+              "Are prereleases installed automatically?",
+              "No. The updater offers stable GitHub releases only. Install test packages manually when needed. It does not turn on automatic updates."
+            ],
+            [
+              "What is the deckerweb Library?",
+              "An embedded discovery and installation catalog under Plugins → Add New → deckerweb. The standard WordPress tab remains the default. Library visibility and online catalog preferences have their own settings."
+            ],
+            [
+              "Does the Library download plugins automatically?",
+              "No. Installation requires an explicit action, capabilities and nonce checks. The embedded catalog is local; optional online catalog refresh must be enabled separately."
+            ],
+            [
+              "Does the Library overwrite newer installed plugins?",
+              "No. A fresh installation never replaces an existing directory. Updates use the separate update action, check the offered version and requirements, and never offer a downgrade."
+            ],
+            [
+              "Does it send usage tracking?",
+              "Builder List Pages contains no usage telemetry. GitHub update checks contact GitHub; optional catalog requests contact the configured approved endpoint. Servers see the requesting IP. Clicking Install downloads the selected release."
+            ],
+            [
+              "Can I use it as a code snippet?",
+              "Use the installable plugin ZIP. Older releases supplied a separate snippet with a smaller feature set. Do not activate a legacy snippet alongside the plugin; the plugin main file is not a standalone snippet."
+            ],
+            [
+              "Does it change or clean up my page content?",
+              "No. It reads builder metadata and filters admin lists. No conversion, builder cleanup or frontend assets are included."
+            ],
+            [
+              "Is ClassicPress supported?",
+              "The current plugin, its Update URI integration and its embedded Library have not been tested on ClassicPress. Earlier compatibility statements do not establish support for this build."
+            ],
+            [
+              "What should I report when recognition looks wrong?",
+              "Include plugin and builder versions, post type, user role, selected filter and expected result. Use a test copy and avoid sharing private page content or credentials."
+            ],
+            [
+              "Why does WP Admin Cleaner block the Bricks page list?",
+              "WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its `bricks` slug also match `edit.php?post_type=page&builder=bricks`. Builder List Pages automatically appends `&blp_view=1` to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active."
+            ],
+            [
+              "What happens when I deactivate or uninstall it?",
+              "Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed."
+            ]
+          ]
+        ]
+      ],
+      "readme_faq_indices": [
+        0,
+        3,
+        8,
+        18,
+        21,
+        23,
+        33
+      ]
+    },
+    "de": {
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1544x500.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.1.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.0+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "sections": [
+        [
+          "Auf einen Blick",
+          "- **Builder erkennen:** anklickbare Builder-Spalte; mehrere Treffer pro Inhalt sind möglich.\n- **Schnell filtern:** eigene Ansichten für mehrere aktive Builder und „Ohne erkannten Builder“.\n- **Weiterarbeiten:** Builder-Auswahl bleibt bei Suche und normalen Listenfiltern erhalten.\n- **Gewohnte Navigation:** zusätzliche Builder-Untermenüs verwenden die Rechte des jeweiligen Inhaltstyps.\n- **Wenig Einrichtung:** drei optionale Schalter, deutsche Übersetzungen, lokale Anleitung und kompletter Änderungsverlauf.\n- **DECKERWEB integriert:** eingebauter GitHub-Updater V2 und Plugin Library 0.9.0."
+        ],
+        [
+          "Installation und erster Filter",
+          "1. Plugin-ZIP über **Plugins → Installieren → Plugin hochladen** installieren beziehungsweise die alte Plugin-Version ersetzen.\n2. Plugin aktivieren und **Seiten** oder eine andere vom aktiven Builder unterstützte Inhaltsliste öffnen.\n3. Einen Builder-Namen über der Tabelle anklicken. Anschließend bei Bedarf die Suche verwenden.\n4. Einstellungen bei Bedarf unter **Einstellungen → Builder List Pages** anpassen."
+        ],
+        [
+          "Builder und Erkennung",
+          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Visual Composer ist auf den bisherigen Seiten-/Beitragsumfang der kostenlosen Ausgabe begrenzt. Astra- und OceanWP-Inhaltstypen behalten ihre spezielle Menünavigation, sofern diese vorhanden ist.\n\nErkennung liest bestehende Metadaten aktiver unterstützter Builder für freigegebene Inhaltstypen. „Ohne erkannten Builder“ bedeutet nicht automatisch Gutenberg. Inaktive Builder-Daten und globale Template-Zuweisungen werden nicht analysiert. Existenzbasierte Integrationen behalten ihre bisherige Semantik auch für leere Werte.\n\nZähler erfassen die gesamte lesbare Gruppe außerhalb des Papierkorbs einschließlich unveröffentlichter Inhalte. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Gruppen können sich überschneiden."
+        ],
+        [
+          "Einstellungen",
+          "Builder-Spalte, Untermenüs und den Filter ohne erkannten Builder websiteweit ein- oder ausschalten. Die Spalte lässt sich zusätzlich persönlich über **Ansicht anpassen** ausblenden. Administratoren ändern Einstellungen; Redakteure verwenden Listenfunktionen gemäß ihren normalen Bearbeitungsrechten.\n\nDer lokale Änderungsverlauf öffnet sich in einem per Tastatur bedienbaren Dialog. Schließe ihn mit Escape, dem Schließen-Button oder einem Klick außerhalb des Dialogs; der Fokus kehrt zum Link zurück."
+        ],
+        [
+          "Updates und Library",
+          "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.1.0 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 0.9.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
+        ],
+        [
+          "Über das Projekt",
+          "Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden."
+        ],
+        [
+          "Fehler, Sicherheit und Unterstützung",
+          "Melde nachvollziehbare Probleme über [GitHub Issues](https://github.com/deckerweb/builder-list-pages/issues). Sicherheitslücken bitte vertraulich über den [Sicherheitsmeldeweg](SECURITY.md) melden; keine Exploit-Details oder Zugangsdaten in einem öffentlichen Issue veröffentlichen.\n\nUnterstütze die Entwicklung über [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me a Coffee](https://buymeacoffee.com/daveshine) oder [PayPal](https://paypal.me/deckerweb)."
+        ],
+        [
+          "Lizenz und enthaltene Komponenten",
+          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 0.9.0 und deckerweb Updater 2.1.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nDie bestehenden Banner und das Icon bestehen aus nativen SVG-Formen mit Volltonfarben und Transparenz. Banner enthalten lebenden Systemschrift-Text, ohne eingebettete Schrift- oder Rasterdateien. PNG-Dateien sind lokale Ableitungen der freigegebenen Grafik."
+        ]
+      ],
+      "faq": [
+        [
+          "Erste Schritte",
+          [
+            [
+              "Muss ich zuerst etwas einrichten?",
+              "Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstützter Builder bearbeiten darf. Ansichten, Builder-Spalte und Untermenüs sind standardmäßig eingeschaltet."
+            ],
+            [
+              "Welche Voraussetzungen gelten?",
+              "WordPress ab 6.7 und PHP ab 8.0. Geprüft mit WordPress 6.7 und 7.1.2 sowie PHP 8.4.5 in separaten SQLite-Installationen, einschließlich Bricks 2.4.2 und WP Admin Cleaner 2.0.1. Andere Builder, Datenbanksysteme und Versionen benötigen weitere Tests."
+            ],
+            [
+              "Ist das Plugin kostenlos?",
+              "Ja, unter GPL v2 oder neuer. Einige unterstützte Builder benötigen eine eigene kostenpflichtige Lizenz."
+            ],
+            [
+              "Welche Builder werden unterstützt?",
+              "Elementor, Bricks, Breakdance, Oxygen ab Version 6, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Bei Visual Composer gilt derzeit der Seiten-/Beitragsumfang der kostenlosen Ausgabe."
+            ],
+            [
+              "Warum sehe ich keine Builder-Ansicht?",
+              "Der Builder muss aktiv sein, den Inhaltstyp erlauben und erkennbare Einstellungen bereitstellen. Dein Benutzer braucht außerdem Bearbeitungsrechte für diesen Typ. Fehlende, ungültige und versteckte Inhaltstypen werden ausgeschlossen."
+            ],
+            [
+              "Funktioniert es mit eigenen Inhaltstypen?",
+              "Ja, wenn ein aktiver Builder sie erlaubt und sie eine Admin-Oberfläche haben. Medienanhänge sind ausgeschlossen."
+            ]
+          ]
+        ],
+        [
+          "Erkennung und Filter",
+          [
+            [
+              "Was sagt die Builder-Spalte aus?",
+              "Sie zeigt passende Metadaten aktiver unterstützter Builder, die für den Inhaltstyp freigegeben sind. Sie analysiert weder die komplette Frontend-Darstellung noch Template-Zuweisungen."
+            ],
+            [
+              "Kann eine Seite zwei Builder anzeigen?",
+              "Ja. Jeder passende Builder erscheint. Nach einer Migration können alte Metadaten verbleiben. Builder-Gruppen können sich überschneiden; ihre Zähler lassen sich nicht einfach addieren."
+            ],
+            [
+              "Was bedeutet „Ohne erkannten Builder“?",
+              "Für keinen aktiven unterstützten Builder dieses Inhaltstyps wurde eine passende Datenregel gefunden. Das beweist nicht, dass die Seite Gutenberg verwendet."
+            ],
+            [
+              "Werden inaktive Builder erkannt?",
+              "In Version 1.1.0 noch nicht. Ihre verbliebenen Daten bilden keine erkannte Gruppe. Eine Bestandsaufnahme inaktiver Builder ist ein späteres Feature."
+            ],
+            [
+              "Erkennt das Plugin Builder-Templates auf normalen Seiten?",
+              "Nein. Die Erkennung basiert auf den eigenen Metadaten der Seite, nicht auf globalen Templates oder Theme-Builder-Bedingungen."
+            ],
+            [
+              "Warum erscheint eine leere Seite unter Oxygen oder Breakdance?",
+              "Diese Integrationen behalten die bisherige Regel zur Existenz eines Metaschlüssels bei. Ein leerer gespeicherter Wert zählt als vorhanden; das ist keine Inhaltsprüfung."
+            ],
+            [
+              "Wie kombiniere ich Builder und Suche?",
+              "Builder auswählen und anschließend die Suche oder normale Listenfilter verwenden. Die Builder-ID bleibt im Listenformular erhalten. Alle oder eine andere Standardansicht setzt die Builder-Auswahl zurück."
+            ],
+            [
+              "Werden Entwürfe und private Seiten mitgezählt?",
+              "Die Zähler berücksichtigen lesbare veröffentlichte, geplante, als Entwurf, ausstehend oder privat gespeicherte Inhalte gemäß den registrierten Admin-Status. Papierkorb und automatische Entwürfe sind ausgeschlossen. Wer fremde Inhalte nicht bearbeiten darf, erhält Zähler für eigene Inhalte."
+            ],
+            [
+              "Warum ist der Zähler größer als die Suchergebnisliste?",
+              "Er beschreibt die gesamte lesbare Builder-Gruppe außerhalb des Papierkorbs. Suche, Datum, Autor und andere Listenfilter können die gerade sichtbaren Zeilen reduzieren."
+            ],
+            [
+              "Funktionieren Filter anderer Plugins weiterhin?",
+              "Bestehende Meta-Abfragegruppen bleiben erhalten und werden mit AND mit dem Builder kombiniert. Der Filter ohne Builder ergänzt einen separaten Ausschluss. Abfrage-Hooks anderer Plugins können Ergebnisse weiterhin beeinflussen."
+            ]
+          ]
+        ],
+        [
+          "Einstellungen und Rechte",
+          [
+            [
+              "Wer kann Einstellungen ändern?",
+              "Benutzer mit manage_options, normalerweise Administratoren. Inhaltsfilter verwenden die Bearbeitungsrechte des jeweiligen Inhaltstyps."
+            ],
+            [
+              "Können Redakteure die Untermenüs verwenden?",
+              "Ja, wenn sie den jeweiligen Inhaltstyp bearbeiten dürfen. edit_theme_options ist nicht erforderlich."
+            ],
+            [
+              "Kann ich die Spalte ausblenden?",
+              "Ja, persönlich über Ansicht anpassen in der Liste oder für die ganze Website unter Einstellungen → Builder List Pages."
+            ],
+            [
+              "Kann ich die zusätzlichen Untermenüs ausblenden?",
+              "Ja, für die ganze Website unter Einstellungen → Builder List Pages. Builder-Ansichten über der Liste bleiben erhalten."
+            ],
+            [
+              "Gelten Einstellungen pro Benutzer oder Website?",
+              "Die drei Plugin-Schalter gelten für die aktuelle Website. Ansicht anpassen steuert die Spaltensichtbarkeit zusätzlich für jeden Benutzer separat."
+            ],
+            [
+              "Was ist mit Multisite?",
+              "Die drei Anzeigeoptionen werden getrennt je Website gespeichert. Eine Netzwerkaktivierung lädt das Plugin auf allen Websites, auch auf neu angelegten. Die Library hat eigene Website- und Netzwerkeinstellungen; Website-Administratoren können deren Netzwerkeinstellungen nicht ändern."
+            ]
+          ]
+        ],
+        [
+          "Updates, Library und Hilfe",
+          [
+            [
+              "Wie funktionieren Updates?",
+              "Der mitgelieferte deckerweb GitHub-Updater V2 prüft öffentliche stabile Releases und integriert sie in die normalen WordPress-Updateseiten. Ein zusätzliches Updater-Plugin ist nicht nötig. Automatische Updates werden nicht eingeschaltet."
+            ],
+            [
+              "Werden Vorabversionen automatisch installiert?",
+              "Nein. Der Updater bietet ausschließlich stabile GitHub-Releases an. Testpakete werden bei Bedarf manuell installiert. Automatische Updates werden nicht eingeschaltet."
+            ],
+            [
+              "Was ist die deckerweb Library?",
+              "Ein eingebetteter Entdeckungs- und Installationskatalog unter Plugins → Installieren → deckerweb. Der normale WordPress-Tab bleibt die Standardansicht. Sichtbarkeit und Online-Katalog haben eigene Library-Einstellungen."
+            ],
+            [
+              "Lädt die Library automatisch Plugins herunter?",
+              "Nein. Installation benötigt eine ausdrückliche Aktion, Rechte- und Nonce-Prüfungen. Der mitgelieferte Katalog liegt lokal; optionale Online-Aktualisierung muss separat aktiviert werden."
+            ],
+            [
+              "Überschreibt die Library neuere installierte Plugins?",
+              "Nein. Eine Neuinstallation ersetzt kein vorhandenes Plugin-Verzeichnis. Updates erfolgen über eine eigene Aktion mit Versions- und Anforderungsprüfung; ein Downgrade wird nicht angeboten."
+            ],
+            [
+              "Gibt es Nutzungs-Tracking?",
+              "Builder List Pages enthält keine Nutzungs-Telemetrie. GitHub-Updateprüfungen kontaktieren GitHub; optionale Kataloganfragen den freigegebenen Endpunkt. Server sehen die anfragende IP-Adresse. Installieren lädt das gewählte Release."
+            ],
+            [
+              "Kann ich es als Code Snippet verwenden?",
+              "Verwende das installierbare Plugin-ZIP. Ältere Releases enthielten ein separates Snippet mit kleinerem Funktionsumfang. Aktiviere ein altes Snippet nicht parallel zum Plugin; die Plugin-Hauptdatei ist kein eigenständiges Snippet."
+            ],
+            [
+              "Ändert oder bereinigt das Plugin Seiteninhalte?",
+              "Nein. Es liest Builder-Metadaten und filtert Admin-Listen. Es gibt keine Konvertierung, Builder-Bereinigung oder Frontend-Assets."
+            ],
+            [
+              "Wird ClassicPress unterstützt?",
+              "Das aktuelle Plugin, seine Update-URI-Anbindung und die eingebettete Library wurden nicht mit ClassicPress getestet. Frühere Kompatibilitätsangaben begründen keine Unterstützung dieses Arbeitsstands."
+            ],
+            [
+              "Was soll ich bei falscher Erkennung melden?",
+              "Plugin- und Builder-Version, Inhaltstyp, Benutzerrolle, gewählten Filter und erwartetes Ergebnis angeben. Eine Testkopie verwenden und keine privaten Seiteninhalte oder Zugangsdaten teilen."
+            ],
+            [
+              "Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?",
+              "WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der URL. Ist „Bricks → Erste Schritte“ ausgeblendet, trifft der Menüname `bricks` auch auf `edit.php?post_type=page&builder=bricks` zu. Seit 1.1.0-rc2 ergänzt Builder List Pages automatisch `&blp_view=1` am Ende seiner Listen-URLs. Suche und Filter bleiben erhalten, und die ausgeblendete Bricks-Menüseite bleibt gesperrt. Admin Cleaner kann aktiv bleiben."
+            ],
+            [
+              "Was passiert beim Deaktivieren oder Deinstallieren?",
+              "Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt."
+            ]
+          ]
+        ]
+      ],
+      "readme_faq_indices": [
+        0,
+        3,
+        8,
+        18,
+        21,
+        23,
+        33
+      ]
+    }
+  },
+  "history": {
+    "en": [
+      [
+        "1.1.0 · 2026-10-01",
+        [
+          [
+            "New",
+            "Optional Builder column with clickable builder names and overlapping matches."
+          ],
+          [
+            "New",
+            "Independent views and submenus for multiple active builders."
+          ],
+          [
+            "New",
+            "“No recognized builder” filter for content outside the detected builder groups."
+          ],
+          [
+            "New",
+            "Compact settings page with deckerweb header, footer, local documentation and changelog dialog."
+          ],
+          [
+            "Improved",
+            "Retains the builder selection when searching and filtering the content list."
+          ],
+          [
+            "Improved",
+            "Centralizes builder metadata rules and resolves settings once per request."
+          ],
+          [
+            "Improved",
+            "Counts readable published and unpublished content outside trash using ID-only queries."
+          ],
+          [
+            "Fixed",
+            "Validates URL parameters and targets only the main supported admin list."
+          ],
+          [
+            "Fixed",
+            "Preserves existing meta query groups and handles missing or malformed builder options."
+          ],
+          [
+            "Fixed",
+            "Uses post-type editing permissions for builder submenus instead of theme permissions."
+          ],
+          [
+            "Fixed",
+            "Prevents WP Admin Cleaner from incorrectly blocking builder lists when a hidden Bricks menu slug matches the end of their URL. Existing list links are normalized automatically while preserving search and filters."
+          ],
+          [
+            "Misc",
+            "Integrates the shared deckerweb GitHub Updater V2 and embedded Plugin Library 0.2.0."
+          ],
+          [
+            "Misc",
+            "Raises minimum PHP to 8.0 for the embedded Library; WordPress 6.7 remains the minimum."
+          ],
+          [
+            "Misc",
+            "Adds bilingual readmes, guides, FAQs, translations, release tooling and regression checks."
+          ]
+        ]
+      ],
+      [
+        "1.0.0 · 2025-04-11",
+        [
+          [
+            "New",
+            "Initial public release with views and submenus for eleven builders."
+          ]
+        ]
+      ]
+    ],
+    "de": [
+      [
+        "1.1.0 · 2026-10-01",
+        [
+          [
+            "Neu",
+            "Optionale Builder-Spalte mit anklickbaren Builder-Namen und mehreren Treffern je Inhalt."
+          ],
+          [
+            "Neu",
+            "Eigene Ansichten und Untermenüs für mehrere gleichzeitig aktive Builder."
+          ],
+          [
+            "Neu",
+            "Filter „Ohne erkannten Builder“ für Inhalte außerhalb der erkannten Builder-Gruppen."
+          ],
+          [
+            "Neu",
+            "Kompakte Einstellungen mit deckerweb Header, Footer, lokaler Anleitung und Changelog-Dialog."
+          ],
+          [
+            "Verbessert",
+            "Builder-Auswahl bleibt beim Suchen und Filtern der Inhaltsliste erhalten."
+          ],
+          [
+            "Verbessert",
+            "Zentrale Regeln für Builder-Metadaten; Einstellungen werden einmal je Anfrage aufgelöst."
+          ],
+          [
+            "Verbessert",
+            "Zählt lesbare veröffentlichte und unveröffentlichte Inhalte außerhalb des Papierkorbs mit schlanken ID-Abfragen."
+          ],
+          [
+            "Behoben",
+            "Prüft URL-Parameter und filtert ausschließlich die Hauptabfrage der unterstützten Admin-Liste."
+          ],
+          [
+            "Behoben",
+            "Erhält bestehende Meta-Abfragegruppen und verarbeitet fehlende oder fehlerhafte Builder-Optionen."
+          ],
+          [
+            "Behoben",
+            "Untermenüs verwenden Bearbeitungsrechte des Inhaltstyps statt Theme-Rechte."
+          ],
+          [
+            "Behoben",
+            "Verhindert die irrtümliche Zugriffssperre durch WP Admin Cleaner, wenn dessen ausgeblendete Bricks-Menüseite mit dem Ende einer Builder-Listen-URL kollidiert. Bestehende Listen-Links werden automatisch ergänzt; Suche und Filter bleiben erhalten."
+          ],
+          [
+            "Sonstiges",
+            "Integriert den gemeinsamen deckerweb GitHub-Updater V2 und die eingebettete Plugin Library 0.2.0."
+          ],
+          [
+            "Sonstiges",
+            "Erhöht die PHP-Mindestversion für die Library auf 8.0; WordPress 6.7 bleibt Mindestversion."
+          ],
+          [
+            "Sonstiges",
+            "Ergänzt zweisprachige Readmes, Anleitungen, FAQs, Übersetzungen, Release-Werkzeuge und Regressionstests."
+          ]
+        ]
+      ],
+      [
+        "1.0.0 · 2025-04-11",
+        [
+          [
+            "Neu",
+            "Erste öffentliche Version mit Ansichten und Untermenüs für elf Builder."
+          ]
+        ]
+      ]
+    ]
+  }
+}

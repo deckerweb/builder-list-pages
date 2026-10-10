@@ -1,7 +1,11 @@
-[Home](Home.md)
+[Builder List Pages](Home)
 
-[English](English.md) · [Deutsch](Deutsch.md)
+**English**
+- [User guide](English)
+- [FAQ by topic](FAQ-English)
+- [Changelog](Changelog-English)
 
-[FAQ EN](FAQ-English.md) · [FAQ DE](FAQ-Deutsch.md)
-
-[Changelog EN](Changelog-English.md) · [Changelog DE](Changelog-Deutsch.md)
+**Deutsch**
+- [Anleitung](Deutsch)
+- [Fragen nach Themen](FAQ-Deutsch)
+- [Changelog](Changelog-Deutsch)

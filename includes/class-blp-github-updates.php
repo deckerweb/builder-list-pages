@@ -9,17 +9,27 @@ namespace Deckerweb\BuilderListPages;
 
 defined( 'ABSPATH' ) || exit;
 
-/** Configure shared update artwork and isolate plugin-specific safeguards. */
+/**
+ * Adapt the shared updater to this public plugin and its local artwork.
+ */
 final class GitHubUpdates {
 	/** Public release repository; never taken from user input. */
 	private const REPOSITORY = 'https://github.com/deckerweb/builder-list-pages';
 
-	/** Register after WordPress initializes translations. @return void */
+	/**
+	 * Register the updater during the native administration initialization.
+	 *
+	 * @return void
+	 */
 	public function register(): void {
 		add_action( 'init', array( $this, 'boot' ) );
 	}
 
-	/** Load the shared versioned class once, including beside other deckerweb plugins. @return void */
+	/**
+	 * Initialize the public GitHub updater without interrupting administration.
+	 *
+	 * @return void
+	 */
 	public function boot(): void {
 		if ( ! class_exists( '\Deckerweb\GitHubReleaseUpdater\V2\Updater' ) ) {
 			require_once BLP_PLUGIN_DIR . 'includes/deckerweb-github-release-updater-v2.php';
@@ -30,10 +40,11 @@ final class GitHubUpdates {
 				self::REPOSITORY,
 				'Builder List Pages',
 				__( 'Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists.', 'builder-list-pages' ),
-				$this->artwork()
+				$this->artwork(),
+				array( 'translate' => require BLP_PLUGIN_DIR . 'includes/updater-translations.php' )
 			);
 		} catch ( \InvalidArgumentException $error ) {
-			// An unsupported directory must not break the admin or login design.
+			// An unsupported directory must not break the plugin administration.
 			return;
 		}
 		$updater->register();

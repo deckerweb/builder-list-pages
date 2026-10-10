@@ -14,7 +14,7 @@
  * Domain Path: /languages/
  * Update URI: https://github.com/deckerweb/builder-list-pages
  * GitHub Plugin URI: https://github.com/deckerweb/builder-list-pages
- * Primary Branch: main
+ *
  * Copyright © 2019–2026 David Decker – DECKERWEB.
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -31,10 +31,22 @@ require_once BLP_PLUGIN_DIR . 'includes/class-blp-query.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-admin.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-settings.php';
 require_once BLP_PLUGIN_DIR . 'includes/class-blp-github-updates.php';
-add_action( 'init', static function (): void {
+add_action( 'init',
+/**
+ * Load the host translation domain during initialization.
+ *
+ * @return void
+ */
+static function (): void {
 	load_plugin_textdomain( 'builder-list-pages', false, dirname( plugin_basename( BLP_PLUGIN_FILE ) ) . '/languages/' );
 } );
-add_action( 'plugins_loaded', static function (): void {
+add_action( 'plugins_loaded',
+/**
+ * Register plugin integrations after all plugin bootstraps are available.
+ *
+ * @return void
+ */
+static function (): void {
 	$registry = new \Deckerweb\BuilderListPages\Registry();
 	$query = new \Deckerweb\BuilderListPages\Query( $registry );
 	$settings = new \Deckerweb\BuilderListPages\Settings();
@@ -43,4 +55,4 @@ add_action( 'plugins_loaded', static function (): void {
 	( new \Deckerweb\BuilderListPages\GitHubUpdates() )->register();
 } );
 require_once BLP_PLUGIN_DIR . 'includes/deckerweb-plugin-library/bootstrap.php';
-deckerweb_library_register( __FILE__, [], BLP_PLUGIN_DIR . 'includes/deckerweb-plugin-library' );
+deckerweb_library_register_v2( __FILE__, [], BLP_PLUGIN_DIR . 'includes/deckerweb-plugin-library' );

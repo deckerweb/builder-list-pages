@@ -1,127 +1,975 @@
 msgid ""
-msgstr "Project-Id-Version: Builder List Pages 1.1.0\nReport-Msgid-Bugs-To: https://github.com/deckerweb/builder-list-pages/issues\nPOT-Creation-Date: 2026-10-01 17:00+0200\nPO-Revision-Date: 2026-10-01 17:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr "Project-Id-Version: Builder List Pages 1.1.0\nReport-Msgid-Bugs-To: https://github.com/deckerweb/builder-list-pages/issues\nPOT-Creation-Date: 2026-10-10 12:00+0200\nPO-Revision-Date: 2026-10-10 12:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-blp-admin.php:76 includes/class-blp-admin.php:78
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "%s is installed but inactive. Activate it first."
+msgstr "%s ist installiert, aber inaktiv. Bitte zuerst aktivieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "%s is missing. Install and activate it first."
+msgstr "%s fehlt. Bitte zuerst installieren und aktivieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "%s must be network activated first."
+msgstr "%s muss zuerst netzwerkweit aktiviert werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "%s supports activation per site only."
+msgstr "%s unterstützt nur die Aktivierung je Website."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Action cancelled."
+msgstr "Vorgang abgebrochen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Activate Bricks QuickNav per site after selecting the Bricks parent or child theme."
+msgstr "Bricks QuickNav bitte je Website aktivieren, nachdem das Bricks-Theme oder ein Child-Theme ausgewählt wurde."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Activating…"
+msgstr "Wird aktiviert…"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Admin"
+msgstr "Administration"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Affected features remain paused until their requirements are met."
+msgstr "Betroffene Funktionen pausieren, bis ihre Voraussetzungen erfüllt sind."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "All"
+msgstr "Alle"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Already active"
+msgstr "Bereits aktiv"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Already up to date."
+msgstr "Bereits aktuell."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Another action for this plugin is running. Please wait."
+msgstr "Für dieses Plugin läuft bereits eine Aktion. Bitte warten."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Another updater provides a different release. Refresh updates before continuing."
+msgstr "Ein anderer Updater bietet einen abweichenden Release an. Bitte die Updateinformationen vor dem Fortfahren aktualisieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Apr"
+msgstr "Apr"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "April"
+msgstr "April"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Archive contains too many files."
+msgstr "Das Archiv enthält zu viele Dateien."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Archive symlinks are not permitted."
+msgstr "Symbolische Verknüpfungen sind im Archiv nicht erlaubt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "As of "
+msgstr "Stand: "
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Aug"
+msgstr "Aug"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "August"
+msgstr "August"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Back to deckerweb"
+msgstr "Zurück zu deckerweb"
+
+#: includes/class-blp-admin.php:165 includes/class-blp-admin.php:167
 msgid "Builder"
 msgstr "Builder"
 
-#: includes/class-blp-settings.php:49 includes/class-blp-settings.php:58
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cannot create temporary file."
+msgstr "Temporäre Datei konnte nicht erstellt werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cannot create verified archive."
+msgstr "Geprüftes Archiv konnte nicht erstellt werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cannot finalize archive."
+msgstr "Archiv konnte nicht abgeschlossen werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cannot normalize archive."
+msgstr "Archiv konnte nicht aufbereitet werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cannot read archive entry."
+msgstr "Archiveintrag konnte nicht gelesen werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Catalog URL"
+msgstr "Katalog-URL"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Catalog refreshed."
+msgstr "Katalog aktualisiert."
+
+#: includes/class-blp-settings.php:109 includes/class-blp-settings.php:125
 msgid "Changelog"
 msgstr "Änderungsverlauf"
 
-#: includes/class-blp-settings.php:58
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Check status"
+msgstr "Status prüfen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Checking status…"
+msgstr "Status wird geprüft…"
+
+#: includes/class-blp-settings.php:125
 msgid "Close"
 msgstr "Schließen"
 
-#: includes/class-blp-settings.php:48
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Commerce"
+msgstr "Commerce"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Compatible additions only"
+msgstr "Nur passende Ergänzungen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Content"
+msgstr "Inhalte"
+
+#: includes/updater-translations.php:28
+msgid "Could not access the update filesystem."
+msgstr "Auf das Dateisystem für das Update konnte nicht zugegriffen werden."
+
+#: includes/updater-translations.php:24
+msgid "Could not create the update download file."
+msgstr "Die Datei für den Update-Download konnte nicht erstellt werden."
+
+#: includes/updater-translations.php:32
+msgid "Could not prepare the GitHub release package."
+msgstr "Das GitHub-Release-Paket konnte nicht vorbereitet werden."
+
+#: includes/class-blp-settings.php:108
 msgid "Counts include readable published and unpublished content outside the trash. Search and other list filters can reduce the visible results. Builder groups may overlap."
 msgstr "Zähler berücksichtigen lesbare veröffentlichte und unveröffentlichte Inhalte außerhalb des Papierkorbs. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Builder-Gruppen können sich überschneiden."
 
-#: includes/class-blp-admin.php:138 includes/class-blp-settings.php:49
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Dec"
+msgstr "Dez"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "December"
+msgstr "Dezember"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Delete Library settings when removing the last host plugin"
+msgstr "Library-Einstellungen beim Entfernen des letzten Host-Plugins ebenfalls löschen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Details & requirements"
+msgstr "Details & Voraussetzungen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Discover more plugins by deckerweb"
+msgstr "Weitere Plugins von deckerweb entdecken"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Dismiss permanently"
+msgstr "Dauerhaft schließen"
+
+#: includes/class-blp-admin.php:264 includes/class-blp-settings.php:109
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: includes/class-blp-github-updates.php:32
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Done. The plugin is active."
+msgstr "Erledigt. Das Plugin ist aktiv."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Enter a catalog URL first."
+msgstr "Bitte zuerst eine Katalog-URL eintragen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Expanded archive is too large."
+msgstr "Das entpackte Archiv ist zu groß."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "F j, Y"
+msgstr "j. F Y"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Feb"
+msgstr "Feb"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "February"
+msgstr "Februar"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Filesystem credentials are required."
+msgstr "Zugangsdaten für das Dateisystem werden benötigt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Filesystem credentials are required. Use the catalog with JavaScript enabled or the native Plugins screen."
+msgstr "Dateisystem-Zugangsdaten sind erforderlich. Bitte den Katalog mit aktiviertem JavaScript oder die WordPress-Pluginverwaltung verwenden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Filter"
+msgstr "Filtern"
+
+#: includes/class-blp-github-updates.php:42
 msgid "Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists."
 msgstr "Finden Sie Seiten nach ihrem Page Builder. Erkennen Sie Builder auf einen Blick, filtern Sie mehrere Builder und arbeiten Sie in den gewohnten WordPress-Listen weiter."
 
-#: includes/class-blp-settings.php:40
+#: includes/class-blp-settings.php:97
 msgid "Find your pages faster"
 msgstr "Finden Sie Ihre Seiten schneller"
 
-#: includes/class-blp-settings.php:48
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Fits my installation"
+msgstr "Passt zu meiner Installation"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Fixed"
+msgstr "Behoben"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Fri"
+msgstr "Fr"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Friday"
+msgstr "Freitag"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "GitHub Stars"
+msgstr "GitHub-Sterne"
+
+#: includes/updater-translations.php:30
+msgid "GitHub release does not contain the plugin main file."
+msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Hide catalog"
+msgstr "Katalog ausblenden"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Improved"
+msgstr "Verbessert"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Install and activate this plugin in the network admin."
+msgstr "Dieses Plugin bitte im Netzwerk-Admin installieren und aktivieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Install deckerweb plugin"
+msgstr "deckerweb-Plugin installieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Install now"
+msgstr "Jetzt installieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installation cancelled."
+msgstr "Installation abgebrochen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installation failed."
+msgstr "Installation fehlgeschlagen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installed"
+msgstr "Installiert"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installed: "
+msgstr "Installiert: "
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installing…"
+msgstr "Wird installiert…"
+
+#: includes/updater-translations.php:20
+msgid "Invalid GitHub repository URL."
+msgstr "Ungültige GitHub-Repository-URL."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid ZIP archive."
+msgstr "Ungültiges ZIP-Archiv."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid approval flag."
+msgstr "Ungültige Freigabeangabe."
+
+#: includes/updater-translations.php:16
+msgid "Invalid authentication provider."
+msgstr "Ungültiger Authentifizierungsanbieter."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid catalog field: "
+msgstr "Ungültiges Katalogfeld: "
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid catalog revision."
+msgstr "Ungültiger Katalogstand."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid catalog schema."
+msgstr "Ungültiges Katalogformat."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid catalog timestamp."
+msgstr "Ungültiger Katalogzeitpunkt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid dependencies."
+msgstr "Ungültige Abhängigkeiten."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid dependency URL."
+msgstr "Ungültige URL einer Abhängigkeit."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid dependency metadata."
+msgstr "Ungültige Angaben zu Abhängigkeiten."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid display field."
+msgstr "Ungültiges Anzeigefeld."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid icon color."
+msgstr "Ungültige Icon-Farbe."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid icon label."
+msgstr "Ungültiges Icon-Kürzel."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid identity or release metadata."
+msgstr "Ungültige Plugin- oder Release-Angaben."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid local icon."
+msgstr "Ungültiges lokales Icon."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid network policy."
+msgstr "Ungültige Netzwerkregel."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid network requirement."
+msgstr "Ungültige Netzwerkanforderung."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid platform version."
+msgstr "Ungültige Plattformversion."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid plugin series."
+msgstr "Ungültige Plugin-Serie."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid star count."
+msgstr "Ungültige Anzahl der GitHub-Sterne."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid stars date."
+msgstr "Ungültiges Datum der GitHub-Sterne."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Jan"
+msgstr "Jan"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "January"
+msgstr "Januar"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Jul"
+msgstr "Jul"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "July"
+msgstr "Juli"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Jun"
+msgstr "Jun"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "June"
+msgstr "Juni"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Library"
+msgstr "Library"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Library changelog"
+msgstr "Library-Änderungsverlauf"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Library settings"
+msgstr "Library-Einstellungen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Library settings saved."
+msgstr "Library-Einstellungen gespeichert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Manage Content"
+msgstr "Inhalte verwalten"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Manage installed plugins"
+msgstr "Installierte Plugins verwalten"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Mar"
+msgstr "Mär"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "March"
+msgstr "März"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "May"
+msgstr "Mai"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Misc"
+msgstr "Sonstiges"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Missing display text."
+msgstr "Anzeigetext fehlt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Missing plugin header."
+msgstr "Plugin-Header fehlt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Mon"
+msgstr "Mo"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Monday"
+msgstr "Montag"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "More by deckerweb"
+msgstr "Mehr von deckerweb"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Multisite"
+msgstr "Multisite"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Network activate"
+msgstr "Netzwerkweit aktivieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Network permission denied."
+msgstr "Keine Berechtigung für das Netzwerk."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "New"
+msgstr "Neu"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "No approved plugins match this selection."
+msgstr "Keine freigegebenen Plugins passen zu dieser Auswahl."
+
+#: includes/class-blp-settings.php:108
 msgid "No matching data was found for the active, supported builders enabled for this content type. The page may still use the block editor, an unsupported or inactive builder, or a builder template."
 msgstr "Für die aktiven unterstützten Builder dieses Inhaltstyps wurden keine passenden Daten gefunden. Die Seite kann trotzdem den Blockeditor, einen nicht unterstützten oder inaktiven Builder oder ein Builder-Template verwenden."
 
-#: includes/class-blp-admin.php:58 includes/class-blp-admin.php:87
+#: includes/class-blp-admin.php:126 includes/class-blp-admin.php:183
 msgid "No recognized builder"
 msgstr "Ohne erkannten Builder"
 
-#: includes/class-blp-settings.php:40
+#: includes/class-blp-settings.php:99
+msgid "No supported builder is available for an editable content type on this site. Activate a supported builder and enable it for Pages or another content type."
+msgstr "Auf dieser Website ist kein unterstützter Builder für einen bearbeitbaren Inhaltstyp verfügbar. Aktivieren Sie einen unterstützten Builder und geben Sie Seiten oder einen anderen Inhaltstyp für ihn frei."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Not installed. You can try again."
+msgstr "Nicht installiert. Ein erneuter Versuch ist möglich."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Nov"
+msgstr "Nov"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "November"
+msgstr "November"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Oct"
+msgstr "Okt"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "October"
+msgstr "Oktober"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Off by default. Applies only when no other host is installed, including inactive hosts. Removes Library settings, installation records and introduction status. Installed plugins, their content and other plugin settings remain unchanged. Network data is shared across sites."
+msgstr "Standardmäßig ausgeschaltet. Gilt nur, wenn kein weiterer Host installiert ist, auch kein deaktivierter. Entfernt Library-Einstellungen, Installationszuordnung und den Status des Einführungshinweises. Installierte Plugins, deren Inhalte und Einstellungen anderer Plugins bleiben erhalten. Netzwerkdaten werden gemeinsam von den Websites genutzt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Online catalog"
+msgstr "Online-Katalog"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Only HTTPS on raw.githubusercontent.com/deckerweb. The server receives the requesting IP address. GitHub is contacted when installing a release."
+msgstr "Nur HTTPS auf raw.githubusercontent.com/deckerweb. Der Server sieht die anfragende IP-Adresse. Beim Installieren eines Releases wird GitHub kontaktiert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Only approved releases"
+msgstr "Nur freigegebene Releases"
+
+#: includes/class-blp-settings.php:97
 msgid "Open Pages or another supported content list. Click a builder above the table to filter, or use its name in the Builder column."
 msgstr "Öffnen Sie Seiten oder eine andere unterstützte Inhaltsliste. Klicken Sie zum Filtern auf einen Builder über der Tabelle oder auf seinen Namen in der Builder-Spalte."
 
-#: includes/class-blp-settings.php:49
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Open catalog"
+msgstr "Katalog öffnen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Optional. The bundled catalog works immediately. Catalog requests are cached for 24 hours. No site URL, plugin list or usage data is sent."
+msgstr "Optional. Der mitgelieferte Katalog funktioniert sofort. Katalogabfragen werden 24 Stunden zwischengespeichert. Keine Website-URL, Plugin-Liste oder Nutzungsdaten werden übertragen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "PHP ZIP support is required."
+msgstr "PHP-ZIP-Unterstützung wird benötigt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "POST required."
+msgstr "Eine POST-Anfrage ist erforderlich."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Permission denied."
+msgstr "Keine Berechtigung."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Planned: "
+msgstr "Geplant: "
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Plugin identity or version does not match the catalog."
+msgstr "Plugin oder Version stimmt nicht mit dem Katalog überein."
+
+#: includes/class-blp-settings.php:109
 msgid "Plugin information"
 msgstr "Plugin-Informationen"
 
-#: includes/class-blp-settings.php:49
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Plugin is not installed."
+msgstr "Das Plugin ist nicht installiert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Plugin series"
+msgstr "Plugin-Serien"
+
+#: includes/class-blp-settings.php:109
 msgid "Plugin website"
 msgstr "Plugin-Website"
 
-#: includes/class-blp-settings.php:48
+#: includes/updater-translations.php:14
+msgid "Private mode must be boolean."
+msgstr "Der Private-Modus muss ein boolescher Wert sein."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Product website"
+msgstr "Produktwebsite"
+
+#: includes/class-blp-settings.php:108
 msgid "Read the documentation and FAQ"
 msgstr "Anleitung und FAQ lesen"
 
-#: includes/class-blp-admin.php:132
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Refresh catalog"
+msgstr "Katalog aktualisieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Release 1.0.0 is being prepared. Installation will be available after package verification."
+msgstr "Release 1.0.0 wird vorbereitet. Die Installation ist nach Prüfung des Pakets verfügbar."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Release checksum is verified before installation. Activation is a separate step."
+msgstr "Vor der Installation wird die Release-Prüfsumme geprüft. Die Aktivierung erfolgt separat."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Release in preparation"
+msgstr "Release in Vorbereitung"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Release must contain exactly the approved plugin directory."
+msgstr "Das Release muss genau das freigegebene Plugin-Verzeichnis enthalten."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Repository & documentation"
+msgstr "Repository & Dokumentation"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Requirements shown are preliminary until the stable release is verified."
+msgstr "Die gezeigten Voraussetzungen sind bis zur Prüfung des stabilen Releases vorläufig."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "Requires PHP %s or newer."
+msgstr "Benötigt PHP %s oder neuer."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "Requires WordPress %s or newer."
+msgstr "Benötigt WordPress %s oder neuer."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Requires a WordPress Multisite network."
+msgstr "Benötigt ein WordPress-Multisite-Netzwerk."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Reset filters"
+msgstr "Filter zurücksetzen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Retrieve approved catalog updates online"
+msgstr "Katalogfreigaben online aktualisieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Sat"
+msgstr "Sa"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Saturday"
+msgstr "Samstag"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Scripts"
+msgstr "Scripte"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Search this catalog"
+msgstr "Diesen Katalog durchsuchen"
+
+#: includes/updater-translations.php:34
+msgid "See the release on GitHub."
+msgstr "Sehen Sie sich den Release auf GitHub an."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Selected by deckerweb · Installed from GitHub releases"
+msgstr "Von deckerweb ausgewählt · Installation aus GitHub-Releases"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Sep"
+msgstr "Sep"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "September"
+msgstr "September"
+
+#: includes/class-blp-admin.php:251
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/class-blp-settings.php:42
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Shop"
+msgstr "Shop"
+
+#: includes/class-blp-settings.php:102
 msgid "Show builder links in post-type menus"
 msgstr "Builder-Links in den Menüs der Inhaltstypen anzeigen"
 
-#: includes/class-blp-settings.php:42
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Show deckerweb under Add Plugins"
+msgstr "deckerweb unter „Plugins hinzufügen“ anzeigen"
+
+#: includes/class-blp-settings.php:102
 msgid "Show the Builder column"
 msgstr "Builder-Spalte anzeigen"
 
-#: includes/class-blp-settings.php:42
+#: includes/class-blp-settings.php:102
 msgid "Show the “No recognized builder” filter"
 msgstr "Filter „Ohne erkannten Builder“ anzeigen"
 
-#: includes/class-blp-admin.php:139
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Shows plugins whose platform and dependency requirements are met in this site or network. Without this filter, plugins with missing requirements remain visible."
+msgstr "Zeigt Plugins, deren Plattform- und Abhängigkeitsanforderungen auf dieser Website oder im Netzwerk erfüllt sind. Ohne diesen Filter bleiben Plugins mit fehlenden Voraussetzungen sichtbar."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Small plugins. Practical improvements."
+msgstr "Kleine Plugins. Konkrete Verbesserungen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Source: GitHub"
+msgstr "Quelle: GitHub"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Sun"
+msgstr "So"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Sunday"
+msgstr "Sonntag"
+
+#: includes/class-blp-admin.php:265
 msgid "Support the project"
 msgstr "Projekt unterstützen"
 
-#: includes/class-blp-github-updates.php:100
+#: includes/class-blp-github-updates.php:111
 msgid "The GitHub package could not be prepared. The installed version has been kept."
 msgstr "Das GitHub-Paket konnte nicht vorbereitet werden. Die installierte Version wurde beibehalten."
 
-#: includes/class-blp-github-updates.php:99
+#: includes/class-blp-github-updates.php:110
 msgid "The GitHub package does not contain the Builder List Pages plugin file."
 msgstr "Das GitHub-Paket enthält die Plugin-Datei von Builder List Pages nicht."
 
-#: includes/class-blp-github-updates.php:122
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The GitHub release could not be downloaded."
+msgstr "Das GitHub-Release konnte nicht heruntergeladen werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The action is still running. Check its status again."
+msgstr "Die Aktion läuft noch. Bitte den Status erneut prüfen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The approved package could not be verified."
+msgstr "Das freigegebene Paket konnte nicht geprüft werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The approved release changed. Refresh updates first."
+msgstr "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The approved release could not be verified."
+msgstr "Der freigegebene Release konnte nicht geprüft werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The catalog URL is not an allowed first-party HTTPS endpoint."
+msgstr "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The catalog could not be verified. Please try again later."
+msgstr "Der Katalog konnte nicht geprüft werden. Bitte später erneut versuchen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The catalog is disabled."
+msgstr "Der Katalog ist deaktiviert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The catalog is hidden."
+msgstr "Der Katalog ist ausgeblendet."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The deckerweb catalog could not load. Check platform requirements and the complete Library integration in the host plugin."
+msgstr "Der deckerweb-Katalog konnte nicht geladen werden. Bitte PHP-/WordPress-Anforderungen und die vollständige Library-Einbindung im Host-Plugin prüfen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The installed plugin identity could not be verified for this catalog update."
+msgstr "Die Identität des installierten Plugins konnte für dieses Katalogupdate nicht bestätigt werden."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The online catalog is unavailable. Showing cached or bundled entries; online approval is checked again before installation."
+msgstr "Der Online-Katalog ist nicht erreichbar. Angezeigt wird der gespeicherte oder mitgelieferte Katalog; vor der Installation wird die Online-Freigabe erneut geprüft."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The online catalog source is not trusted."
+msgstr "Die Online-Katalogquelle ist nicht vertrauenswürdig."
+
+#: includes/class-blp-github-updates.php:133
 msgid "The package identity or version does not match a newer Builder List Pages release."
 msgstr "Paketidentität oder Version passen nicht zu einem neueren Release von Builder List Pages."
 
-#: includes/class-blp-github-updates.php:127
+#: includes/class-blp-github-updates.php:138
 msgid "The package version differs from the offered update. Please check for updates again."
 msgstr "Die Paketversion weicht vom angebotenen Update ab. Bitte prüfe erneut auf Updates."
 
-#: includes/class-blp-github-updates.php:98
+#: includes/updater-translations.php:18
+msgid "The plugin must be installed in a stable slug directory."
+msgstr "Das Plugin muss in einem Verzeichnis mit einem festen Slug installiert sein."
+
+#: includes/updater-translations.php:22
+msgid "The private update could not be authorized. Check the repository credentials and refresh updates."
+msgstr "Das private Update konnte nicht autorisiert werden. Prüfen Sie die Repository-Zugangsdaten und suchen Sie erneut nach Updates."
+
+#: includes/updater-translations.php:26
+msgid "The private update download failed. Check credentials and try again."
+msgstr "Der Download des privaten Updates ist fehlgeschlagen. Prüfen Sie die Zugangsdaten und versuchen Sie es erneut."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The release checksum does not match. Installation stopped."
+msgstr "Die Prüfsumme des Releases stimmt nicht überein. Installation gestoppt."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The request could not be completed. Check the plugin status before trying again."
+msgstr "Die Anfrage konnte nicht abgeschlossen werden. Vor einem erneuten Versuch den Plugin-Status prüfen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The requirements below describe the offered release."
+msgstr "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release."
+
+#: includes/class-blp-github-updates.php:109
 msgid "The update filesystem is unavailable. Please try again."
 msgstr "Das Dateisystem für Updates ist nicht verfügbar. Bitte versuchen Sie es erneut."
 
-#: includes/class-blp-github-updates.php:107 includes/class-blp-github-updates.php:111 includes/class-blp-github-updates.php:115
+#: includes/deckerweb-plugin-library / shared updater
+msgid "The update has not been confirmed. You can try again."
+msgstr "Die Aktualisierung wurde nicht bestätigt. Sie können es erneut versuchen."
+
+#: includes/class-blp-github-updates.php:118 includes/class-blp-github-updates.php:122 includes/class-blp-github-updates.php:126
 msgid "The update package could not be checked."
 msgstr "Das Updatepaket konnte nicht geprüft werden."
 
-#: includes/class-blp-github-updates.php:131
+#: includes/class-blp-github-updates.php:142
 msgid "The update package has missing or invalid WordPress/PHP requirements."
 msgstr "Im Updatepaket fehlen gültige WordPress-/PHP-Voraussetzungen."
 
-#: includes/class-blp-settings.php:46
+#: includes/class-blp-settings.php:106
 msgid "These choices apply to this site. Each user can also hide the Builder column using Screen Options on the content list."
 msgstr "Diese Einstellungen gelten für diese Website. Jeder Benutzer kann die Builder-Spalte zusätzlich über Ansicht anpassen in der Inhaltsliste ausblenden."
 
-#: includes/class-blp-github-updates.php:135
+#: includes/deckerweb-plugin-library / shared updater
+msgid "This catalog requires a newer Library."
+msgstr "Dieser Katalog benötigt eine neuere Library."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "This plugin directory already exists. Use the installed plugin; it will not be overwritten."
+msgstr "Dieses Plugin-Verzeichnis existiert bereits. Bitte das installierte Plugin verwenden; es wird nicht überschrieben."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "This release is no longer approved."
+msgstr "Dieses Release ist nicht mehr freigegeben."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "This release is not approved."
+msgstr "Dieses Release ist nicht freigegeben."
+
+#: includes/class-blp-github-updates.php:146
 msgid "This release requires a newer WordPress or PHP version. The installed version has been kept."
 msgstr "Dieses Release benötigt eine neuere WordPress- oder PHP-Version. Die installierte Version wurde beibehalten."
 
-#: includes/class-blp-settings.php:49
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Thu"
+msgstr "Do"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Tools"
+msgstr "Werkzeuge"
+
+#: includes/class-blp-admin.php:140
+msgid "Total readable items in this group, excluding trash. Search and other filters may show fewer results."
+msgstr "Alle für Sie lesbaren Inhalte dieser Gruppe ohne Papierkorb. Suche und weitere Filter können weniger Ergebnisse anzeigen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Tue"
+msgstr "Di"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Unsafe archive path."
+msgstr "Unsicherer Archivpfad."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Untrusted release URL."
+msgstr "Nicht vertrauenswürdige Release-URL."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "Update %1$s to version %2$s or newer."
+msgstr "%1$s bitte auf Version %2$s oder neuer aktualisieren."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Update failed."
+msgstr "Aktualisierung fehlgeschlagen."
+
+#: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "Update to %s"
+msgstr "Auf %s aktualisieren"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Updated"
+msgstr "Aktualisiert"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Updating…"
+msgstr "Wird aktualisiert…"
+
+#: includes/class-blp-settings.php:109
 msgid "Version"
 msgstr "Version"
 
-#: includes/class-blp-settings.php:48
+#: includes/deckerweb-plugin-library / shared updater
+msgid "View plugins"
+msgstr "Plugins ansehen"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Wed"
+msgstr "Mi"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: includes/class-blp-settings.php:108
 msgid "What does “No recognized builder” mean?"
 msgstr "Was bedeutet „Ohne erkannten Builder“?"
 
-#: includes/class-blp-admin.php:114
+#: includes/class-blp-admin.php:221
 #, php-format
 msgid "With %s"
 msgstr "Mit %s"
 
-#: includes/class-blp-settings.php:38 includes/class-blp-settings.php:49
+#: includes/deckerweb-plugin-library / shared updater
+msgid "WordPress"
+msgstr "WordPress"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "You already use one of my plugins. Find selected additions in the deckerweb tab."
+msgstr "Sie nutzen bereits ein Plugin von mir. Ausgewählte Ergänzungen finden Sie im deckerweb-Tab."
+
+#: includes/class-blp-settings.php:96 includes/class-blp-settings.php:109
 msgid "Your pages. Your builders. One clear overview."
 msgstr "Ihre Seiten. Ihre Builder. Alles im Blick."

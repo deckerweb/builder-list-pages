@@ -17,7 +17,9 @@ use Deckerweb\BuilderListPages\Query;
 use Deckerweb\BuilderListPages\Settings;
 use Deckerweb\BuilderListPages\Admin;
 $checks=0;
+/** Verify an integration outcome. @param bool $condition Condition to verify. @param string $message Test label. @return void */
 function check($condition,$message) { global $checks; ++$checks; if(!$condition) throw new Exception('FAIL: '.$message); echo 'PASS: '.$message.PHP_EOL; }
+/** Surface PHP diagnostics as failing tests. @param int $severity PHP severity. @param string $message Diagnostic. @param string $file Source file. @param int $line Source line. @return void */
 set_error_handler(function($severity,$message,$file,$line) { if(error_reporting() & $severity) throw new ErrorException($message,0,$severity,$file,$line); });
 wp_set_current_user(1);
 foreach(get_posts(['post_type'=>['page','post'],'post_status'=>'any','numberposts'=>-1,'s'=>'BLP']) as $old) wp_delete_post($old->ID,true);
@@ -28,6 +30,7 @@ update_option('bricks_global_settings',['postTypes'=>['page','post']]);
 update_option('brizy','bad-format');
 $GLOBALS['ct_ignore_post_types']=array_values(array_diff(get_post_types(),['page']));
 register_post_type('fixture_hidden',['show_ui'=>false]);
+/** Add disposable legacy and malformed builder definitions. @param array $builders Original definitions. @return array Fixture definitions. */
 add_filter('blp/filter/builder-data',function($builders) {
     $builders['elementor']['builder-types'][]='fixture_hidden';
     $builders['bad']='invalid';
@@ -52,6 +55,7 @@ foreach(['bricks','both'] as $name) update_post_meta($ids[$name],'_bricks_editor
 update_post_meta($ids['disabled'],'_elementor_edit_mode','disabled');
 add_post_meta($ids['duplicate'],'_elementor_edit_mode','disabled');
 update_post_meta($ids['empty_exists'],'_ct_builder_json','');
+/** Query the fixture set with a builder and optional constraints. @param string $id Builder identifier. @param array $extra Additional query arguments. @return array Matching post IDs. */
 $filtered=function($id,$extra=[]) use($query,$ids) {
     $q=new WP_Query();$query->apply($q,'page',$id);
     return $q->query(array_merge(['post__in'=>array_values($ids),'post_type'=>'page','post_status'=>'publish','fields'=>'ids','posts_per_page'=>-1,'meta_query'=>$q->get('meta_query')],$extra));

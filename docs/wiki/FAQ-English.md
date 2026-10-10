@@ -1,8 +1,6 @@
-# Frequently asked questions
+# FAQ by topic
 
 [Guide](English.md) · [Deutsch](FAQ-Deutsch.md)
-
-Answers for release 1.1.0. Planned features are not described as available.
 
 ## Getting started
 
@@ -46,7 +44,7 @@ No configured condition matched among active supported builders enabled for this
 
 ### Are inactive builders detected?
 
-Not in 1.1.0. Their remaining data does not form a detected group. An inventory of inactive-builder data is a future feature.
+No. Detection covers active supported builders enabled for the current content type. Remaining metadata from inactive builders is not included.
 
 ### Does it recognize builder templates applied to normal pages?
 
@@ -96,7 +94,7 @@ The three plugin switches apply to the current site. WordPress Screen Options pr
 
 ### What about Multisite?
 
-Settings stay per site; network activation loads the plugin on each site. The embedded Library provides its own network-aware controls. This RC has not been fully tested in Multisite.
+The three display choices are stored separately for each site. Network activation loads the plugin on all sites, including newly created sites. The Library uses its own site and network controls; site administrators cannot manage its network preferences.
 
 ## Updates, Library and troubleshooting
 
@@ -104,9 +102,9 @@ Settings stay per site; network activation loads the plugin on each site. The em
 
 The bundled deckerweb GitHub Updater V2 checks public stable releases and integrates with the regular WordPress update screens. No separate updater plugin is required. The updater does not enable automatic updates.
 
-### Will this RC automatically install other RCs?
+### Are prereleases installed automatically?
 
-No. Prereleases are excluded by the stable-release updater. Install test ZIPs manually; a newer stable 1.1.0 can replace this RC later.
+No. The updater offers stable GitHub releases only. Install test packages manually when needed. It does not turn on automatic updates.
 
 ### What is the deckerweb Library?
 
@@ -118,7 +116,7 @@ No. Installation requires an explicit action, capabilities and nonce checks. The
 
 ### Does the Library overwrite newer installed plugins?
 
-No. The embedded installer does not replace an existing plugin directory or downgrade this RC to the pinned 1.0.0 catalog release.
+No. A fresh installation never replaces an existing directory. Updates use the separate update action, check the offered version and requirements, and never offer a downgrade.
 
 ### Does it send usage tracking?
 
@@ -126,7 +124,7 @@ Builder List Pages contains no usage telemetry. GitHub update checks contact Git
 
 ### Can I use it as a code snippet?
 
-A separately generated PHP and Code Snippets JSON export provides views, columns and submenus with the default switches. It excludes plugin settings, bundled assets, updater and Library. Activate either the plugin or the snippet, never both. The modular plugin main file is no longer a standalone snippet.
+Use the installable plugin ZIP. Older releases supplied a separate snippet with a smaller feature set. Do not activate a legacy snippet alongside the plugin; the plugin main file is not a standalone snippet.
 
 ### Does it change or clean up my page content?
 
@@ -134,13 +132,16 @@ No. It reads builder metadata and filters admin lists. No conversion, builder cl
 
 ### Is ClassicPress supported?
 
-The previous version documented ClassicPress compatibility. This RC, its native Update URI integration and the embedded Library have not been verified on ClassicPress; do not assume support from old documentation.
+The current plugin, its Update URI integration and its embedded Library have not been tested on ClassicPress. Earlier compatibility statements do not establish support for this build.
 
 ### What should I report when recognition looks wrong?
 
 Include plugin and builder versions, post type, user role, selected filter and expected result. Use a test copy and avoid sharing private page content or credentials.
 
+### Why does WP Admin Cleaner block the Bricks page list?
 
-## Why does WP Admin Cleaner block the Bricks page list?
+WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its `bricks` slug also match `edit.php?post_type=page&builder=bricks`. Builder List Pages automatically appends `&blp_view=1` to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.
 
-WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. Hiding the Bricks Getting Started menu makes its `bricks` slug also match `edit.php?post_type=page&builder=bricks`. Starting with 1.1.0-rc2, Builder List Pages automatically appends `&blp_view=1` to its list URLs while retaining search and filters. The hidden Bricks screen stays blocked, and Admin Cleaner can remain active.
+### What happens when I deactivate or uninstall it?
+
+Deactivation keeps all data. Uninstallation removes this plugin’s temporary update cache while keeping its three site settings and all builder content. Shared Library caches and tasks are removed only when no other installed host needs them, including inactive hosts. Library preferences remain unless its separate cleanup option is enabled. Plugins installed through the Library are never removed.

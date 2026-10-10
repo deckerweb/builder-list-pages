@@ -1,8 +1,6 @@
-# Häufig gestellte Fragen
+# Fragen nach Themen
 
 [Anleitung](Deutsch.md) · [English](FAQ-English.md)
-
-Antworten zum Release 1.1.0. Geplante Funktionen werden nicht als verfügbar beschrieben.
 
 ## Erste Schritte
 
@@ -96,7 +94,7 @@ Die drei Plugin-Schalter gelten für die aktuelle Website. Ansicht anpassen steu
 
 ### Was ist mit Multisite?
 
-Einstellungen bleiben pro Website; Netzwerkaktivierung lädt das Plugin auf jeder Website. Die Library hat eigene Netzwerkfunktionen. Dieses RC wurde nicht umfassend in Multisite getestet.
+Die drei Anzeigeoptionen werden getrennt je Website gespeichert. Eine Netzwerkaktivierung lädt das Plugin auf allen Websites, auch auf neu angelegten. Die Library hat eigene Website- und Netzwerkeinstellungen; Website-Administratoren können deren Netzwerkeinstellungen nicht ändern.
 
 ## Updates, Library und Hilfe
 
@@ -104,9 +102,9 @@ Einstellungen bleiben pro Website; Netzwerkaktivierung lädt das Plugin auf jede
 
 Der mitgelieferte deckerweb GitHub-Updater V2 prüft öffentliche stabile Releases und integriert sie in die normalen WordPress-Updateseiten. Ein zusätzliches Updater-Plugin ist nicht nötig. Automatische Updates werden nicht eingeschaltet.
 
-### Installiert dieses RC automatisch weitere RCs?
+### Werden Vorabversionen automatisch installiert?
 
-Nein. Der Updater schließt Vorabversionen aus. Test-ZIPs werden manuell installiert; eine spätere stabile Version 1.1.0 kann dieses RC ersetzen.
+Nein. Der Updater bietet ausschließlich stabile GitHub-Releases an. Testpakete werden bei Bedarf manuell installiert. Automatische Updates werden nicht eingeschaltet.
 
 ### Was ist die deckerweb Library?
 
@@ -118,7 +116,7 @@ Nein. Installation benötigt eine ausdrückliche Aktion, Rechte- und Nonce-Prüf
 
 ### Überschreibt die Library neuere installierte Plugins?
 
-Nein. Der Installer ersetzt kein vorhandenes Plugin-Verzeichnis und stuft dieses RC nicht auf die im Katalog hinterlegte Version 1.0.0 zurück.
+Nein. Eine Neuinstallation ersetzt kein vorhandenes Plugin-Verzeichnis. Updates erfolgen über eine eigene Aktion mit Versions- und Anforderungsprüfung; ein Downgrade wird nicht angeboten.
 
 ### Gibt es Nutzungs-Tracking?
 
@@ -126,7 +124,7 @@ Builder List Pages enthält keine Nutzungs-Telemetrie. GitHub-Updateprüfungen k
 
 ### Kann ich es als Code Snippet verwenden?
 
-Ein separat erzeugter PHP- und Code-Snippets-JSON-Export bietet Ansichten, Spalte und Untermenüs mit den Standard-Schaltern. Einstellungen, Assets, Updater und Library sind nicht enthalten. Entweder Plugin oder Snippet aktivieren, niemals beide. Die modulare Plugin-Hauptdatei ist kein eigenständiges Snippet mehr.
+Verwende das installierbare Plugin-ZIP. Ältere Releases enthielten ein separates Snippet mit kleinerem Funktionsumfang. Aktiviere ein altes Snippet nicht parallel zum Plugin; die Plugin-Hauptdatei ist kein eigenständiges Snippet.
 
 ### Ändert oder bereinigt das Plugin Seiteninhalte?
 
@@ -134,13 +132,16 @@ Nein. Es liest Builder-Metadaten und filtert Admin-Listen. Es gibt keine Konvert
 
 ### Wird ClassicPress unterstützt?
 
-Die Vorgängerversion dokumentierte ClassicPress-Kompatibilität. Dieses RC, die native Update-URI-Integration und die Library sind nicht auf ClassicPress geprüft. Alte Dokumentation ist keine Zusage für dieses Release.
+Das aktuelle Plugin, seine Update-URI-Anbindung und die eingebettete Library wurden nicht mit ClassicPress getestet. Frühere Kompatibilitätsangaben begründen keine Unterstützung dieses Arbeitsstands.
 
 ### Was soll ich bei falscher Erkennung melden?
 
 Plugin- und Builder-Version, Inhaltstyp, Benutzerrolle, gewählten Filter und erwartetes Ergebnis angeben. Eine Testkopie verwenden und keine privaten Seiteninhalte oder Zugangsdaten teilen.
 
-
-## Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?
+### Warum sperrt WP Admin Cleaner die Bricks-Seitenliste?
 
 WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der URL. Ist „Bricks → Erste Schritte“ ausgeblendet, trifft der Menüname `bricks` auch auf `edit.php?post_type=page&builder=bricks` zu. Seit 1.1.0-rc2 ergänzt Builder List Pages automatisch `&blp_view=1` am Ende seiner Listen-URLs. Suche und Filter bleiben erhalten, und die ausgeblendete Bricks-Menüseite bleibt gesperrt. Admin Cleaner kann aktiv bleiben.
+
+### Was passiert beim Deaktivieren oder Deinstallieren?
+
+Die Deaktivierung erhält alle Daten. Die Deinstallation entfernt den temporären Update-Cache dieses Plugins, erhält aber die drei Website-Einstellungen und alle Builder-Inhalte. Gemeinsame Library-Caches und Aufgaben werden nur entfernt, wenn kein anderer installierter Host sie benötigt, auch kein inaktiver. Library-Einstellungen bleiben erhalten, sofern deren separate Löschoption nicht eingeschaltet ist. Über die Library installierte Plugins werden niemals entfernt.

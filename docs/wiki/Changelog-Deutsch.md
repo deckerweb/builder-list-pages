@@ -2,6 +2,13 @@
 
 [English](Changelog-English.md) · [FAQ](FAQ-Deutsch.md)
 
+## 1.2.1 · 2026-10-21
+
+- **Verbessert:** Aktualisiert die eingebettete deckerweb Library auf 1.1.0 und den Updater auf 2.2.0, einschließlich Host-Übersetzungen und geprüfter katalogbasierter Updates.
+- **Behoben:** Prüft Updatepakete bei nativen Sammelupdates ebenso wie bei Einzelupdates.
+- **Behoben:** Hält geschlossene Änderungsverläufe auch bei fremden Dialog-Styles verborgen und erhält native Schließ- und Dokumentationslink-Fallbacks.
+- **Sonstiges:** Benötigt PHP 8.1; WordPress 6.7 bleibt unterstützt. Einstellungen, Favoriten und Builder-Inhalte bleiben erhalten.
+
 ## 1.2.0 · 2026-10-10
 
 - **Neu:** Ergänzt einen Mehrfach-Builder-Filter, optionale Prüfung inaktiver Spuren, persönliche gespeicherte Ansichten, kompakte Benutzerauswahl, sparsame kopierbare Diagnose und einen ausdrücklichen CSV-Export für Übergaben.

@@ -53,11 +53,11 @@ final class Admin {
 	 */
 	public function canonical_list_url(): string {
 		global $pagenow;
-		if ( ! is_admin() || 'edit.php' !== $pagenow || wp_doing_ajax() || 'GET' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) { return ''; }
-		$type = $_GET['post_type'] ?? 'post';
+		if ( ! is_admin() || 'edit.php' !== $pagenow || wp_doing_ajax() || 'get' !== sanitize_key( wp_unslash( $_SERVER['REQUEST_METHOD'] ?? '' ) ) ) { return ''; }
+		$type = isset( $_GET['post_type'] ) && is_string( $_GET['post_type'] ) ? sanitize_key( wp_unslash( $_GET['post_type'] ) ) : 'post';
 		if ( ! is_string( $type ) || '' === $this->query->selected( $type ) ) { return ''; }
-		$uri = $_SERVER['REQUEST_URI'] ?? '';
-		$raw_query = is_string( $uri ) ? wp_parse_url( wp_unslash( $uri ), PHP_URL_QUERY ) : '';
+		$uri = isset( $_SERVER['REQUEST_URI'] ) && is_string( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+		$raw_query = is_string( $uri ) ? wp_parse_url( $uri, PHP_URL_QUERY ) : '';
 		if ( is_string( $raw_query ) && preg_match( '/(?:^|&)blp_view=1$/D', $raw_query ) ) { return ''; }
 		$url = add_query_arg( wp_unslash( $_GET ), admin_url( 'edit.php' ) );
 		return add_query_arg( 'blp_view', '1', remove_query_arg( 'blp_view', $url ) );
@@ -198,9 +198,13 @@ final class Admin {
 			return;
 		}
 		foreach ( $builders as $id => $builder ) {
-			echo '<a class="blp-builder" href="' . esc_url( self::list_url( $type, $id ) ) . '" title="' . esc_attr( sprintf( __( 'Filter by %s', 'builder-list-pages' ), $builder['label'] ) ) . '">' . esc_html( $builder['label'] ) . '</a> ';
+			/* translators: %s: recognized builder name. */
+			$filter_label = sprintf( __( 'Filter by %s', 'builder-list-pages' ), $builder['label'] );
+			/* translators: %s: recognized builder name. */
+			$edit_label = sprintf( __( 'Edit with %s', 'builder-list-pages' ), $builder['label'] );
+			echo '<a class="blp-builder" href="' . esc_url( self::list_url( $type, $id ) ) . '" title="' . esc_attr( $filter_label ) . '">' . esc_html( $builder['label'] ) . '</a> ';
 			$url = $this->editor_url( $post_id, $id );
-			if ( $url ) { echo '<a class="blp-editor-link" href="' . esc_url( $url ) . '">' . esc_html( sprintf( __( 'Edit with %s', 'builder-list-pages' ), $builder['label'] ) ) . '</a> '; }
+			if ( $url ) { echo '<a class="blp-editor-link" href="' . esc_url( $url ) . '">' . esc_html( $edit_label ) . '</a> '; }
 		}
 		if ( $recognized ) { $this->recognition_details( $post_id, $recognized ); }
 	}

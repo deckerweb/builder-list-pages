@@ -10,7 +10,7 @@ No. Activate the plugin and open a content list that an active supported builder
 
 ### Which requirements apply?
 
-WordPress 6.7+ and PHP 8.0+. Checked on WordPress 6.7 and 7.1.2 with PHP 8.4.5 using disposable SQLite installations, including Bricks 2.4.2 and WP Admin Cleaner 2.0.1. Other builder integrations, database engines and versions still need broader testing.
+WordPress 6.7+ and PHP 8.1+. Checked on WordPress 6.7 and 7.1.3 with PHP 8.4.5 using isolated SQLite installations; PHP 8.1.29 workflow checks also passed. MySQL/MariaDB, FTP/SSH and broader real-builder combinations need separate checks.
 
 ### Is it free?
 

@@ -39,7 +39,7 @@ final class Query {
 	 * @return string Resulting text, URL or SQL fragment.
 	 */
 	public function selected( string $type ): string {
-		$value = $_GET['builder'] ?? '';
+		$value = isset( $_GET['builder'] ) && is_string( $_GET['builder'] ) ? sanitize_key( wp_unslash( $_GET['builder'] ) ) : '';
 		if ( ! is_string( $value ) ) { return ''; }
 		$id = sanitize_key( wp_unslash( $value ) );
 		$builders = $this->registry->for_type( $type );

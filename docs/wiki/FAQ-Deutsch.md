@@ -10,7 +10,7 @@ Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstü
 
 ### Welche Voraussetzungen gelten?
 
-WordPress ab 6.7 und PHP ab 8.0. Geprüft mit WordPress 6.7 und 7.1.2 sowie PHP 8.4.5 in separaten SQLite-Installationen, einschließlich Bricks 2.4.2 und WP Admin Cleaner 2.0.1. Andere Builder, Datenbanksysteme und Versionen benötigen weitere Tests.
+WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 6.7 und 7.1.3 mit PHP 8.4.5 in isolierten SQLite-Installationen; die Workflowprüfungen bestanden auch mit PHP 8.1.29. MySQL/MariaDB, FTP/SSH und weitere echte Builder-Kombinationen benötigen gesonderte Prüfungen.
 
 ### Ist das Plugin kostenlos?
 

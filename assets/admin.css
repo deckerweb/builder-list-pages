@@ -10,3 +10,5 @@
 .blp-editor-link{display:block;font-size:11px;margin:0 0 7px 8px}
 
 .blp-recognition{margin:4px 0 8px;font-size:11px}.blp-recognition summary{cursor:pointer}.blp-recognition code{font-size:10px;overflow-wrap:anywhere}.blp-recognition ul{margin:6px 0}.blp-recognition summary:focus-visible{outline:2px solid #17616a;outline-offset:3px}
+
+.blp-root dialog.blp-document-dialog:not([open]),.blp-root dialog.blp-document-dialog[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important}.blp-document-dialog header form{margin:0}

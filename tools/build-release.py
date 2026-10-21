@@ -17,14 +17,14 @@ def files(runtime):
   if any(part in {'.git','.nova','__pycache__','node_modules'} for part in rel.parts) or f.name in {'.DS_Store','.gitattributes','.gitignore'}:continue
   assert not any(word in str(rel).lower() for word in ['roadmap','specifikation','sub-spec','internal-archive']),f'Private document: {rel}'
   if runtime:
-   allowed=(str(rel) in rootfiles or rel.parts[0] in {'includes','languages'} or (rel.parts[0]=='assets' and 'alternatives' not in rel.parts and (f.suffix in {'.svg','.png','.css','.js'} or f.name == 'Inter-OFL.txt')) or (str(rel) in {'docs/changelog.txt','docs/changelog-de.txt'}) or (rel.parts[:2]==('docs','wiki') and f.suffix=='.html'))
+   allowed=(str(rel) in rootfiles or rel.parts[0] in {'includes','languages'} or (rel.parts[0]=='assets' and 'alternatives' not in rel.parts and ((f.name in {'icon.svg','icon-128x128.png','icon-256x256.png','banner-772x250.png','banner-1544x500.png','banner-de-772x250.png','banner-de-1544x500.png','banner-1280x640.png','banner-de-1280x640.png'} or f.suffix in {'.css','.js'}) or f.name == 'Inter-OFL.txt')) or (str(rel) in {'docs/changelog.txt','docs/changelog-de.txt','docs/changelog-de-formal.txt'}) or (rel.parts[:2]==('docs','wiki') and f.suffix=='.html'))
    if not allowed:continue
   yield f,rel
 
 def archive(path,items):
  with zipfile.ZipFile(path,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
   for f,rel in items:
-   info=zipfile.ZipInfo('builder-list-pages/'+rel.as_posix(),date_time=(2026,10,10,12,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;z.writestr(info,f.read_bytes())
+   info=zipfile.ZipInfo('builder-list-pages/'+rel.as_posix(),date_time=(2026,10,21,12,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;z.writestr(info,f.read_bytes())
 paths=[]
 for kind,runtime in [('',True),('-source',False)]:
  dest=out/f'builder-list-pages-{suffix}{kind}.zip';archive(dest,files(runtime));paths.append(dest);print(f'{dest.name}: {dest.stat().st_size:,} bytes')

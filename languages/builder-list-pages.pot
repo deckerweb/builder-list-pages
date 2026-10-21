@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Builder List Pages 1.2.0\nContent-Type: text/plain; charset=UTF-8\n"
+msgstr "Project-Id-Version: Builder List Pages 1.2.1\nContent-Type: text/plain; charset=UTF-8\n"
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "%s is installed but inactive. Activate it first."
@@ -34,6 +34,14 @@ msgid "Activating…"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Active"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Active filters: "
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Admin"
 msgstr ""
 
@@ -59,6 +67,10 @@ msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Another action for this plugin is running. Please wait."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Another component interrupted the request. If Git Updater is active, temporarily deactivate it and retry."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -105,6 +117,10 @@ msgstr ""
 msgid "Builder"
 msgstr ""
 
+#: includes/class-blp-github-updates.php:68
+msgid "Builder List Pages needs deckerweb Updater 2.2.0 for its catalog integration. Another plugin loaded an older updater first. Update the other deckerweb plugins, then check for updates again."
+msgstr ""
+
 #: includes/class-blp-workflows.php:75
 msgid "Builder groups can overlap. An existing metadata field can count even when empty. Recognition describes stored signatures, not frontend rendering or global templates."
 msgstr ""
@@ -117,8 +133,16 @@ msgstr ""
 msgid "Builder view"
 msgstr ""
 
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Bundled catalog"
+msgstr ""
+
 #: includes/class-blp-workflows.php:87
 msgid "CSV exports this builder, status and search selection, up to 5,000 readable items. Other list filters are not included."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Cached or bundled catalog"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -177,7 +201,7 @@ msgstr ""
 msgid "Compatible additions only"
 msgstr ""
 
-#: includes/class-blp-admin.php:219
+#: includes/class-blp-admin.php:223
 msgid "Contains an empty value"
 msgstr ""
 
@@ -185,15 +209,23 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/updater-translations.php:28
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Copied."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Copy diagnostic information"
+msgstr ""
+
+#: includes/updater-translations.php:27
 msgid "Could not access the update filesystem."
 msgstr ""
 
-#: includes/updater-translations.php:24
+#: includes/updater-translations.php:23
 msgid "Could not create the update download file."
 msgstr ""
 
-#: includes/updater-translations.php:32
+#: includes/updater-translations.php:31
 msgid "Could not prepare the GitHub release package."
 msgstr ""
 
@@ -226,10 +258,18 @@ msgid "Discover more plugins by deckerweb"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Discover randomly"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Dismiss permanently"
 msgstr ""
 
-#: includes/class-blp-admin.php:310 includes/class-blp-settings.php:109
+#: includes/updater-translations.php:39
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/class-blp-admin.php:314 includes/class-blp-settings.php:109
 msgid "Documentation"
 msgstr ""
 
@@ -241,7 +281,7 @@ msgstr ""
 msgid "Edit link"
 msgstr ""
 
-#: includes/class-blp-admin.php:203
+#: includes/class-blp-admin.php:204
 msgid "Edit with %s"
 msgstr ""
 
@@ -281,11 +321,11 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: includes/class-blp-admin.php:201
+#: includes/class-blp-admin.php:202
 msgid "Filter by %s"
 msgstr ""
 
-#: includes/class-blp-github-updates.php:42
+#: includes/class-blp-github-updates.php:48
 msgid "Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists."
 msgstr ""
 
@@ -309,11 +349,15 @@ msgstr ""
 msgid "Friday"
 msgstr ""
 
+#: includes/updater-translations.php:35
+msgid "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider."
+msgstr ""
+
 #: includes/deckerweb-plugin-library / shared updater
 msgid "GitHub Stars"
 msgstr ""
 
-#: includes/updater-translations.php:30
+#: includes/updater-translations.php:29
 msgid "GitHub release does not contain the plugin main file."
 msgstr ""
 
@@ -350,6 +394,10 @@ msgid "Installed"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Installed · inactive"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Installed: "
 msgstr ""
 
@@ -357,7 +405,7 @@ msgstr ""
 msgid "Installing…"
 msgstr ""
 
-#: includes/updater-translations.php:20
+#: includes/updater-translations.php:19
 msgid "Invalid GitHub repository URL."
 msgstr ""
 
@@ -369,7 +417,7 @@ msgstr ""
 msgid "Invalid approval flag."
 msgstr ""
 
-#: includes/updater-translations.php:16
+#: includes/updater-translations.php:15
 msgid "Invalid authentication provider."
 msgstr ""
 
@@ -438,6 +486,10 @@ msgid "Invalid plugin series."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Invalid sort order."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Invalid star count."
 msgstr ""
 
@@ -470,6 +522,10 @@ msgid "June"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Last successful check: "
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Library"
 msgstr ""
 
@@ -489,7 +545,7 @@ msgstr ""
 msgid "Manage Content"
 msgstr ""
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:37
 msgid "Manage installed plugins"
 msgstr ""
 
@@ -538,7 +594,19 @@ msgid "Multisite"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Name A–Z"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Name Z–A"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Network activate"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Network active"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -625,8 +693,12 @@ msgstr ""
 msgid "POST required."
 msgstr ""
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:41
 msgid "Permission denied."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Permission denied. Reload the page and check your permissions."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -653,12 +725,16 @@ msgstr ""
 msgid "Plugin website"
 msgstr ""
 
-#: includes/updater-translations.php:14
+#: includes/updater-translations.php:13
 msgid "Private mode must be boolean."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Product website"
+msgstr ""
+
+#: includes/updater-translations.php:43
+msgid "Public catalog callbacks require both providers and cannot be used in private mode."
 msgstr ""
 
 #: includes/class-blp-settings.php:108
@@ -669,7 +745,11 @@ msgstr ""
 msgid "Read-only audit: these items contain known signatures from inactive builders. A trace does not prove which builder renders the page. No content is changed."
 msgstr ""
 
-#: includes/class-blp-admin.php:215
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Recently updated"
+msgstr ""
+
+#: includes/class-blp-admin.php:219
 msgid "Recognition details"
 msgstr ""
 
@@ -698,6 +778,10 @@ msgid "Remove builder filter"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Remove filter: "
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Repository & documentation"
 msgstr ""
 
@@ -723,6 +807,10 @@ msgstr ""
 
 #: includes/class-blp-workflows.php:71
 msgid "Reset search"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Reset view"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -757,8 +845,12 @@ msgstr ""
 msgid "Search this catalog"
 msgstr ""
 
-#: includes/updater-translations.php:34
+#: includes/updater-translations.php:33
 msgid "See the release on GitHub."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Select and copy the text."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -773,7 +865,7 @@ msgstr ""
 msgid "September"
 msgstr ""
 
-#: includes/class-blp-admin.php:297
+#: includes/class-blp-admin.php:301
 msgid "Settings"
 msgstr ""
 
@@ -810,18 +902,30 @@ msgid "Shows plugins whose platform and dependency requirements are met in this 
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "Shuffle again"
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Small plugins. Practical improvements."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Sort by"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Source: GitHub"
 msgstr ""
 
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Standard"
+msgstr ""
+
 #: includes/class-blp-workflows.php:131
 msgid "Status"
 msgstr ""
 
-#: includes/class-blp-admin.php:219
+#: includes/class-blp-admin.php:223
 msgid "Stored signature matched"
 msgstr ""
 
@@ -837,15 +941,19 @@ msgstr ""
 msgid "Support diagnostics: select and copy"
 msgstr ""
 
-#: includes/class-blp-admin.php:311
+#: includes/class-blp-admin.php:315
 msgid "Support the project"
 msgstr ""
 
-#: includes/class-blp-github-updates.php:111
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Technical information"
+msgstr ""
+
+#: includes/class-blp-github-updates.php:127
 msgid "The GitHub package could not be prepared. The installed version has been kept."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:110
+#: includes/class-blp-github-updates.php:126
 msgid "The GitHub package does not contain the Builder List Pages plugin file."
 msgstr ""
 
@@ -861,11 +969,11 @@ msgstr ""
 msgid "The approved package could not be verified."
 msgstr ""
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:47
 msgid "The approved release changed. Refresh updates first."
 msgstr ""
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:45
 msgid "The approved release could not be verified."
 msgstr ""
 
@@ -901,23 +1009,23 @@ msgstr ""
 msgid "The online catalog source is not trusted."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:133
+#: includes/class-blp-github-updates.php:149
 msgid "The package identity or version does not match a newer Builder List Pages release."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:138
+#: includes/class-blp-github-updates.php:154
 msgid "The package version differs from the offered update. Please check for updates again."
 msgstr ""
 
-#: includes/updater-translations.php:18
+#: includes/updater-translations.php:17
 msgid "The plugin must be installed in a stable slug directory."
 msgstr ""
 
-#: includes/updater-translations.php:22
+#: includes/updater-translations.php:21
 msgid "The private update could not be authorized. Check the repository credentials and refresh updates."
 msgstr ""
 
-#: includes/updater-translations.php:26
+#: includes/updater-translations.php:25
 msgid "The private update download failed. Check credentials and try again."
 msgstr ""
 
@@ -933,7 +1041,7 @@ msgstr ""
 msgid "The requirements below describe the offered release."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:109
+#: includes/class-blp-github-updates.php:125
 msgid "The update filesystem is unavailable. Please try again."
 msgstr ""
 
@@ -941,16 +1049,20 @@ msgstr ""
 msgid "The update has not been confirmed. You can try again."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:118 includes/class-blp-github-updates.php:122 includes/class-blp-github-updates.php:126
+#: includes/class-blp-github-updates.php:134 includes/class-blp-github-updates.php:138 includes/class-blp-github-updates.php:142
 msgid "The update package could not be checked."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:142
+#: includes/class-blp-github-updates.php:158
 msgid "The update package has missing or invalid WordPress/PHP requirements."
 msgstr ""
 
 #: includes/class-blp-settings.php:106
 msgid "These choices apply to this site. Each user can also hide the Builder column using Screen Options on the content list."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "These details contain component versions and catalog status, without credentials or site content."
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -969,7 +1081,7 @@ msgstr ""
 msgid "This release is not approved."
 msgstr ""
 
-#: includes/class-blp-github-updates.php:146
+#: includes/class-blp-github-updates.php:162
 msgid "This release requires a newer WordPress or PHP version. The installed version has been kept."
 msgstr ""
 
@@ -1011,6 +1123,10 @@ msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Update %1$s to version %2$s or newer."
+msgstr ""
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Update available"
 msgstr ""
 
 #: includes/deckerweb-plugin-library / shared updater
@@ -1061,7 +1177,7 @@ msgstr ""
 msgid "What does “No recognized builder” mean?"
 msgstr ""
 
-#: includes/class-blp-admin.php:267
+#: includes/class-blp-admin.php:271
 msgid "With %s"
 msgstr ""
 

@@ -1,23 +1,15 @@
-# 1.2.0
+# 1.2.1
 
-## 1.2.0 · 2026-10-10
+## 1.2.1 · 2026-10-21
 
-- **New:** Adds a multiple-builder filter, optional inactive-trace audit, personal saved views, compact user display choice, minimal copyable diagnostics and an explicit CSV handover export.
-- **Improved:** Explains empty results with independent search/builder recovery and clearer badge actions; adds permission-checked native Bricks editor links.
-- **Improved:** Preserves personal favorites and preferences across deactivation and uninstall; limits exports to permitted items and neutralizes spreadsheet formulas.
-- **Improved:** Updates bilingual banners and icons using the approved blue-petrol vector artwork and local Inter font outlines with the font license.
-- **Improved:** Integrates deckerweb Library 0.9.0 and Updater 2.1.0 with complete German informal/formal host translations and synchronized local documentation.
-- **Improved:** Displays the plugin icon once in the settings header; keeps version, documentation and author information in the footer.
-- **Fixed:** Places native admin notices below the complete settings header and clarifies the column and post-type admin menu labels.
-- **Misc:** Preserves existing site settings, builder content and minimum requirements; includes the local Inter font license.
+- **Improved:** Updates the embedded deckerweb Library to 1.1.0 and Updater to 2.2.0, including host translations and verified catalog-based updates.
+- **Fixed:** Validates packages during native bulk updates as well as individual updates.
+- **Fixed:** Keeps closed changelog dialogs hidden under conflicting styles and preserves native close and documentation-link fallbacks.
+- **Misc:** Requires PHP 8.1; WordPress 6.7 remains supported. Existing settings, favorites and builder content are retained.
 
-## 1.2.0 · 2026-10-10
+## 1.2.1 · 2026-10-21
 
-- **Neu:** Ergänzt einen Mehrfach-Builder-Filter, optionale Prüfung inaktiver Spuren, persönliche gespeicherte Ansichten, kompakte Benutzerauswahl, sparsame kopierbare Diagnose und einen ausdrücklichen CSV-Export für Übergaben.
-- **Verbessert:** Erklärt leere Ergebnisse mit getrenntem Zurücksetzen von Suche und Builder sowie klareren Kennzeichen-Aktionen; ergänzt normale Bricks-Bearbeitungslinks mit Rechteprüfung.
-- **Verbessert:** Erhält persönliche Favoriten und Anzeigepräferenzen bei Deaktivierung und Deinstallation; begrenzt Exporte auf erlaubte Inhalte und entschärft Tabellenformeln.
-- **Verbessert:** Aktualisiert zweisprachige Banner und Icons mit der freigegebenen blaupetrolfarbenen Vektorgestaltung und lokalen Inter-Schriftpfaden samt Schriftlizenz.
-- **Verbessert:** Integriert deckerweb Library 0.9.0 und Updater 2.1.0 mit vollständigen deutschen Du-/Sie-Übersetzungen im Host und synchroner lokaler Dokumentation.
-- **Verbessert:** Zeigt das Plugin-Icon einmal im Einstellungsheader; Version, Dokumentation und Autorenangaben bleiben im Footer.
-- **Behoben:** Ordnet normale Admin-Hinweise unter dem vollständigen Einstellungsheader ein und präzisiert die Beschriftungen für Spalte und Admin-Menüs der Inhaltstypen.
-- **Sonstiges:** Erhält bestehende Website-Einstellungen, Builder-Inhalte und Mindestanforderungen; liefert die lokale Inter-Schriftlizenz mit.
+- **Verbessert:** Aktualisiert die eingebettete deckerweb Library auf 1.1.0 und den Updater auf 2.2.0, einschließlich Host-Übersetzungen und geprüfter katalogbasierter Updates.
+- **Behoben:** Prüft Updatepakete bei nativen Sammelupdates ebenso wie bei Einzelupdates.
+- **Behoben:** Hält geschlossene Änderungsverläufe auch bei fremden Dialog-Styles verborgen und erhält native Schließ- und Dokumentationslink-Fallbacks.
+- **Sonstiges:** Benötigt PHP 8.1; WordPress 6.7 bleibt unterstützt. Einstellungen, Favoriten und Builder-Inhalte bleiben erhalten.

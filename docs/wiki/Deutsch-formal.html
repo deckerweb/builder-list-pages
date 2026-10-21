@@ -1,0 +1,47 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Dokumentation</title><link rel="stylesheet" href="../../assets/documentation.css"></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-Deutsch-formal.html">FAQ</a><a href="Changelog-Deutsch-formal.html">Changelog</a></nav><h1 id="anleitung">Anleitung</h1>
+<p>Builder List Pages 1.2.1 · <a href="FAQ-Deutsch-formal.html">FAQ</a> · <a href="English.html">English</a></p>
+<h2 id="auf-einen-blick">Auf einen Blick</h2>
+<ul>
+<li><strong>Builder erkennen:</strong> anklickbare Builder-Spalte; mehrere Treffer pro Inhalt sind möglich.</li>
+<li><strong>Schnell filtern:</strong> eigene Ansichten für mehrere aktive Builder und „Ohne erkannten Builder“.</li>
+<li><strong>Weiterarbeiten:</strong> Builder-Auswahl bleibt bei Suche und normalen Listenfiltern erhalten.</li>
+<li><strong>Gewohnte Navigation:</strong> zusätzliche Builder-Untermenüs verwenden die Rechte des jeweiligen Inhaltstyps.</li>
+<li><strong>Wenig Einrichtung:</strong> drei optionale Schalter, deutsche Übersetzungen, lokale Anleitung und kompletter Änderungsverlauf.</li>
+<li><strong>DECKERWEB integriert:</strong> eingebauter GitHub-Updater V2 und Plugin Library 1.1.0.</li>
+</ul>
+<h2 id="installation-und-erster-filter">Installation und erster Filter</h2>
+<ol>
+<li>Plugin-ZIP über <strong>Plugins → Installieren → Plugin hochladen</strong> installieren beziehungsweise die alte Plugin-Version ersetzen.</li>
+<li>Plugin aktivieren und <strong>Seiten</strong> oder eine andere vom aktiven Builder unterstützte Inhaltsliste öffnen.</li>
+<li>Einen Builder-Namen über der Tabelle anklicken. Anschließend bei Bedarf die Suche verwenden.</li>
+<li>Einstellungen bei Bedarf unter <strong>Einstellungen → Builder List Pages</strong> anpassen.</li>
+</ol>
+<h2 id="builder-und-erkennung">Builder und Erkennung</h2>
+<p>Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Visual Composer ist auf den bisherigen Seiten-/Beitragsumfang der kostenlosen Ausgabe begrenzt. Astra- und OceanWP-Inhaltstypen behalten ihre spezielle Menünavigation, sofern diese vorhanden ist.</p>
+<p>Erkennung liest bestehende Metadaten aktiver unterstützter Builder für freigegebene Inhaltstypen. „Ohne erkannten Builder“ bedeutet nicht automatisch Gutenberg. Inaktive Builder-Daten und globale Template-Zuweisungen werden nicht analysiert. Existenzbasierte Integrationen behalten ihre bisherige Semantik auch für leere Werte.</p>
+<p>Zähler erfassen die gesamte lesbare Gruppe außerhalb des Papierkorbs einschließlich unveröffentlichter Inhalte. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Gruppen können sich überschneiden.</p>
+<h2 id="einstellungen">Einstellungen</h2>
+<p>Builder-Spalte, Untermenüs und den Filter ohne erkannten Builder websiteweit ein- oder ausschalten. Die Spalte lässt sich zusätzlich persönlich über <strong>Ansicht anpassen</strong> ausblenden. Administratoren ändern Einstellungen; Redakteure verwenden Listenfunktionen gemäß ihren normalen Bearbeitungsrechten.</p>
+<p>Der lokale Änderungsverlauf öffnet sich in einem per Tastatur bedienbaren Dialog. Schließen Sie ihn mit Escape, dem Schließen Sien-Button oder einem Klick außerhalb des Dialogs; der Fokus kehrt zum Link zurück.</p>
+<h2 id="updates-und-library">Updates und Library</h2>
+<p>Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.0 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter Ihrer Kontrolle.</p>
+<p>Die eingebettete deckerweb Library 1.1.0 ergänzt <strong>Plugins → Installieren → deckerweb</strong> mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.</p>
+<p>Bei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt.</p>
+<h2 id="neue-werkzeuge-und-persönliche-ansichten">Neue Werkzeuge und persönliche Ansichten</h2>
+<p>Die Ansicht <strong>Mehrere Builder erkannt</strong> sammelt Inhalte mit mindestens zwei unterschiedlichen Signaturen aktiver Builder. Doppelte Kopien desselben Metadatenfelds zählen einmal.</p>
+<p>Öffnen Sie <strong>Builder-Werkzeuge und persönliche Ansichten</strong> oberhalb der normalen Inhaltsliste, um eine Ansicht auszuwählen, einen benannten Favoriten zu speichern, zur kompakten Auswahl zu wechseln, inaktive Builder-Spuren zu prüfen, Diagnosedaten zu kopieren oder eine CSV herunterzuladen. Die Werkzeuge bleiben standardmäßig zugeklappt; die bisherigen Builder-Ansichten bleiben Standard. Bricks-Kennzeichen bieten einen getrennten Bearbeitungslink, wenn die eigenen Bricks-Berechtigungen ihn erlauben.</p>
+<p><strong>Inaktive Spuren:</strong> Die optionale, rein lesende Ansicht prüft bekannte Metadaten-Signaturen auch bei deaktiviertem Builder. Sie aktiviert keine Builder, verändert keine Inhalte und beweist nicht, welcher Builder das Frontend darstellt. Bei existenzbasierter Erkennung können leere Felder zählen. Aktive Builder, die für einen Inhaltstyp abgeschaltet sind, gelten nicht als inaktiv.</p>
+<p><strong>Persönliche Favoriten:</strong> Speichern Sie Inhaltstyp, Builder, Status und Suche für Ihr Benutzerkonto auf dieser Website. Derselbe Name aktualisiert einen Favoriten; bis zu 20 Namen werden unterstützt. Beim Öffnen Sien werden Ihre Rechte erneut geprüft. Favoriten lassen sich einzeln löschen; Deaktivierung und Deinstallation erhalten sie.</p>
+<p><strong>Diagnose:</strong> Wählen Sie den lokalen Text aus und kopieren Sie ihn. Er enthält Plugin-, WordPress- und PHP-Version, Namen unterstützter aktiver Builder und zugängliche Inhaltstypen. Website-URLs, Benutzernamen, Zugangsdaten und Seiteninhalte fehlen. Es wird nichts automatisch gesendet.</p>
+<p><strong>CSV:</strong> Laden Sie Titel, Status, erkannte Builder und Bearbeitungslink für die ausdrücklich angezeigte Auswahl nach Builder/Status/Suche herunter, mit bis zu 5.000 lesbaren und bearbeitbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt; der Hinweis steht vor dem Download. Tabellenformeln werden entschärft. Bearbeitungslinks enthalten die Website-URL; die CSV ist für eine vertrauliche Übergabe gedacht, im Unterschied zur sparsamen Support-Diagnose.</p>
+<p>Ein leeres Builder-Ergebnis erklärt Builder, Suche und Status. <strong>Suche zurücksetzen</strong> oder <strong>Builder-Filter aufheben</strong> entfernt nur diese Einschränkung und erhält Inhaltstyp und weitere Listenfilter.</p>
+<p>Öffnen Sie <strong>Details zur Erkennung</strong> in einer Zeile, um die Namen erkannter Metadatenfelder und einen Hinweis auf leere Werte zu sehen. Metadatenwerte und Builder-Inhalte werden nicht angezeigt.</p>
+<h2 id="über-das-projekt">Über das Projekt</h2>
+<p>Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden.</p>
+<h2 id="fehler-sicherheit-und-unterstützung">Fehler, Sicherheit und Unterstützung</h2>
+<p>Melde nachvollziehbare Probleme über <a href="https://github.com/deckerweb/builder-list-pages/issues">GitHub Issues</a>. Sicherheitslücken bitte vertraulich über den <a href="../../SECURITY.md">Sicherheitsmeldeweg</a> melden; keine Exploit-Details oder Zugangsdaten in einem öffentlichen Issue veröffentlichen.</p>
+<p>Unterstütze die Entwicklung über <a href="https://ko-fi.com/deckerweb">Ko-fi</a>, <a href="https://buymeacoffee.com/daveshine">Buy Me a Coffee</a> oder <a href="https://paypal.me/deckerweb">PayPal</a>.</p>
+<h2 id="lizenz-und-enthaltene-komponenten">Lizenz und enthaltene Komponenten</h2>
+<p>GPL v2 oder neuer. <a href="../../LICENSE">Lizenz</a>. Enthält deckerweb Plugin Library 1.1.0 und deckerweb Updater 2.2.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus <a href="https://github.com/deckerweb/advanced-scripts-quicknav">Advanced Scripts QuickNav</a>, <code>includes/deckerweb-changelog-v1.php</code>, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.</p>
+<p>Banner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die <a href="../../assets/Inter-OFL.txt">Schriftlizenz</a> liegt ohne Fontdateien bei.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.2.1</p></footer></main></body></html>

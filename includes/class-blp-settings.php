@@ -78,13 +78,18 @@ final class Settings {
 	 *
 	 * @return bool Whether the condition or display choice is enabled.
 	 */
-	private function german(): bool { return 1 === preg_match( '/^de(?:_|$)/i', determine_locale() ); }
+	private function german(): bool { return 0 === strpos( $this->document_language(), 'Deutsch' ); }
+	/** Resolve documents from the active admin language, including switched and formal locales. @return string Whitelisted local document suffix. */
+	private function document_language(): string {
+		$locale = is_locale_switched() ? get_locale() : determine_locale();
+		return 'de_DE_formal' === $locale ? 'Deutsch-formal' : ( 1 === preg_match( '/^de(?:_|$)/i', $locale ) ? 'Deutsch' : 'English' );
+	}
 	/**
 	 * Return the matching bundled changelog URL.
 	 *
 	 * @return string Resulting text, URL or SQL fragment.
 	 */
-	private function document_url(): string { return plugins_url( $this->german() ? 'docs/changelog-de.txt' : 'docs/changelog.txt', BLP_PLUGIN_FILE ); }
+	private function document_url(): string { return plugins_url( 'docs/wiki/Changelog-' . $this->document_language() . '.html', BLP_PLUGIN_FILE ); }
 	/**
 	 * Print the settings form and documentation only for permitted users.
 	 *
@@ -92,7 +97,7 @@ final class Settings {
 	 */
 	public function render(): void {
 		if ( ! current_user_can( 'manage_options' ) ) { return; }
-		$wiki = plugins_url( $this->german() ? 'docs/wiki/Deutsch.html' : 'docs/wiki/English.html', BLP_PLUGIN_FILE );
+		$wiki = plugins_url( 'docs/wiki/' . $this->document_language() . '.html', BLP_PLUGIN_FILE );
 		echo '<div class="wrap blp-root"><header class="blp-header"><img src="' . esc_url( plugins_url( 'assets/icon.svg', BLP_PLUGIN_FILE ) ) . '" width="56" height="56" alt=""><div><h1>Builder List Pages</h1><p>' . esc_html__( 'Your pages. Your builders. One clear overview.', 'builder-list-pages' ) . '</p></div></header><hr class="wp-header-end">';
 		echo '<section class="blp-card"><h2>' . esc_html__( 'Find your pages faster', 'builder-list-pages' ) . '</h2><p>' . esc_html__( 'Open Pages or another supported content list. Click a builder above the table to filter, or use its name in the Builder column.', 'builder-list-pages' ) . '</p><form method="post" action="options.php">';
 		if ( ! ( new Registry() )->post_types() ) {
@@ -116,14 +121,14 @@ final class Settings {
 	 * @return void
 	 */
 	private function dialog(): void {
-		$file = BLP_PLUGIN_DIR . ( $this->german() ? 'docs/changelog-de.txt' : 'docs/changelog.txt' );
+		$file = BLP_PLUGIN_DIR . ( 'Deutsch-formal' === $this->document_language() ? 'docs/changelog-de-formal.txt' : ( $this->german() ? 'docs/changelog-de.txt' : 'docs/changelog.txt' ) );
 		if ( ! is_readable( $file ) || filesize( $file ) > 262144 ) { return; }
 		$text = file_get_contents( $file );
 		if ( ! is_string( $text ) ) { return; }
 		require_once BLP_PLUGIN_DIR . 'includes/deckerweb-changelog-v1.php';
 		$content = \Deckerweb_Changelog_Renderer_V1::render( $text );
-		echo '<dialog class="blp-document-dialog" id="blp-document-changelog" aria-labelledby="blp-changelog-title"><header><h2 id="blp-changelog-title">Builder List Pages · ' . esc_html__( 'Changelog', 'builder-list-pages' ) . '</h2><button class="button" type="button" data-blp-close autofocus>' . esc_html__( 'Close', 'builder-list-pages' ) . '</button></header><div class="blp-document-content" tabindex="0">';
-		echo $content; // Every text node is escaped above; markup is fixed.
+		echo '<dialog hidden class="blp-document-dialog" id="blp-document-changelog" aria-labelledby="blp-changelog-title"><header><h2 id="blp-changelog-title">Builder List Pages · ' . esc_html__( 'Changelog', 'builder-list-pages' ) . '</h2><form method="dialog"><button class="button" data-blp-close autofocus>' . esc_html__( 'Close', 'builder-list-pages' ) . '</button></form></header><div class="blp-document-content" tabindex="0">';
+		echo wp_kses( $content, [ 'section' => [ 'class' => true ], 'header' => [ 'class' => true ], 'h3' => [], 'span' => [ 'class' => true ], 'ul' => [ 'class' => true ], 'li' => [], 'code' => [] ] );
 		echo '</div></dialog>';
 	}
 }

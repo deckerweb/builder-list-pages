@@ -34,6 +34,12 @@ final class GitHubUpdates {
 		if ( ! class_exists( '\Deckerweb\GitHubReleaseUpdater\V2\Updater' ) ) {
 			require_once BLP_PLUGIN_DIR . 'includes/deckerweb-github-release-updater-v2.php';
 		}
+		if ( ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_HOST_TRANSLATIONS' ) || ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_CATALOG_PROVIDER' ) ) {
+			add_action( 'admin_notices', [ $this, 'configuration_notice' ] );
+			return;
+		}
+		$options = [ 'translate' => require BLP_PLUGIN_DIR . 'includes/updater-translations.php' ];
+		if ( function_exists( 'deckerweb_library_updater_options_v1' ) ) { $options = array_merge( $options, deckerweb_library_updater_options_v1( BLP_PLUGIN_FILE, self::REPOSITORY ) ); }
 		try {
 			$updater = new \Deckerweb\GitHubReleaseUpdater\V2\Updater(
 				BLP_PLUGIN_FILE,
@@ -41,7 +47,7 @@ final class GitHubUpdates {
 				'Builder List Pages',
 				__( 'Find pages by their page builder. Recognize builders at a glance, filter multiple builders and keep working in familiar WordPress lists.', 'builder-list-pages' ),
 				$this->artwork(),
-				array( 'translate' => require BLP_PLUGIN_DIR . 'includes/updater-translations.php' )
+				$options
 			);
 		} catch ( \InvalidArgumentException $error ) {
 			// An unsupported directory must not break the plugin administration.
@@ -50,6 +56,16 @@ final class GitHubUpdates {
 		$updater->register();
 		add_filter( 'http_request_args', array( $this, 'request_limits' ), 20, 2 );
 		add_filter( 'upgrader_source_selection', array( $this, 'validate_source' ), 30, 4 );
+	}
+
+	/**
+	 * Explain a previously loaded old updater without disrupting other plugins.
+	 * @return void
+	 */
+	public function configuration_notice(): void {
+		$screen = get_current_screen();
+		if ( ! current_user_can( 'update_plugins' ) || ! $screen || ! in_array( $screen->id, [ 'plugins', 'update-core', 'settings_page_builder-list-pages' ], true ) ) { return; }
+		echo '<div class="notice notice-warning"><p>' . esc_html__( 'Builder List Pages needs deckerweb Updater 2.2.0 for its catalog integration. Another plugin loaded an older updater first. Update the other deckerweb plugins, then check for updates again.', 'builder-list-pages' ) . '</p></div>';
 	}
 
 	/**
@@ -101,7 +117,7 @@ final class GitHubUpdates {
 	 * @return mixed Original source or localized WP_Error.
 	 */
 	public function validate_source( $source, $remote_source, $upgrader, array $hook_extra ) {
-		if ( ( $hook_extra['plugin'] ?? '' ) !== plugin_basename( BLP_PLUGIN_FILE ) || ( $hook_extra['type'] ?? '' ) !== 'plugin' || ( $hook_extra['action'] ?? '' ) !== 'update' ) {
+		if ( ( $hook_extra['plugin'] ?? '' ) !== plugin_basename( BLP_PLUGIN_FILE ) || ( isset( $hook_extra['type'] ) && 'plugin' !== $hook_extra['type'] ) || ( isset( $hook_extra['action'] ) && 'update' !== $hook_extra['action'] ) || ( ! isset( $hook_extra['type'], $hook_extra['action'] ) && ! ( $upgrader instanceof \Plugin_Upgrader && true === $upgrader->bulk ) ) ) {
 			return $source;
 		}
 		if ( is_wp_error( $source ) ) {

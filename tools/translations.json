@@ -304,8 +304,8 @@
     "de_DE_formal": "Eine POST-Anfrage ist erforderlich."
   },
   "Permission denied.": {
-    "de_DE": "Keine Berechtigung.",
-    "de_DE_formal": "Keine Berechtigung."
+    "de_DE": "Zugriff verweigert.",
+    "de_DE_formal": "Zugriff verweigert."
   },
   "Plugin identity or version does not match the catalog.": {
     "de_DE": "Plugin oder Version stimmt nicht mit dem Katalog überein.",
@@ -384,8 +384,8 @@
     "de_DE_formal": "Das GitHub-Release konnte nicht heruntergeladen werden."
   },
   "The approved release changed. Refresh updates first.": {
-    "de_DE": "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren.",
-    "de_DE_formal": "Das freigegebene Release hat sich geändert. Bitte zuerst die Updates aktualisieren."
+    "de_DE": "Die freigegebene Version hat sich geändert. Suche zuerst erneut nach Updates.",
+    "de_DE_formal": "Die freigegebene Version hat sich geändert. Suchen Sie zuerst erneut nach Updates."
   },
   "The catalog URL is not an allowed first-party HTTPS endpoint.": {
     "de_DE": "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle.",
@@ -652,8 +652,8 @@
     "de_DE_formal": "Ungültiger Katalogzeitpunkt."
   },
   "The approved release could not be verified.": {
-    "de_DE": "Der freigegebene Release konnte nicht geprüft werden.",
-    "de_DE_formal": "Der freigegebene Release konnte nicht geprüft werden."
+    "de_DE": "Die freigegebene Version konnte nicht geprüft werden.",
+    "de_DE_formal": "Die freigegebene Version konnte nicht geprüft werden."
   },
   "Only HTTPS on raw.githubusercontent.com/deckerweb. The server receives the requesting IP address. GitHub is contacted when installing a release.": {
     "de_DE": "Nur HTTPS auf raw.githubusercontent.com/deckerweb. Der Server sieht die anfragende IP-Adresse. Beim Installieren eines Releases wird GitHub kontaktiert.",
@@ -1086,5 +1086,121 @@
   "Show builder links in post-type admin menus": {
     "de_DE": "Builder-Links in den Admin-Menüs der Inhaltstypen anzeigen",
     "de_DE_formal": "Builder-Links in den Admin-Menüs der Inhaltstypen anzeigen"
+  },
+  "Active": {
+    "de_DE": "Aktiv",
+    "de_DE_formal": "Aktiv"
+  },
+  "Active filters: ": {
+    "de_DE": "Aktive Filter: ",
+    "de_DE_formal": "Aktive Filter: "
+  },
+  "Another component interrupted the request. If Git Updater is active, temporarily deactivate it and retry.": {
+    "de_DE": "Eine andere Komponente hat die Anfrage unterbrochen. Falls Git Updater aktiv ist, deaktiviere ihn vorübergehend und wiederhole den Vorgang.",
+    "de_DE_formal": "Eine andere Komponente hat die Anfrage unterbrochen. Falls Git Updater aktiv ist, deaktivieren Sie ihn vorübergehend und wiederholen Sie den Vorgang."
+  },
+  "Bundled catalog": {
+    "de_DE": "Mitgelieferter Katalog",
+    "de_DE_formal": "Mitgelieferter Katalog"
+  },
+  "Cached or bundled catalog": {
+    "de_DE": "Gespeicherter oder mitgelieferter Katalog",
+    "de_DE_formal": "Gespeicherter oder mitgelieferter Katalog"
+  },
+  "Copied.": {
+    "de_DE": "Kopiert.",
+    "de_DE_formal": "Kopiert."
+  },
+  "Copy diagnostic information": {
+    "de_DE": "Diagnoseinformationen kopieren",
+    "de_DE_formal": "Diagnoseinformationen kopieren"
+  },
+  "Discover randomly": {
+    "de_DE": "Zufällig entdecken",
+    "de_DE_formal": "Zufällig entdecken"
+  },
+  "Dismiss this notice": {
+    "de_DE": "Diesen Hinweis ausblenden",
+    "de_DE_formal": "Diesen Hinweis ausblenden"
+  },
+  "Git Updater is active. If a deckerweb installation or update fails, temporarily deactivate Git Updater and retry. Reactivate it afterwards if other plugins or themes need it. Only leave it disabled when those extensions have another reliable update provider.": {
+    "de_DE": "Git Updater ist aktiv. Wenn eine deckerweb-Installation oder ein Update fehlschlägt, deaktiviere Git Updater vorübergehend und versuche es erneut. Aktiviere ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lass ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen.",
+    "de_DE_formal": "Git Updater ist aktiv. Wenn eine deckerweb-Installation oder ein Update fehlschlägt, deaktivieren Sie Git Updater vorübergehend und versuchen Sie es erneut. Aktivieren Sie ihn danach wieder, wenn andere Plugins oder Themes ihn benötigen. Lassen Sie ihn nur dauerhaft deaktiviert, wenn diese Erweiterungen einen anderen zuverlässigen Updateweg besitzen."
+  },
+  "Installed · inactive": {
+    "de_DE": "Installiert · inaktiv",
+    "de_DE_formal": "Installiert · inaktiv"
+  },
+  "Invalid sort order.": {
+    "de_DE": "Ungültige Sortierung.",
+    "de_DE_formal": "Ungültige Sortierung."
+  },
+  "Last successful check: ": {
+    "de_DE": "Zuletzt erfolgreich geprüft: ",
+    "de_DE_formal": "Zuletzt erfolgreich geprüft: "
+  },
+  "Name A–Z": {
+    "de_DE": "Name A–Z",
+    "de_DE_formal": "Name A–Z"
+  },
+  "Name Z–A": {
+    "de_DE": "Name Z–A",
+    "de_DE_formal": "Name Z–A"
+  },
+  "Network active": {
+    "de_DE": "Netzwerkweit aktiv",
+    "de_DE_formal": "Netzwerkweit aktiv"
+  },
+  "Permission denied. Reload the page and check your permissions.": {
+    "de_DE": "Zugriff verweigert. Lade die Seite neu und prüfe deine Berechtigungen.",
+    "de_DE_formal": "Zugriff verweigert. Laden Sie die Seite neu und prüfen Sie Ihre Berechtigungen."
+  },
+  "Recently updated": {
+    "de_DE": "Zuletzt aktualisiert",
+    "de_DE_formal": "Zuletzt aktualisiert"
+  },
+  "Remove filter: ": {
+    "de_DE": "Filter entfernen: ",
+    "de_DE_formal": "Filter entfernen: "
+  },
+  "Reset view": {
+    "de_DE": "Ansicht zurücksetzen",
+    "de_DE_formal": "Ansicht zurücksetzen"
+  },
+  "Select and copy the text.": {
+    "de_DE": "Text markieren und kopieren.",
+    "de_DE_formal": "Text markieren und kopieren."
+  },
+  "Shuffle again": {
+    "de_DE": "Neu mischen",
+    "de_DE_formal": "Neu mischen"
+  },
+  "Sort by": {
+    "de_DE": "Sortieren nach",
+    "de_DE_formal": "Sortieren nach"
+  },
+  "Standard": {
+    "de_DE": "Standard",
+    "de_DE_formal": "Standard"
+  },
+  "Technical information": {
+    "de_DE": "Technische Informationen",
+    "de_DE_formal": "Technische Informationen"
+  },
+  "These details contain component versions and catalog status, without credentials or site content.": {
+    "de_DE": "Diese Angaben enthalten Komponentenversionen und den Katalogstatus, keine Zugangsdaten oder Website-Inhalte.",
+    "de_DE_formal": "Diese Angaben enthalten Komponentenversionen und den Katalogstatus, keine Zugangsdaten oder Website-Inhalte."
+  },
+  "Update available": {
+    "de_DE": "Update verfügbar",
+    "de_DE_formal": "Update verfügbar"
+  },
+  "Public catalog callbacks require both providers and cannot be used in private mode.": {
+    "de_DE": "Öffentliche Katalog-Callbacks benötigen beide Anbieter und können nicht im Private-Modus verwendet werden.",
+    "de_DE_formal": "Öffentliche Katalog-Callbacks benötigen beide Anbieter und können nicht im Private-Modus verwendet werden."
+  },
+  "Builder List Pages needs deckerweb Updater 2.2.0 for its catalog integration. Another plugin loaded an older updater first. Update the other deckerweb plugins, then check for updates again.": {
+    "de_DE": "Builder List Pages benötigt deckerweb Updater 2.2.0 für die Kataloganbindung. Ein anderes Plugin hat zuerst einen älteren Updater geladen. Aktualisiere die anderen deckerweb Plugins und prüfe danach erneut auf Updates.",
+    "de_DE_formal": "Builder List Pages benötigt deckerweb Updater 2.2.0 für die Kataloganbindung. Ein anderes Plugin hat zuerst einen älteren Updater geladen. Aktualisieren Sie die anderen deckerweb Plugins und prüfen Sie danach erneut auf Updates."
   }
 }

@@ -2,6 +2,11 @@
 
 [English](Changelog-English.md) · [FAQ](FAQ-Deutsch-formal.md)
 
+## 1.2.2 · 2026-10-22
+
+- **Verbessert:** Trennt Updater-Caches nach Implementierungsversion.
+- **Behoben:** Aktualisiert den eingebetteten deckerweb Updater auf 2.2.1, damit dieses Plugin auch bei einer zuerst geladenen älteren Updater-Kopie seinen eigenen Updateweg behält.
+
 ## 1.2.1 · 2026-10-21
 
 - **Verbessert:** Aktualisiert die eingebettete deckerweb Library auf 1.1.0 und den Updater auf 2.2.0, einschließlich Host-Übersetzungen und geprüfter katalogbasierter Updates.

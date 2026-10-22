@@ -1,15 +1,11 @@
-# 1.2.1
+# 1.2.2
 
-## 1.2.1 · 2026-10-21
+## 1.2.2 · 2026-10-22
 
-- **Improved:** Updates the embedded deckerweb Library to 1.1.0 and Updater to 2.2.0, including host translations and verified catalog-based updates.
-- **Fixed:** Validates packages during native bulk updates as well as individual updates.
-- **Fixed:** Keeps closed changelog dialogs hidden under conflicting styles and preserves native close and documentation-link fallbacks.
-- **Misc:** Requires PHP 8.1; WordPress 6.7 remains supported. Existing settings, favorites and builder content are retained.
+- **Improved:** Separates updater caches by implementation version.
+- **Fixed:** Updates the embedded deckerweb Updater to 2.2.1 so this plugin retains its update engine when another plugin loads an older updater first.
 
-## 1.2.1 · 2026-10-21
+## 1.2.2 · 2026-10-22
 
-- **Verbessert:** Aktualisiert die eingebettete deckerweb Library auf 1.1.0 und den Updater auf 2.2.0, einschließlich Host-Übersetzungen und geprüfter katalogbasierter Updates.
-- **Behoben:** Prüft Updatepakete bei nativen Sammelupdates ebenso wie bei Einzelupdates.
-- **Behoben:** Hält geschlossene Änderungsverläufe auch bei fremden Dialog-Styles verborgen und erhält native Schließ- und Dokumentationslink-Fallbacks.
-- **Sonstiges:** Benötigt PHP 8.1; WordPress 6.7 bleibt unterstützt. Einstellungen, Favoriten und Builder-Inhalte bleiben erhalten.
+- **Verbessert:** Trennt Updater-Caches nach Implementierungsversion.
+- **Behoben:** Aktualisiert den eingebetteten deckerweb Updater auf 2.2.1, damit dieses Plugin auch bei einer zuerst geladenen älteren Updater-Kopie seinen eigenen Updateweg behält.

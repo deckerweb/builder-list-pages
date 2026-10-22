@@ -31,17 +31,16 @@ final class GitHubUpdates {
 	 * @return void
 	 */
 	public function boot(): void {
-		if ( ! class_exists( '\Deckerweb\GitHubReleaseUpdater\V2\Updater' ) ) {
-			require_once BLP_PLUGIN_DIR . 'includes/deckerweb-github-release-updater-v2.php';
-		}
-		if ( ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_HOST_TRANSLATIONS' ) || ! defined( '\Deckerweb\GitHubReleaseUpdater\V2\Updater::SUPPORTS_CATALOG_PROVIDER' ) ) {
+		// Load the pinned engine even when another host already selected a legacy V2 class.
+		$updater_class = require BLP_PLUGIN_DIR . 'includes/deckerweb-github-release-updater-v2.php';
+		if ( ! is_string( $updater_class ) || ! class_exists( $updater_class, false ) || ! defined( $updater_class . '::SUPPORTS_HOST_TRANSLATIONS' ) || ! constant( $updater_class . '::SUPPORTS_HOST_TRANSLATIONS' ) || ! defined( $updater_class . '::SUPPORTS_CATALOG_PROVIDER' ) || ! constant( $updater_class . '::SUPPORTS_CATALOG_PROVIDER' ) ) {
 			add_action( 'admin_notices', [ $this, 'configuration_notice' ] );
 			return;
 		}
 		$options = [ 'translate' => require BLP_PLUGIN_DIR . 'includes/updater-translations.php' ];
 		if ( function_exists( 'deckerweb_library_updater_options_v1' ) ) { $options = array_merge( $options, deckerweb_library_updater_options_v1( BLP_PLUGIN_FILE, self::REPOSITORY ) ); }
 		try {
-			$updater = new \Deckerweb\GitHubReleaseUpdater\V2\Updater(
+			$updater = new $updater_class(
 				BLP_PLUGIN_FILE,
 				self::REPOSITORY,
 				'Builder List Pages',

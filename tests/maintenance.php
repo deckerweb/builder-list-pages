@@ -28,7 +28,7 @@ foreach ( [ 'de_DE', 'de_DE_formal' ] as $locale ) {
 require_once $plugin . 'includes/deckerweb-changelog-v1.php';
 foreach ( [ 'changelog.txt' => 'Fixed', 'changelog-de.txt' => 'Behoben' ] as $file => $prefix ) {
  $html = Deckerweb_Changelog_Renderer_V1::render( file_get_contents( $plugin . 'docs/' . $file ) );
- blp_check( substr_count( $html, 'ddw-changelog-release' ) === 4 && str_contains( $html, 'ddw-changelog-fixed' ) && str_contains( $html, $prefix ), $file . ': versions and localized category badges render' );
+ blp_check( substr_count( $html, 'ddw-changelog-release' ) === 5 && str_contains( $html, 'ddw-changelog-fixed' ) && str_contains( $html, $prefix ), $file . ': versions and localized category badges render' );
 }
 $html = Deckerweb_Changelog_Renderer_V1::render( "== Changelog ==\n\n= 1.1.0 · 2026-10-01 =\n* Fixed: <script>alert(1)</script> `<img src=x onerror=alert(1)>`" );
 blp_check( ! str_contains( $html, '<script>' ) && ! str_contains( $html, '<img' ) && str_contains( $html, '&lt;script&gt;' ), 'History markup cannot inject executable HTML' );

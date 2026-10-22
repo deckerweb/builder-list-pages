@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.2 · 2026-10-22
+
+- **Improved:** Separates updater caches by implementation version.
+- **Fixed:** Updates the embedded deckerweb Updater to 2.2.1 so this plugin retains its update engine when another plugin loads an older updater first.
+
 ## 1.2.1 · 2026-10-21
 
 - **Improved:** Updates the embedded deckerweb Library to 1.1.0 and Updater to 2.2.0, including host translations and verified catalog-based updates.

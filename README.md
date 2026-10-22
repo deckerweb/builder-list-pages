@@ -4,7 +4,7 @@
 
 **Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-**Version:** 1.2.1 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later
+**Version:** 1.2.2 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later
 
 [Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -29,7 +29,7 @@
 - **Keep working:** builder selection stays in searches and standard list filters.
 - **Familiar navigation:** builder submenus respect the post type’s editing permissions.
 - **Little setup:** three optional switches, German translations, local guide and full changelog.
-- **DECKERWEB integrated:** embedded GitHub Updater 2.2.0 and Plugin Library 1.1.0.
+- **DECKERWEB integrated:** embedded GitHub Updater 2.2.1 and Plugin Library 1.1.0.
 
 ## Installation and first filter
 
@@ -54,7 +54,7 @@ The local changelog opens in a keyboard-accessible dialog. Close it with Escape,
 
 ## Updates and Library
 
-Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.0. No separate updater plugin is needed; automatic updates stay under your control.
+Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.
 
 The embedded deckerweb Library 1.1.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.
 
@@ -112,6 +112,11 @@ Deactivation keeps all data. Uninstallation removes this plugin’s temporary up
 
 ## Changelog
 
+### 1.2.2 · 2026-10-22
+
+- **Improved:** Separates updater caches by implementation version.
+- **Fixed:** Updates the embedded deckerweb Updater to 2.2.1 so this plugin retains its update engine when another plugin loads an older updater first.
+
 ### 1.2.1 · 2026-10-21
 
 - **Improved:** Updates the embedded deckerweb Library to 1.1.0 and Updater to 2.2.0, including host translations and verified catalog-based updates.
@@ -165,6 +170,6 @@ Support development through [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me a Coff
 
 ## License and included components
 
-GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.1.0 and deckerweb Updater 2.2.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
+GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.1.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
 
 The banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files.

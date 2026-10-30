@@ -10,7 +10,7 @@ Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstü
 
 ### Welche Voraussetzungen gelten?
 
-WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 6.7 und 7.1.3 mit PHP 8.4.5 in isolierten SQLite-Installationen; die Workflowprüfungen bestanden auch mit PHP 8.1.29. MySQL/MariaDB, FTP/SSH und weitere echte Builder-Kombinationen benötigen gesonderte Prüfungen.
+WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 7.1.4 mit PHP 8.1 und 8.4 sowie auf WordPress 6.7 mit PHP 8.1. Die Integrationsprüfungen für CrocoBuilder und Builderius bestanden außerdem mit PHP 8.2 und 8.4. Die Tests verwenden isolierte SQLite-Installationen; vollständige MySQL-/MariaDB-, FTP-/SSH-Tests und jede Kombination aus Builder und Version sind nicht abgedeckt.
 
 ### Ist das Plugin kostenlos?
 
@@ -18,7 +18,7 @@ Ja, unter GPL v2 oder neuer. Einige unterstützte Builder benötigen eine eigene
 
 ### Welche Builder werden unterstützt?
 
-Elementor, Bricks, Breakdance, Oxygen ab Version 6, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Bei Visual Composer gilt derzeit der Seiten-/Beitragsumfang der kostenlosen Ausgabe.
+Die [Builder-Übersicht](Builders-Deutsch.md) enthält getrennte Tabellen für klassische und blockbasierte Builder, einschließlich Free-/Pro-Hinweisen und kurzen Bedingungen.
 
 ### Warum sehe ich keine Builder-Ansicht?
 
@@ -69,6 +69,10 @@ Er beschreibt die gesamte lesbare Builder-Gruppe außerhalb des Papierkorbs. Suc
 ### Funktionieren Filter anderer Plugins weiterhin?
 
 Bestehende Meta-Abfragegruppen bleiben erhalten und werden mit AND mit dem Builder kombiniert. Der Filter ohne Builder ergänzt einen separaten Ausschluss. Abfrage-Hooks anderer Plugins können Ergebnisse weiterhin beeinflussen.
+
+### Welche Block-Sammlungen kann ich finden?
+
+Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit und Kubio. Erkannte Nutzung bedeutet nicht, dass die gesamte Seite mit einem einzigen Werkzeug erstellt wurde. [Sonderfälle und Grenzen](Recognition-Deutsch.md).
 
 ## Einstellungen und Rechte
 
@@ -159,3 +163,25 @@ Nur, dass eine bekannte Metadaten-Signatur vorhanden ist. Sie kann historisch od
 ### Was enthält die CSV?
 
 Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft.
+
+## Inhaltstypen und WordPress-Werkzeuge
+
+### Warum erscheinen manche Inhaltstypen nicht mehr?
+
+Die Vorauswahl lässt bekannte technische Datensätze und Systemtypen weg. Wähle unter Einstellungen → Builder List Pages → Inhaltstypen anpassen bei einem geeigneten eigenen Typ Einbeziehen. Berechtigungen und Einschränkungen des Builders gelten weiterhin; Core-Systemdatensätze bleiben ausgeschlossen.
+
+### Löscht Ausblenden Inhalte oder ändert es meinen Builder?
+
+Nein. Es nimmt den Inhaltstyp auf dieser Website aus den Integrationsfunktionen dieses Plugins. Inhalte, Builder-Einstellungen und gespeicherte Favoriten bleiben erhalten. Beim Öffnen eines Favoriten gilt die aktuelle Auswahl. Automatisch entfernt eine Ausnahme.
+
+### Was versteht dieses Plugin unter einem Builder?
+
+Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.
+
+Bei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.
+
+Ein aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde.
+
+### Warum fehlen die Befehle?
+
+Befehle werden nur dort ergänzt, wo WordPress seine eigene Palette lädt, und nur für zugängliche Builder-/Inhaltstyp-Kombinationen. Auf älteren WordPress-Oberflächen führen die vorhandenen Menülinks oder die Einstellungsübersicht zum Ziel.

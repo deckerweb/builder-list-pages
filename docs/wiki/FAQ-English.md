@@ -10,7 +10,7 @@ No. Activate the plugin and open a content list that an active supported builder
 
 ### Which requirements apply?
 
-WordPress 6.7+ and PHP 8.1+. Checked on WordPress 6.7 and 7.1.3 with PHP 8.4.5 using isolated SQLite installations; PHP 8.1.29 workflow checks also passed. MySQL/MariaDB, FTP/SSH and broader real-builder combinations need separate checks.
+WordPress 6.7+ and PHP 8.1+. Checked on WordPress 7.1.4 with PHP 8.1 and 8.4, and on WordPress 6.7 with PHP 8.1. CrocoBuilder and Builderius integration checks also passed with PHP 8.2 and 8.4. Tests used isolated SQLite installations; full MySQL/MariaDB, FTP/SSH and every builder/version combination are not covered.
 
 ### Is it free?
 
@@ -18,7 +18,7 @@ Yes. GPL v2 or later. Some supported builders require their own paid license.
 
 ### Which builders are supported?
 
-Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer currently uses the free edition’s page/post scope.
+The [builder overview](Builders-English.md) lists classic and block-based builders separately, with Free/Pro notes and concise conditions.
 
 ### Why is no builder view visible?
 
@@ -69,6 +69,10 @@ Badges describe the complete readable builder group outside trash. Search, date,
 ### Do other plugin filters still work?
 
 Existing meta query groups are kept and combined with the selected builder using AND. The no-builder filter adds its exclusion separately. Third-party query hooks can still affect results.
+
+### Which block libraries can I find?
+
+Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit and Kubio. Recognized usage does not mean the entire page was created with one tool. [Special cases and limits](Recognition-English.md).
 
 ## Settings and permissions
 
@@ -159,3 +163,25 @@ Only that a known metadata signature is present. It can be historical or empty a
 ### What is included in the CSV?
 
 Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized.
+
+## Content types and WordPress tools
+
+### Why do some content types no longer appear?
+
+Automatic selection omits known technical and system records. Under Settings → Builder List Pages → Adjust content types, select Include for a suitable custom type. Permissions and native builder restrictions still apply; core system records remain excluded.
+
+### Does Hide delete content or change my builder?
+
+No. It removes the type from this plugin’s integration features on this site. Content, builder settings and saved favorites remain. Opening a favorite rechecks the current selection. Return to Automatic to remove an override.
+
+### What does this plugin mean by a builder?
+
+This plugin uses “builder” to mean tools for designing content and layouts in WordPress. This includes classic page builders such as Bricks, Elementor and Oxygen, as well as extensions for the WordPress block editor, such as Kadence Blocks and Spectra.
+
+For block extensions, using individual blocks or supported design features is enough for a match. The entire page does not have to be built with that tool. A content item can therefore show more than one builder.
+
+An active theme or a global template alone does not mean that the individual content item was edited with that builder.
+
+### Why are the commands missing?
+
+Commands are added only where WordPress already loads its native palette and only for accessible builder/type combinations. On older WordPress screens, use the existing menu links or the settings overview.

@@ -1,0 +1,142 @@
+{
+  "version": "1.3.0",
+  "classic": [
+    [
+      "Beaver Builder",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Breakdance",
+      "",
+      ""
+    ],
+    [
+      "Bricks",
+      "",
+      ""
+    ],
+    [
+      "Brizy",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Builderius",
+      "Free / Pro; gespeicherte direkte Seiten-Templates, PHP 8.2+",
+      "Free / Pro; saved direct page templates, PHP 8.2+"
+    ],
+    [
+      "CrocoBuilder",
+      "Direkt aktivierte Inhalte; WP 7.0+ / PHP 8.2+",
+      "Directly enabled content; WP 7.0+ / PHP 8.2+"
+    ],
+    [
+      "Divi",
+      "Divi 4 / 5; Theme oder Builder-Plugin",
+      "Divi 4 / 5; theme or builder plugin"
+    ],
+    [
+      "Elementor",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Mosaic",
+      "Direkte Layout-Zuweisungen; WP 6.9+ / PHP 8.2+",
+      "Direct layout assignments; WP 6.9+ / PHP 8.2+"
+    ],
+    [
+      "Oxygen",
+      "Oxygen Classic und Oxygen 6",
+      "Oxygen Classic and Oxygen 6"
+    ],
+    [
+      "Pagelayer",
+      "",
+      ""
+    ],
+    [
+      "SiteOrigin",
+      "Seitenlayouts und eingebettete Layout-Blöcke; Free / Premium",
+      "Page layouts and embedded layout blocks; Free / Premium"
+    ],
+    [
+      "Thrive Architect",
+      "Direkte Architect-Inhalte; keine globalen Theme-Templates",
+      "Direct Architect content; excludes global theme templates"
+    ],
+    [
+      "Visual Composer",
+      "Website Builder; nicht WPBakery",
+      "Website Builder; not WPBakery"
+    ],
+    [
+      "Zion Builder",
+      "Free / Pro",
+      "Free / Pro"
+    ]
+  ],
+  "blocks": [
+    [
+      "Essential Blocks",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Etch",
+      "Direkte Etch-Inhalte; Theme allein genügt nicht",
+      "Direct Etch content; the theme alone is not sufficient"
+    ],
+    [
+      "GenerateBlocks",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Genesis Blocks",
+      "Genesis-Blöcke; keine unveränderten Atomic-Blocks-Inhalte",
+      "Genesis blocks; excludes unchanged Atomic Blocks content"
+    ],
+    [
+      "Greenshift / GreenLight",
+      "Gespeicherte Blöcke, einschließlich Addons; Addon-Status in der Übersicht",
+      "Stored blocks, including addons; addon status in the overview"
+    ],
+    [
+      "GutenKit",
+      "Free-Blöcke",
+      "Free blocks"
+    ],
+    [
+      "Kadence Blocks",
+      "Free / Pro; auch Kadence-Blöcke aus Creative Kit und importierten Vorlagen",
+      "Free / Pro; includes Kadence blocks from Creative Kit and imported templates"
+    ],
+    [
+      "Kubio",
+      "Eigene Blöcke und erkannte Kubio-Stile; keine globale Template-Zuordnung",
+      "Own blocks and recognized Kubio styles; excludes global template assignment"
+    ],
+    [
+      "Otter Blocks",
+      "Otter- und Atomic-Wind-Blöcke sowie gespeicherte Otter-Bedingungen",
+      "Otter and Atomic Wind blocks, plus stored Otter conditions"
+    ],
+    [
+      "Spectra Blocks",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Spectra Legacy",
+      "Free / Pro",
+      "Free / Pro"
+    ],
+    [
+      "Stackable",
+      "Free / Premium; aktuelle und ältere Blöcke",
+      "Free / Premium; current and legacy blocks"
+    ]
+  ]
+}

@@ -5,4 +5,6 @@
 [Help & bugs / Hilfe & Fehler](https://github.com/deckerweb/builder-list-pages/issues) · [Discussions / Austausch](https://github.com/deckerweb/builder-list-pages/discussions) · [Security / Sicherheit](https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)
 
 © 2019–2026 David Decker – DECKERWEB.  
-Plugin: [GPL v2 or later / GPL v2 oder höher](https://www.gnu.org/licenses/gpl-2.0.html).
+Plugin license / Plugin-Lizenz: [GPL v2 or later / GPL v2 oder höher](https://www.gnu.org/licenses/gpl-2.0.html).
+
+[Website EN](https://deckerwebplugins.com/en/plugins/builder-list-pages/) · [Website DE](https://deckerwebplugins.com/de/plugins/builder-list-pages/)

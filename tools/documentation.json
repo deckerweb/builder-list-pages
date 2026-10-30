@@ -1,36 +1,44 @@
 {
-  "version": "1.2.2",
+  "version": "1.3.0",
   "languages": {
     "en": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.2.2 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.3.0 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
-          "At a glance",
-          "- **Recognize builders:** clickable Builder column, including multiple matches per item.\n- **Filter quickly:** independent views for multiple active builders and “No recognized builder”.\n- **Keep working:** builder selection stays in searches and standard list filters.\n- **Familiar navigation:** builder submenus respect the post type’s editing permissions.\n- **Little setup:** three optional switches, German translations, local guide and full changelog.\n- **DECKERWEB integrated:** embedded GitHub Updater 2.2.1 and Plugin Library 1.1.0."
+          "At a Glance",
+          "- **Find your tool:** separate support tables for classic page builders and block-based builders, with concise Free/Pro notes.\n- **See your integrations:** installed tools, active/inactive status and direct content-type links with readable counts.\n- **Spot useful results:** matching content types first; Pages then Posts within each group, with distinct subtle colors.\n- **Choose content types:** automatic selection plus per-site Automatic, Hide and Include controls.\n- **Recognize mixed content:** clickable Builder badges, multiple-builder views and inactive traces.\n- **Keep working:** searches, personal favorites, CSV exports and familiar WordPress lists.\n- **Native WordPress tools:** local Site Health information and shortcuts in the available Command Palette.\n- **Your language:** English, German and formal German; bundled guide and full changelog.\n- **DECKERWEB integrated:** GitHub Updater 2.2.1 and Plugin Library 1.2.0."
         ],
         [
           "Installation and first filter",
-          "1. Upload the plugin ZIP through **Plugins → Add New → Upload Plugin**, replacing the old plugin version if installed.\n2. Activate it and open **Pages** or another content list enabled by an active supported builder.\n3. Click a builder above the table. Then use the normal search if needed.\n4. Adjust optional choices under **Settings → Builder List Pages**."
+          "1. Upload the plugin ZIP through **Plugins → Add New → Upload Plugin**, replacing the old plugin version if installed.\n2. Activate it and open **Pages** or another content list enabled by an active supported builder.\n3. Click a builder above the table. Then use the normal search if needed.\n4. Adjust optional choices under **Settings → Builder List Pages**.\n\n### Step 1: Recognize builders\n\nOpen **Pages → All Pages**. The **Builder** column lists recognized tools. A page can show several names.\n\n![Builder column and filters in the page overview](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/overview-en.png)\n\n### Step 2: Filter matching pages\n\nClick a builder above the table or its name in a row. The example keeps the two pages using Kadence blocks; one also contains Spectra blocks. **All** returns to the full list.\n\n![Page list filtered by Kadence Blocks](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/filter-en.png)"
         ],
         [
           "Builders and recognition",
-          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer retains the free edition’s page/post scope. Astra and OceanWP post types retain their special menu navigation when available.\n\nRecognition reads existing metadata for active supported builders enabled on the post type. “No recognized builder” does not automatically mean Gutenberg. The default views recognize active builders; the optional trace view checks inactive signatures. Global template assignments are not analyzed. Existence-based integrations retain their previous semantics even for empty values.\n\nCounts describe the complete readable group outside trash, including unpublished content. Search and other list filters can reduce visible results. Builder groups can overlap."
+          "Classic page builders and block-based builders are listed separately. [View supported builders](https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/Builders-English.md).\n\nPages can use several builders or block collections. The Builder column shows recognized tools; click a name to filter the list. The overview lists conditions briefly, with detailed explanations on the special cases page.\n\n### What does this plugin mean by a “builder”?\n\nThis plugin uses “builder” to mean tools for designing content and layouts in WordPress. This includes classic page builders such as Bricks, Elementor and Oxygen, as well as extensions for the WordPress block editor, such as Kadence Blocks and Spectra.\n\nFor block extensions, using individual blocks or supported design features is enough for a match. The entire page does not have to be built with that tool. A content item can therefore show more than one builder.\n\nAn active theme or a global template alone does not mean that the individual content item was edited with that builder.\n\nEtch is recognized from directly stored Etch blocks. An active Etch theme or an Etch block in a global header or footer alone does not make a page an Etch content item.\n\nCrocoBuilder recognizes directly enabled content and requires PHP 8.2 and WordPress 7.0. Builderius Free/Pro recognizes enabled page templates explicitly assigned to a content item. This saved editor assignment does not indicate which development state has been published live. Automatic and global templates are excluded. Builderius requires PHP 8.2. Other integrations remain available on older systems."
         ],
         [
           "Settings",
-          "Enable or disable the Builder column, builder submenus and no-builder filter site-wide. Users can also hide the column individually through **Screen Options**. Administrators change settings; editors use list features according to normal editing permissions.\n\nThe local changelog opens in a keyboard-accessible dialog. Close it with Escape, the Close button or a click outside the dialog; focus returns to the link."
+          "Open **Settings → Builder List Pages** to see installed supported tools, active/inactive status and recognized Free/Pro editions. An inactive Pro addon is marked separately. Edition labels describe distributions, not license status.\n\nUse a content-type button to open its filtered list. Types with matching content appear first; Pages, then Posts lead each group. Matching Pages use pale blue, Posts pale violet and other types pale green. Zero-result buttons stay neutral and usable. Counts include readable published and unpublished items outside the trash; groups can overlap. Inactive integrations have no content links.\n\nThe three display switches control the Builder column, builder submenus and no-builder filter site-wide. Users can also hide the column through **Screen Options**.\n\n### Adjust content types\n\nExpand **Adjust content types**. Each registered eligible content type shows its name and slug. Choose **Automatic**, **Hide** or **Include**, then **Save Changes**. Automatic omits known system, redirect, consent, form-management and log types. Custom types cannot always be classified reliably, so override the selection if needed.\n\nThe selection applies to the overview, column, filters, submenus and command shortcuts. Include checks stored signatures; it does not label every item as builder content or override editing permissions and native builder restrictions. It can include a custom type that lacks the standard editor. System records and internal builder libraries remain excluded. These choices do not change builder settings or content. Return a type to Automatic to remove its override. Values belonging to temporarily absent plugins are retained. Settings apply to this site and survive deactivation and uninstall.\n\n![Installed integrations and display settings](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/settings-en.png)\n\n![Content-type selection with Automatic, Hide and Include](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/content-types-en.png)\n\nThe existing no-builder explanation remains, followed by a plain-language definition of classic builders and block extensions. The local changelog opens in a keyboard-accessible dialog; Escape or Close returns focus to its link.\n\nInstalled GreenShift addons appear with their individual active/inactive status within the shared integration. Content counts are not repeated for each addon. An active addon without the available base does not enable recognition."
         ],
         [
           "Updates and Library",
-          "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 1.1.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
+          "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 1.2.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
         ],
         [
           "New tools and personal views",
           "The **Multiple builders recognized** view collects content with at least two distinct active builder signatures. Duplicate copies of the same metadata field count once.\n\nOpen **Builder tools and personal views** above the native content list to select a view, save a named favorite, switch to a compact selector, inspect inactive builder traces, copy diagnostics or export a CSV. The tools remain collapsed by default; existing builder views remain the default. Bricks badges provide a separate editor link only when native Bricks permissions allow it.\n\n**Inactive traces:** the optional read-only view checks known metadata signatures even when the corresponding builder is inactive. It does not activate builders, change content or prove which builder renders the frontend. Empty fields can count for existence-based signatures. Active builders disabled for a post type are not classified as inactive.\n\n**Personal favorites:** save post type, builder, status and search for your own account on this site. Save the same name to update a favorite; up to 20 names are supported. Opening a favorite rechecks your access. Delete favorites individually; deactivation and uninstall retain them.\n\n**Diagnostics:** select and copy the local text containing plugin, WordPress and PHP versions, supported active builder names and accessible post types. It omits website URLs, usernames, credentials and page contents. Nothing is automatically sent.\n\n**CSV:** download title, status, recognized builders and edit link for the explicitly displayed builder/status/search selection, up to 5,000 readable and editable items. Other list filters are not included; the tool states this before download. CSV formulas are neutralized. Edit links contain the site URL, so the CSV is intended for a trusted handover, unlike the minimal support diagnostics.\n\nAn empty builder result explains the current builder, search and status. **Reset search** or **Remove builder filter** clears that one restriction while preserving the post type and other list filters.\n\nOpen **Recognition details** in a row to see the matched metadata field names and whether an empty value exists. No metadata values or builder content are displayed."
         ],
         [
+          "Feature Highlights",
+          "### Your tool, immediately visible\n\nFind classic page builders and block libraries in separate support tables. Free/Pro notes and short conditions make compatibility easy to assess.\n\n### From integration to content in one click\n\nSee installed tools and their status, then jump directly to recognized Pages, Posts or custom content. Matching types lead the list and receive subtle colors.\n\n### Useful content types, with room for exceptions\n\nAutomatic selection keeps technical records out of the way. Override individual types with Hide or Include, consistently across the plugin.\n\n### Familiar WordPress workflows\n\nUse the normal lists, searches and permissions, plus personal views and CSV handovers. Site Health information helps with support; available Command Palette shortcuts speed up navigation.\n\n### Recognize popular page builders and block tools\n\nFind content designed with Bricks, Elementor, Breakdance and many other popular page builders. Block-based tools such as Kadence Blocks, Spectra and GenerateBlocks are also supported, in both Free and Pro. Etch and GreenShift are supported too, along with directly assigned Mosaic Builder layouts. Global headers, footers and automatic templates are not automatically attributed to every page."
+        ],
+        [
+          "WordPress tools",
+          "**Tools → Site Health → Info → Builder List Pages** lists the plugin version, available integrations, selected content types and explicit overrides. It contains no page contents, credentials or license information and sends nothing automatically. Inactive builders and zero results are not health warnings.\n\nWhere WordPress already offers the **Command Palette**, search for **Builder List Pages**. Administrators can open integrations and settings; users with editing permissions can open the appropriate builder/type lists. Commands respect the same content-type selection and native editing permissions. The plugin does not add a separate palette or force it onto older screens. It does not scan content or calculate counts for commands.\n\n[Detailed selection rules and developer filter](https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/Recognition-English.md#content-type-selection)\n\n![Local plugin information in Site Health](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/site-health-en.png)\n\n![Direct builder navigation in the WordPress Command Palette](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/commands-en.png)"
+        ],
+        [
           "About",
-          "Created and maintained by David Decker – DECKERWEB. © 2019–2026. Builder List Pages began in 2019 and complements native content lists; it reads metadata without converting pages or loading frontend assets."
+          "Created and maintained by David Decker – DECKERWEB. © 2019–2026. Builder List Pages began in 2019 and complements native content lists; it reads metadata without converting pages or loading frontend assets.\n\n[Plugin website](https://deckerwebplugins.com/en/plugins/builder-list-pages/)"
         ],
         [
           "Issues, security and support",
@@ -38,7 +46,7 @@
         ],
         [
           "License and included components",
-          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.1.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files."
+          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.2.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files."
         ]
       ],
       "faq": [
@@ -51,7 +59,7 @@
             ],
             [
               "Which requirements apply?",
-              "WordPress 6.7+ and PHP 8.1+. Checked on WordPress 6.7 and 7.1.3 with PHP 8.4.5 using isolated SQLite installations; PHP 8.1.29 workflow checks also passed. MySQL/MariaDB, FTP/SSH and broader real-builder combinations need separate checks."
+              "WordPress 6.7+ and PHP 8.1+. Checked on WordPress 7.1.4 with PHP 8.1 and 8.4, and on WordPress 6.7 with PHP 8.1. CrocoBuilder and Builderius integration checks also passed with PHP 8.2 and 8.4. Tests used isolated SQLite installations; full MySQL/MariaDB, FTP/SSH and every builder/version combination are not covered."
             ],
             [
               "Is it free?",
@@ -59,7 +67,7 @@
             ],
             [
               "Which builders are supported?",
-              "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer currently uses the free edition’s page/post scope."
+              "The [builder overview](Builders-English.md) lists classic and block-based builders separately, with Free/Pro notes and concise conditions."
             ],
             [
               "Why is no builder view visible?",
@@ -113,6 +121,10 @@
             [
               "Do other plugin filters still work?",
               "Existing meta query groups are kept and combined with the selected builder using AND. The no-builder filter adds its exclusion separately. Third-party query hooks can still affect results."
+            ],
+            [
+              "Which block libraries can I find?",
+              "Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit and Kubio. Recognized usage does not mean the entire page was created with one tool. [Special cases and limits](Recognition-English.md)."
             ]
           ]
         ],
@@ -214,6 +226,27 @@
               "Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized."
             ]
           ]
+        ],
+        [
+          "Content types and WordPress tools",
+          [
+            [
+              "Why do some content types no longer appear?",
+              "Automatic selection omits known technical and system records. Under Settings → Builder List Pages → Adjust content types, select Include for a suitable custom type. Permissions and native builder restrictions still apply; core system records remain excluded."
+            ],
+            [
+              "Does Hide delete content or change my builder?",
+              "No. It removes the type from this plugin’s integration features on this site. Content, builder settings and saved favorites remain. Opening a favorite rechecks the current selection. Return to Automatic to remove an override."
+            ],
+            [
+              "What does this plugin mean by a builder?",
+              "This plugin uses “builder” to mean tools for designing content and layouts in WordPress. This includes classic page builders such as Bricks, Elementor and Oxygen, as well as extensions for the WordPress block editor, such as Kadence Blocks and Spectra.\n\nFor block extensions, using individual blocks or supported design features is enough for a match. The entire page does not have to be built with that tool. A content item can therefore show more than one builder.\n\nAn active theme or a global template alone does not mean that the individual content item was edited with that builder."
+            ],
+            [
+              "Why are the commands missing?",
+              "Commands are added only where WordPress already loads its native palette and only for accessible builder/type combinations. On older WordPress screens, use the existing menu links or the settings overview."
+            ]
+          ]
         ]
       ],
       "readme_faq_indices": [
@@ -227,35 +260,43 @@
       ]
     },
     "de": {
-      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1280x640.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.2.2 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.1+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
+      "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-de-1280x640.png)\n\n**Deine Seiten. Deine Builder. Alles im Blick.** Erkenne Builder in deinen Inhaltslisten, filtere Elementor-, Bricks- und andere Builder-Seiten und arbeite im gewohnten WordPress-Admin weiter. Hilfreich bei gemischten Websites, Übergaben und Builder-Wechseln.\n\n**Version:** 1.3.0 · **Voraussetzungen:** WordPress 6.7+ / PHP 8.1+ · **Lizenz:** GPL v2 oder neuer\n\n[English](README.md) · [Anleitung](docs/wiki/Deutsch.md) · [Ausführliche FAQ](docs/wiki/FAQ-Deutsch.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "Auf einen Blick",
-          "- **Builder erkennen:** anklickbare Builder-Spalte; mehrere Treffer pro Inhalt sind möglich.\n- **Schnell filtern:** eigene Ansichten für mehrere aktive Builder und „Ohne erkannten Builder“.\n- **Weiterarbeiten:** Builder-Auswahl bleibt bei Suche und normalen Listenfiltern erhalten.\n- **Gewohnte Navigation:** zusätzliche Builder-Untermenüs verwenden die Rechte des jeweiligen Inhaltstyps.\n- **Wenig Einrichtung:** drei optionale Schalter, deutsche Übersetzungen, lokale Anleitung und kompletter Änderungsverlauf.\n- **DECKERWEB integriert:** eingebauter GitHub-Updater V2 und Plugin Library 1.1.0."
+          "- **Dein Werkzeug finden:** getrennte Tabellen für klassische Page Builder und blockbasierte Builder mit kurzen Free-/Pro-Hinweisen.\n- **Integrationen überblicken:** installierte Werkzeuge, Aktiv-/Inaktiv-Status und direkte Inhaltslinks mit lesbaren Trefferzahlen.\n- **Treffer schneller sehen:** Inhaltstypen mit Treffern zuerst; innerhalb der Gruppen Seiten vor Beiträgen, mit eigenen dezenten Farben.\n- **Inhaltstypen auswählen:** automatische Vorauswahl plus Automatisch, Ausblenden und Einbeziehen pro Website.\n- **Gemischte Inhalte erkennen:** anklickbare Builder-Namen, Mehrfach-Builder-Ansicht und inaktive Spuren.\n- **Direkt weiterarbeiten:** Suche, persönliche Favoriten, CSV-Export und vertraute WordPress-Listen.\n- **WordPress-Werkzeuge nutzen:** lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren Befehlspalette.\n- **Passende Sprache:** Englisch, Deutsch und Deutsch (Sie); lokale Anleitung und vollständiger Änderungsverlauf.\n- **DECKERWEB integriert:** GitHub Updater 2.2.1 und Plugin Library 1.2.0."
         ],
         [
           "Installation und erster Filter",
-          "1. Plugin-ZIP über **Plugins → Installieren → Plugin hochladen** installieren beziehungsweise die alte Plugin-Version ersetzen.\n2. Plugin aktivieren und **Seiten** oder eine andere vom aktiven Builder unterstützte Inhaltsliste öffnen.\n3. Einen Builder-Namen über der Tabelle anklicken. Anschließend bei Bedarf die Suche verwenden.\n4. Einstellungen bei Bedarf unter **Einstellungen → Builder List Pages** anpassen."
+          "1. Plugin-ZIP über **Plugins → Installieren → Plugin hochladen** installieren beziehungsweise die alte Plugin-Version ersetzen.\n2. Plugin aktivieren und **Seiten** oder eine andere vom aktiven Builder unterstützte Inhaltsliste öffnen.\n3. Einen Builder-Namen über der Tabelle anklicken. Anschließend bei Bedarf die Suche verwenden.\n4. Einstellungen bei Bedarf unter **Einstellungen → Builder List Pages** anpassen.\n\n### Schritt 1: Builder erkennen\n\nÖffne **Seiten → Alle Seiten**. In der Spalte **Builder** stehen die erkannten Werkzeuge. Eine Seite kann mehrere Namen tragen.\n\n![Builder-Spalte und Filter in der Seitenübersicht](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/overview-de.png)\n\n### Schritt 2: Passende Seiten filtern\n\nKlicke auf einen Builder über der Tabelle oder auf seinen Namen in einer Zeile. Im Beispiel bleiben die beiden Seiten mit Kadence-Blöcken sichtbar; eine davon enthält zusätzlich Spectra-Blöcke. **Alle** öffnet wieder die vollständige Liste.\n\n![Nach Kadence Blocks gefilterte Seitenliste](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/filter-de.png)"
         ],
         [
           "Builder und Erkennung",
-          "Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Visual Composer ist auf den bisherigen Seiten-/Beitragsumfang der kostenlosen Ausgabe begrenzt. Astra- und OceanWP-Inhaltstypen behalten ihre spezielle Menünavigation, sofern diese vorhanden ist.\n\nErkennung liest bestehende Metadaten aktiver unterstützter Builder für freigegebene Inhaltstypen. „Ohne erkannten Builder“ bedeutet nicht automatisch Gutenberg. Inaktive Builder-Daten und globale Template-Zuweisungen werden nicht analysiert. Existenzbasierte Integrationen behalten ihre bisherige Semantik auch für leere Werte.\n\nZähler erfassen die gesamte lesbare Gruppe außerhalb des Papierkorbs einschließlich unveröffentlichter Inhalte. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Gruppen können sich überschneiden."
+          "Klassische Page Builder und blockbasierte Builder sind übersichtlich getrennt aufgelistet. [Unterstützte Builder ansehen](https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/Builders-Deutsch.md).\n\nSeiten können mehrere Builder oder Block-Sammlungen verwenden. Die Builder-Spalte zeigt die erkannten Werkzeuge; ein Klick filtert die Liste. Bedingungen stehen kurz in der Übersicht, ausführliche Hinweise auf der Seite zu Sonderfällen.\n\n### Was versteht dieses Plugin unter einem „Builder“?\n\nAls „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.\n\nBei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.\n\nEin aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde.\n\nEtch wird anhand der direkt gespeicherten Etch-Blöcke erkannt. Ein aktives Etch-Theme oder ein Etch-Block im globalen Header oder Footer allein macht eine Seite nicht zu einem Etch-Inhalt.\n\nCrocoBuilder erkennt direkt aktivierte Inhalte; PHP 8.2 und WordPress 7.0 sind dafür erforderlich. Builderius Free/Pro erkennt ausdrücklich einem Inhalt zugeordnete, aktivierte Seiten-Templates. Diese gespeicherte Editor-Zuweisung sagt nicht aus, welcher Entwicklungsstand bereits live veröffentlicht wurde. Automatische und globale Templates werden nicht zugerechnet. Builderius benötigt PHP 8.2. Auf älteren Systemen bleiben die übrigen Integrationen nutzbar."
         ],
         [
           "Einstellungen",
-          "Builder-Spalte, Untermenüs und den Filter ohne erkannten Builder websiteweit ein- oder ausschalten. Die Spalte lässt sich zusätzlich persönlich über **Ansicht anpassen** ausblenden. Administratoren ändern Einstellungen; Redakteure verwenden Listenfunktionen gemäß ihren normalen Bearbeitungsrechten.\n\nDer lokale Änderungsverlauf öffnet sich in einem per Tastatur bedienbaren Dialog. Schließe ihn mit Escape, dem Schließen-Button oder einem Klick außerhalb des Dialogs; der Fokus kehrt zum Link zurück."
+          "Unter **Einstellungen → Builder List Pages** siehst du installierte unterstützte Werkzeuge, ihren Aktiv-/Inaktiv-Status und erkannte Free-/Pro-Ausgaben. Ein inaktives Pro-Addon ist gesondert gekennzeichnet. Die Ausgabenbezeichnungen beschreiben Pakete, keinen Lizenzstatus.\n\nÜber einen Button pro Inhaltstyp öffnest du die gefilterte Liste. Inhaltstypen mit Treffern erscheinen zuerst; innerhalb der Gruppen führen Seiten und danach Beiträge. Seiten mit Treffern sind dezent blau, Beiträge violett und weitere Inhaltstypen grün hinterlegt. Nulltreffer bleiben neutral und anklickbar. Die Zahlen umfassen lesbare veröffentlichte und unveröffentlichte Inhalte außerhalb des Papierkorbs; Gruppen können sich überschneiden. Inaktive Integrationen erhalten keine Inhaltslinks.\n\nDie drei Anzeigeschalter steuern Builder-Spalte, Builder-Untermenüs und Ohne-Builder-Filter für diese Website. Die Spalte lässt sich zusätzlich persönlich über **Ansicht anpassen** ausblenden.\n\n### Inhaltstypen anpassen\n\nÖffne **Inhaltstypen anpassen**. Jeder registrierte geeignete Inhaltstyp erscheint mit Name und Slug. Wähle **Automatisch**, **Ausblenden** oder **Einbeziehen** und anschließend **Änderungen speichern**. Die automatische Vorauswahl lässt bekannte System-, Redirect-, Consent-, Formularverwaltungs- und Protokolltypen weg. Eigene Inhaltstypen lassen sich nicht immer eindeutig zuordnen; passe die Auswahl bei Bedarf an.\n\nDie Auswahl gilt für Übersicht, Spalte, Filter, Untermenüs und Befehle. Einbeziehen prüft gespeicherte Erkennungsmerkmale; es erklärt nicht alle Einträge zu Builder-Inhalten und umgeht keine Bearbeitungsrechte oder Einschränkungen des Builders. Auch ein eigener Inhaltstyp ohne normalen Editor kann einbezogen werden. Systemdatensätze und interne Builder-Bibliotheken bleiben ausgeschlossen. Builder-Einstellungen und Inhalte ändern sich dadurch nicht. Mit Automatisch entfernst du die Ausnahme. Werte vorübergehend fehlender Plugins bleiben erhalten. Die Einstellungen gelten für diese Website und bleiben bei Deaktivierung und Deinstallation bestehen.\n\n![Installierte Integrationen und Anzeige-Einstellungen](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/settings-de.png)\n\n![Inhaltstyp-Auswahl mit Automatisch, Ausblenden und Einbeziehen](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/content-types-de.png)\n\nDer vorhandene Ohne-Builder-Hinweis bleibt erhalten; darunter erklärt ein eigener Abschnitt klassische Builder und Block-Erweiterungen verständlich. Der lokale Änderungsverlauf öffnet sich als tastaturbedienbarer Dialog; Escape oder Schließen führt zum Ausgangslink zurück.\n\nBei GreenShift erscheinen installierte Addons mit ihrem jeweiligen Aktiv-Status unter der gemeinsamen Integration. Die Inhaltszähler werden nicht je Addon wiederholt. Ein aktives Addon ohne verfügbare Basis macht die Erkennung nicht verfügbar."
         ],
         [
           "Updates und Library",
-          "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.1 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 1.1.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
+          "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.1 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 1.2.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
         ],
         [
           "Neue Werkzeuge und persönliche Ansichten",
           "Die Ansicht **Mehrere Builder erkannt** sammelt Inhalte mit mindestens zwei unterschiedlichen Signaturen aktiver Builder. Doppelte Kopien desselben Metadatenfelds zählen einmal.\n\nÖffne **Builder-Werkzeuge und persönliche Ansichten** oberhalb der normalen Inhaltsliste, um eine Ansicht auszuwählen, einen benannten Favoriten zu speichern, zur kompakten Auswahl zu wechseln, inaktive Builder-Spuren zu prüfen, Diagnosedaten zu kopieren oder eine CSV herunterzuladen. Die Werkzeuge bleiben standardmäßig zugeklappt; die bisherigen Builder-Ansichten bleiben Standard. Bricks-Kennzeichen bieten einen getrennten Bearbeitungslink, wenn die eigenen Bricks-Berechtigungen ihn erlauben.\n\n**Inaktive Spuren:** Die optionale, rein lesende Ansicht prüft bekannte Metadaten-Signaturen auch bei deaktiviertem Builder. Sie aktiviert keine Builder, verändert keine Inhalte und beweist nicht, welcher Builder das Frontend darstellt. Bei existenzbasierter Erkennung können leere Felder zählen. Aktive Builder, die für einen Inhaltstyp abgeschaltet sind, gelten nicht als inaktiv.\n\n**Persönliche Favoriten:** Speichere Inhaltstyp, Builder, Status und Suche für dein Benutzerkonto auf dieser Website. Derselbe Name aktualisiert einen Favoriten; bis zu 20 Namen werden unterstützt. Beim Öffnen werden deine Rechte erneut geprüft. Favoriten lassen sich einzeln löschen; Deaktivierung und Deinstallation erhalten sie.\n\n**Diagnose:** Wähle den lokalen Text aus und kopiere ihn. Er enthält Plugin-, WordPress- und PHP-Version, Namen unterstützter aktiver Builder und zugängliche Inhaltstypen. Website-URLs, Benutzernamen, Zugangsdaten und Seiteninhalte fehlen. Es wird nichts automatisch gesendet.\n\n**CSV:** Lade Titel, Status, erkannte Builder und Bearbeitungslink für die ausdrücklich angezeigte Auswahl nach Builder/Status/Suche herunter, mit bis zu 5.000 lesbaren und bearbeitbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt; der Hinweis steht vor dem Download. Tabellenformeln werden entschärft. Bearbeitungslinks enthalten die Website-URL; die CSV ist für eine vertrauliche Übergabe gedacht, im Unterschied zur sparsamen Support-Diagnose.\n\nEin leeres Builder-Ergebnis erklärt Builder, Suche und Status. **Suche zurücksetzen** oder **Builder-Filter aufheben** entfernt nur diese Einschränkung und erhält Inhaltstyp und weitere Listenfilter.\n\nÖffne **Details zur Erkennung** in einer Zeile, um die Namen erkannter Metadatenfelder und einen Hinweis auf leere Werte zu sehen. Metadatenwerte und Builder-Inhalte werden nicht angezeigt."
         ],
         [
+          "Feature Highlights",
+          "### Dein Werkzeug sofort erkennen\n\nGetrennte Tabellen zeigen klassische Page Builder und Block-Bibliotheken. Free-/Pro-Hinweise und kurze Bedingungen machen die Unterstützung schnell verständlich.\n\n### Mit einem Klick zu den passenden Inhalten\n\nSieh installierte Werkzeuge und ihren Status und öffne direkt erkannte Seiten, Beiträge oder eigene Inhalte. Inhaltstypen mit Treffern stehen vorn und erhalten dezente Farben.\n\n### Sinnvolle Inhaltstypen mit Platz für Ausnahmen\n\nDie Vorauswahl hält technische Datensätze aus dem Weg. Passe einzelne Inhaltstypen über Ausblenden oder Einbeziehen an – einheitlich im gesamten Plugin.\n\n### Vertraute WordPress-Abläufe\n\nArbeite mit normalen Listen, Suche und Berechtigungen sowie persönlichen Ansichten und CSV-Übergaben. Informationen im Website-Zustand helfen beim Support; verfügbare Befehle beschleunigen die Navigation.\n\n### Beliebte Page Builder und Block-Werkzeuge erkennen\n\nFinde Inhalte, die du mit Bricks, Elementor, Breakdance und vielen weiteren beliebten Page Buildern gestaltet hast. Auch blockbasierte Werkzeuge wie Kadence Blocks, Spectra und GenerateBlocks werden unterstützt – jeweils in Free und Pro. Dazu kommen Etch, GreenShift und Mosaic Builder mit direkt zugewiesenen Layouts. Globale Header, Footer und automatische Templates werden nicht pauschal jeder Seite zugerechnet."
+        ],
+        [
+          "WordPress-Werkzeuge",
+          "**Werkzeuge → Website-Zustand → Bericht → Builder List Pages** zeigt Plugin-Version, verfügbare Integrationen, ausgewählte Inhaltstypen und ausdrückliche Ausnahmen. Seiteninhalte, Zugangsdaten und Lizenzinformationen fehlen bewusst; nichts wird automatisch versendet. Inaktive Builder und Nulltreffer erzeugen keine Zustandswarnung.\n\nWo WordPress die **Befehlspalette** bereits bereitstellt, suche nach **Builder List Pages**. Administratoren öffnen Integrationen und Einstellungen; Benutzer mit Bearbeitungsrechten springen zu passenden Builder-/Inhaltstyp-Listen. Befehle beachten dieselbe Inhaltstyp-Auswahl und die normalen Bearbeitungsrechte. Das Plugin ergänzt keine eigene Palette und erzwingt sie nicht auf älteren Oberflächen. Für Befehle werden keine Inhalte durchsucht oder Treffer gezählt.\n\n[Auswahlregeln und Entwicklerfilter im Detail](https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/Recognition-Deutsch.md#inhaltstyp-auswahl)\n\n![Lokale Plugin-Informationen im Website-Zustand](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/site-health-de.png)\n\n![Direkte Builder-Sprungziele in der WordPress-Befehlspalette](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/commands-de.png)"
+        ],
+        [
           "Über das Projekt",
-          "Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden."
+          "Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden.\n\n[Plugin-Website](https://deckerwebplugins.com/de/plugins/builder-list-pages/)"
         ],
         [
           "Fehler, Sicherheit und Unterstützung",
@@ -263,7 +304,7 @@
         ],
         [
           "Lizenz und enthaltene Komponenten",
-          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 1.1.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nBanner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](assets/Inter-OFL.txt) liegt ohne Fontdateien bei."
+          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 1.2.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nBanner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](assets/Inter-OFL.txt) liegt ohne Fontdateien bei."
         ]
       ],
       "faq": [
@@ -276,7 +317,7 @@
             ],
             [
               "Welche Voraussetzungen gelten?",
-              "WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 6.7 und 7.1.3 mit PHP 8.4.5 in isolierten SQLite-Installationen; die Workflowprüfungen bestanden auch mit PHP 8.1.29. MySQL/MariaDB, FTP/SSH und weitere echte Builder-Kombinationen benötigen gesonderte Prüfungen."
+              "WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 7.1.4 mit PHP 8.1 und 8.4 sowie auf WordPress 6.7 mit PHP 8.1. Die Integrationsprüfungen für CrocoBuilder und Builderius bestanden außerdem mit PHP 8.2 und 8.4. Die Tests verwenden isolierte SQLite-Installationen; vollständige MySQL-/MariaDB-, FTP-/SSH-Tests und jede Kombination aus Builder und Version sind nicht abgedeckt."
             ],
             [
               "Ist das Plugin kostenlos?",
@@ -284,7 +325,7 @@
             ],
             [
               "Welche Builder werden unterstützt?",
-              "Elementor, Bricks, Breakdance, Oxygen ab Version 6, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Bei Visual Composer gilt derzeit der Seiten-/Beitragsumfang der kostenlosen Ausgabe."
+              "Die [Builder-Übersicht](Builders-Deutsch.md) enthält getrennte Tabellen für klassische und blockbasierte Builder, einschließlich Free-/Pro-Hinweisen und kurzen Bedingungen."
             ],
             [
               "Warum sehe ich keine Builder-Ansicht?",
@@ -338,6 +379,10 @@
             [
               "Funktionieren Filter anderer Plugins weiterhin?",
               "Bestehende Meta-Abfragegruppen bleiben erhalten und werden mit AND mit dem Builder kombiniert. Der Filter ohne Builder ergänzt einen separaten Ausschluss. Abfrage-Hooks anderer Plugins können Ergebnisse weiterhin beeinflussen."
+            ],
+            [
+              "Welche Block-Sammlungen kann ich finden?",
+              "Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit und Kubio. Erkannte Nutzung bedeutet nicht, dass die gesamte Seite mit einem einzigen Werkzeug erstellt wurde. [Sonderfälle und Grenzen](Recognition-Deutsch.md)."
             ]
           ]
         ],
@@ -439,6 +484,27 @@
               "Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft."
             ]
           ]
+        ],
+        [
+          "Inhaltstypen und WordPress-Werkzeuge",
+          [
+            [
+              "Warum erscheinen manche Inhaltstypen nicht mehr?",
+              "Die Vorauswahl lässt bekannte technische Datensätze und Systemtypen weg. Wähle unter Einstellungen → Builder List Pages → Inhaltstypen anpassen bei einem geeigneten eigenen Typ Einbeziehen. Berechtigungen und Einschränkungen des Builders gelten weiterhin; Core-Systemdatensätze bleiben ausgeschlossen."
+            ],
+            [
+              "Löscht Ausblenden Inhalte oder ändert es meinen Builder?",
+              "Nein. Es nimmt den Inhaltstyp auf dieser Website aus den Integrationsfunktionen dieses Plugins. Inhalte, Builder-Einstellungen und gespeicherte Favoriten bleiben erhalten. Beim Öffnen eines Favoriten gilt die aktuelle Auswahl. Automatisch entfernt eine Ausnahme."
+            ],
+            [
+              "Was versteht dieses Plugin unter einem Builder?",
+              "Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.\n\nBei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.\n\nEin aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde."
+            ],
+            [
+              "Warum fehlen die Befehle?",
+              "Befehle werden nur dort ergänzt, wo WordPress seine eigene Palette lädt, und nur für zugängliche Builder-/Inhaltstyp-Kombinationen. Auf älteren WordPress-Oberflächen führen die vorhandenen Menülinks oder die Einstellungsübersicht zum Ziel."
+            ]
+          ]
         ]
       ],
       "readme_faq_indices": [
@@ -454,6 +520,47 @@
   },
   "history": {
     "en": [
+      [
+        "1.3.0 · 2026-10-30",
+        [
+          [
+            "New",
+            "Recognizes additional classic and block-based builders, including supported premium blocks. Includes Genesis Blocks."
+          ],
+          [
+            "New",
+            "Recognizes direct Etch content and shows installed GreenShift addons with their individual active/inactive status."
+          ],
+          [
+            "New",
+            "Recognizes directly enabled CrocoBuilder content and direct Builderius page templates in Free and Pro."
+          ],
+          [
+            "New",
+            "Adds an installed-integration overview with status, Free/Pro editions and direct filtered content links."
+          ],
+          [
+            "New",
+            "Adds per-site content-type choices, local Site Health information and shortcuts in the available WordPress Command Palette."
+          ],
+          [
+            "Improved",
+            "Adds a builder overview with separate tables and concise notes on limitations."
+          ],
+          [
+            "Improved",
+            "Shows matching content types first, prioritizes Pages and Posts within each group, and gives matching core types distinct subtle colors. Explains classic builders and block extensions in plain language."
+          ],
+          [
+            "Improved",
+            "Updates the embedded deckerweb Library to 1.2.0 with personal status filters, matching result counts and clearer download diagnostics."
+          ],
+          [
+            "Fixed",
+            "Recognizes Zion Builder Pro with its bundled core and respects Beaver Builder content types more reliably."
+          ]
+        ]
+      ],
       [
         "1.2.2 · 2026-10-22",
         [
@@ -598,6 +705,47 @@
     ],
     "de": [
       [
+        "1.3.0 · 2026-10-30",
+        [
+          [
+            "Neu",
+            "Erkennt zusätzliche klassische und blockbasierte Builder einschließlich ihrer unterstützten Premium-Blöcke. Einschließlich Genesis Blocks."
+          ],
+          [
+            "Neu",
+            "Erkennt direkte Etch-Inhalte und zeigt installierte GreenShift-Addons mit ihrem jeweiligen Aktiv-Status an."
+          ],
+          [
+            "Neu",
+            "Erkennt direkt aktivierte CrocoBuilder-Inhalte und direkte Builderius-Seiten-Templates in Free und Pro."
+          ],
+          [
+            "Neu",
+            "Zeigt installierte Integrationen mit Status, Free-/Pro-Ausgaben und direkten Links zu gefilterten Inhalten."
+          ],
+          [
+            "Neu",
+            "Ergänzt Inhaltstyp-Auswahl pro Website, lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren WordPress-Befehlspalette."
+          ],
+          [
+            "Verbessert",
+            "Neue Builder-Übersicht mit getrennten Tabellen und kurzen Hinweisen zu Einschränkungen."
+          ],
+          [
+            "Verbessert",
+            "Zeigt Inhaltstypen mit Treffern zuerst, bevorzugt Seiten und Beiträge innerhalb der Gruppen und hebt Core-Inhaltstypen mit eigenen dezenten Farben hervor. Erklärt klassische Builder und Block-Erweiterungen verständlich."
+          ],
+          [
+            "Verbessert",
+            "Aktualisiert die eingebettete deckerweb Library auf 1.2.0 mit persönlichen Statusfiltern, passenden Trefferzahlen und verständlicheren Download-Diagnosen."
+          ],
+          [
+            "Behoben",
+            "Erkennt Zion Builder Pro mit enthaltenem Basis-Builder und berücksichtigt die Inhaltstypen von Beaver Builder zuverlässiger."
+          ]
+        ]
+      ],
+      [
         "1.2.2 · 2026-10-22",
         [
           [
@@ -739,5 +887,11 @@
         ]
       ]
     ]
-  }
+  },
+  "approved_builder_highlight": {
+    "de": "Finde Inhalte, die du mit Bricks, Elementor, Breakdance und vielen weiteren beliebten Page Buildern gestaltet hast. Auch blockbasierte Werkzeuge wie Kadence Blocks, Spectra und GenerateBlocks werden unterstützt – jeweils in Free und Pro. Dazu kommen Etch, GreenShift und Mosaic Builder mit direkt zugewiesenen Layouts. Globale Header, Footer und automatische Templates werden nicht pauschal jeder Seite zugerechnet.",
+    "de_formal": "Finden Sie Inhalte, die Sie mit Bricks, Elementor, Breakdance und vielen weiteren beliebten Page Buildern gestaltet haben. Auch blockbasierte Werkzeuge wie Kadence Blocks, Spectra und GenerateBlocks werden unterstützt – jeweils in Free und Pro. Dazu kommen Etch, GreenShift und Mosaic Builder mit direkt zugewiesenen Layouts. Globale Header, Footer und automatische Templates werden nicht pauschal jeder Seite zugerechnet.",
+    "en": "Find content designed with Bricks, Elementor, Breakdance and many other popular page builders. Block-based tools such as Kadence Blocks, Spectra and GenerateBlocks are also supported, in both Free and Pro. Etch and GreenShift are supported too, along with directly assigned Mosaic Builder layouts. Global headers, footers and automatic templates are not automatically attributed to every page."
+  },
+  "tested_up_to": "7.1.4"
 }

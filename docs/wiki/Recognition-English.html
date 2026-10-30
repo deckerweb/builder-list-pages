@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Documentation</title><link rel="stylesheet" href="../../assets/documentation.css"></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-English.html">FAQ</a><a href="Changelog-English.html">Changelog</a></nav><h1 id="special-cases-and-recognition-limits">Special cases and recognition limits</h1>
+<p><a href="Recognition-Deutsch.html">Deutsch</a> · <a href="Builders-English.html">Builder overview</a></p>
+<h2 id="mosaic">Mosaic</h2>
+<p>Recognizes direct stored layout assignments in the current Mosaic theme. Automatic template assignments, deleted layouts and global headers/footers do not count. Mosaic is not evaluated while WordPress is switched to another multisite site within the same request. Mosaic requires WordPress 6.9 and PHP 8.2; Builder List Pages retains WordPress 6.7 and PHP 8.1.</p>
+<h2 id="template-imports-and-theme-extensions">Template imports and theme extensions</h2>
+<p>Kadence Starter Templates and Brainstorm Force Starter Templates are not separate builders. Recognition follows the imported Kadence, Spectra or other builder content. The importers need not remain active. Kadence Theme Kit Pro and Beaver Themer can assign global layouts; that does not prove direct use in page content.</p>
+<h2 id="block-usage-and-premium-features">Block usage and premium features</h2>
+<p>A recognized block proves use of a block family. It confirms neither a premium license nor availability of every dynamic feature. Extensions of existing blocks are not always separately detectable. The Kadence page wizard alone does not count as page content. Generic CSS and the shared Spectra AI block are not treated as unique builder evidence.</p>
+<h2 id="reusable-content">Reusable content</h2>
+<p>Nested blocks and readable published synced patterns are inspected. Traversal is limited to 20 reference levels and 200 pattern references per content item to avoid cycles. Other external templates and content returned by queries are not automatically followed.</p>
+<h2 id="counts-privacy-and-performance">Counts, privacy and performance</h2>
+<p>Counts cover readable content outside trash. Search and other list filters may reduce visible results. Mixed pages can appear in several builder groups. Recognition does not change content, render builders or send page content to external services. Results are cached only for the current request.</p>
+<h2 id="genesis-blocks-and-atomic-blocks">Genesis Blocks and Atomic Blocks</h2>
+<p>Genesis Blocks is recognized from stored Genesis blocks. Unchanged older Atomic Blocks content is not automatically attributed to Genesis. Builder List Pages does not convert content.</p>
+<h2 id="thrive-architect-and-theme-builder">Thrive Architect and Theme Builder</h2>
+<p>Recognition follows Architect markers stored directly on content. Thrive Theme Builder can also load the Architect core. Its activation or a globally assigned theme template therefore does not prove direct Architect editing of every page. Elementor Pro is similarly recognized within the Elementor family; global Pro templates do not automatically count as directly edited page content.</p>
+<h2 id="content-type-selection">Content-type selection</h2>
+<p>Automatic selection combines native builder support with WordPress type properties. Known administrative records such as menus, redirect rules, consent records, form management and logs are omitted. <code>post_content</code> alone is not an eligibility test: builders may store content in metadata, and technical records may contain text.</p>
+<p>Under <strong>Settings → Builder List Pages → Adjust content types</strong>, each explicit site override takes precedence over automatic classification. <strong>Include</strong> checks stored signatures; native builder support, editing permissions and hard system exclusions still apply. Explicit choices can include non-public custom types without the standard editor. <strong>Hide</strong> applies to the overview, column, filters, submenus, commands and accessible CSV/favorite types. Content and builder settings are retained.</p>
+<h3 id="developer-filter">Developer filter</h3>
+<p><code>deckerweb_builder_list_pages_content_type_allowed</code> receives the automatic decision, the <code>WP_Post_Type</code> object and the builder ID. Return a Boolean to change the automatic selection. Explicit site overrides apply afterward. The filter cannot bypass permissions, system exclusions or native builder type restrictions.</p>
+<pre><code class="language-php">add_filter( &#39;deckerweb_builder_list_pages_content_type_allowed&#39;, function ( $allowed, $type, $builder ) {
+    if ( &#39;my_private_portfolio&#39; === $type-&gt;name &amp;&amp; &#39;oxygen-classic&#39; === $builder ) {
+        return true;
+    }
+    return $allowed;
+}, 10, 3 );
+</code></pre>
+<p>The <code>blp_settings[post_type_rules]</code> settings belong to the current site. Temporarily unregistered types retain their choices. Automatic removes an override. Deactivation and uninstall retain these settings; foreign content is never modified.</p>
+<h2 id="etch">Etch</h2>
+<p>Directly stored Etch blocks are recognized, including mixed content and explicitly embedded synced patterns. Etch must be loaded and available for active filters. The Etch theme alone, global headers and footers, and automatically applied templates are not attributed to a page.</p>
+<h2 id="crocobuilder">CrocoBuilder</h2>
+<p>The content’s native builder activation flag determines recognition. After returning to the WordPress editor, retained layout data alone does not count. An enabled item without a saved layout can therefore also appear as CrocoBuilder. CrocoBuilder’s allowed content types apply in addition to this plugin’s settings. Requires WordPress 7.0 and PHP 8.2.</p>
+<h2 id="builderius">Builderius</h2>
+<p>Free and Pro form one integration. Recognition covers enabled page templates directly owned by a content item with an explicit matching content-ID rule. Additional contextual rules, global templates and automatic assignments do not count. Assignment describes the saved editor state, not the live deployed release or its content. Disabled templates do not match. Custom content types require the corresponding Pro setting. Requires PHP 8.2; tested with Free and Pro 1.4-beta. On older PHP this integration stays paused without disabling other builders.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.3.0</p></footer></main></body></html>

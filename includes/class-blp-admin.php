@@ -217,7 +217,8 @@ final class Admin {
 	 */
 	private function recognition_details( int $post_id, array $builders ): void {
 		echo '<details class="blp-recognition"><summary>' . esc_html__( 'Recognition details', 'builder-list-pages' ) . '</summary><ul>';
-		foreach ( $builders as $b ) {
+		foreach ( $builders as $id => $b ) {
+			if ( 'blocks' === ( $b['recognition'] ?? '' ) ) { $names = BlockAdapters::for_post( $post_id )[ $id ] ?? []; echo '<li>' . esc_html( $b['label'] ) . ': <code>' . esc_html( implode( ', ', $names ) ) . '</code></li>'; continue; }
 			$values = get_post_meta( $post_id, $b['meta-key'], false );
 			$empty = in_array( '', $values, true );
 			echo '<li>' . esc_html( $b['label'] ) . ': <code>' . esc_html( $b['meta-key'] ) . '</code> · ' . esc_html( $empty ? __( 'Contains an empty value', 'builder-list-pages' ) : __( 'Stored signature matched', 'builder-list-pages' ) ) . '</li>';

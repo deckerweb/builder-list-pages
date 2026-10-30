@@ -4,11 +4,11 @@
 <h3 id="muss-ich-zuerst-etwas-einrichten">Muss ich zuerst etwas einrichten?</h3>
 <p>Nein. Plugin aktivieren und eine Inhaltsliste öffnen, die ein aktiver unterstützter Builder bearbeiten darf. Ansichten, Builder-Spalte und Untermenüs sind standardmäßig eingeschaltet.</p>
 <h3 id="welche-voraussetzungen-gelten">Welche Voraussetzungen gelten?</h3>
-<p>WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 6.7 und 7.1.3 mit PHP 8.4.5 in isolierten SQLite-Installationen; die Workflowprüfungen bestanden auch mit PHP 8.1.29. MySQL/MariaDB, FTP/SSH und weitere echte Builder-Kombinationen benötigen gesonderte Prüfungen.</p>
+<p>WordPress 6.7+ und PHP 8.1+. Geprüft auf WordPress 7.1.4 mit PHP 8.1 und 8.4 sowie auf WordPress 6.7 mit PHP 8.1. Die Integrationsprüfungen für CrocoBuilder und Builderius bestanden außerdem mit PHP 8.2 und 8.4. Die Tests verwenden isolierte SQLite-Installationen; vollständige MySQL-/MariaDB-, FTP-/SSH-Tests und jede Kombination aus Builder und Version sind nicht abgedeckt.</p>
 <h3 id="ist-das-plugin-kostenlos">Ist das Plugin kostenlos?</h3>
 <p>Ja, unter GPL v2 oder neuer. Einige unterstützte Builder benötigen eine eigene kostenpflichtige Lizenz.</p>
 <h3 id="welche-builder-werden-unterstützt">Welche Builder werden unterstützt?</h3>
-<p>Elementor, Bricks, Breakdance, Oxygen ab Version 6, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Bei Visual Composer gilt derzeit der Seiten-/Beitragsumfang der kostenlosen Ausgabe.</p>
+<p>Die <a href="Builders-Deutsch.html">Builder-Übersicht</a> enthält getrennte Tabellen für klassische und blockbasierte Builder, einschließlich Free-/Pro-Hinweisen und kurzen Bedingungen.</p>
 <h3 id="warum-sehe-ich-keine-builder-ansicht">Warum sehe ich keine Builder-Ansicht?</h3>
 <p>Der Builder muss aktiv sein, den Inhaltstyp erlauben und erkennbare Einstellungen bereitstellen. Dein Benutzer braucht außerdem Bearbeitungsrechte für diesen Typ. Fehlende, ungültige und versteckte Inhaltstypen werden ausgeschlossen.</p>
 <h3 id="funktioniert-es-mit-eigenen-inhaltstypen">Funktioniert es mit eigenen Inhaltstypen?</h3>
@@ -34,6 +34,8 @@
 <p>Er beschreibt die gesamte lesbare Builder-Gruppe außerhalb des Papierkorbs. Suche, Datum, Autor und andere Listenfilter können die gerade sichtbaren Zeilen reduzieren.</p>
 <h3 id="funktionieren-filter-anderer-plugins-weiterhin">Funktionieren Filter anderer Plugins weiterhin?</h3>
 <p>Bestehende Meta-Abfragegruppen bleiben erhalten und werden mit AND mit dem Builder kombiniert. Der Filter ohne Builder ergänzt einen separaten Ausschluss. Abfrage-Hooks anderer Plugins können Ergebnisse weiterhin beeinflussen.</p>
+<h3 id="welche-block-sammlungen-kann-ich-finden">Welche Block-Sammlungen kann ich finden?</h3>
+<p>Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit und Kubio. Erkannte Nutzung bedeutet nicht, dass die gesamte Seite mit einem einzigen Werkzeug erstellt wurde. <a href="Recognition-Deutsch.html">Sonderfälle und Grenzen</a>.</p>
 <h2 id="einstellungen-und-rechte">Einstellungen und Rechte</h2>
 <h3 id="wer-kann-einstellungen-ändern">Wer kann Einstellungen ändern?</h3>
 <p>Benutzer mit manage_options, normalerweise Administratoren. Inhaltsfilter verwenden die Bearbeitungsrechte des jeweiligen Inhaltstyps.</p>
@@ -79,4 +81,15 @@
 <p>Nur, dass eine bekannte Metadaten-Signatur vorhanden ist. Sie kann historisch oder leer sein und beweist nicht die Darstellung im Frontend. Die Prüfung verändert keine Inhalte.</p>
 <h3 id="was-enthält-die-csv">Was enthält die CSV?</h3>
 <p>Titel, Status, Builder-Namen und normaler Bearbeitungslink für die Auswahl nach Builder/Status/Suche, begrenzt auf 5.000 lesbare und bearbeitbare Inhalte. Andere Listenfilter fehlen; Tabellenformeln werden entschärft.</p>
-<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.2.2</p></footer></main></body></html>
+<h2 id="inhaltstypen-und-wordpress-werkzeuge">Inhaltstypen und WordPress-Werkzeuge</h2>
+<h3 id="warum-erscheinen-manche-inhaltstypen-nicht-mehr">Warum erscheinen manche Inhaltstypen nicht mehr?</h3>
+<p>Die Vorauswahl lässt bekannte technische Datensätze und Systemtypen weg. Wähle unter Einstellungen → Builder List Pages → Inhaltstypen anpassen bei einem geeigneten eigenen Typ Einbeziehen. Berechtigungen und Einschränkungen des Builders gelten weiterhin; Core-Systemdatensätze bleiben ausgeschlossen.</p>
+<h3 id="löscht-ausblenden-inhalte-oder-ändert-es-meinen-builder">Löscht Ausblenden Inhalte oder ändert es meinen Builder?</h3>
+<p>Nein. Es nimmt den Inhaltstyp auf dieser Website aus den Integrationsfunktionen dieses Plugins. Inhalte, Builder-Einstellungen und gespeicherte Favoriten bleiben erhalten. Beim Öffnen eines Favoriten gilt die aktuelle Auswahl. Automatisch entfernt eine Ausnahme.</p>
+<h3 id="was-versteht-dieses-plugin-unter-einem-builder">Was versteht dieses Plugin unter einem Builder?</h3>
+<p>Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.</p>
+<p>Bei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.</p>
+<p>Ein aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde.</p>
+<h3 id="warum-fehlen-die-befehle">Warum fehlen die Befehle?</h3>
+<p>Befehle werden nur dort ergänzt, wo WordPress seine eigene Palette lädt, und nur für zugängliche Builder-/Inhaltstyp-Kombinationen. Auf älteren WordPress-Oberflächen führen die vorhandenen Menülinks oder die Einstellungsübersicht zum Ziel.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.3.0</p></footer></main></body></html>

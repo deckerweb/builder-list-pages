@@ -1,13 +1,16 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Builder List Pages · Dokumentation</title><link rel="stylesheet" href="../../assets/documentation.css"></head><body><main><nav><a href="Home.html">Builder List Pages</a><a href="English.html">English</a><a href="Deutsch.html">Deutsch</a><a href="FAQ-Deutsch.html">FAQ</a><a href="Changelog-Deutsch.html">Changelog</a></nav><h1 id="anleitung">Anleitung</h1>
-<p>Builder List Pages 1.2.2 · <a href="FAQ-Deutsch.html">FAQ</a> · <a href="English.html">English</a></p>
+<p>Builder List Pages 1.3.0 · <a href="FAQ-Deutsch.html">FAQ</a> · <a href="English.html">English</a></p>
 <h2 id="auf-einen-blick">Auf einen Blick</h2>
 <ul>
-<li><strong>Builder erkennen:</strong> anklickbare Builder-Spalte; mehrere Treffer pro Inhalt sind möglich.</li>
-<li><strong>Schnell filtern:</strong> eigene Ansichten für mehrere aktive Builder und „Ohne erkannten Builder“.</li>
-<li><strong>Weiterarbeiten:</strong> Builder-Auswahl bleibt bei Suche und normalen Listenfiltern erhalten.</li>
-<li><strong>Gewohnte Navigation:</strong> zusätzliche Builder-Untermenüs verwenden die Rechte des jeweiligen Inhaltstyps.</li>
-<li><strong>Wenig Einrichtung:</strong> drei optionale Schalter, deutsche Übersetzungen, lokale Anleitung und kompletter Änderungsverlauf.</li>
-<li><strong>DECKERWEB integriert:</strong> eingebauter GitHub-Updater V2 und Plugin Library 1.1.0.</li>
+<li><strong>Dein Werkzeug finden:</strong> getrennte Tabellen für klassische Page Builder und blockbasierte Builder mit kurzen Free-/Pro-Hinweisen.</li>
+<li><strong>Integrationen überblicken:</strong> installierte Werkzeuge, Aktiv-/Inaktiv-Status und direkte Inhaltslinks mit lesbaren Trefferzahlen.</li>
+<li><strong>Treffer schneller sehen:</strong> Inhaltstypen mit Treffern zuerst; innerhalb der Gruppen Seiten vor Beiträgen, mit eigenen dezenten Farben.</li>
+<li><strong>Inhaltstypen auswählen:</strong> automatische Vorauswahl plus Automatisch, Ausblenden und Einbeziehen pro Website.</li>
+<li><strong>Gemischte Inhalte erkennen:</strong> anklickbare Builder-Namen, Mehrfach-Builder-Ansicht und inaktive Spuren.</li>
+<li><strong>Direkt weiterarbeiten:</strong> Suche, persönliche Favoriten, CSV-Export und vertraute WordPress-Listen.</li>
+<li><strong>WordPress-Werkzeuge nutzen:</strong> lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren Befehlspalette.</li>
+<li><strong>Passende Sprache:</strong> Englisch, Deutsch und Deutsch (Sie); lokale Anleitung und vollständiger Änderungsverlauf.</li>
+<li><strong>DECKERWEB integriert:</strong> GitHub Updater 2.2.1 und Plugin Library 1.2.0.</li>
 </ul>
 <h2 id="installation-und-erster-filter">Installation und erster Filter</h2>
 <ol>
@@ -16,16 +19,190 @@
 <li>Einen Builder-Namen über der Tabelle anklicken. Anschließend bei Bedarf die Suche verwenden.</li>
 <li>Einstellungen bei Bedarf unter <strong>Einstellungen → Builder List Pages</strong> anpassen.</li>
 </ol>
+<h3 id="schritt-1-builder-erkennen">Schritt 1: Builder erkennen</h3>
+<p>Öffne <strong>Seiten → Alle Seiten</strong>. In der Spalte <strong>Builder</strong> stehen die erkannten Werkzeuge. Eine Seite kann mehrere Namen tragen.</p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/overview-de.png">Builder-Spalte und Filter in der Seitenübersicht</a></p>
+<h3 id="schritt-2-passende-seiten-filtern">Schritt 2: Passende Seiten filtern</h3>
+<p>Klicke auf einen Builder über der Tabelle oder auf seinen Namen in einer Zeile. Im Beispiel bleiben die beiden Seiten mit Kadence-Blöcken sichtbar; eine davon enthält zusätzlich Spectra-Blöcke. <strong>Alle</strong> öffnet wieder die vollständige Liste.</p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/filter-de.png">Nach Kadence Blocks gefilterte Seitenliste</a></p>
 <h2 id="builder-und-erkennung">Builder und Erkennung</h2>
-<p>Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer und Visual Composer. Visual Composer ist auf den bisherigen Seiten-/Beitragsumfang der kostenlosen Ausgabe begrenzt. Astra- und OceanWP-Inhaltstypen behalten ihre spezielle Menünavigation, sofern diese vorhanden ist.</p>
-<p>Erkennung liest bestehende Metadaten aktiver unterstützter Builder für freigegebene Inhaltstypen. „Ohne erkannten Builder“ bedeutet nicht automatisch Gutenberg. Inaktive Builder-Daten und globale Template-Zuweisungen werden nicht analysiert. Existenzbasierte Integrationen behalten ihre bisherige Semantik auch für leere Werte.</p>
-<p>Zähler erfassen die gesamte lesbare Gruppe außerhalb des Papierkorbs einschließlich unveröffentlichter Inhalte. Suche und weitere Listenfilter können die sichtbaren Ergebnisse reduzieren. Gruppen können sich überschneiden.</p>
+<p>Klassische Page Builder und blockbasierte Builder sind übersichtlich getrennt aufgelistet. <a href="Builders-Deutsch.html">Unterstützte Builder ansehen</a>.</p>
+<p>Seiten können mehrere Builder oder Block-Sammlungen verwenden. Die Builder-Spalte zeigt die erkannten Werkzeuge; ein Klick filtert die Liste. Bedingungen stehen kurz in der Übersicht, ausführliche Hinweise auf der Seite zu Sonderfällen.</p>
+<h3 id="was-versteht-dieses-plugin-unter-einem-builder">Was versteht dieses Plugin unter einem „Builder“?</h3>
+<p>Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.</p>
+<p>Bei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.</p>
+<p>Ein aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde.</p>
+<p>Etch wird anhand der direkt gespeicherten Etch-Blöcke erkannt. Ein aktives Etch-Theme oder ein Etch-Block im globalen Header oder Footer allein macht eine Seite nicht zu einem Etch-Inhalt.</p>
+<p>CrocoBuilder erkennt direkt aktivierte Inhalte; PHP 8.2 und WordPress 7.0 sind dafür erforderlich. Builderius Free/Pro erkennt ausdrücklich einem Inhalt zugeordnete, aktivierte Seiten-Templates. Diese gespeicherte Editor-Zuweisung sagt nicht aus, welcher Entwicklungsstand bereits live veröffentlicht wurde. Automatische und globale Templates werden nicht zugerechnet. Builderius benötigt PHP 8.2. Auf älteren Systemen bleiben die übrigen Integrationen nutzbar.</p>
+<h3 id="klassische-page-builder">Klassische Page Builder</h3>
+<table>
+<thead>
+<tr>
+<th>Werkzeug</th>
+<th>Unterstützt</th>
+<th>Kurzinfo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Beaver Builder</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Breakdance</td>
+<td>Ja</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Bricks</td>
+<td>Ja</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Brizy</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Builderius</td>
+<td>Ja</td>
+<td>Free / Pro; gespeicherte direkte Seiten-Templates, PHP 8.2+</td>
+</tr>
+<tr>
+<td>CrocoBuilder</td>
+<td>Ja</td>
+<td>Direkt aktivierte Inhalte; WP 7.0+ / PHP 8.2+</td>
+</tr>
+<tr>
+<td>Divi</td>
+<td>Ja</td>
+<td>Divi 4 / 5; Theme oder Builder-Plugin</td>
+</tr>
+<tr>
+<td>Elementor</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Mosaic</td>
+<td>Ja</td>
+<td>Direkte Layout-Zuweisungen; WP 6.9+ / PHP 8.2+</td>
+</tr>
+<tr>
+<td>Oxygen</td>
+<td>Ja</td>
+<td>Oxygen Classic und Oxygen 6</td>
+</tr>
+<tr>
+<td>Pagelayer</td>
+<td>Ja</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SiteOrigin</td>
+<td>Ja</td>
+<td>Seitenlayouts und eingebettete Layout-Blöcke; Free / Premium</td>
+</tr>
+<tr>
+<td>Thrive Architect</td>
+<td>Ja</td>
+<td>Direkte Architect-Inhalte; keine globalen Theme-Templates</td>
+</tr>
+<tr>
+<td>Visual Composer</td>
+<td>Ja</td>
+<td>Website Builder; nicht WPBakery</td>
+</tr>
+<tr>
+<td>Zion Builder</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+</tbody></table>
+<h3 id="blockbasierte-builder">Blockbasierte Builder</h3>
+<table>
+<thead>
+<tr>
+<th>Werkzeug</th>
+<th>Unterstützt</th>
+<th>Kurzinfo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Essential Blocks</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Etch</td>
+<td>Ja</td>
+<td>Direkte Etch-Inhalte; Theme allein genügt nicht</td>
+</tr>
+<tr>
+<td>GenerateBlocks</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Genesis Blocks</td>
+<td>Ja</td>
+<td>Genesis-Blöcke; keine unveränderten Atomic-Blocks-Inhalte</td>
+</tr>
+<tr>
+<td>Greenshift / GreenLight</td>
+<td>Ja</td>
+<td>Gespeicherte Blöcke, einschließlich Addons; Addon-Status in der Übersicht</td>
+</tr>
+<tr>
+<td>GutenKit</td>
+<td>Ja</td>
+<td>Free-Blöcke</td>
+</tr>
+<tr>
+<td>Kadence Blocks</td>
+<td>Ja</td>
+<td>Free / Pro; auch Kadence-Blöcke aus Creative Kit und importierten Vorlagen</td>
+</tr>
+<tr>
+<td>Kubio</td>
+<td>Ja</td>
+<td>Eigene Blöcke und erkannte Kubio-Stile; keine globale Template-Zuordnung</td>
+</tr>
+<tr>
+<td>Otter Blocks</td>
+<td>Ja</td>
+<td>Otter- und Atomic-Wind-Blöcke sowie gespeicherte Otter-Bedingungen</td>
+</tr>
+<tr>
+<td>Spectra Blocks</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Spectra Legacy</td>
+<td>Ja</td>
+<td>Free / Pro</td>
+</tr>
+<tr>
+<td>Stackable</td>
+<td>Ja</td>
+<td>Free / Premium; aktuelle und ältere Blöcke</td>
+</tr>
+</tbody></table>
 <h2 id="einstellungen">Einstellungen</h2>
-<p>Builder-Spalte, Untermenüs und den Filter ohne erkannten Builder websiteweit ein- oder ausschalten. Die Spalte lässt sich zusätzlich persönlich über <strong>Ansicht anpassen</strong> ausblenden. Administratoren ändern Einstellungen; Redakteure verwenden Listenfunktionen gemäß ihren normalen Bearbeitungsrechten.</p>
-<p>Der lokale Änderungsverlauf öffnet sich in einem per Tastatur bedienbaren Dialog. Schließe ihn mit Escape, dem Schließen-Button oder einem Klick außerhalb des Dialogs; der Fokus kehrt zum Link zurück.</p>
+<p>Unter <strong>Einstellungen → Builder List Pages</strong> siehst du installierte unterstützte Werkzeuge, ihren Aktiv-/Inaktiv-Status und erkannte Free-/Pro-Ausgaben. Ein inaktives Pro-Addon ist gesondert gekennzeichnet. Die Ausgabenbezeichnungen beschreiben Pakete, keinen Lizenzstatus.</p>
+<p>Über einen Button pro Inhaltstyp öffnest du die gefilterte Liste. Inhaltstypen mit Treffern erscheinen zuerst; innerhalb der Gruppen führen Seiten und danach Beiträge. Seiten mit Treffern sind dezent blau, Beiträge violett und weitere Inhaltstypen grün hinterlegt. Nulltreffer bleiben neutral und anklickbar. Die Zahlen umfassen lesbare veröffentlichte und unveröffentlichte Inhalte außerhalb des Papierkorbs; Gruppen können sich überschneiden. Inaktive Integrationen erhalten keine Inhaltslinks.</p>
+<p>Die drei Anzeigeschalter steuern Builder-Spalte, Builder-Untermenüs und Ohne-Builder-Filter für diese Website. Die Spalte lässt sich zusätzlich persönlich über <strong>Ansicht anpassen</strong> ausblenden.</p>
+<h3 id="inhaltstypen-anpassen">Inhaltstypen anpassen</h3>
+<p>Öffne <strong>Inhaltstypen anpassen</strong>. Jeder registrierte geeignete Inhaltstyp erscheint mit Name und Slug. Wähle <strong>Automatisch</strong>, <strong>Ausblenden</strong> oder <strong>Einbeziehen</strong> und anschließend <strong>Änderungen speichern</strong>. Die automatische Vorauswahl lässt bekannte System-, Redirect-, Consent-, Formularverwaltungs- und Protokolltypen weg. Eigene Inhaltstypen lassen sich nicht immer eindeutig zuordnen; passe die Auswahl bei Bedarf an.</p>
+<p>Die Auswahl gilt für Übersicht, Spalte, Filter, Untermenüs und Befehle. Einbeziehen prüft gespeicherte Erkennungsmerkmale; es erklärt nicht alle Einträge zu Builder-Inhalten und umgeht keine Bearbeitungsrechte oder Einschränkungen des Builders. Auch ein eigener Inhaltstyp ohne normalen Editor kann einbezogen werden. Systemdatensätze und interne Builder-Bibliotheken bleiben ausgeschlossen. Builder-Einstellungen und Inhalte ändern sich dadurch nicht. Mit Automatisch entfernst du die Ausnahme. Werte vorübergehend fehlender Plugins bleiben erhalten. Die Einstellungen gelten für diese Website und bleiben bei Deaktivierung und Deinstallation bestehen.</p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/settings-de.png">Installierte Integrationen und Anzeige-Einstellungen</a></p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/content-types-de.png">Inhaltstyp-Auswahl mit Automatisch, Ausblenden und Einbeziehen</a></p>
+<p>Der vorhandene Ohne-Builder-Hinweis bleibt erhalten; darunter erklärt ein eigener Abschnitt klassische Builder und Block-Erweiterungen verständlich. Der lokale Änderungsverlauf öffnet sich als tastaturbedienbarer Dialog; Escape oder Schließen führt zum Ausgangslink zurück.</p>
+<p>Bei GreenShift erscheinen installierte Addons mit ihrem jeweiligen Aktiv-Status unter der gemeinsamen Integration. Die Inhaltszähler werden nicht je Addon wiederholt. Ein aktives Addon ohne verfügbare Basis macht die Erkennung nicht verfügbar.</p>
 <h2 id="updates-und-library">Updates und Library</h2>
 <p>Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.1 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.</p>
-<p>Die eingebettete deckerweb Library 1.1.0 ergänzt <strong>Plugins → Installieren → deckerweb</strong> mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.</p>
+<p>Die eingebettete deckerweb Library 1.2.0 ergänzt <strong>Plugins → Installieren → deckerweb</strong> mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.</p>
 <p>Bei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt.</p>
 <h2 id="neue-werkzeuge-und-persönliche-ansichten">Neue Werkzeuge und persönliche Ansichten</h2>
 <p>Die Ansicht <strong>Mehrere Builder erkannt</strong> sammelt Inhalte mit mindestens zwei unterschiedlichen Signaturen aktiver Builder. Doppelte Kopien desselben Metadatenfelds zählen einmal.</p>
@@ -36,12 +213,30 @@
 <p><strong>CSV:</strong> Lade Titel, Status, erkannte Builder und Bearbeitungslink für die ausdrücklich angezeigte Auswahl nach Builder/Status/Suche herunter, mit bis zu 5.000 lesbaren und bearbeitbaren Inhalten. Andere Listenfilter werden nicht berücksichtigt; der Hinweis steht vor dem Download. Tabellenformeln werden entschärft. Bearbeitungslinks enthalten die Website-URL; die CSV ist für eine vertrauliche Übergabe gedacht, im Unterschied zur sparsamen Support-Diagnose.</p>
 <p>Ein leeres Builder-Ergebnis erklärt Builder, Suche und Status. <strong>Suche zurücksetzen</strong> oder <strong>Builder-Filter aufheben</strong> entfernt nur diese Einschränkung und erhält Inhaltstyp und weitere Listenfilter.</p>
 <p>Öffne <strong>Details zur Erkennung</strong> in einer Zeile, um die Namen erkannter Metadatenfelder und einen Hinweis auf leere Werte zu sehen. Metadatenwerte und Builder-Inhalte werden nicht angezeigt.</p>
+<h2 id="feature-highlights">Feature Highlights</h2>
+<h3 id="dein-werkzeug-sofort-erkennen">Dein Werkzeug sofort erkennen</h3>
+<p>Getrennte Tabellen zeigen klassische Page Builder und Block-Bibliotheken. Free-/Pro-Hinweise und kurze Bedingungen machen die Unterstützung schnell verständlich.</p>
+<h3 id="mit-einem-klick-zu-den-passenden-inhalten">Mit einem Klick zu den passenden Inhalten</h3>
+<p>Sieh installierte Werkzeuge und ihren Status und öffne direkt erkannte Seiten, Beiträge oder eigene Inhalte. Inhaltstypen mit Treffern stehen vorn und erhalten dezente Farben.</p>
+<h3 id="sinnvolle-inhaltstypen-mit-platz-für-ausnahmen">Sinnvolle Inhaltstypen mit Platz für Ausnahmen</h3>
+<p>Die Vorauswahl hält technische Datensätze aus dem Weg. Passe einzelne Inhaltstypen über Ausblenden oder Einbeziehen an – einheitlich im gesamten Plugin.</p>
+<h3 id="vertraute-wordpress-abläufe">Vertraute WordPress-Abläufe</h3>
+<p>Arbeite mit normalen Listen, Suche und Berechtigungen sowie persönlichen Ansichten und CSV-Übergaben. Informationen im Website-Zustand helfen beim Support; verfügbare Befehle beschleunigen die Navigation.</p>
+<h3 id="beliebte-page-builder-und-block-werkzeuge-erkennen">Beliebte Page Builder und Block-Werkzeuge erkennen</h3>
+<p>Finde Inhalte, die du mit Bricks, Elementor, Breakdance und vielen weiteren beliebten Page Buildern gestaltet hast. Auch blockbasierte Werkzeuge wie Kadence Blocks, Spectra und GenerateBlocks werden unterstützt – jeweils in Free und Pro. Dazu kommen Etch, GreenShift und Mosaic Builder mit direkt zugewiesenen Layouts. Globale Header, Footer und automatische Templates werden nicht pauschal jeder Seite zugerechnet.</p>
+<h2 id="wordpress-werkzeuge">WordPress-Werkzeuge</h2>
+<p><strong>Werkzeuge → Website-Zustand → Bericht → Builder List Pages</strong> zeigt Plugin-Version, verfügbare Integrationen, ausgewählte Inhaltstypen und ausdrückliche Ausnahmen. Seiteninhalte, Zugangsdaten und Lizenzinformationen fehlen bewusst; nichts wird automatisch versendet. Inaktive Builder und Nulltreffer erzeugen keine Zustandswarnung.</p>
+<p>Wo WordPress die <strong>Befehlspalette</strong> bereits bereitstellt, suche nach <strong>Builder List Pages</strong>. Administratoren öffnen Integrationen und Einstellungen; Benutzer mit Bearbeitungsrechten springen zu passenden Builder-/Inhaltstyp-Listen. Befehle beachten dieselbe Inhaltstyp-Auswahl und die normalen Bearbeitungsrechte. Das Plugin ergänzt keine eigene Palette und erzwingt sie nicht auf älteren Oberflächen. Für Befehle werden keine Inhalte durchsucht oder Treffer gezählt.</p>
+<p><a href="Recognition-Deutsch.html#inhaltstyp-auswahl">Auswahlregeln und Entwicklerfilter im Detail</a></p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/site-health-de.png">Lokale Plugin-Informationen im Website-Zustand</a></p>
+<p><a href="https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/docs/images/commands-de.png">Direkte Builder-Sprungziele in der WordPress-Befehlspalette</a></p>
 <h2 id="über-das-projekt">Über das Projekt</h2>
 <p>Entwickelt und gepflegt von David Decker – DECKERWEB. © 2019–2026. Builder List Pages entstand 2019 und ergänzt die normalen Inhaltslisten. Es liest Metadaten, ohne Seiten umzuwandeln oder Frontend-Assets zu laden.</p>
+<p><a href="https://deckerwebplugins.com/de/plugins/builder-list-pages/">Plugin-Website</a></p>
 <h2 id="fehler-sicherheit-und-unterstützung">Fehler, Sicherheit und Unterstützung</h2>
 <p>Melde nachvollziehbare Probleme über <a href="https://github.com/deckerweb/builder-list-pages/issues">GitHub Issues</a>. Sicherheitslücken bitte vertraulich über den <a href="../../SECURITY.md">Sicherheitsmeldeweg</a> melden; keine Exploit-Details oder Zugangsdaten in einem öffentlichen Issue veröffentlichen.</p>
 <p>Unterstütze die Entwicklung über <a href="https://ko-fi.com/deckerweb">Ko-fi</a>, <a href="https://buymeacoffee.com/daveshine">Buy Me a Coffee</a> oder <a href="https://paypal.me/deckerweb">PayPal</a>.</p>
 <h2 id="lizenz-und-enthaltene-komponenten">Lizenz und enthaltene Komponenten</h2>
-<p>GPL v2 oder neuer. <a href="../../LICENSE">Lizenz</a>. Enthält deckerweb Plugin Library 1.1.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus <a href="https://github.com/deckerweb/advanced-scripts-quicknav">Advanced Scripts QuickNav</a>, <code>includes/deckerweb-changelog-v1.php</code>, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.</p>
+<p>GPL v2 oder neuer. <a href="../../LICENSE">Lizenz</a>. Enthält deckerweb Plugin Library 1.2.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus <a href="https://github.com/deckerweb/advanced-scripts-quicknav">Advanced Scripts QuickNav</a>, <code>includes/deckerweb-changelog-v1.php</code>, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.</p>
 <p>Banner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die <a href="../../assets/Inter-OFL.txt">Schriftlizenz</a> liegt ohne Fontdateien bei.</p>
-<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.2.2</p></footer></main></body></html>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.3.0</p></footer></main></body></html>

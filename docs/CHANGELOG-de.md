@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.3.0 · 2026-10-30
+
+- **Neu:** Erkennt zusätzliche klassische und blockbasierte Builder einschließlich ihrer unterstützten Premium-Blöcke. Einschließlich Genesis Blocks.
+- **Neu:** Erkennt direkte Etch-Inhalte und zeigt installierte GreenShift-Addons mit ihrem jeweiligen Aktiv-Status an.
+- **Neu:** Erkennt direkt aktivierte CrocoBuilder-Inhalte und direkte Builderius-Seiten-Templates in Free und Pro.
+- **Neu:** Zeigt installierte Integrationen mit Status, Free-/Pro-Ausgaben und direkten Links zu gefilterten Inhalten.
+- **Neu:** Ergänzt Inhaltstyp-Auswahl pro Website, lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren WordPress-Befehlspalette.
+- **Verbessert:** Neue Builder-Übersicht mit getrennten Tabellen und kurzen Hinweisen zu Einschränkungen.
+- **Verbessert:** Zeigt Inhaltstypen mit Treffern zuerst, bevorzugt Seiten und Beiträge innerhalb der Gruppen und hebt Core-Inhaltstypen mit eigenen dezenten Farben hervor. Erklärt klassische Builder und Block-Erweiterungen verständlich.
+- **Verbessert:** Aktualisiert die eingebettete deckerweb Library auf 1.2.0 mit persönlichen Statusfiltern, passenden Trefferzahlen und verständlicheren Download-Diagnosen.
+- **Behoben:** Erkennt Zion Builder Pro mit enthaltenem Basis-Builder und berücksichtigt die Inhaltstypen von Beaver Builder zuverlässiger.
+
 ## 1.2.2 · 2026-10-22
 
 - **Verbessert:** Trennt Updater-Caches nach Implementierungsversion.

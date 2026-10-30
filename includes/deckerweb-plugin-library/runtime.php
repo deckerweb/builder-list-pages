@@ -13,11 +13,11 @@ require_once __DIR__ . '/src/Library.php';
  *
  * @param array $chosen Elected host candidate with absolute embedded directory.
  * @param array $hosts Registered host candidates for shared integration.
- * @return \Deckerweb\PluginLibrary\V1_1_0\Library Registered elected runtime.
+ * @return \Deckerweb\PluginLibrary\V1_2_0\Library Registered elected runtime.
  * Registers native WordPress hooks; does not install or activate other plugins.
  */
 return static function( array $chosen, array $hosts ) {
-	$runtime = new \Deckerweb\PluginLibrary\V1_1_0\Library( $chosen, $hosts );
+	$runtime = new \Deckerweb\PluginLibrary\V1_2_0\Library( $chosen, $hosts );
 	$runtime->register();
 	return $runtime;
 };

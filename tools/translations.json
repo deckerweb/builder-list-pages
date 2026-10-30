@@ -1202,5 +1202,213 @@
   "Builder List Pages needs deckerweb Updater 2.2.0 for its catalog integration. Another plugin loaded an older updater first. Update the other deckerweb plugins, then check for updates again.": {
     "de_DE": "Builder List Pages benötigt deckerweb Updater 2.2.0 für die Kataloganbindung. Ein anderes Plugin hat zuerst einen älteren Updater geladen. Aktualisiere die anderen deckerweb Plugins und prüfe danach erneut auf Updates.",
     "de_DE_formal": "Builder List Pages benötigt deckerweb Updater 2.2.0 für die Kataloganbindung. Ein anderes Plugin hat zuerst einen älteren Updater geladen. Aktualisieren Sie die anderen deckerweb Plugins und prüfen Sie danach erneut auf Updates."
+  },
+  "Block libraries are recognized from saved blocks and readable published synced patterns, up to 20 reference levels and 200 pattern references per content item. A match means that the content uses those blocks; it does not mean that the entire page was built with that library. Global headers, templates and theme settings alone do not count.": {
+    "de_DE": "Block-Sammlungen werden anhand gespeicherter Blöcke und lesbarer veröffentlichter synchronisierter Patterns erkannt, bis zu 20 Verweisebenen und 200 Pattern-Verweisen pro Inhalt. Ein Treffer bedeutet, dass der Inhalt diese Blöcke verwendet; nicht, dass die gesamte Seite damit gebaut wurde. Globale Header, Templates und Theme-Einstellungen allein zählen nicht.",
+    "de_DE_formal": "Block-Sammlungen werden anhand gespeicherter Blöcke und lesbarer veröffentlichter synchronisierter Patterns erkannt, bis zu 20 Verweisebenen und 200 Pattern-Verweisen pro Inhalt. Ein Treffer bedeutet, dass der Inhalt diese Blöcke verwendet; nicht, dass die gesamte Seite damit gebaut wurde. Globale Header, Templates und Theme-Einstellungen allein zählen nicht."
+  },
+  "Your builders and integrations": {
+    "de_DE": "Deine Builder und Integrationen",
+    "de_DE_formal": "Ihre Builder und Integrationen"
+  },
+  "See which supported tools are installed on this site and open their recognized content. Active describes the tool, not every page on the site.": {
+    "de_DE": "Hier siehst du die installierten unterstützten Werkzeuge und öffnest ihre erkannten Inhalte. Aktiv bezeichnet das Werkzeug, nicht jede Seite der Website.",
+    "de_DE_formal": "Hier sehen Sie die installierten unterstützten Werkzeuge und öffnen ihre erkannten Inhalte. Aktiv bezeichnet das Werkzeug, nicht jede Seite der Website."
+  },
+  "No supported integration is installed or available on this site.": {
+    "de_DE": "Auf dieser Website ist keine unterstützte Integration installiert oder verfügbar.",
+    "de_DE_formal": "Auf dieser Website ist keine unterstützte Integration installiert oder verfügbar."
+  },
+  "Active — recognition unavailable": {
+    "de_DE": "Aktiv – Erkennung nicht verfügbar",
+    "de_DE_formal": "Aktiv – Erkennung nicht verfügbar"
+  },
+  "Installed, inactive": {
+    "de_DE": "Installiert, inaktiv",
+    "de_DE_formal": "Installiert, inaktiv"
+  },
+  "inactive": {
+    "de_DE": "inaktiv",
+    "de_DE_formal": "inaktiv"
+  },
+  "%1$s (%2$s)": {
+    "de_DE": "%1$s (%2$s)",
+    "de_DE_formal": "%1$s (%2$s)"
+  },
+  "No matching content yet.": {
+    "de_DE": "Noch keine passenden Inhalte.",
+    "de_DE_formal": "Noch keine passenden Inhalte."
+  },
+  "No supported content type is available to your account. Check the builder’s content-type settings.": {
+    "de_DE": "Für dein Konto ist kein unterstützter Inhaltstyp verfügbar. Prüfe die Inhaltstyp-Einstellungen des Builders.",
+    "de_DE_formal": "Für Ihr Konto ist kein unterstützter Inhaltstyp verfügbar. Prüfen Sie die Inhaltstyp-Einstellungen des Builders."
+  },
+  "Recognition is paused. Check the integration’s dependencies and requirements.": {
+    "de_DE": "Die Erkennung pausiert. Prüfe die Abhängigkeiten und Voraussetzungen der Integration.",
+    "de_DE_formal": "Die Erkennung pausiert. Prüfen Sie die Abhängigkeiten und Voraussetzungen der Integration."
+  },
+  "Content links become available when this integration is active.": {
+    "de_DE": "Inhaltslinks sind verfügbar, sobald diese Integration aktiv ist.",
+    "de_DE_formal": "Inhaltslinks sind verfügbar, sobald diese Integration aktiv ist."
+  },
+  "All supported integrations": {
+    "de_DE": "Alle unterstützten Integrationen",
+    "de_DE_formal": "Alle unterstützten Integrationen"
+  },
+  "Adjust content types": {
+    "de_DE": "Inhaltstypen anpassen",
+    "de_DE_formal": "Inhaltstypen anpassen"
+  },
+  "Custom content types cannot always be classified reliably. If a content type is missing or does not belong here, adjust the automatic selection.": {
+    "de_DE": "Benutzerdefinierte Inhaltstypen lassen sich nicht immer eindeutig zuordnen. Falls ein Inhaltstyp fehlt oder hier nicht sinnvoll ist, kannst du die automatische Auswahl anpassen.",
+    "de_DE_formal": "Benutzerdefinierte Inhaltstypen lassen sich nicht immer eindeutig zuordnen. Falls ein Inhaltstyp fehlt oder hier nicht sinnvoll ist, können Sie die automatische Auswahl anpassen."
+  },
+  "These choices apply to the overview, Builder column, filters and submenus on this site. Include checks stored builder data; it does not mark all items as builder content or override permissions and native builder restrictions. Builder settings and content remain unchanged.": {
+    "de_DE": "Diese Auswahl gilt für Übersicht, Builder-Spalte, Filter und Untermenüs auf dieser Website. Einbeziehen prüft gespeicherte Builder-Daten; es kennzeichnet nicht automatisch alle Einträge als Builder-Inhalte und umgeht keine Berechtigungen oder Einschränkungen des Builders. Builder-Einstellungen und Inhalte bleiben unverändert.",
+    "de_DE_formal": "Diese Auswahl gilt für Übersicht, Builder-Spalte, Filter und Untermenüs auf dieser Website. Einbeziehen prüft gespeicherte Builder-Daten; es kennzeichnet nicht automatisch alle Einträge als Builder-Inhalte und umgeht keine Berechtigungen oder Einschränkungen des Builders. Builder-Einstellungen und Inhalte bleiben unverändert."
+  },
+  "Automatic": {
+    "de_DE": "Automatisch",
+    "de_DE_formal": "Automatisch"
+  },
+  "Hide": {
+    "de_DE": "Ausblenden",
+    "de_DE_formal": "Ausblenden"
+  },
+  "Include": {
+    "de_DE": "Einbeziehen",
+    "de_DE_formal": "Einbeziehen"
+  },
+  "What does this plugin mean by a “builder”?": {
+    "de_DE": "Was versteht dieses Plugin unter einem „Builder“?",
+    "de_DE_formal": "Was versteht dieses Plugin unter einem „Builder“?"
+  },
+  "This plugin uses “builder” to mean tools for designing content and layouts in WordPress. This includes classic page builders such as Bricks, Elementor and Oxygen, as well as extensions for the WordPress block editor, such as Kadence Blocks and Spectra.": {
+    "de_DE": "Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen du Inhalte und Layouts in WordPress gestaltest. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra.",
+    "de_DE_formal": "Als „Builder“ bezeichnet dieses Plugin Werkzeuge, mit denen Sie Inhalte und Layouts in WordPress gestalten. Dazu gehören klassische Page Builder wie Bricks, Elementor oder Oxygen ebenso wie Erweiterungen des WordPress-Blockeditors, beispielsweise Kadence Blocks oder Spectra."
+  },
+  "For block extensions, using individual blocks or supported design features is enough for a match. The entire page does not have to be built with that tool. A content item can therefore show more than one builder.": {
+    "de_DE": "Bei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen.",
+    "de_DE_formal": "Bei Block-Erweiterungen genügt es, dass ein Inhalt einzelne Blöcke oder unterstützte Gestaltungsfunktionen des Werkzeugs verwendet. Die gesamte Seite muss damit nicht erstellt worden sein. Deshalb können bei einem Inhalt auch mehrere Builder erscheinen."
+  },
+  "An active theme or a global template alone does not mean that the individual content item was edited with that builder.": {
+    "de_DE": "Ein aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde.",
+    "de_DE_formal": "Ein aktives Theme oder eine globale Vorlage allein bedeutet dagegen nicht, dass der einzelne Inhalt mit diesem Builder bearbeitet wurde."
+  },
+  "Available integrations": {
+    "de_DE": "Verfügbare Integrationen",
+    "de_DE_formal": "Verfügbare Integrationen"
+  },
+  "Selected content types": {
+    "de_DE": "Ausgewählte Inhaltstypen",
+    "de_DE_formal": "Ausgewählte Inhaltstypen"
+  },
+  "Explicitly included content types": {
+    "de_DE": "Ausdrücklich einbezogene Inhaltstypen",
+    "de_DE_formal": "Ausdrücklich einbezogene Inhaltstypen"
+  },
+  "Explicitly hidden content types": {
+    "de_DE": "Ausdrücklich ausgeblendete Inhaltstypen",
+    "de_DE_formal": "Ausdrücklich ausgeblendete Inhaltstypen"
+  },
+  "Local integration and content-type settings for troubleshooting. No page contents, credentials or license details are included.": {
+    "de_DE": "Lokale Integrations- und Inhaltstyp-Einstellungen für die Fehlersuche. Seiteninhalte, Zugangsdaten und Lizenzinformationen sind nicht enthalten.",
+    "de_DE_formal": "Lokale Integrations- und Inhaltstyp-Einstellungen für die Fehlersuche. Seiteninhalte, Zugangsdaten und Lizenzinformationen sind nicht enthalten."
+  },
+  "Builder List Pages: integrations and settings": {
+    "de_DE": "Builder List Pages: Integrationen und Einstellungen",
+    "de_DE_formal": "Builder List Pages: Integrationen und Einstellungen"
+  },
+  "Builder List Pages: %1$s — %2$s": {
+    "de_DE": "Builder List Pages: %1$s – %2$s",
+    "de_DE_formal": "Builder List Pages: %1$s – %2$s"
+  },
+  "None": {
+    "de_DE": "Keine",
+    "de_DE_formal": "Keine"
+  },
+  "No selected, editable content type is available. Check the content-type choices below and the builder’s settings.": {
+    "de_DE": "Es ist kein ausgewählter, bearbeitbarer Inhaltstyp verfügbar. Prüfe die Inhaltstyp-Auswahl unten und die Builder-Einstellungen.",
+    "de_DE_formal": "Es ist kein ausgewählter, bearbeitbarer Inhaltstyp verfügbar. Prüfen Sie die Inhaltstyp-Auswahl unten und die Builder-Einstellungen."
+  },
+  "No builder content lists are currently selected. Check the content-type choices below and the supported builder’s settings.": {
+    "de_DE": "Derzeit sind keine Builder-Inhaltslisten ausgewählt. Prüfe die Inhaltstyp-Auswahl unten und die Einstellungen des unterstützten Builders.",
+    "de_DE_formal": "Derzeit sind keine Builder-Inhaltslisten ausgewählt. Prüfen Sie die Inhaltstyp-Auswahl unten und die Einstellungen des unterstützten Builders."
+  },
+  "Installed addons": {
+    "de_DE": "Installierte Addons",
+    "de_DE_formal": "Installierte Addons"
+  },
+  "Plugin status": {
+    "de_DE": "Plugin-Status",
+    "de_DE_formal": "Plugin-Status"
+  },
+  "Not installed": {
+    "de_DE": "Nicht installiert",
+    "de_DE_formal": "Nicht installiert"
+  },
+  "Inactive": {
+    "de_DE": "Inaktiv",
+    "de_DE_formal": "Inaktiv"
+  },
+  "Invalid status filter.": {
+    "de_DE": "Ungültiger Statusfilter.",
+    "de_DE_formal": "Ungültiger Statusfilter."
+  },
+  "%1$s of %2$s plugins": {
+    "de_DE": "%1$s von %2$s Plugins",
+    "de_DE_formal": "%1$s von %2$s Plugins"
+  },
+  "Package download": {
+    "de_DE": "Paketdownload",
+    "de_DE_formal": "Paketdownload"
+  },
+  "Catalog verification": {
+    "de_DE": "Katalogprüfung",
+    "de_DE_formal": "Katalogprüfung"
+  },
+  "Connection failed. Please try again later.": {
+    "de_DE": "Die Verbindung ist fehlgeschlagen. Bitte später erneut versuchen.",
+    "de_DE_formal": "Die Verbindung ist fehlgeschlagen. Bitte später erneut versuchen."
+  },
+  "The connection timed out. Please try again later.": {
+    "de_DE": "Die Zeit für die Verbindung wurde überschritten. Bitte später erneut versuchen.",
+    "de_DE_formal": "Die Zeit für die Verbindung wurde überschritten. Bitte später erneut versuchen."
+  },
+  "The server address could not be resolved.": {
+    "de_DE": "Die Serveradresse konnte nicht aufgelöst werden.",
+    "de_DE_formal": "Die Serveradresse konnte nicht aufgelöst werden."
+  },
+  "The secure connection could not be verified.": {
+    "de_DE": "Die sichere Verbindung konnte nicht bestätigt werden.",
+    "de_DE_formal": "Die sichere Verbindung konnte nicht bestätigt werden."
+  },
+  "The server returned HTTP %d. Please try again later.": {
+    "de_DE": "Der Server hat HTTP %d zurückgegeben. Bitte später erneut versuchen.",
+    "de_DE_formal": "Der Server hat HTTP %d zurückgegeben. Bitte später erneut versuchen."
+  },
+  "The catalog response is invalid, incompatible or too large.": {
+    "de_DE": "Die Katalogantwort ist ungültig, inkompatibel oder zu groß.",
+    "de_DE_formal": "Die Katalogantwort ist ungültig, inkompatibel oder zu groß."
+  },
+  "Stage: %1$s. %2$s": {
+    "de_DE": "Fehlerstufe: %1$s. %2$s",
+    "de_DE_formal": "Fehlerstufe: %1$s. %2$s"
+  },
+  "Checksum verification": {
+    "de_DE": "Prüfsummenprüfung",
+    "de_DE_formal": "Prüfsummenprüfung"
+  },
+  "Archive verification": {
+    "de_DE": "Archivprüfung",
+    "de_DE_formal": "Archivprüfung"
+  },
+  "The package checksum does not match the approved release. Installation was stopped.": {
+    "de_DE": "Die Paketprüfsumme stimmt nicht mit der freigegebenen Version überein. Die Installation wurde gestoppt.",
+    "de_DE_formal": "Die Paketprüfsumme stimmt nicht mit der freigegebenen Version überein. Die Installation wurde gestoppt."
+  },
+  "The package did not pass the archive or plugin identity checks. Installation was stopped.": {
+    "de_DE": "Das Paket hat die Archiv- oder Plugin-Identitätsprüfung nicht bestanden. Die Installation wurde gestoppt.",
+    "de_DE_formal": "Das Paket hat die Archiv- oder Plugin-Identitätsprüfung nicht bestanden. Die Installation wurde gestoppt."
   }
 }

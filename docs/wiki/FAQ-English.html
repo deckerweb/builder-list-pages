@@ -4,11 +4,11 @@
 <h3 id="do-i-need-to-configure-anything-first">Do I need to configure anything first?</h3>
 <p>No. Activate the plugin and open a content list that an active supported builder can edit. Views, the Builder column and builder submenus are enabled by default.</p>
 <h3 id="which-requirements-apply">Which requirements apply?</h3>
-<p>WordPress 6.7+ and PHP 8.1+. Checked on WordPress 6.7 and 7.1.3 with PHP 8.4.5 using isolated SQLite installations; PHP 8.1.29 workflow checks also passed. MySQL/MariaDB, FTP/SSH and broader real-builder combinations need separate checks.</p>
+<p>WordPress 6.7+ and PHP 8.1+. Checked on WordPress 7.1.4 with PHP 8.1 and 8.4, and on WordPress 6.7 with PHP 8.1. CrocoBuilder and Builderius integration checks also passed with PHP 8.2 and 8.4. Tests used isolated SQLite installations; full MySQL/MariaDB, FTP/SSH and every builder/version combination are not covered.</p>
 <h3 id="is-it-free">Is it free?</h3>
 <p>Yes. GPL v2 or later. Some supported builders require their own paid license.</p>
 <h3 id="which-builders-are-supported">Which builders are supported?</h3>
-<p>Elementor, Bricks, Breakdance, Oxygen 6+, Oxygen Classic, Brizy, Beaver Builder, ZionBuilder, Thrive Architect, Pagelayer and Visual Composer. Visual Composer currently uses the free edition’s page/post scope.</p>
+<p>The <a href="Builders-English.html">builder overview</a> lists classic and block-based builders separately, with Free/Pro notes and concise conditions.</p>
 <h3 id="why-is-no-builder-view-visible">Why is no builder view visible?</h3>
 <p>The builder must be active, allow the current post type, and provide recognized settings. Your user also needs editing access to that type. Invalid, missing and hidden post types are excluded.</p>
 <h3 id="does-it-work-with-custom-post-types">Does it work with custom post types?</h3>
@@ -34,6 +34,8 @@
 <p>Badges describe the complete readable builder group outside trash. Search, date, author and other list constraints can reduce the rows currently shown.</p>
 <h3 id="do-other-plugin-filters-still-work">Do other plugin filters still work?</h3>
 <p>Existing meta query groups are kept and combined with the selected builder using AND. The no-builder filter adds its exclusion separately. Third-party query hooks can still affect results.</p>
+<h3 id="which-block-libraries-can-i-find">Which block libraries can I find?</h3>
+<p>Kadence Blocks, Spectra Legacy, Spectra Blocks, Greenshift / GreenLight, GenerateBlocks, Genesis Blocks, Stackable, Otter Blocks, Essential Blocks, GutenKit and Kubio. Recognized usage does not mean the entire page was created with one tool. <a href="Recognition-English.html">Special cases and limits</a>.</p>
 <h2 id="settings-and-permissions">Settings and permissions</h2>
 <h3 id="who-can-change-settings">Who can change settings?</h3>
 <p>Users with manage_options, normally administrators. Content filtering uses each post type’s own editing permissions.</p>
@@ -79,4 +81,15 @@
 <p>Only that a known metadata signature is present. It can be historical or empty and does not prove frontend rendering. The audit never changes content.</p>
 <h3 id="what-is-included-in-the-csv">What is included in the CSV?</h3>
 <p>Title, status, builder labels and native edit link for the builder/status/search selection, limited to 5,000 readable and editable items. Other list filters are excluded and formulas are neutralized.</p>
-<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.2.2</p></footer></main></body></html>
+<h2 id="content-types-and-wordpress-tools">Content types and WordPress tools</h2>
+<h3 id="why-do-some-content-types-no-longer-appear">Why do some content types no longer appear?</h3>
+<p>Automatic selection omits known technical and system records. Under Settings → Builder List Pages → Adjust content types, select Include for a suitable custom type. Permissions and native builder restrictions still apply; core system records remain excluded.</p>
+<h3 id="does-hide-delete-content-or-change-my-builder">Does Hide delete content or change my builder?</h3>
+<p>No. It removes the type from this plugin’s integration features on this site. Content, builder settings and saved favorites remain. Opening a favorite rechecks the current selection. Return to Automatic to remove an override.</p>
+<h3 id="what-does-this-plugin-mean-by-a-builder">What does this plugin mean by a builder?</h3>
+<p>This plugin uses “builder” to mean tools for designing content and layouts in WordPress. This includes classic page builders such as Bricks, Elementor and Oxygen, as well as extensions for the WordPress block editor, such as Kadence Blocks and Spectra.</p>
+<p>For block extensions, using individual blocks or supported design features is enough for a match. The entire page does not have to be built with that tool. A content item can therefore show more than one builder.</p>
+<p>An active theme or a global template alone does not mean that the individual content item was edited with that builder.</p>
+<h3 id="why-are-the-commands-missing">Why are the commands missing?</h3>
+<p>Commands are added only where WordPress already loads its native palette and only for accessible builder/type combinations. On older WordPress screens, use the existing menu links or the settings overview.</p>
+<footer><p>© 2019–2026 David Decker – DECKERWEB · 1.3.0</p></footer></main></body></html>

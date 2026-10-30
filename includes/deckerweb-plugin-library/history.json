@@ -1,5 +1,41 @@
 [
   {
+    "version": "1.2.0",
+    "date": "2026-10-30",
+    "changes": {
+      "New": [
+        {
+          "en": "Filter plugins by installation, activation and available catalog updates, with matching result counts.",
+          "de": "Plugins nach Installation, Aktivierung und verfügbaren Katalogupdates filtern, mit passender Trefferzahl."
+        }
+      ],
+      "Improved": [
+        {
+          "en": "Plugin status and matching results refresh after successful catalog actions. Reset filters keeps the personal sort order.",
+          "de": "Plugin-Status und Treffer werden nach erfolgreichen Katalogaktionen aktualisiert. Filter zurücksetzen erhält die persönliche Sortierung."
+        },
+        {
+          "en": "Updated bundled catalog and local original icons.",
+          "de": "Aktualisierter eingebauter Katalog und lokale Originalicons."
+        },
+        {
+          "en": "Catalog and download failures identify the failed stage and a safe connection, HTTP, checksum or archive cause.",
+          "de": "Katalog- und Downloadfehler nennen die betroffene Fehlerstufe sowie eine bereinigte Verbindungs-, HTTP-, Prüfsummen- oder Archivursache."
+        },
+        {
+          "en": "More compact catalog filters retain familiar WordPress controls and keyboard focus.",
+          "de": "Kompaktere Katalogfilter erhalten vertraute WordPress-Bedienelemente und Tastaturfokus."
+        }
+      ],
+      "Fixed": [
+        {
+          "en": "Catalog actions remain inline after changing filters or sorting.",
+          "de": "Katalogaktionen bleiben auch nach Filter- oder Sortierwechseln inline."
+        }
+      ]
+    }
+  },
+  {
     "version": "1.1.0",
     "date": "2026-10-21",
     "changes": {

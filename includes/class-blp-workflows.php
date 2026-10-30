@@ -23,10 +23,11 @@ final class Workflows {
 		$value = get_user_meta( get_current_user_id(), self::key(), true );
 		return is_array( $value ) ? [ 'compact' => ! empty( $value['compact'] ), 'views' => array_slice( is_array( $value['views'] ?? null ) ? $value['views'] : [], 0, 20 ) ] : [ 'compact' => false, 'views' => [] ];
 	}
-	/** Validate a content type's editing access. @param string $type Post-type slug. @return bool Whether native editing access exists. */
+	/** Validate editing access and the shared content-type selection. @param string $type Post-type slug. @return bool Whether native editing access exists. */
 	public static function allowed( string $type ): bool {
-		$o = get_post_type_object( $type );
-		return $o && $o->show_ui && 'attachment' !== $type && current_user_can( $o->cap->edit_posts );
+		if ( ! ContentTypes::accessible( $type ) ) { return false; }
+		$registry = new Registry();
+		return (bool) ( $registry->for_type( $type ) || $registry->traces( $type ) );
 	}
 	/** Read one bounded scalar request input. @param array $source Request fields. @param string $key Field name. @param bool $slashed Whether WordPress request slashes must be removed. @return string Unslashed input or empty string. */
 	private static function input( array $source, string $key, bool $slashed = true ): string { return is_string( $source[ $key ] ?? null ) ? substr( $slashed ? wp_unslash( $source[ $key ] ) : $source[ $key ], 0, 500 ) : ''; }

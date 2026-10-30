@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
 """Render bilingual readmes, FAQ and changelog from one maintained content source."""
 from pathlib import Path
-import json,re
+import json,re,runpy
 root=Path(__file__).resolve().parents[1]
 d=json.loads((root/'tools/documentation.json').read_text())
+runpy.run_path(str(root/'tools/build-support.py'))
 def slug(s):return re.sub(r'[^\w]+','-',s.lower(),flags=re.UNICODE).strip('-')
 def history(lang,txt=False):
  return '\n\n'.join((f'= {v} =' if txt else f'## {v}')+'\n\n'+'\n'.join((f'* {p}: {t}' if txt else f'- **{p}:** {t}') for p,t in items) for v,items in d['history'][lang])
 for lang,name,other in [('en','English','Deutsch'),('de','Deutsch','English')]:
- de=lang=='de';v=d['languages'][lang]; flat=[q for _,qs in v['faq'] for q in qs];v['readme_faq']=[flat[i] for i in v['readme_faq_indices']]; sections=v['sections'];pre=sections[:6];post=sections[6:];faqtitle='FAQ';chtitle='Changelog';fullfaq='Vollständige FAQ nach Themen' if de else 'Complete FAQ by topic'
+ de=lang=='de';v=d['languages'][lang]; flat=[q for _,qs in v['faq'] for q in qs];v['readme_faq']=[list(flat[i]) for i in v['readme_faq_indices']]; sections=v['sections'];split=next(i for i,x in enumerate(sections) if x[0] in ('About','Über das Projekt'));pre=sections[:split];post=sections[split:];faqtitle='FAQ';chtitle='Changelog';fullfaq='Vollständige FAQ nach Themen' if de else 'Complete FAQ by topic'
+ support=(root/f'docs/wiki/Builders-{name}.md').read_text()
+ matrix=support[support.index('## '):].split('\n\n'+('Das passende Plugin' if de else 'The corresponding plugin'))[0]
+ sections[2][1] += '\n\n'+matrix.replace('## ', '### ')
  intro=v['intro']; intro=re.sub(r'\*\*Version:\*\*[^\n]+',f'**Version:** {d["version"]} · **'+('Voraussetzungen' if de else 'Requires')+':** WordPress 6.7+ / PHP 8.1+ · **'+('Lizenz' if de else 'License')+':** GPL v2 '+('oder neuer' if de else 'or later'),intro)
+ for question in v['readme_faq']:
+  question[1]=re.sub(r'\]\(((?:Builders|Recognition)-[^)]+\.md)\)',r'](docs/wiki/\1)',question[1])
  ordered=pre+[[faqtitle,'\n\n'.join('### '+q+'\n\n'+a for q,a in v['readme_faq'])+f'\n\n[{fullfaq}](docs/wiki/FAQ-{name}.md)'],[chtitle,history(lang).replace('## ', '### ')+f'\n\n[{chtitle}](docs/wiki/Changelog-{name}.md)']]+post
+ intro += '\n\n['+('Unterstützt das Plugin meinen Builder?' if de else 'Is my builder supported?')+'](docs/wiki/Builders-'+name+'.md)'
  toc='## '+('Inhalt' if de else 'Contents')+'\n\n'+'\n'.join(f'- [{title}](#{slug(title)})' for title,_ in ordered)
  md=intro.strip()+'\n\n'+toc+'\n\n'+'\n\n'.join(f'## {t}\n\n{body}' for t,body in ordered)+'\n'
+ md=re.sub(r'!\[([^\]]*)\]\(https://raw\.githubusercontent\.com/deckerweb/builder-list-pages/main/docs/images/(content-types|site-health|commands)-[^)]+\)', lambda m:'['+m.group(1)+'](docs/wiki/'+name+'.md#'+(('inhaltstypen-anpassen' if de else 'adjust-content-types') if m.group(2)=='content-types' else ('wordpress-werkzeuge' if de else 'wordpress-tools'))+')', md)
  (root/('README-de.md' if de else 'README.md')).write_text(md)
- header=f'=== Builder List Pages ===\nContributors: deckerweb\nTags: admin, pages, page builder, filter, post types\nRequires at least: 6.7\nTested up to: 7.1.3\nRequires PHP: 8.1\nStable tag: {d["version"]}\nLicense: GPL v2 or later\nLicense URI: https://www.gnu.org/licenses/gpl-2.0.html\n\n'+('Seiten nach Builder filtern und direkt in den normalen WordPress-Inhaltslisten weiterarbeiten.' if de else 'Find pages by builder and keep working in familiar WordPress content lists.')+'\n\n'
+ header=f'=== Builder List Pages ===\nContributors: deckerweb\nTags: admin, pages, page builder, filter, post types\nRequires at least: 6.7\nTested up to: {d["tested_up_to"]}\nRequires PHP: 8.1\nStable tag: {d["version"]}\nLicense: GPL v2 or later\nLicense URI: https://www.gnu.org/licenses/gpl-2.0.html\n\n'+('Seiten nach Builder filtern und direkt in den normalen WordPress-Inhaltslisten weiterarbeiten.' if de else 'Find pages by builder and keep working in familiar WordPress content lists.')+'\n\n'
  desc=pre+post
  txt=header+'== Description ==\n\n'+('Deine Seiten. Deine Builder. Alles im Blick.' if de else 'Your pages. Your builders. One clear overview.')+'\n\n'+'\n\n'.join(f'= {t} =\n\n{body}' for t,body in desc if t not in ('Installation and first filter','Installation und erster Filter'))
  install=next(body for title,body in pre if title.startswith('Installation'))
@@ -23,7 +31,7 @@ for lang,name,other in [('en','English','Deutsch'),('de','Deutsch','English')]:
  # WordPress readmes use absolute links outside their own sections.
  txt=re.sub(r'\]\((?!https?:|#)([^)]+)\)',lambda m:'](https://github.com/deckerweb/builder-list-pages/blob/main/'+m.group(1)+')',txt)
  (root/('readme-de.txt' if de else 'readme.txt')).write_text(txt)
- guide='# '+('Anleitung' if de else 'User guide')+f'\n\nBuilder List Pages {d["version"]} · [FAQ](FAQ-{name}.md) · [{other}]({other}.md)\n\n'+'\n\n'.join('## '+t+'\n\n'+body.replace('(assets/Inter-OFL.txt)','(https://github.com/deckerweb/builder-list-pages/blob/main/assets/Inter-OFL.txt)').replace('(SECURITY.md)','(https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)').replace('(LICENSE)','(https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE)') for t,body in sections)+'\n'
+ guide='# '+('Anleitung' if de else 'User guide')+f'\n\nBuilder List Pages {d["version"]} · [FAQ](FAQ-{name}.md) · [{other}]({other}.md)\n\n'+'\n\n'.join('## '+t+'\n\n'+body.replace('https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/','').replace('(assets/Inter-OFL.txt)','(https://github.com/deckerweb/builder-list-pages/blob/main/assets/Inter-OFL.txt)').replace('(SECURITY.md)','(https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)').replace('(LICENSE)','(https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE)') for t,body in sections)+'\n'
  (root/f'docs/wiki/{name}.md').write_text(guide)
  faq='# '+('Fragen nach Themen' if de else 'FAQ by topic')+f'\n\n[{"Anleitung" if de else "Guide"}]({name}.md) · [{other}](FAQ-{other}.md)\n\n'+'\n\n'.join('## '+title+'\n\n'+'\n\n'.join('### '+q+'\n\n'+a for q,a in qs) for title,qs in v['faq'])+'\n'
  (root/f'docs/wiki/FAQ-{name}.md').write_text(faq)
@@ -31,22 +39,33 @@ for lang,name,other in [('en','English','Deutsch'),('de','Deutsch','English')]:
  (root/('docs/CHANGELOG-de.md' if de else 'docs/CHANGELOG.md')).write_text(hist)
  (root/f'docs/wiki/Changelog-{name}.md').write_text('# Changelog\n\n'+f'[{other}](Changelog-{other}.md) · [FAQ](FAQ-{name}.md)\n\n'+history(lang)+'\n')
  (root/('docs/changelog-de.txt' if de else 'docs/changelog.txt')).write_text('== Changelog ==\n\n'+history(lang,True)+'\n')
-(root/'docs/wiki/Home.md').write_text('# Builder List Pages\n\n![Builder List Pages](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/assets/banner-1280x640.png)\n\nYour pages. Your builders. One clear overview.\n\n[English](English.md) · [FAQ by topic](FAQ-English.md) · [Changelog](Changelog-English.md)\n\n![Builder List Pages](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/assets/banner-de-1280x640.png)\n\nDeine Seiten. Deine Builder. Alles im Blick.\n\n[Deutsch](Deutsch.md) · [Fragen nach Themen](FAQ-Deutsch.md) · [Changelog](Changelog-Deutsch.md)\n')
+(root/'docs/wiki/Home.md').write_text('# Builder List Pages\n\n![Builder List Pages](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/assets/banner-1280x640.png)\n\nYour pages. Your builders. One clear overview.\n\nRecognize and filter builder content in familiar WordPress lists.\n\n[English](English.md) · [FAQ by topic](FAQ-English.md) · [Changelog](Changelog-English.md)\n\n![Builder List Pages](https://raw.githubusercontent.com/deckerweb/builder-list-pages/main/assets/banner-de-1280x640.png)\n\nDeine Seiten. Deine Builder. Alles im Blick.\n\nErkenne und filtere Builder-Inhalte in vertrauten WordPress-Listen.\n\n[Deutsch](Deutsch.md) · [Fragen nach Themen](FAQ-Deutsch.md) · [Changelog](Changelog-Deutsch.md)\n')
 (root/'docs/wiki/_Sidebar.md').write_text('[Builder List Pages](Home)\n\n**English**\n- [User guide](English)\n- [FAQ by topic](FAQ-English)\n- [Changelog](Changelog-English)\n\n**Deutsch**\n- [Anleitung](Deutsch)\n- [Fragen nach Themen](FAQ-Deutsch)\n- [Changelog](Changelog-Deutsch)\n')
 (root/'RELEASE-NOTES.md').write_text('# '+d['version']+'\n\n'+history('en').split('\n\n## ')[0]+'\n\n'+history('de').split('\n\n## ')[0]+'\n')
 print('Generated four readmes, both FAQ and guide languages, history and Wiki navigation.')
 
 # Repository Markdown remains editable; Wiki export normalizes only page targets.
 (root/'docs/wiki/_Sidebar.md').write_text('## English\n\n- [Getting started and user guide](English)\n- [FAQ by topic](FAQ-English)\n- [Changelog](Changelog-English)\n- [Help and security](https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)\n\n## Deutsch\n\n- [Erste Schritte und Anleitung](Deutsch)\n- [Fragen nach Themen](FAQ-Deutsch)\n- [Changelog](Changelog-Deutsch)\n- [Hilfe und Sicherheit](https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)\n')
-(root/'docs/wiki/_Footer.md').write_text('**Builder List Pages · Documentation / Dokumentation**\n\n[Wiki home / Wiki-Startseite](https://github.com/deckerweb/builder-list-pages/wiki) · [Repository](https://github.com/deckerweb/builder-list-pages) · [Downloads & Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n[Help & bugs / Hilfe & Fehler](https://github.com/deckerweb/builder-list-pages/issues) · [Discussions / Austausch](https://github.com/deckerweb/builder-list-pages/discussions) · [Security / Sicherheit](https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)\n\n© 2019–2026 David Decker – DECKERWEB.  \nPlugin: [GPL v2 or later / GPL v2 oder höher](https://www.gnu.org/licenses/gpl-2.0.html).\n')
+(root/'docs/wiki/_Footer.md').write_text('**Builder List Pages · Documentation / Dokumentation**\n\n[Wiki home / Wiki-Startseite](https://github.com/deckerweb/builder-list-pages/wiki) · [Repository](https://github.com/deckerweb/builder-list-pages) · [Downloads & Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n[Help & bugs / Hilfe & Fehler](https://github.com/deckerweb/builder-list-pages/issues) · [Discussions / Austausch](https://github.com/deckerweb/builder-list-pages/discussions) · [Security / Sicherheit](https://github.com/deckerweb/builder-list-pages/blob/main/SECURITY.md)\n\n© 2019–2026 David Decker – DECKERWEB.  \nPlugin license / Plugin-Lizenz: [GPL v2 or later / GPL v2 oder höher](https://www.gnu.org/licenses/gpl-2.0.html).\n')
 
 # Formal admin documents use the same factual source, with explicit German address substitutions.
-formal_pairs = [('Deine','Ihre'),('deiner','Ihrer'),('deinen','Ihren'),('deine','Ihre'),('dein','Ihr'),('deinem','Ihrem'),('deines','Ihres'),('Du kannst','Sie können'),('du kannst','Sie können'),(' du ',' Sie '),(' dir ',' Ihnen '),(' dich ',' Sie '),('Öffne','Öffnen Sie'),('Speichere','Speichern Sie'),('Wähle','Wählen Sie'),('Lade','Laden Sie'),('Lösche','Löschen Sie'),('Schließe','Schließen Sie'),('Aktiviere','Aktivieren Sie'),('Klicke','Klicken Sie'),('Prüfe','Prüfen Sie'),('Gib ','Geben Sie '),('kopiere ihn','kopieren Sie ihn'),('wenn du','wenn Sie'),('kannst du','können Sie')]
+formal_pairs = [('Deine','Ihre'),('deiner','Ihrer'),('deinen','Ihren'),('deine','Ihre'),('dein','Ihr'),('deinem','Ihrem'),('deines','Ihres'),('Du kannst','Sie können'),('du kannst','Sie können'),(' du ',' Sie '),(' dir ',' Ihnen '),(' dich ',' Sie '),('Öffne','Öffnen Sie'),('Speichere','Speichern Sie'),('Wähle','Wählen Sie'),('Lade','Laden Sie'),('Lösche','Löschen Sie'),('Schließe','Schließen Sie'),('Aktiviere','Aktivieren Sie'),('Klicke','Klicken Sie'),('Prüfe','Prüfen Sie'),('Dein ','Ihr '),('Arbeite','Arbeiten Sie'),('könntest du','könnten Sie'),('mit denen du','mit denen Sie'),('gestaltest','gestalten'),('Sieh ','Sehen Sie '),('passe die','passen Sie die'),('Passe ','Passen Sie '),('öffnest du','öffnen Sie'),('hast du','haben Sie'),('du die','Sie die'),('entfernst du','entfernen Sie'),('Gib ','Geben Sie '),('kopiere ihn','kopieren Sie ihn'),('wenn du','wenn Sie'),('kannst du','können Sie')]
 def formal_text(text):
+ text=text.replace(d["approved_builder_highlight"]["de"], d["approved_builder_highlight"]["de_formal"])
  for old,new in formal_pairs:text=text.replace(old,new)
- return text
+ return text.replace('öffnest Sie','öffnen Sie').replace('entfernst Sie','entfernen Sie')
 for filename in ['Deutsch','FAQ-Deutsch','Changelog-Deutsch']:
  text=formal_text((root/f'docs/wiki/{filename}.md').read_text())
  text=text.replace('(Deutsch.md)','(Deutsch-formal.md)').replace('(FAQ-Deutsch.md)','(FAQ-Deutsch-formal.md)').replace('(Changelog-Deutsch.md)','(Changelog-Deutsch-formal.md)')
  (root/f'docs/wiki/{filename}-formal.md').write_text(text)
 (root/'docs/changelog-de-formal.txt').write_text(formal_text((root/'docs/changelog-de.txt').read_text()))
+
+for name in ['English','Deutsch']:
+ path=root/f'docs/wiki/{name}.md'
+ text=path.read_text().replace('https://github.com/deckerweb/builder-list-pages/blob/main/docs/wiki/Builders-'+name+'.md','Builders-'+name+'.md')
+ path.write_text(text)
+sidebar=root/'docs/wiki/_Sidebar.md'
+text=sidebar.read_text().replace('- [Changelog](Changelog-English)', '- [Supported builders](Builders-English)\n- [Special cases](Recognition-English)\n- [Changelog](Changelog-English)').replace('- [Changelog](Changelog-Deutsch)', '- [Unterstützte Builder](Builders-Deutsch)\n- [Sonderfälle](Recognition-Deutsch)\n- [Changelog](Changelog-Deutsch)')
+sidebar.write_text(text)
+footer=root/'docs/wiki/_Footer.md'
+footer.write_text(footer.read_text()+'\n[Website EN](https://deckerwebplugins.com/en/plugins/builder-list-pages/) · [Website DE](https://deckerwebplugins.com/de/plugins/builder-list-pages/)\n')

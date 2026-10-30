@@ -30,8 +30,14 @@ final class Query {
 	 */
 	public function register(): void {
 		add_action( 'pre_get_posts', [ $this, 'filter_main' ], 20 );
+		add_action( 'clean_post_cache', [ $this, 'reset_counts' ] );
+		add_action( 'update_option_blp_settings', [ $this, 'reset_counts' ] );
+		foreach ( [ 'added_post_meta', 'updated_post_meta', 'deleted_post_meta' ] as $hook ) { add_action( $hook, [ $this, 'reset_counts' ] ); }
 		add_filter( 'posts_where', [ $this, 'exclude_builders' ], 20, 2 );
 	}
+	/** Invalidate request-local counts after saved content or a synced pattern changes. @return void */
+	public function reset_counts(): void { $this->counts = []; }
+
 	/**
 	 * Validate the requested builder against available views.
 	 *
@@ -70,13 +76,14 @@ final class Query {
 	 */
 	public function apply( \WP_Query $query, string $type, string $id ): void {
 		$builders = $this->registry->for_type( $type );
-		if ( 'multiple' === $id && count( $builders ) > 1 ) { $this->special_queries[ $query ] = [ $builders, 2 ]; return; }
-		if ( 'traces' === $id ) { $traces = $this->registry->traces( $type ); if ( $traces ) { $this->special_queries[ $query ] = [ $traces, 1 ]; } return; }
+		if ( 'multiple' === $id && count( $builders ) > 1 ) { $this->special_queries[ $query ] = [ $builders, 2, $type ]; return; }
+		if ( 'traces' === $id ) { $traces = $this->registry->traces( $type ); if ( $traces ) { $this->special_queries[ $query ] = [ $traces, 1, $type ]; } return; }
 		if ( 'none' === $id && $builders ) {
-			$this->negative_queries[ $query ] = $builders;
+			$this->negative_queries[ $query ] = [ $builders, $type ];
 			return;
 		}
 		if ( ! isset( $builders[ $id ] ) ) { return; }
+		if ( 'blocks' === ( $builders[ $id ]['recognition'] ?? '' ) ) { $this->special_queries[ $query ] = [ [ $builders[ $id ] ], 1, $type ]; return; }
 		$existing = $query->get( 'meta_query' );
 		$builder = $builders[ $id ]['meta_query'];
 		$query->set( 'meta_query', is_array( $existing ) && $existing ? [ 'relation' => 'AND', $existing, $builder ] : $builder );
@@ -91,24 +98,38 @@ final class Query {
 	public function exclude_builders( string $where, \WP_Query $query ): string {
 		if ( $this->special_queries->contains( $query ) ) {
 			global $wpdb;
-			[ $builders, $minimum ] = $this->special_queries[ $query ];
+			[ $builders, $minimum, $type ] = $this->special_queries[ $query ];
 			$parts = [];
 			foreach ( $builders as $builder ) {
-				$c = $builder['meta_query'][0];
-				$condition = $wpdb->prepare( 'blp_meta.meta_key = %s', $c['key'] );
-				if ( '=' === $c['compare'] ) { $condition .= $wpdb->prepare( ' AND blp_meta.meta_value = %s', $c['value'] ); }
-				$parts[] = "CASE WHEN EXISTS (SELECT 1 FROM {$wpdb->postmeta} AS blp_meta WHERE blp_meta.post_id = {$wpdb->posts}.ID AND {$condition}) THEN 1 ELSE 0 END";
+				$condition = $this->condition( $builder, $type );
+				$parts[] = "CASE WHEN ({$condition}) THEN 1 ELSE 0 END";
 			}
 			return $where . ' AND (' . implode( ' + ', $parts ) . ') >= ' . (int) $minimum;
 		}
 		if ( ! $this->negative_queries->contains( $query ) ) { return $where; }
-		$clauses = [ 'relation' => 'OR' ];
-		foreach ( $this->negative_queries[ $query ] as $builder ) { $clauses[] = $builder['meta_query']; }
-		global $wpdb;
-		$meta = new \WP_Meta_Query( $clauses );
-		$sql = $meta->get_sql( 'post', 'blp_posts', 'ID', $query );
-		return $where . " AND {$wpdb->posts}.ID NOT IN (SELECT blp_posts.ID FROM {$wpdb->posts} AS blp_posts {$sql['join']} WHERE 1=1 {$sql['where']})";
+		$parts = [];
+		[ $builders, $type ] = $this->negative_queries[ $query ];
+		foreach ( $builders as $builder ) { $parts[] = '(' . $this->condition( $builder, $type ) . ')'; }
+		return $where . ' AND NOT (' . implode( ' OR ', $parts ) . ')';
 	}
+	/**
+	 * Build one verified family or metadata condition shared by negative and multiple views.
+	 * @param array $builder Validated registry entry.
+	 * @param string $type Validated content-type name.
+	 * @return string SQL predicate using prepared values and internal integer IDs only.
+	 */
+	private function condition( array $builder, string $type ): string {
+		global $wpdb;
+		if ( 'blocks' === ( $builder['recognition'] ?? '' ) ) {
+			$ids = BlockAdapters::ids( $type, $builder['builder-id'] );
+			return $ids ? $wpdb->posts . '.ID IN (' . implode( ',', array_map( 'absint', $ids ) ) . ')' : '1=0';
+		}
+		$c = $builder['meta_query'][0];
+		$condition = $wpdb->prepare( 'blp_meta.meta_key = %s', $c['key'] );
+		if ( '=' === $c['compare'] ) { $condition .= $wpdb->prepare( ' AND blp_meta.meta_value = %s', $c['value'] ); }
+		return "EXISTS (SELECT 1 FROM {$wpdb->postmeta} AS blp_meta WHERE blp_meta.post_id = {$wpdb->posts}.ID AND {$condition})";
+	}
+
 	/**
 	 * Cache readable content counts outside trash for this request.
 	 *
@@ -117,7 +138,7 @@ final class Query {
 	 * @return int Number of readable matching items.
 	 */
 	public function count( string $type, string $id ): int {
-		$key = $type . ':' . $id;
+		$key = get_current_blog_id() . ':' . get_current_user_id() . ':' . $type . ':' . $id;
 		if ( isset( $this->counts[ $key ] ) ) { return $this->counts[ $key ]; }
 		$query = new \WP_Query();
 		$this->apply( $query, $type, $id );

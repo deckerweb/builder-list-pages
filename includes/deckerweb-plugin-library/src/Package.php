@@ -1,6 +1,6 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_1_0;
+namespace Deckerweb\PluginLibrary\V1_2_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /** Verify the original release, then normalize a bounded, single-plugin archive. */
@@ -29,10 +29,14 @@ final class Package {
 		] );
 		if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
 			self::remove( $file );
-			return new \WP_Error( 'dwl_download', Library::t( 'The GitHub release could not be downloaded.' ) );
+			return Catalog::request_error( $response, 'package' );
 		}
 		$result = self::verify( $file, $entry );
 		self::remove( $file );
+		if ( is_wp_error($result) ) {
+   $hash = $result->get_error_code() === 'dwl_hash';
+   return new \WP_Error($result->get_error_code(), sprintf(Library::t('Stage: %1$s. %2$s'), Library::t($hash ? 'Checksum verification' : 'Archive verification'), Library::t($hash ? 'The package checksum does not match the approved release. Installation was stopped.' : 'The package did not pass the archive or plugin identity checks. Installation was stopped.')), ['stage'=>$hash?'checksum':'archive','cause'=>$hash?'checksum_mismatch':'invalid_package']);
+  }
 		return $result;
 	}
 

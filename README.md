@@ -4,7 +4,7 @@
 
 **Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.
 
-**Version:** 1.3.0 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later
+**Version:** 1.3.1 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later
 
 [Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)
 
@@ -38,7 +38,7 @@
 - **Keep working:** searches, personal favorites, CSV exports and familiar WordPress lists.
 - **Native WordPress tools:** local Site Health information and shortcuts in the available Command Palette.
 - **Your language:** English, German and formal German; bundled guide and full changelog.
-- **DECKERWEB integrated:** GitHub Updater 2.2.1 and Plugin Library 1.2.0.
+- **DECKERWEB integrated:** GitHub Updater 2.4.0 and Plugin Library 1.3.0.
 
 ## Installation and first filter
 
@@ -138,9 +138,9 @@ Installed GreenShift addons appear with their individual active/inactive status 
 
 ## Updates and Library
 
-Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.
+Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.4.0. No separate updater plugin is needed; automatic updates stay under your control.
 
-The embedded deckerweb Library 1.2.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.
+The embedded deckerweb Library 1.3.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.
 
 The Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings.
 
@@ -230,6 +230,10 @@ WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. H
 
 ## Changelog
 
+### 1.3.1
+
+- **Fixed:** Update deckerweb Library to 1.3.0 and Updater to 2.4.0, with catalog-independent updates, bounded downloads and stricter package checks.
+
 ### 1.3.0 · 2026-10-30
 
 - **New:** Recognizes additional classic and block-based builders, including supported premium blocks. Includes Genesis Blocks.
@@ -302,6 +306,6 @@ Support development through [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me a Coff
 
 ## License and included components
 
-GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.2.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
+GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.3.0 and deckerweb Updater 2.4.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
 
 The banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files.

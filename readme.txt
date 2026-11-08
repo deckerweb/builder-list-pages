@@ -2,9 +2,9 @@
 Contributors: deckerweb
 Tags: admin, pages, page builder, filter, post types
 Requires at least: 6.7
-Tested up to: 7.1.4
+Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Your pages. Your builders. One clear overview.
 - Keep working: searches, personal favorites, CSV exports and familiar WordPress lists.
 - Native WordPress tools: local Site Health information and shortcuts in the available Command Palette.
 - Your language: English, German and formal German; bundled guide and full changelog.
-- DECKERWEB integrated: GitHub Updater 2.2.1 and Plugin Library 1.2.0.
+- DECKERWEB integrated: GitHub Updater 2.4.0 and Plugin Library 1.3.0.
 
 = Builders and recognition =
 
@@ -105,9 +105,9 @@ Installed GreenShift addons appear with their individual active/inactive status 
 
 = Updates and Library =
 
-Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.
+Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.4.0. No separate updater plugin is needed; automatic updates stay under your control.
 
-The embedded deckerweb Library 1.2.0 adds Plugins → Add New → deckerweb, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.
+The embedded deckerweb Library 1.3.0 adds Plugins → Add New → deckerweb, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.
 
 The Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings.
 
@@ -177,7 +177,7 @@ Support development through [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me a Coff
 
 = License and included components =
 
-GPL v2 or later. [License](https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE). Includes deckerweb Plugin Library 1.2.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
+GPL v2 or later. [License](https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE). Includes deckerweb Plugin Library 1.3.0 and deckerweb Updater 2.4.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.
 
 The banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](https://github.com/deckerweb/builder-list-pages/blob/main/assets/Inter-OFL.txt) is included, without font files.
 
@@ -233,6 +233,10 @@ WP Admin Cleaner 2.0.1 matches hidden menu entries against the end of the URL. H
 [Complete FAQ by topic](https://github.com/deckerweb/builder-list-pages/wiki/FAQ-English)
 
 == Changelog ==
+
+= 1.3.1 =
+
+* Fixed: Update deckerweb Library to 1.3.0 and Updater to 2.4.0, with catalog-independent updates, bounded downloads and stricter package checks.
 
 = 1.3.0 · 2026-10-30 =
 

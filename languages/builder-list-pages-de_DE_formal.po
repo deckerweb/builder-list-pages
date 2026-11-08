@@ -1,5 +1,5 @@
 msgid ""
-msgstr "Project-Id-Version: Builder List Pages 1.3.0\nReport-Msgid-Bugs-To: https://github.com/deckerweb/builder-list-pages/issues\nPOT-Creation-Date: 2026-10-10 12:00+0200\nPO-Revision-Date: 2026-10-10 12:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+msgstr "Project-Id-Version: Builder List Pages 1.3.1\nReport-Msgid-Bugs-To: https://github.com/deckerweb/builder-list-pages/issues\nPOT-Creation-Date: 2026-10-10 12:00+0200\nPO-Revision-Date: 2026-10-10 12:00+0200\nLast-Translator: David Decker – DECKERWEB\nLanguage-Team: German\nLanguage: de_DE_formal\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/class-blp-settings.php:168
 #, php-format
@@ -127,7 +127,7 @@ msgstr "Das Archiv enthält zu viele Dateien."
 msgid "Archive symlinks are not permitted."
 msgstr "Symbolische Verknüpfungen sind im Archiv nicht erlaubt."
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:57
 msgid "Archive verification"
 msgstr "Archivprüfung"
 
@@ -224,9 +224,21 @@ msgstr "Archiveintrag konnte nicht gelesen werden."
 msgid "Catalog URL"
 msgstr "Katalog-URL"
 
+#: includes/updater-translations.php:51
+msgid "Catalog approval"
+msgstr "Katalogfreigabe"
+
+#: includes/updater-translations.php:49
+msgid "Catalog diagnostics require a public catalog provider."
+msgstr "Die Katalogdiagnose benötigt einen öffentlichen Kataloganbieter."
+
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Catalog refreshed."
 msgstr "Katalog aktualisiert."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Catalog retrieval does not limit updates of installed plugins. Those use their normal WordPress update provider."
+msgstr "Der Katalogabruf begrenzt keine Updates installierter Plugins. Diese verwenden ihren normalen WordPress-Updater."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Catalog verification"
@@ -248,7 +260,7 @@ msgstr "Status prüfen"
 msgid "Checking status…"
 msgstr "Status wird geprüft…"
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:55
 msgid "Checksum verification"
 msgstr "Prüfsummenprüfung"
 
@@ -450,6 +462,11 @@ msgstr "GitHub-Sterne"
 msgid "GitHub release does not contain the plugin main file."
 msgstr "Der GitHub-Release enthält nicht die Hauptdatei des Plugins."
 
+#: includes/updater-translations.php:79
+#, php-format
+msgid "HTTP status: %d."
+msgstr "HTTP-Status: %d."
+
 #: includes/class-blp-settings.php:138
 msgid "Hide"
 msgstr "Ausblenden"
@@ -497,6 +514,14 @@ msgstr "Installiert"
 #: includes/class-blp-settings.php:161
 msgid "Installed addons"
 msgstr "Installierte Addons"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installed plugin identity does not match the approved release."
+msgstr "Die Identität des installierten Plugins stimmt nicht mit dem freigegebenen Release überein."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Installed plugins use their normal update provider. Reload the update information and try again."
+msgstr "Installierte Plugins verwenden ihren normalen Updater. Aktualisieren Sie die Updateinformationen und versuchen Sie es erneut."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Installed · inactive"
@@ -586,6 +611,10 @@ msgstr "Ungültige Netzwerkregel."
 msgid "Invalid network requirement."
 msgstr "Ungültige Netzwerkanforderung."
 
+#: includes/updater-translations.php:83
+msgid "Invalid package cleanup provider."
+msgstr "Ungültiger Anbieter für die Paketbereinigung."
+
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Invalid platform version."
 msgstr "Ungültige Plattformversion."
@@ -593,6 +622,10 @@ msgstr "Ungültige Plattformversion."
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Invalid plugin series."
 msgstr "Ungültige Plugin-Serie."
+
+#: includes/updater-translations.php:81
+msgid "Invalid private download limits."
+msgstr "Ungültige Grenzen für private Downloads."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Invalid sort order."
@@ -774,6 +807,10 @@ msgstr "Für Ihr Konto ist kein unterstützter Inhaltstyp verfügbar. Prüfen Si
 msgid "No supported integration is installed or available on this site."
 msgstr "Auf dieser Website ist keine unterstützte Integration installiert oder verfügbar."
 
+#: includes/deckerweb-plugin-library / shared updater
+msgid "No update reported."
+msgstr "Kein Update gemeldet."
+
 #: includes/class-blp-admin-tools.php:28 includes/class-blp-admin-tools.php:29 includes/class-blp-admin-tools.php:30 includes/class-blp-admin-tools.php:31
 msgid "None"
 msgstr "Keine"
@@ -838,7 +875,7 @@ msgstr "PHP-ZIP-Unterstützung wird benötigt."
 msgid "POST required."
 msgstr "Eine POST-Anfrage ist erforderlich."
 
-#: includes/deckerweb-plugin-library / shared updater
+#: includes/updater-translations.php:53
 msgid "Package download"
 msgstr "Paketdownload"
 
@@ -975,6 +1012,10 @@ msgstr "Ansicht zurücksetzen"
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Retrieve approved catalog updates online"
 msgstr "Katalogfreigaben online aktualisieren"
+
+#: includes/updater-translations.php:85
+msgid "Safe package cleanup is unavailable for this update provider."
+msgstr "Für diesen Updateanbieter ist keine sichere Paketbereinigung verfügbar."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "Sat"
@@ -1149,6 +1190,10 @@ msgstr "Die freigegebene Version hat sich geändert. Suchen Sie zuerst erneut na
 msgid "The approved release could not be verified."
 msgstr "Die freigegebene Version konnte nicht geprüft werden."
 
+#: includes/updater-translations.php:73
+msgid "The archive or plugin identity could not be verified. Installation was stopped."
+msgstr "Das Archiv oder die Pluginidentität konnte nicht geprüft werden. Die Installation wurde gestoppt."
+
 #: includes/deckerweb-plugin-library / shared updater
 msgid "The catalog URL is not an allowed first-party HTTPS endpoint."
 msgstr "Die Katalog-URL ist keine erlaubte eigene HTTPS-Quelle."
@@ -1182,6 +1227,10 @@ msgid "The installed plugin identity could not be verified for this catalog upda
 msgstr "Die Identität des installierten Plugins konnte für dieses Katalogupdate nicht bestätigt werden."
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "The installed plugin identity could not be verified. Use the Plugins screen to review it."
+msgstr "Die Identität des installierten Plugins konnte nicht geprüft werden. Prüfen Sie es auf der Plugins-Seite."
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "The online catalog is unavailable. Showing cached or bundled entries; online approval is checked again before installation."
 msgstr "Der Online-Katalog ist nicht erreichbar. Angezeigt wird der gespeicherte oder mitgelieferte Katalog; vor der Installation wird die Online-Freigabe erneut geprüft."
 
@@ -1196,6 +1245,10 @@ msgstr "Die Paketprüfsumme stimmt nicht mit der freigegebenen Version überein.
 #: includes/deckerweb-plugin-library / shared updater
 msgid "The package did not pass the archive or plugin identity checks. Installation was stopped."
 msgstr "Das Paket hat die Archiv- oder Plugin-Identitätsprüfung nicht bestanden. Die Installation wurde gestoppt."
+
+#: includes/updater-translations.php:71
+msgid "The package does not match the approved checksum. Installation was stopped."
+msgstr "Das Paket entspricht nicht der freigegebenen Prüfsumme. Die Installation wurde gestoppt."
 
 #: includes/class-blp-github-updates.php:148
 msgid "The package identity or version does not match a newer Builder List Pages release."
@@ -1226,12 +1279,20 @@ msgid "The request could not be completed. Check the plugin status before trying
 msgstr "Die Anfrage konnte nicht abgeschlossen werden. Vor einem erneuten Versuch den Plugin-Status prüfen."
 
 #: includes/deckerweb-plugin-library / shared updater
+msgid "The requirements below describe the catalog version for first installation, not an installed-plugin update."
+msgstr "Die folgenden Voraussetzungen beschreiben die Katalogversion für die Erstinstallation, nicht ein Bestandsupdate."
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "The requirements below describe the offered release."
 msgstr "Die folgenden Voraussetzungen beziehen sich auf den angebotenen Release."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "The secure connection could not be verified."
 msgstr "Die sichere Verbindung konnte nicht bestätigt werden."
+
+#: includes/updater-translations.php:65
+msgid "The secure connection to the update server failed."
+msgstr "Die sichere Verbindung zum Updateserver ist fehlgeschlagen."
 
 #: includes/deckerweb-plugin-library / shared updater
 msgid "The server address could not be resolved."
@@ -1257,6 +1318,30 @@ msgstr "Das Updatepaket konnte nicht geprüft werden."
 #: includes/class-blp-github-updates.php:157
 msgid "The update package has missing or invalid WordPress/PHP requirements."
 msgstr "Im Updatepaket fehlen gültige WordPress-/PHP-Voraussetzungen."
+
+#: includes/updater-translations.php:87
+msgid "The update package identity, version or requirements could not be verified."
+msgstr "Identität, Version oder Anforderungen des Updatepakets konnten nicht bestätigt werden."
+
+#: includes/updater-translations.php:69
+msgid "The update provider did not return valid update data."
+msgstr "Der Updateanbieter hat keine gültigen Updatedaten geliefert."
+
+#: includes/updater-translations.php:61
+msgid "The update request timed out. Try again later."
+msgstr "Die Updateanfrage hat zu lange gedauert. Versuchen Sie es später erneut."
+
+#: includes/updater-translations.php:63
+msgid "The update server address could not be resolved."
+msgstr "Die Adresse des Updateservers konnte nicht aufgelöst werden."
+
+#: includes/updater-translations.php:59
+msgid "The update server could not be reached. Try again later."
+msgstr "Der Updateserver ist nicht erreichbar. Versuchen Sie es später erneut."
+
+#: includes/updater-translations.php:67
+msgid "The update server returned an unsuccessful HTTP response."
+msgstr "Der Updateserver hat eine HTTP-Fehlerantwort zurückgegeben."
 
 #: includes/class-blp-settings.php:134
 msgid "These choices apply to the overview, Builder column, filters and submenus on this site. Include checks stored builder data; it does not mark all items as builder content or override permissions and native builder restrictions. Builder settings and content remain unchanged."
@@ -1340,8 +1425,22 @@ msgid "Update available"
 msgstr "Update verfügbar"
 
 #: includes/deckerweb-plugin-library / shared updater
+#, php-format
+msgid "Update available: %s"
+msgstr "Update verfügbar: %s"
+
+#: includes/deckerweb-plugin-library / shared updater
 msgid "Update failed."
 msgstr "Aktualisierung fehlgeschlagen."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Update information changed. Reload the page and try again."
+msgstr "Die Updateinformationen haben sich geändert. Laden Sie die Seite neu und versuchen Sie es erneut."
+
+#: includes/updater-translations.php:76
+#, php-format
+msgid "Update stopped at %1$s: %2$s"
+msgstr "Update gestoppt bei %1$s: %2$s"
 
 #: includes/deckerweb-plugin-library / shared updater
 #, php-format
@@ -1359,6 +1458,14 @@ msgstr "Wird aktualisiert…"
 #: includes/class-blp-workflows.php:87
 msgid "Use compact builder selection for my account"
 msgstr "Kompakte Builder-Auswahl für mein Benutzerkonto verwenden"
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Use the Plugins screen to manage this installed plugin."
+msgstr "Verwalten Sie dieses installierte Plugin auf der Plugins-Seite."
+
+#: includes/deckerweb-plugin-library / shared updater
+msgid "Verified first installations · Independent plugin updates"
+msgstr "Geprüfte Erstinstallationen · Unabhängige Pluginupdates"
 
 #: includes/class-blp-settings.php:122 includes/class-blp-admin-tools.php:27
 msgid "Version"

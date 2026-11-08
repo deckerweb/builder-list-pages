@@ -2,6 +2,10 @@
 
 [Deutsch](Changelog-Deutsch.md) · [FAQ](FAQ-English.md)
 
+## 1.3.1
+
+- **Fixed:** Update deckerweb Library to 1.3.0 and Updater to 2.4.0, with catalog-independent updates, bounded downloads and stricter package checks.
+
 ## 1.3.0 · 2026-10-30
 
 - **New:** Recognizes additional classic and block-based builders, including supported premium blocks. Includes Genesis Blocks.

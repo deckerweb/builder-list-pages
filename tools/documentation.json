@@ -1,12 +1,12 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "languages": {
     "en": {
       "intro": "# Builder List Pages\n\n![Builder List Pages](assets/banner-1280x640.png)\n\n**Your pages. Your builders. One clear overview.** Recognize builders in your content lists, filter Elementor, Bricks and other builder pages, and keep working in familiar WordPress screens. Useful for mixed websites, handovers and builder migrations.\n\n**Version:** 1.3.0 · **Requires:** WordPress 6.7+ / PHP 8.1+ · **License:** GPL v2 or later\n\n[Deutsch](README-de.md) · [User guide](docs/wiki/English.md) · [Extended FAQ](docs/wiki/FAQ-English.md) · [GitHub Releases](https://github.com/deckerweb/builder-list-pages/releases)\n\n",
       "sections": [
         [
           "At a Glance",
-          "- **Find your tool:** separate support tables for classic page builders and block-based builders, with concise Free/Pro notes.\n- **See your integrations:** installed tools, active/inactive status and direct content-type links with readable counts.\n- **Spot useful results:** matching content types first; Pages then Posts within each group, with distinct subtle colors.\n- **Choose content types:** automatic selection plus per-site Automatic, Hide and Include controls.\n- **Recognize mixed content:** clickable Builder badges, multiple-builder views and inactive traces.\n- **Keep working:** searches, personal favorites, CSV exports and familiar WordPress lists.\n- **Native WordPress tools:** local Site Health information and shortcuts in the available Command Palette.\n- **Your language:** English, German and formal German; bundled guide and full changelog.\n- **DECKERWEB integrated:** GitHub Updater 2.2.1 and Plugin Library 1.2.0."
+          "- **Find your tool:** separate support tables for classic page builders and block-based builders, with concise Free/Pro notes.\n- **See your integrations:** installed tools, active/inactive status and direct content-type links with readable counts.\n- **Spot useful results:** matching content types first; Pages then Posts within each group, with distinct subtle colors.\n- **Choose content types:** automatic selection plus per-site Automatic, Hide and Include controls.\n- **Recognize mixed content:** clickable Builder badges, multiple-builder views and inactive traces.\n- **Keep working:** searches, personal favorites, CSV exports and familiar WordPress lists.\n- **Native WordPress tools:** local Site Health information and shortcuts in the available Command Palette.\n- **Your language:** English, German and formal German; bundled guide and full changelog.\n- **DECKERWEB integrated:** GitHub Updater 2.4.0 and Plugin Library 1.3.0."
         ],
         [
           "Installation and first filter",
@@ -22,7 +22,7 @@
         ],
         [
           "Updates and Library",
-          "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.2.1. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 1.2.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
+          "Stable GitHub releases appear in the regular WordPress update system through deckerweb Updater 2.4.0. No separate updater plugin is needed; automatic updates stay under your control.\n\nThe embedded deckerweb Library 1.3.0 adds **Plugins → Add New → deckerweb**, with a local approved catalog, series filters and plugin details. The standard WordPress tab remains the default. Installation, activation and updates require an explicit permitted action. Online catalog refresh is optional and off by default.\n\nThe Library follows the active compatible copy when multiple deckerweb plugins are installed. Its preferences are separate from the three Builder List Pages display settings."
         ],
         [
           "New tools and personal views",
@@ -46,7 +46,7 @@
         ],
         [
           "License and included components",
-          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.2.0 and deckerweb Updater 2.2.1 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files."
+          "GPL v2 or later. [License](LICENSE). Includes deckerweb Plugin Library 1.3.0 and deckerweb Updater 2.4.0 by David Decker – DECKERWEB, both GPL-2.0-or-later. The shared changelog renderer originates from [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, by the same author under GPL-2.0-or-later. No premium builder or Admin Cleaner code is included.\n\nThe banners and icon use native vector shapes. Banners include Inter lettering converted to paths, linear background gradients and transparency; no raster images, live fonts, SVG filters or external resources. Icons use native shapes and solid fills. PNGs are rendered from those same SVGs. Inter is free for commercial use under SIL Open Font License 1.1; [font license](assets/Inter-OFL.txt) is included, without font files."
         ]
       ],
       "faq": [
@@ -264,7 +264,7 @@
       "sections": [
         [
           "Auf einen Blick",
-          "- **Dein Werkzeug finden:** getrennte Tabellen für klassische Page Builder und blockbasierte Builder mit kurzen Free-/Pro-Hinweisen.\n- **Integrationen überblicken:** installierte Werkzeuge, Aktiv-/Inaktiv-Status und direkte Inhaltslinks mit lesbaren Trefferzahlen.\n- **Treffer schneller sehen:** Inhaltstypen mit Treffern zuerst; innerhalb der Gruppen Seiten vor Beiträgen, mit eigenen dezenten Farben.\n- **Inhaltstypen auswählen:** automatische Vorauswahl plus Automatisch, Ausblenden und Einbeziehen pro Website.\n- **Gemischte Inhalte erkennen:** anklickbare Builder-Namen, Mehrfach-Builder-Ansicht und inaktive Spuren.\n- **Direkt weiterarbeiten:** Suche, persönliche Favoriten, CSV-Export und vertraute WordPress-Listen.\n- **WordPress-Werkzeuge nutzen:** lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren Befehlspalette.\n- **Passende Sprache:** Englisch, Deutsch und Deutsch (Sie); lokale Anleitung und vollständiger Änderungsverlauf.\n- **DECKERWEB integriert:** GitHub Updater 2.2.1 und Plugin Library 1.2.0."
+          "- **Dein Werkzeug finden:** getrennte Tabellen für klassische Page Builder und blockbasierte Builder mit kurzen Free-/Pro-Hinweisen.\n- **Integrationen überblicken:** installierte Werkzeuge, Aktiv-/Inaktiv-Status und direkte Inhaltslinks mit lesbaren Trefferzahlen.\n- **Treffer schneller sehen:** Inhaltstypen mit Treffern zuerst; innerhalb der Gruppen Seiten vor Beiträgen, mit eigenen dezenten Farben.\n- **Inhaltstypen auswählen:** automatische Vorauswahl plus Automatisch, Ausblenden und Einbeziehen pro Website.\n- **Gemischte Inhalte erkennen:** anklickbare Builder-Namen, Mehrfach-Builder-Ansicht und inaktive Spuren.\n- **Direkt weiterarbeiten:** Suche, persönliche Favoriten, CSV-Export und vertraute WordPress-Listen.\n- **WordPress-Werkzeuge nutzen:** lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren Befehlspalette.\n- **Passende Sprache:** Englisch, Deutsch und Deutsch (Sie); lokale Anleitung und vollständiger Änderungsverlauf.\n- **DECKERWEB integriert:** GitHub Updater 2.4.0 und Plugin Library 1.3.0."
         ],
         [
           "Installation und erster Filter",
@@ -280,7 +280,7 @@
         ],
         [
           "Updates und Library",
-          "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.1 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 1.2.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
+          "Stabile GitHub-Releases erscheinen über deckerweb Updater 2.4.0 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.\n\nDie eingebettete deckerweb Library 1.3.0 ergänzt **Plugins → Installieren → deckerweb** mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.\n\nBei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt."
         ],
         [
           "Neue Werkzeuge und persönliche Ansichten",
@@ -304,7 +304,7 @@
         ],
         [
           "Lizenz und enthaltene Komponenten",
-          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 1.2.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nBanner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](assets/Inter-OFL.txt) liegt ohne Fontdateien bei."
+          "GPL v2 oder neuer. [Lizenz](LICENSE). Enthält deckerweb Plugin Library 1.3.0 und deckerweb Updater 2.4.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.\n\nBanner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](assets/Inter-OFL.txt) liegt ohne Fontdateien bei."
         ]
       ],
       "faq": [
@@ -521,6 +521,15 @@
   "history": {
     "en": [
       [
+        "1.3.1",
+        [
+          [
+            "Fixed",
+            "Update deckerweb Library to 1.3.0 and Updater to 2.4.0, with catalog-independent updates, bounded downloads and stricter package checks."
+          ]
+        ]
+      ],
+      [
         "1.3.0 · 2026-10-30",
         [
           [
@@ -704,6 +713,15 @@
       ]
     ],
     "de": [
+      [
+        "1.3.1",
+        [
+          [
+            "Behoben",
+            "deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert: Updates unabhängig vom Katalog, begrenzte Downloads und strengere Paketprüfung."
+          ]
+        ]
+      ],
       [
         "1.3.0 · 2026-10-30",
         [
@@ -893,5 +911,5 @@
     "de_formal": "Finden Sie Inhalte, die Sie mit Bricks, Elementor, Breakdance und vielen weiteren beliebten Page Buildern gestaltet haben. Auch blockbasierte Werkzeuge wie Kadence Blocks, Spectra und GenerateBlocks werden unterstützt – jeweils in Free und Pro. Dazu kommen Etch, GreenShift und Mosaic Builder mit direkt zugewiesenen Layouts. Globale Header, Footer und automatische Templates werden nicht pauschal jeder Seite zugerechnet.",
     "en": "Find content designed with Bricks, Elementor, Breakdance and many other popular page builders. Block-based tools such as Kadence Blocks, Spectra and GenerateBlocks are also supported, in both Free and Pro. Etch and GreenShift are supported too, along with directly assigned Mosaic Builder layouts. Global headers, footers and automatic templates are not automatically attributed to every page."
   },
-  "tested_up_to": "7.1.4"
+  "tested_up_to": "7.1"
 }

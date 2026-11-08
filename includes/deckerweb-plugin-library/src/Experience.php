@@ -1,6 +1,6 @@
 <?php
 /** Copyright 2026 David Decker – DECKERWEB. SPDX-License-Identifier: GPL-2.0-or-later */
-namespace Deckerweb\PluginLibrary\V1_2_0;
+namespace Deckerweb\PluginLibrary\V1_3_0;
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /** Personal catalog presentation and local, data-minimized diagnostics. */
 final class Experience {
@@ -34,22 +34,25 @@ final class Experience {
   update_user_meta( get_current_user_id(), self::META, $v );
   wp_safe_redirect( self_admin_url( 'plugin-install.php?tab=deckerweb' ) ); exit;
  }
- /** Identify a strictly newer approved stable release without treating unknown or development versions as updates.
-  * @param array $entry Validated catalog entry.
-  * @param array $plugins Installed plugin headers keyed by basename.
-  * @return bool Whether an installed stable numeric version is older than the offered stable version.
+ /**
+  * Report an existing normal update without comparing the catalog release version.
+  * @param array $entry Catalog plugin identity.
+  * @param array $plugins Installed plugin headers.
+  * @param mixed $state Existing update snapshot, or null to read WordPress state.
+  * @return bool Whether WordPress currently offers a forward update for the installed plugin.
   */
- public static function update_available( array $entry, array $plugins ): bool {
-  $version = $plugins[$entry['plugin_file']]['Version'] ?? '';
-  return is_string( $version ) && preg_match( '/^\d+(?:\.\d+){1,3}$/D', $version ) && empty( $entry['_preview'] ) && version_compare( $entry['version'], $version, '>' );
+ public static function update_available( array $entry, array $plugins, $state = null ): bool {
+  return NativeUpdates::offer( $entry, $plugins, $state ) !== null;
  }
+
  /** Match the current website or network status without remote requests.
   * @param string $status Whitelisted status filter.
   * @param array $entry Validated catalog entry.
   * @param array $plugins Installed plugin headers.
+  * @param mixed $state Existing update snapshot, or null to read WordPress state.
   * @return bool Whether the entry matches the selected status.
   */
- public static function matches( string $status, array $entry, array $plugins ): bool {
+ public static function matches( string $status, array $entry, array $plugins, $state = null ): bool {
   $installed = isset( $plugins[$entry['plugin_file']] );
   $active = $installed && ( is_network_admin() ? is_plugin_active_for_network( $entry['plugin_file'] ) : is_plugin_active( $entry['plugin_file'] ) );
   switch ( $status ) {
@@ -57,7 +60,7 @@ final class Experience {
    case 'installed': return $installed;
    case 'active': return $active;
    case 'inactive': return $installed && ! $active;
-   case 'updates': return self::update_available( $entry, $plugins );
+   case 'updates': return self::update_available( $entry, $plugins, $state );
    default: return true;
   }
  }

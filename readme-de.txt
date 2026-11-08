@@ -2,9 +2,9 @@
 Contributors: deckerweb
 Tags: admin, pages, page builder, filter, post types
 Requires at least: 6.7
-Tested up to: 7.1.4
+Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Deine Seiten. Deine Builder. Alles im Blick.
 - Direkt weiterarbeiten: Suche, persönliche Favoriten, CSV-Export und vertraute WordPress-Listen.
 - WordPress-Werkzeuge nutzen: lokale Informationen im Website-Zustand und Sprungziele in der verfügbaren Befehlspalette.
 - Passende Sprache: Englisch, Deutsch und Deutsch (Sie); lokale Anleitung und vollständiger Änderungsverlauf.
-- DECKERWEB integriert: GitHub Updater 2.2.1 und Plugin Library 1.2.0.
+- DECKERWEB integriert: GitHub Updater 2.4.0 und Plugin Library 1.3.0.
 
 = Builder und Erkennung =
 
@@ -105,9 +105,9 @@ Bei GreenShift erscheinen installierte Addons mit ihrem jeweiligen Aktiv-Status 
 
 = Updates und Library =
 
-Stabile GitHub-Releases erscheinen über deckerweb Updater 2.2.1 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.
+Stabile GitHub-Releases erscheinen über deckerweb Updater 2.4.0 im normalen WordPress-Updatesystem. Ein separates Updater-Plugin ist nicht nötig; automatische Updates bleiben unter deiner Kontrolle.
 
-Die eingebettete deckerweb Library 1.2.0 ergänzt Plugins → Installieren → deckerweb mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.
+Die eingebettete deckerweb Library 1.3.0 ergänzt Plugins → Installieren → deckerweb mit einem lokalen freigegebenen Katalog, Serienfiltern und Plugin-Details. Der normale WordPress-Tab bleibt die Vorgabe. Installation, Aktivierung und Updates erfordern eine ausdrückliche Aktion mit passenden Rechten. Der Online-Katalog ist optional und standardmäßig ausgeschaltet.
 
 Bei mehreren deckerweb Plugins übernimmt die aktive kompatible Library-Kopie. Ihre Einstellungen sind von den drei Anzeigeoptionen von Builder List Pages getrennt.
 
@@ -177,7 +177,7 @@ Unterstütze die Entwicklung über [Ko-fi](https://ko-fi.com/deckerweb), [Buy Me
 
 = Lizenz und enthaltene Komponenten =
 
-GPL v2 oder neuer. [Lizenz](https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE). Enthält deckerweb Plugin Library 1.2.0 und deckerweb Updater 2.2.1 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.
+GPL v2 oder neuer. [Lizenz](https://github.com/deckerweb/builder-list-pages/blob/main/LICENSE). Enthält deckerweb Plugin Library 1.3.0 und deckerweb Updater 2.4.0 von David Decker – DECKERWEB, beide unter GPL-2.0-or-later. Der gemeinsame Changelog-Renderer stammt aus [Advanced Scripts QuickNav](https://github.com/deckerweb/advanced-scripts-quicknav), `includes/deckerweb-changelog-v1.php`, vom selben Autor unter GPL-2.0-or-later. Premium-Code von Buildern oder Admin Cleaner wird nicht mitgeliefert.
 
 Banner und Icon verwenden native Vektorformen. Die Banner enthalten Inter-Schriftpfade, lineare Hintergrundverläufe und Transparenz; keine Rasterbilder, Live-Schriften, SVG-Filter oder externen Ressourcen. Icons verwenden native Formen und Vollfarben. PNGs werden aus denselben SVGs gerendert. Inter ist unter SIL Open Font License 1.1 kostenlos kommerziell nutzbar; die [Schriftlizenz](https://github.com/deckerweb/builder-list-pages/blob/main/assets/Inter-OFL.txt) liegt ohne Fontdateien bei.
 
@@ -233,6 +233,10 @@ WP Admin Cleaner 2.0.1 vergleicht ausgeblendete Menüeinträge mit dem Ende der 
 [Vollständige FAQ nach Themen](https://github.com/deckerweb/builder-list-pages/wiki/FAQ-Deutsch)
 
 == Changelog ==
+
+= 1.3.1 =
+
+* Behoben: deckerweb Library auf 1.3.0 und Updater auf 2.4.0 aktualisiert: Updates unabhängig vom Katalog, begrenzte Downloads und strengere Paketprüfung.
 
 = 1.3.0 · 2026-10-30 =
 

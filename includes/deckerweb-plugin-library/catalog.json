@@ -17,18 +17,15 @@
       "category": "Admin",
       "dependencies": [],
       "github_stars": 2,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "BAS",
       "icon_background": "#edf3f0",
       "icon": "assets/icons/brand-admin-schemes-7e6be96553a5.png",
       "published_at": "2026-10-22T21:08:30Z",
       "series_memberships": [],
-      "series_memberships_v2": [
-        "tools"
-      ],
+      "series_memberships_v2": [],
       "sort_order": 0,
       "series_memberships_v3": [
-        "tools",
         "admin"
       ],
       "category_de": "Admin"
@@ -57,10 +54,9 @@
         }
       ],
       "github_stars": 3,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "BDQ",
       "icon_background": "#f0f3f6",
-      "series": "quicknav",
       "published_at": "2026-10-21T23:07:32Z",
       "series_memberships": [
         "quicknav"
@@ -77,7 +73,10 @@
           "mode": "pause"
         }
       ],
-      "category_de": "Breakdance"
+      "category_de": "Breakdance",
+      "series_memberships_v2": [
+        "quicknav"
+      ]
     },
     {
       "approved": true,
@@ -95,7 +94,7 @@
       "category": "Content",
       "dependencies": [],
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/daily-scripture-d44520ea223b.png",
       "icon_label": "DS",
       "icon_background": "#f0f3f6",
@@ -134,11 +133,10 @@
         }
       ],
       "github_stars": 7,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/bricks-quicknav-307de6c15a3f.png",
       "icon_label": "BXQ",
       "icon_background": "#f0f3f6",
-      "series": "quicknav",
       "published_at": "2026-10-22T21:46:32Z",
       "series_memberships": [
         "quicknav"
@@ -154,6 +152,9 @@
           "since_version": "2.0.0",
           "mode": "pause"
         }
+      ],
+      "series_memberships_v2": [
+        "quicknav"
       ]
     },
     {
@@ -180,10 +181,9 @@
         }
       ],
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "OQN",
       "icon_background": "#eef1f8",
-      "series": "quicknav",
       "published_at": "2026-10-22T09:00:30Z",
       "series_memberships": [
         "quicknav"
@@ -201,7 +201,10 @@
           "mode": "pause"
         }
       ],
-      "category_de": "Oxygen"
+      "category_de": "Oxygen",
+      "series_memberships_v2": [
+        "quicknav"
+      ]
     },
     {
       "approved": true,
@@ -227,7 +230,7 @@
         }
       ],
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/advanced-scripts-quicknav-6b9f0d0f1174.png",
       "icon_label": "ASQ",
       "icon_background": "#f0f3f6",
@@ -236,14 +239,11 @@
         "quicknav"
       ],
       "series_memberships_v2": [
-        "quicknav",
-        "tools"
+        "quicknav"
       ],
       "sort_order": 50,
       "series_memberships_v3": [
-        "quicknav",
-        "tools",
-        "admin"
+        "quicknav"
       ],
       "dependency_rules": [
         {
@@ -270,22 +270,22 @@
       "category": "Content",
       "dependencies": [],
       "github_stars": 4,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/quick-edit-featured-image-1a8941ac79e5.png",
       "icon_label": "QFI",
       "icon_background": "#f0f3f6",
       "published_at": "2026-10-22T21:47:05Z",
-      "series": "builder",
       "series_memberships": [
-        "builder",
         "manage-content"
       ],
       "sort_order": 60,
       "series_memberships_v3": [
-        "builder",
         "manage-content"
       ],
-      "category_de": "Inhalte"
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "manage-content"
+      ]
     },
     {
       "approved": true,
@@ -303,22 +303,22 @@
       "category": "Content",
       "dependencies": [],
       "github_stars": 4,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "SIU",
       "icon_background": "#f4f0e9",
       "published_at": "2026-10-22T09:18:54Z",
-      "series": "builder",
       "series_memberships": [
-        "builder",
-        "manage-content"
+        "builder"
       ],
       "sort_order": 70,
       "series_memberships_v3": [
-        "builder",
-        "manage-content"
+        "builder"
       ],
       "icon": "assets/icons/shortcode-item-updated-7a3bcb32fa92.png",
-      "category_de": "Inhalte"
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "builder"
+      ]
     },
     {
       "approved": true,
@@ -326,22 +326,21 @@
       "name": "Builder List Pages",
       "description": "Recognize page builders at a glance, filter several builders and find their content in familiar WordPress lists.",
       "description_de": "Page Builder auf einen Blick erkennen, mehrere Builder filtern und ihre Inhalte in vertrauten WordPress-Listen finden.",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "repository": "deckerweb/builder-list-pages",
       "plugin_file": "builder-list-pages/builder-list-pages.php",
-      "download_url": "https://github.com/deckerweb/builder-list-pages/releases/download/v1.2.2/builder-list-pages-1.2.2.zip",
-      "sha256": "61d163c9d3b09374d695c6d8f796c6b8e1b1f507959cb8749a3eca9ab1a5f7e3",
+      "download_url": "https://github.com/deckerweb/builder-list-pages/releases/download/v1.3.0/builder-list-pages-1.3.0.zip",
+      "sha256": "016e39b0953aa238fcb40a3a62c70865a0d10dbd2821ed57381a29e31c9bd7d5",
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "category": "Builder",
       "dependencies": [],
       "github_stars": 3,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/builder-list-pages-81160c9b906b.png",
       "icon_label": "BLP",
       "icon_background": "#f0f3f6",
-      "series": "builder",
-      "published_at": "2026-10-22T21:05:53Z",
+      "published_at": "2026-10-30T17:05:44Z",
       "series_memberships": [
         "builder"
       ],
@@ -349,7 +348,10 @@
       "series_memberships_v3": [
         "builder"
       ],
-      "category_de": "Builder"
+      "category_de": "Builder",
+      "series_memberships_v2": [
+        "builder"
+      ]
     },
     {
       "approved": true,
@@ -365,7 +367,7 @@
       "requires_wp": "6.7",
       "requires_php": "8.2",
       "github_stars": 12,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Configurable WordPress toolbar menus and practical shortcuts for single sites and Multisite networks.",
       "description_de": "Konfigurierbare WordPress-Toolbar-Menüs und praktische Verknüpfungen für einzelne Websites und Multisite-Netzwerke.",
       "requires_multisite": false,
@@ -373,16 +375,19 @@
       "icon": "assets/icons/multisite-toolbar-additions-34b76a02a055.png",
       "icon_label": "MTA",
       "icon_background": "#edf2f5",
-      "series": "quicknav",
       "published_at": "2026-10-22T21:06:04Z",
       "series_memberships": [
         "quicknav"
       ],
       "sort_order": 90,
       "series_memberships_v3": [
-        "quicknav"
+        "quicknav",
+        "admin"
       ],
-      "category_de": "Multisite"
+      "category_de": "Multisite",
+      "series_memberships_v2": [
+        "quicknav"
+      ]
     },
     {
       "approved": true,
@@ -398,14 +403,13 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 4,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Multiple authors without user accounts, with profiles, local photos and flexible shortcodes for your builder or theme.",
       "description_de": "Mehrere Autoren ohne Benutzerkonten: mit Profilen, lokalen Fotos und flexiblen Shortcodes für Builder oder Theme.",
       "icon": "assets/icons/post-author-taxonomy-e41e3b9d292d.png",
       "icon_label": "PAT",
       "icon_background": "#edf2f5",
       "published_at": "2026-10-22T21:58:25Z",
-      "series": "builder",
       "series_memberships": [
         "builder",
         "manage-content"
@@ -415,7 +419,11 @@
         "builder",
         "manage-content"
       ],
-      "category_de": "Inhalte"
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "builder",
+        "manage-content"
+      ]
     },
     {
       "approved": true,
@@ -431,14 +439,13 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 6,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Portfolio projects, categories and tags with a quick start, project template and native block patterns.",
       "description_de": "Portfolio-Projekte, Kategorien und Schlagwörter mit Schnellstart, Projektvorlage und nativen Block-Vorlagen.",
       "icon": "assets/icons/portfolio-content-e69660bfe1ba.png",
       "icon_label": "PC",
       "icon_background": "#edf2f5",
       "published_at": "2026-10-22T22:44:49Z",
-      "series": "builder",
       "series_memberships": [
         "builder",
         "manage-content"
@@ -448,7 +455,11 @@
         "builder",
         "manage-content"
       ],
-      "category_de": "Inhalte"
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "builder",
+        "manage-content"
+      ]
     },
     {
       "approved": true,
@@ -464,13 +475,12 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 14,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Small dynamic helpers for your WordPress website. Find, configure and copy useful shortcodes.",
       "description_de": "Kleine dynamische Helfer für deine WordPress-Website: nützliche Shortcodes finden, konfigurieren und kopieren.",
       "icon": "assets/icons/builder-shortcode-extras-8d63d2952676.png",
       "icon_label": "BSE",
       "icon_background": "#edf2f5",
-      "series": "builder",
       "published_at": "2026-10-22T21:05:29Z",
       "series_memberships": [
         "builder"
@@ -479,7 +489,10 @@
       "series_memberships_v3": [
         "builder"
       ],
-      "category_de": "Inhalte"
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "builder"
+      ]
     },
     {
       "approved": true,
@@ -495,28 +508,20 @@
       "requires_wp": "6.7",
       "requires_php": "8.3",
       "github_stars": 2,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Move selected plugin settings from top-level menus into suitable submenus for a clearer WordPress admin.",
       "description_de": "Ausgewählte Plugin-Einstellungen aus Hauptmenüs in passende Untermenüs verschieben – für einen übersichtlicheren WordPress-Admin.",
       "icon": "assets/icons/plugin-submenu-mover-8378bc01dc18.png",
       "icon_label": "PSM",
       "icon_background": "#edf2f5",
       "published_at": "2026-10-21T22:50:44Z",
-      "series": "builder",
-      "series_memberships": [
-        "builder"
-      ],
+      "series_memberships": [],
       "sort_order": 130,
       "series_memberships_v3": [
-        "builder",
-        "admin",
-        "tools"
+        "admin"
       ],
       "category_de": "Admin",
-      "series_memberships_v2": [
-        "builder",
-        "tools"
-      ]
+      "series_memberships_v2": []
     },
     {
       "approved": true,
@@ -525,7 +530,6 @@
       "repository": "deckerweb/purify-elementor",
       "plugin_file": "purify-elementor/purify-elementor.php",
       "category": "Elementor",
-      "series": "purify",
       "dependencies": [
         {
           "name": "Elementor",
@@ -539,7 +543,7 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Targeted Elementor advertising cleanup with optional AI, news and locked widget controls.",
       "description_de": "Gezielte Bereinigung von Elementor-Werbung mit optionalen Einstellungen für KI, Neuigkeiten und gesperrte Widgets.",
       "published_at": "2026-10-21T22:18:40Z",
@@ -561,7 +565,10 @@
           "mode": "pause"
         }
       ],
-      "icon_background": "#e9e1f1"
+      "icon_background": "#e9e1f1",
+      "series_memberships_v2": [
+        "purify"
+      ]
     },
     {
       "approved": true,
@@ -580,7 +587,6 @@
           "detector": ""
         }
       ],
-      "series": "purify",
       "series_memberships": [
         "purify"
       ],
@@ -591,7 +597,7 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 2,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "published_at": "2026-10-22T10:31:49Z",
       "icon_label": "PCL",
       "sort_order": 150,
@@ -606,7 +612,10 @@
         }
       ],
       "category_de": "Admin",
-      "icon_background": "#dfebdd"
+      "icon_background": "#dfebdd",
+      "series_memberships_v2": [
+        "purify"
+      ]
     },
     {
       "approved": true,
@@ -625,7 +634,6 @@
           "detector": ""
         }
       ],
-      "series": "purify",
       "series_memberships": [
         "purify"
       ],
@@ -636,7 +644,7 @@
       "requires_wp": "6.7",
       "requires_php": "8.1",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "published_at": "2026-10-22T10:31:04Z",
       "icon_label": "PFL",
       "sort_order": 160,
@@ -651,7 +659,10 @@
           "mode": "pause"
         }
       ],
-      "icon_background": "#f1e3d7"
+      "icon_background": "#f1e3d7",
+      "series_memberships_v2": [
+        "purify"
+      ]
     },
     {
       "approved": true,
@@ -666,24 +677,20 @@
       "requires_php": "8.1",
       "dependencies": [],
       "category": "Commerce",
-      "series_memberships": [
-        "connect"
-      ],
+      "series_memberships": [],
       "icon": "assets/icons/connect-for-shopware-edf44f8030fc.png",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "download_url": "https://github.com/deckerweb/connect-for-shopware/releases/download/v1.1.1/connect-for-shopware-1.1.1.zip",
       "sha256": "65381b703106107efdb86ce47f5b3a58b3ac4209b7e01b4a953f7deb716eb495",
       "published_at": "2026-10-21T22:27:38Z",
       "icon_label": "CFS",
       "sort_order": 170,
       "series_memberships_v3": [
-        "connect",
         "shop"
       ],
       "category_de": "Handel",
       "series_memberships_v2": [
-        "connect",
         "shop"
       ],
       "icon_background": "#dfe7f0"
@@ -702,7 +709,7 @@
       "requires_wp": "7.1.2",
       "requires_php": "8.2",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "description": "Temporarily redirect draft posts, pages and public custom post types to published content or a custom URL.",
       "description_de": "Entwürfe von Beiträgen, Seiten und öffentlichen Inhaltstypen vorübergehend auf veröffentlichte Inhalte oder eine eigene URL umleiten.",
       "requires_multisite": false,
@@ -718,7 +725,10 @@
       "series_memberships_v3": [
         "manage-content"
       ],
-      "category_de": "WordPress"
+      "category_de": "WordPress",
+      "series_memberships_v2": [
+        "manage-content"
+      ]
     },
     {
       "approved": true,
@@ -728,29 +738,27 @@
       "plugin_file": "tools-for-fluentcart/tools-for-fluentcart.php",
       "category": "Commerce",
       "dependencies": [],
-      "version": "0.9.1",
-      "download_url": "https://github.com/deckerweb/tools-for-fluentcart/releases/download/v0.9.1/tools-for-fluentcart-0.9.1.zip",
-      "sha256": "6ad5001a4dd1b6b84ae2c398ffea4f8c403ffd629c6750d23b71f77b126268d0",
+      "version": "1.0.0",
+      "download_url": "https://github.com/deckerweb/tools-for-fluentcart/releases/download/v1.0.0/tools-for-fluentcart-1.0.0.zip",
+      "sha256": "1ff8f4581cf6532e40823784fc5c84aba60c057fe100829b37ac6635bf74f19d",
       "requires_wp": "7.1.2",
       "requires_php": "8.2",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
-      "description": "Practical FluentCart tools for quantity limits, minimum order values and single-item carts. Cart Rules supports FluentCart 1.7.x and stays paused without a supported active version.",
-      "description_de": "Praktische FluentCart-Werkzeuge für Mengenlimits, Mindestbestellwerte und Einzelartikel-Warenkörbe. Cart Rules unterstützt FluentCart 1.7.x und bleibt ohne unterstützte aktive Version pausiert.",
+      "stars_checked_at": "2026-11-04",
+      "description": "FluentCart tools for cart rules, product notes, store checks and catalog mode. Cart Rules pauses without supported active FluentCart 1.7.0 or later; plugin settings remain available.",
+      "description_de": "FluentCart-Werkzeuge für Warenkorbregeln, Produktnotizen, Shop-Prüfungen und Katalogmodus. Ohne unterstütztes aktives FluentCart ab 1.7.0 pausiert Cart Rules; die Plugin-Einstellungen bleiben erreichbar.",
       "requires_multisite": false,
       "network_only": false,
-      "icon": "assets/icons/tools-for-fluentcart-f628f6cdf6b3.png",
+      "icon": "assets/icons/tools-for-fluentcart-808c1c876fd1.png",
       "icon_label": "TFC",
       "icon_background": "#edf2f5",
-      "published_at": "2026-10-22T09:31:24Z",
+      "published_at": "2026-11-04T23:26:55Z",
       "series_memberships": [],
       "series_memberships_v2": [
-        "tools",
         "shop"
       ],
       "sort_order": 190,
       "series_memberships_v3": [
-        "tools",
         "shop"
       ],
       "category_de": "Handel"
@@ -784,8 +792,12 @@
       ],
       "icon": "assets/icons/builder-content-guide-46fc9f1a1a32.png",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
-      "category_de": "Inhalte"
+      "stars_checked_at": "2026-11-04",
+      "category_de": "Inhalte",
+      "series_memberships_v2": [
+        "builder",
+        "manage-content"
+      ]
     },
     {
       "approved": true,
@@ -805,7 +817,6 @@
       "icon": "assets/icons/builder-template-categories-7e8d993c4679.png",
       "icon_label": "BTC",
       "icon_background": "#f0f3f6",
-      "series": "builder",
       "published_at": "2026-10-22T21:07:44Z",
       "series_memberships": [
         "builder"
@@ -816,7 +827,10 @@
       ],
       "category_de": "Builder",
       "github_stars": 34,
-      "stars_checked_at": "2026-10-30"
+      "stars_checked_at": "2026-11-04",
+      "series_memberships_v2": [
+        "builder"
+      ]
     },
     {
       "approved": true,
@@ -834,19 +848,16 @@
       "category": "Admin",
       "dependencies": [],
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "SE",
       "icon_background": "#edf3f0",
       "icon": "assets/icons/site-essentials-c6e2b94cd6fd.png",
       "published_at": "2026-10-29T07:41:07Z",
       "series_memberships": [],
-      "series_memberships_v2": [
-        "tools"
-      ],
+      "series_memberships_v2": [],
       "sort_order": 230,
       "series_memberships_v3": [
-        "admin",
-        "tools"
+        "admin"
       ],
       "category_de": "Admin"
     },
@@ -866,23 +877,20 @@
       "dependencies": [],
       "category": "Genesis",
       "category_de": "Genesis",
-      "series": "builder",
       "series_memberships": [
         "builder"
       ],
       "series_memberships_v2": [
-        "builder",
-        "tools"
+        "builder"
       ],
       "series_memberships_v3": [
-        "builder",
-        "tools"
+        "builder"
       ],
       "icon_label": "GNF",
       "sort_order": 240,
       "published_at": "2026-10-22T22:45:20Z",
       "github_stars": 4,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/genesis-widgetized-notfound-b19c22c920b2.png",
       "icon_background": "#e1e8dc"
     },
@@ -892,23 +900,22 @@
       "name": "Types & Fields QuickNav",
       "description": "Quick toolbar access to content type and custom field administration, with configurable provider navigation and role or user exclusions.",
       "description_de": "Kurze Toolbar-Wege zur Verwaltung von Inhaltstypen und Feldern – mit wählbaren Provider-Menüs und Rollen- oder Benutzersperren.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "repository": "deckerweb/types-fields-quicknav",
       "plugin_file": "types-fields-quicknav/types-fields-quicknav.php",
-      "download_url": "https://github.com/deckerweb/types-fields-quicknav/releases/download/1.0.1/types-fields-quicknav-1.0.1.zip",
-      "sha256": "9e5dcb6a85e4e7faddd8a65da3e4b67ff6e4994ae1a90b325249f31a862970d7",
+      "download_url": "https://github.com/deckerweb/types-fields-quicknav/releases/download/1.1.0/types-fields-quicknav-1.1.0.zip",
+      "sha256": "eeea8c98890e28d7a8e306736336e1179decb748e92e2a1280ccc64a424893b4",
       "requires_wp": "7.1.2",
       "requires_php": "8.2",
       "category": "Content types & fields",
       "category_de": "Inhaltstypen & Felder",
       "dependencies": [],
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon_label": "TFQ",
       "icon_background": "#ddd2bb",
       "icon": "assets/icons/types-fields-quicknav-ffa511c3a6a2.png",
-      "published_at": "2026-10-21T22:52:15Z",
-      "series": "quicknav",
+      "published_at": "2026-11-04T20:15:09Z",
       "series_memberships": [
         "quicknav"
       ],
@@ -940,17 +947,14 @@
       "category": "Admin",
       "category_de": "Admin",
       "series_memberships": [],
-      "series_memberships_v2": [
-        "tools"
-      ],
+      "series_memberships_v2": [],
       "series_memberships_v3": [
-        "tools",
         "admin"
       ],
       "icon_label": "TBM",
       "icon": "assets/icons/tabulamea-973feb3bc9e3.png",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "published_at": "2026-10-21T21:45:27Z",
       "sort_order": 260,
       "icon_background": "#ddebe8"
@@ -975,17 +979,15 @@
         "builder"
       ],
       "series_memberships_v2": [
-        "builder",
-        "tools"
+        "builder"
       ],
       "series_memberships_v3": [
-        "builder",
-        "tools"
+        "builder"
       ],
       "icon_label": "GWF",
       "icon": "assets/icons/genesis-widgetized-footer-c82e29394a19.png",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "published_at": "2026-10-22T22:44:23Z",
       "sort_order": 270,
       "icon_background": "#e7e2ef"
@@ -1016,7 +1018,7 @@
       "sort_order": 280,
       "published_at": "2026-10-22T22:45:30Z",
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "icon": "assets/icons/tuerchenzeit-07331ad294a6.png"
     },
     {
@@ -1047,18 +1049,15 @@
         }
       ],
       "series_memberships": [],
-      "series_memberships_v2": [
-        "tools"
-      ],
+      "series_memberships_v2": [],
       "series_memberships_v3": [
-        "glotpress",
-        "tools"
+        "glotpress"
       ],
       "icon_label": "GEN",
       "icon_background": "#e4eaf1",
       "sort_order": 290,
       "github_stars": 5,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "download_url": "https://github.com/deckerweb/gp-project-export-name/releases/download/2.0.0/gp-project-export-name-2.0.0.zip",
       "sha256": "d979b12b2781d237ca6fb381e751bdc167a9de43c634b2c77e70603ebb50fa94",
       "published_at": "2026-10-27T09:05:37Z",
@@ -1095,27 +1094,107 @@
         "builder"
       ],
       "series_memberships_v2": [
-        "tools",
         "builder"
       ],
       "series_memberships_v3": [
         "glotpress",
-        "tools",
         "builder"
       ],
       "icon_label": "GF",
       "icon_background": "#e4eaf1",
       "sort_order": 300,
       "github_stars": 1,
-      "stars_checked_at": "2026-10-30",
+      "stars_checked_at": "2026-11-04",
       "download_url": "https://github.com/deckerweb/glotframe/releases/download/v1.0.0/glotframe-1.0.0.zip",
       "sha256": "450e9399cee155b8970f4fcbebbe53e57ba46e73a1daaf5686d1f349ad2dff36",
       "published_at": "2026-10-27T12:06:06Z",
       "icon": "assets/icons/glotframe-399fa87020d5.png"
+    },
+    {
+      "approved": true,
+      "slug": "wpcodebox-quicknav",
+      "name": "WPCodeBox QuickNav",
+      "description": "Reach WPCodeBox snippets through personal favorites, status lists, folders and search in the WordPress toolbar. WPCodeBox navigation pauses without supported WPCodeBox 2; settings and the independent Functionality Plugin overview remain available.",
+      "description_de": "WPCodeBox-Snippets über Favoriten, Statuslisten, Ordner und Suche in der Toolbar erreichen. Ohne unterstütztes WPCodeBox 2 pausiert die Navigation; Einstellungen und die eigenständige Functionality-Plugin-Übersicht bleiben verfügbar.",
+      "version": "1.0.0",
+      "repository": "deckerweb/wpcodebox-quicknav",
+      "plugin_file": "wpcodebox-quicknav/wpcodebox-quicknav.php",
+      "download_url": "https://github.com/deckerweb/wpcodebox-quicknav/releases/download/v1.0.0/wpcodebox-quicknav-1.0.0.zip",
+      "sha256": "a1da2ccc2661f488483b71d49b870eb6e1d192161e7243bbe026158edddb9bdd",
+      "requires_wp": "6.9",
+      "requires_php": "8.3",
+      "category": "Code snippets",
+      "category_de": "Code-Snippets",
+      "dependencies": [
+        {
+          "name": "WPCodeBox 2",
+          "plugin_file": "wpcodebox2/wpcodebox2.php",
+          "min_version": "1.4.1"
+        }
+      ],
+      "icon_label": "WBQ",
+      "series_memberships": [
+        "quicknav"
+      ],
+      "series_memberships_v2": [
+        "quicknav"
+      ],
+      "series_memberships_v3": [
+        "quicknav"
+      ],
+      "sort_order": 310,
+      "github_stars": 1,
+      "stars_checked_at": "2026-11-04",
+      "published_at": "2026-11-04T21:01:31Z",
+      "dependency_rules": [
+        {
+          "plugin_file": "wpcodebox2/wpcodebox2.php",
+          "since_version": "1.0.0",
+          "mode": "pause"
+        }
+      ],
+      "requires_multisite": false,
+      "network_only": false,
+      "icon": "assets/icons/wpcodebox-quicknav-22cffca6f65f.png"
+    },
+    {
+      "approved": true,
+      "slug": "builder-pdf-presenter",
+      "name": "Builder PDF Presenter",
+      "version": "1.0.0",
+      "repository": "deckerweb/builder-pdf-presenter",
+      "plugin_file": "builder-pdf-presenter/builder-pdf-presenter.php",
+      "description": "Manage and present PDFs with cover cards, an on-demand reader, blocks, patterns, shortcodes and optional native Bricks elements. Bricks and Meta Box are optional.",
+      "description_de": "PDFs verwalten und mit Cover-Karten, bedarfsgeladenem Reader, Blöcken, Vorlagen, Shortcodes und optionalen nativen Bricks-Elementen präsentieren. Bricks und Meta Box sind optional.",
+      "requires_wp": "6.9",
+      "requires_php": "8.3",
+      "category": "Content",
+      "category_de": "Inhalte",
+      "dependencies": [],
+      "requires_multisite": false,
+      "network_only": false,
+      "icon_label": "BPP",
+      "icon": "assets/icons/builder-pdf-presenter-5ffcecb79dff.png",
+      "sort_order": 320,
+      "series_memberships": [
+        "builder",
+        "manage-content"
+      ],
+      "series_memberships_v2": [
+        "builder",
+        "manage-content"
+      ],
+      "series_memberships_v3": [
+        "builder",
+        "manage-content"
+      ],
+      "download_url": "https://github.com/deckerweb/builder-pdf-presenter/releases/download/v1.0.0/builder-pdf-presenter-1.0.0.zip",
+      "sha256": "e6b228d3161424388a94633cd7d27fb3425e264d1d3e34655fac61268366ccf0",
+      "published_at": "2026-11-06T18:55:58Z"
     }
   ],
-  "catalog_revision": "2026-10-30.1",
-  "generated_at": "2026-10-30T16:12:55Z",
+  "catalog_revision": "2026-11-08.1",
+  "generated_at": "2026-11-08T21:44:34Z",
   "requires_library": "0.1.0",
   "series_definitions": {
     "quicknav": {
@@ -1137,16 +1216,6 @@
       "name": "Manage Content",
       "name_de": "Inhalte verwalten",
       "order": 30
-    },
-    "connect": {
-      "name": "Connect",
-      "name_de": "Connect",
-      "order": 40
-    },
-    "tools": {
-      "name": "Tools",
-      "name_de": "Werkzeuge",
-      "order": 50
     },
     "shop": {
       "name": "Shop",

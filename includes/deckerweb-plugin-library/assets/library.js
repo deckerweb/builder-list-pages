@@ -78,7 +78,7 @@
     finish(job,message || dwlInline.failed,true);
     job.form.dataset.dwlRecover='1';job.form.dataset.dwlLabel=job.label;job.button.textContent=dwlInline.status;
    };
-   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{action:'dwl_inline_status',operation:job.form.dataset.dwlAction,slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response=>{
+   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{action:'dwl_inline_status',operation:job.form.dataset.dwlAction,target_version:job.form.querySelector('[name="target_version"]')?.value||'',slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response=>{
     const data=response?.data || {};
     if (!response.success || data.pending) {unavailable(data.message);return;}
     if(!data.installed && job.failure){finish(job,job.failure+' '+(data.message||''),true);return;}apply(job,data);
@@ -87,7 +87,7 @@
   // Native upgrader filters may verify the Core updates nonce. The server still
   // independently verifies the operation- and slug-bound Library _wpnonce.
   const send = (job) => {
-   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{...credentials(),_ajax_nonce:window.wp?.updates?.ajaxNonce,action:'dwl_inline',operation:job.form.dataset.dwlAction,slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response => {
+   $.ajax({url:dwlInline.url,method:'POST',dataType:'json',data:{...credentials(),_ajax_nonce:window.wp?.updates?.ajaxNonce,action:'dwl_inline',operation:job.form.dataset.dwlAction,target_version:job.form.querySelector('[name="target_version"]')?.value||'',slug:job.form.dataset.dwlSlug,network:job.form.dataset.dwlNetwork,_wpnonce:job.form.querySelector('[name="_wpnonce"]').value}}).done(response => {
     const data = response?.data || {};
     if (!response.success) {
      if (data.credentials && document.getElementById('request-filesystem-credentials-dialog') && window.wp?.updates) {
